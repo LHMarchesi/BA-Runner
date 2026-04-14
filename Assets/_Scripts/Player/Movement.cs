@@ -1,36 +1,46 @@
 using System;
+using System.Buffers.Text;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Windows;
 
 public class Movement : MonoBehaviour
 {
-    private Vector3 targetPosition;
-
-    [SerializeField] float constantSpeed;
-    [SerializeField] float decerationSpeed;
-    [SerializeField] float accelerationSpeed;
-    [SerializeField] float currentSpeed;
-
-    private int currentCarPosition;
-    private int maxPosition = 3;
     [SerializeField] float laneOffset;
     [SerializeField] Transform startPosition;
     [SerializeField] private Transform[] lanes;
+    [SerializeField] private float maxDistance;
+    [SerializeField] private float boostForce;
+    [SerializeField] private float springStrength;
+    [SerializeField] private float maxReturnForce;
+    [SerializeField] private float damping;
+
+
+    private Vector3 targetPosition;
+    private int currentCarPosition;
+    private int maxPosition = 3;
+    private float baseX;
+    private bool canMove = true;
+    private float inputX;
+    private float currentVelocityX;
+    [SerializeField] private float brakingForce;
 
     private void Start()
     {
         targetPosition = startPosition.position;
         transform.position = targetPosition;
+        baseX = transform.position.x;
     }
 
-    private bool canMove = true;
     public void OnMove(InputAction.CallbackContext context)
     {
+        Vector2 input = context.ReadValue<Vector2>();
+
+        inputX = input.x;
+
         if (!context.started || !canMove) return;
 
-        Vector2 input = context.ReadValue<Vector2>();
         float vertical = input.y;
-        float horizontal = input.x;
 
         if (vertical > 0 && currentCarPosition < maxPosition)
         {
@@ -42,21 +52,8 @@ public class Movement : MonoBehaviour
             currentCarPosition--;
             Move();
         }
-
-        if (horizontal > 0)
-        {
-            Accelerate();
-        }
-        else if (horizontal < 0)
-        {
-            //Decelerate();
-        }
     }
 
-    private void Accelerate()
-    {
-        throw new NotImplementedException();
-    }
 
     private void Move()
     {
@@ -70,13 +67,45 @@ public class Movement : MonoBehaviour
         canMove = true;
     }
 
-
     private void Update()
     {
-        transform.position = Vector3.Lerp(transform.position, targetPosition, 10f * Time.deltaTime);
-        transform.Translate(transform.right * constantSpeed * Time.deltaTime);
-        transform.Translate(transform.right * decerationSpeed * Time.deltaTime);
+        HandleBoost();
+        transform.position += Vector3.right * currentVelocityX * Time.deltaTime;
 
+        transform.position = new Vector3(
+      transform.position.x,
+      Mathf.Lerp(transform.position.y, targetPosition.y, 10f * Time.deltaTime),
+      transform.position.z
+  );
+    }
+
+    private void HandleBoost()
+    {
+        float currentX = transform.position.x;
+        float distance = baseX - currentX;
+
+        bool canAccelerate = Mathf.Abs(currentX - baseX) < maxDistance;
+
+        // Boost
+        if (inputX > 0 && canAccelerate)
+        {
+            currentVelocityX = boostForce;
+        }
+
+        // Resorte
+        float returnForce = distance * springStrength;
+        returnForce = Mathf.Clamp(returnForce, -maxReturnForce, maxReturnForce);
+
+        currentVelocityX += returnForce * Time.deltaTime;
+       
+        if (inputX < 0)
+        {
+            currentVelocityX += returnForce * brakingForce * Time.deltaTime;
+
+        }
+
+        // Damping
+        currentVelocityX *= damping;
     }
     private void UpdatePosition()
     {

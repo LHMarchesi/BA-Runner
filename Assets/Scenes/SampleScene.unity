@@ -1541,8 +1541,8 @@ MonoBehaviour:
   npcPrefab: {fileID: 4691921660047537743, guid: e7479db8dbafd434587a4df2c0af2e61, type: 3}
   poolSize: 20
   timeBetweenWaves: 4
-  timeBetweenSpawns: 1.4
-  carsPerWave: 6
+  timeBetweenSpawns: 0.7
+  carsPerWave: 18
 --- !u!4 &1805791355
 Transform:
   m_ObjectHideFlags: 0
@@ -1599,18 +1599,6 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1399445317116853480, guid: 07b24961ec04ae94aa86875b9cf7a7f8, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1399445317116853480, guid: 07b24961ec04ae94aa86875b9cf7a7f8, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1399445317116853480, guid: 07b24961ec04ae94aa86875b9cf7a7f8, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1399445317116853480, guid: 07b24961ec04ae94aa86875b9cf7a7f8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -1658,17 +1646,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1399445317116853480, guid: 07b24961ec04ae94aa86875b9cf7a7f8, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3764500245973759094, guid: 07b24961ec04ae94aa86875b9cf7a7f8, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 8672301451433408647, guid: 07b24961ec04ae94aa86875b9cf7a7f8, type: 3}
-      propertyPath: constantSpeed
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8672301451433408647, guid: 07b24961ec04ae94aa86875b9cf7a7f8, type: 3}
       propertyPath: startPosition
