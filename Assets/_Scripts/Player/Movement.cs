@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 public class Movement : MonoBehaviour
 {
     private int currentCarPosition;
-    private int maxPosition = 4;
+    private int maxPosition = 3;
     [SerializeField] float laneOffset;
     [SerializeField] Transform startPosition;
 
@@ -53,9 +53,14 @@ public class Movement : MonoBehaviour
     {
         transform.position = Vector3.Lerp(transform.position, targetPosition, 10f * Time.deltaTime);
     }
-
+    [SerializeField] private Transform[] lanes;
     private void UpdatePosition()
     {
+        Transform lane = lanes[currentCarPosition];
+        transform.SetParent(lane);
+
+        transform.SetAsLastSibling();
+
         targetPosition = new Vector3(
             startPosition.position.x,
             startPosition.position.y + currentCarPosition * laneOffset,
