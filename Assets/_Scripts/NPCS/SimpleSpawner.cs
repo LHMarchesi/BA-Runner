@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class SimpleSpawner : MonoBehaviour
 {
+    [SerializeField] LevelManager levelManager;
     [Header("Spawn Points")]
     [SerializeField] private Transform[] lanes; // asignar 4 en inspector
 
@@ -15,19 +16,12 @@ public class SimpleSpawner : MonoBehaviour
     [SerializeField] private int poolSize = 20;
     private List<GameObject> pool = new List<GameObject>();
 
-    [Header("Wave Settings")]
-    [SerializeField] private float timeBetweenWaves = 3f;
-    [SerializeField] private float timeBetweenSpawns = 0.5f;
-    [SerializeField] private int carsPerWave = 5;
-
-    private int currentWave = 0;
 
     void Start()
     {
         CreatePool();
         StartCoroutine(SpawnWaves());
     }
-
    
     void CreatePool()
     {
@@ -39,7 +33,6 @@ public class SimpleSpawner : MonoBehaviour
         }
     }
 
-    
     GameObject GetFromPool()
     {
         foreach (GameObject obj in pool)
@@ -60,32 +53,45 @@ public class SimpleSpawner : MonoBehaviour
     {
         while (true)
         {
-            currentWave++;
-            int enemiesToSpawn = carsPerWave + currentWave; // escala dificultad
+            SpawnPattern pattern = levelManager.CurrentLevel.levelPatterns[Random.Range(0, levelManager.CurrentLevel.levelPatterns.Length)];
+            Debug.LogWarning("Spawn Pattern: " + pattern.name);
+            yield return StartCoroutine(SpawnPatternRoutine(pattern));
 
-            for (int i = 0; i < enemiesToSpawn; i++)
-            {
-                SpawnEnemy();
-                yield return new WaitForSeconds(timeBetweenSpawns);
-            }
-
-            yield return new WaitForSeconds(timeBetweenWaves);
+            yield return new WaitForSeconds(levelManager.CurrentLevel.timeBetweenWaves);
         }
     }
 
-    // 🔹 Spawn individual
-    void SpawnEnemy()
+    IEnumerator SpawnPatternRoutine(SpawnPattern pattern)
+    {
+        foreach (var spawn in pattern.spawns)
+        {
+            yield return new WaitForSeconds(spawn.delay);
+            SpawnEnemyInLane(spawn.laneIndex);
+        }
+    }
+
+    void SpawnEnemyInLane(int laneIndex)
     {
         GameObject enemy = GetFromPool();
 
-        int randomIndex = Random.Range(0, lanes.Length);
-        Transform lane = lanes[randomIndex];
+        Transform lane = lanes[laneIndex];
 
-        enemy.transform.SetParent(lane); // 🔥 clave
+        enemy.transform.SetParent(lane);
 
         RectTransform rect = enemy.GetComponent<RectTransform>();
-        rect.anchoredPosition = Vector2.zero; // centrado en el carril
+        rect.anchoredPosition = Vector2.zero;
 
         enemy.SetActive(true);
+        StartCoroutine(ReturnToPoolAfterTime(enemy, 8f));
+    }
+
+    IEnumerator ReturnToPoolAfterTime(GameObject enemy, float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        if (enemy.activeInHierarchy) // evita errores si ya se desactivó
+        {
+            enemy.SetActive(false);
+        }
     }
 }

@@ -11,7 +11,7 @@ public class LevelManager : MonoBehaviour
     private float levelProgession;
 
     public static Action OnLevelComplete;
-    private Level_Scriptable CurrentLevel => levels[currentLevelIndex];
+    public Level_Scriptable CurrentLevel => levels[currentLevelIndex];
 
     private void Start()
     {

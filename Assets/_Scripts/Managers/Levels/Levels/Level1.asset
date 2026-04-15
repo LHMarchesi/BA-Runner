@@ -12,6 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa7792cd6221c7d4c8f51bb26b31ea3c, type: 3}
   m_Name: Level1
   m_EditorClassIdentifier: Assembly-CSharp::Level_Scriptable
+  levelPatterns:
+  - {fileID: 11400000, guid: f5b65df6f240d2b498388f6b4bc43e1e, type: 2}
+  - {fileID: 11400000, guid: 9f934b38b3792684e9659bd548173aba, type: 2}
+  - {fileID: 11400000, guid: ef7d5dc7788466e46845304513fefa69, type: 2}
+  - {fileID: 11400000, guid: 9ca471e1f2ce1de49b6c15f7f8baee05, type: 2}
+  - {fileID: 11400000, guid: 99ef0752c27bf4b45a69cbd1058eeddf, type: 2}
+  - {fileID: 11400000, guid: 3659cce06676a3042a08b0c3e39d6599, type: 2}
   levelIndex: 1
   maxLevelProgession: 45
+  timeBetweenWaves: 0.7
   levelMusic: {fileID: 0}

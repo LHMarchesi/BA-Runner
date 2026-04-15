@@ -445,8 +445,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0.0000029357, y: -102.85}
-  m_SizeDelta: {x: 289.2258, y: 20}
+  m_AnchoredPosition: {x: -0.018738, y: 44}
+  m_SizeDelta: {x: 1188.7, y: 97.21}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &432736746
 MonoBehaviour:
@@ -563,7 +563,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.34448874, g: 1, b: 0, a: 1}
+  m_Color: {r: 0.12584901, g: 0.15471691, b: 0.11063719, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -615,14 +615,14 @@ RectTransform:
   m_GameObject: {fileID: 470439764}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.15145, y: 0.15145, z: 0.15145}
+  m_LocalScale: {x: 0.47702202, y: 0.47702202, z: 0.47702202}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 463604375}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 8.7, y: 0}
+  m_AnchoredPosition: {x: 24.979, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &470439766
@@ -851,6 +851,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Npc_Car
   speed: 250
+  lifetime: 0
 --- !u!114 &598113876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1024,6 +1025,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Npc_Car
   speed: 250
+  lifetime: 0
 --- !u!114 &648262435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1223,6 +1225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Npc_Car
   speed: 250
+  lifetime: 0
 --- !u!114 &794404680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1592,6 +1595,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Npc_Car
   speed: 250
+  lifetime: 0
 --- !u!114 &1297423645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2037,6 +2041,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2b2c16fc3ab31a4984cbc6c21fe0748, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SimpleSpawner
+  levelManager: {fileID: 1332032280}
   lanes:
   - {fileID: 598113874}
   - {fileID: 648262433}
