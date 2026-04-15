@@ -21,6 +21,7 @@ public class Movement : MonoBehaviour
     private int maxPosition = 3;
     private float baseX;
     private bool canMove = true;
+    private bool isAlive = true;
     private float inputX;
     private float currentVelocityX;
     [SerializeField] private float brakingForce;
@@ -69,6 +70,7 @@ public class Movement : MonoBehaviour
 
     private void Update()
     {
+        if (!isAlive) return;
         HandleBoost();
         transform.position += Vector3.right * currentVelocityX * Time.deltaTime;
 
@@ -81,6 +83,7 @@ public class Movement : MonoBehaviour
 
     private void HandleBoost()
     {
+        if (!canMove) return;
         float currentX = transform.position.x;
         float distance = baseX - currentX;
 
@@ -97,7 +100,7 @@ public class Movement : MonoBehaviour
         returnForce = Mathf.Clamp(returnForce, -maxReturnForce, maxReturnForce);
 
         currentVelocityX += returnForce * Time.deltaTime;
-       
+
         if (inputX < 0)
         {
             currentVelocityX += returnForce * brakingForce * Time.deltaTime;
@@ -125,5 +128,10 @@ public class Movement : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("Collided with: " + collision.gameObject.name);
+        canMove = false;
+        isAlive = false;
+        transform.SetParent(collision.transform);
+
+        //trigger end game 
     }
 }
