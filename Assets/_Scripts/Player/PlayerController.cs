@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float springStrength;
     [SerializeField] private float maxReturnForce;
     [SerializeField] private float damping;
+    [SerializeField] private AudioClip crashSound;
 
 
     private Vector3 targetPosition;
@@ -135,6 +136,7 @@ public class PlayerController : MonoBehaviour
         isAlive = false;
         transform.SetParent(collision.transform);
         GameManager.Instance.ChangeState(GameState.Lose);
+        AudioManager.Instance.PlaySFX(crashSound);  
         //trigger end game 
     }
 }
