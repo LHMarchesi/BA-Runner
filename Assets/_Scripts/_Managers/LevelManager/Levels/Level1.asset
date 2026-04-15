@@ -21,5 +21,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3659cce06676a3042a08b0c3e39d6599, type: 2}
   levelIndex: 1
   maxLevelProgession: 45
-  timeBetweenWaves: 0.7
-  levelMusic: {fileID: 0}
+  timeBetweenWaves: 1
+  cinematicScene: CinematicScene
+  gameplayScene: SampleScene
+  levelMusic: {fileID: 8300000, guid: 00be40f827bc90943b73b5260456325c, type: 3}

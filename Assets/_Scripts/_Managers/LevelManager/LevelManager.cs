@@ -24,7 +24,6 @@ public class LevelManager : MonoBehaviour
         currentLevelIndex = index;
         levelProgession = 0;
         progessBar.UpdateProgess(levelProgession, CurrentLevel.maxLevelProgession);
-        AudioManager.Instance.PlayMusic(CurrentLevel.levelMusic);
     }
 
 
@@ -37,6 +36,7 @@ public class LevelManager : MonoBehaviour
         }
         else
         {
+            GameManager.Instance.ChangeState(GameState.Win);
             OnLevelComplete?.Invoke();
             NextLevel();
         }
@@ -51,6 +51,7 @@ public class LevelManager : MonoBehaviour
         else
         {
             Debug.Log("Juego completado");
+            //GameManager.Instance.ChangeState(GameState.Credits);
         }
     }
 

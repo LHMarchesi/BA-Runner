@@ -34,6 +34,15 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void StopMusic()
+    {
+        if (MusicSource.isPlaying)
+        {
+            MusicSource.Stop();
+        }
+    }
+
+
     public void PlayMusic(AudioClip clip)
     {
         if (clip != null)

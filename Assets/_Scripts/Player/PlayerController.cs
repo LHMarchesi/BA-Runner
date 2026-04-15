@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Windows;
 
-public class Movement : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     [SerializeField] float laneOffset;
     [SerializeField] Transform startPosition;
@@ -22,6 +22,7 @@ public class Movement : MonoBehaviour
     private float baseX;
     private bool canMove = true;
     private bool isAlive = true;
+    public bool canCollide = true;
     private float inputX;
     private float currentVelocityX;
     [SerializeField] private float brakingForce;
@@ -31,7 +32,9 @@ public class Movement : MonoBehaviour
         targetPosition = startPosition.position;
         transform.position = targetPosition;
         baseX = transform.position.x;
+        LevelManager.OnLevelComplete += () => canCollide = false;
     }
+
 
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -127,11 +130,11 @@ public class Movement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Collided with: " + collision.gameObject.name);
+        if(!canCollide) return;
         canMove = false;
         isAlive = false;
         transform.SetParent(collision.transform);
-
+        GameManager.Instance.ChangeState(GameState.Lose);
         //trigger end game 
     }
 }
