@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
+    public static LevelManager instance;
+
+    private void Awake()
+    {
+        if (instance == null) { instance = this; } else { Destroy(gameObject); }
+    }
     [SerializeField] private ProgessBar progessBar;
     [SerializeField] private List<Level_Scriptable> levels;
-
+    [SerializeField] private SpeedData speedData;
     private int currentLevelIndex;
     private float levelProgession;
 
@@ -33,6 +39,9 @@ public class LevelManager : MonoBehaviour
         {
             levelProgession += Time.deltaTime;
             progessBar.UpdateProgess(levelProgession, CurrentLevel.maxLevelProgession);
+
+            float normalized = levelProgession / CurrentLevel.maxLevelProgession;
+            speedData.progressionMultiplier = Mathf.Lerp(1.5f, 3f, normalized);
         }
         else
         {
@@ -53,11 +62,5 @@ public class LevelManager : MonoBehaviour
             Debug.Log("Juego completado");
             //GameManager.Instance.ChangeState(GameState.Credits);
         }
-    }
-
-
-    private void Update()
-    {
-        IncreaseLevelProgession();
     }
 }

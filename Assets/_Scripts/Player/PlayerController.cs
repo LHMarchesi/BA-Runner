@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float maxReturnForce;
     [SerializeField] private float damping;
     [SerializeField] private AudioClip crashSound;
-
+    [SerializeField] private SpeedData speedData;
 
     private Vector3 targetPosition;
     private int currentCarPosition;
@@ -30,6 +30,9 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        speedData.boostMultiplier = 1;
+        speedData.baseWorldSpeed = 1;
+        speedData.progressionMultiplier = 1;
         targetPosition = startPosition.position;
         transform.position = targetPosition;
         baseX = transform.position.x;
@@ -92,12 +95,16 @@ public class PlayerController : MonoBehaviour
         float distance = baseX - currentX;
 
         bool canAccelerate = Mathf.Abs(currentX - baseX) < maxDistance;
-
         // Boost
         if (inputX > 0 && canAccelerate)
         {
             currentVelocityX = boostForce;
+            speedData.boostMultiplier = currentVelocityX / 250; // Update boost multiplier based on current velocity          
+        }else
+        {
+            speedData.boostMultiplier = 1f; // Reset boost multiplier when not boosting
         }
+
 
         // Resorte
         float returnForce = distance * springStrength;
@@ -134,6 +141,9 @@ public class PlayerController : MonoBehaviour
         if(!canCollide) return;
         canMove = false;
         isAlive = false;
+        speedData.boostMultiplier = 0;
+        speedData.baseWorldSpeed = 0;
+        speedData.progressionMultiplier = 0;
         transform.SetParent(collision.transform);
         GameManager.Instance.ChangeState(GameState.Lose);
         AudioManager.Instance.PlaySFX(crashSound);  

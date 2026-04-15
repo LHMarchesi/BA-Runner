@@ -18,7 +18,7 @@ public class GameplayState : IState
 
     public void Execute()
     {
-        // gameplay corre solo
+        LevelManager.instance.IncreaseLevelProgession();
     }
 
     public void Sleep()

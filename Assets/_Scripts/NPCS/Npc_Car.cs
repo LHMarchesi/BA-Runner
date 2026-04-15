@@ -2,10 +2,14 @@ using UnityEngine;
 
 public class Npc_Car : MonoBehaviour
 {
-    public float speed;
+    [SerializeField] private SpeedData speedData;
+    [SerializeField] private float speed;
+
 
     private void Update()
     {
-        transform.Translate(Vector3.left * speed * Time.deltaTime);
+        transform.Translate(
+    Vector3.left * speed * speedData.CurrentWorldSpeed * Time.deltaTime
+);
     }
 }
