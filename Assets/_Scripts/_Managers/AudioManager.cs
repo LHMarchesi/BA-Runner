@@ -30,6 +30,7 @@ public class AudioManager : MonoBehaviour
     {
         if (clip != null)
         {
+            audioSource.pitch = Random.Range(0.95f, 1.3f); // Agrega una ligera variación de tono para evitar la repetición monótona
             audioSource.PlayOneShot(clip);
         }
     }

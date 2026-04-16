@@ -68,7 +68,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -3855390878696569443, guid: 784aad86e31fc1d42ae092148b55a4f2, type: 3}
+  m_Sprite: {fileID: -3888109967018907179, guid: a8ea5ac8226ea0644b52f0c7b5a2532c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -92,6 +92,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   speedData: {fileID: 11400000, guid: 33b0c508177c1a142be8b48318a9b72e, type: 2}
   speed: 600
+  sprites:
+  - {fileID: -5165881585636880259, guid: 605af93f9ace40b4c9c97ac90b07cd08, type: 3}
+  - {fileID: -3888109967018907179, guid: a8ea5ac8226ea0644b52f0c7b5a2532c, type: 3}
 --- !u!50 &-167357517310235788
 Rigidbody2D:
   serializedVersion: 5

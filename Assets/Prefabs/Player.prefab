@@ -69,7 +69,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -8030835215644163416, guid: d94acdd5bf85e93438b842e75398a874, type: 3}
+  m_Sprite: {fileID: -3315882072124439391, guid: 06d517d9704b7b244a68640d866158b5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -105,6 +105,8 @@ MonoBehaviour:
   damping: 0.9
   crashSound: {fileID: 8300000, guid: 4b4b789c75704eb4ca95ee7290c29623, type: 3}
   startSound: {fileID: 0}
+  moveLaneSound: {fileID: 8300000, guid: 0da3f43629b6aa1afa83a20fdbe8e870, type: 3}
+  boostSound: {fileID: 8300000, guid: ce60b07d99566b1bd9310482376aacdc, type: 3}
   canCollide: 1
   brakingForce: 2
 --- !u!114 &248399721250031833

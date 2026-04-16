@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float damping;
     [SerializeField] private AudioClip crashSound;
     [SerializeField] private AudioClip startSound;
+    [SerializeField] private AudioClip moveLaneSound;
+    [SerializeField] private AudioClip boostSound;
 
     private Vector3 targetPosition;
     private int currentCarPosition;
@@ -70,6 +72,7 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
+        AudioManager.Instance.PlaySFX(moveLaneSound);
         canMove = false;
         UpdatePosition();
         Invoke(nameof(ResetMove), 0.1f); // cooldown
@@ -92,7 +95,7 @@ public class PlayerController : MonoBehaviour
       transform.position.z
   );
     }
-
+    private bool wasBoosting;
     private void HandleBoost()
     {
         if (!canMove) return;
@@ -113,12 +116,16 @@ public class PlayerController : MonoBehaviour
                 10f * Time.deltaTime
             );
         }
-
+      
         if (isBoosting)
         {
+            if (!wasBoosting)
+            {
+                AudioManager.Instance.PlaySFX(boostSound);
+            }
             currentVelocityX = boostForce;
         }
-
+        wasBoosting = isBoosting;
         // Resorte
         float returnForce = distance * springStrength;
         returnForce = Mathf.Clamp(returnForce, -maxReturnForce, maxReturnForce);

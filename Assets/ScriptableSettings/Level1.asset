@@ -24,6 +24,6 @@ MonoBehaviour:
   timeBetweenWaves: 0.85
   cinematicScene: CinematicScene
   gameplayScene: SampleScene
-  levelMusic: {fileID: 8300000, guid: fd4a6c3e460b92a438cd11cfa2b7c9c8, type: 3}
+  levelMusic: {fileID: 8300000, guid: ee672d7e8b91c8d4d82339c058e2fb2e, type: 3}
   levelBackground: {fileID: -2766439190625139700, guid: 6d7e9361c78fa7c4caf92a857fb501d4, type: 3}
   speedData: {fileID: 11400000, guid: 33b0c508177c1a142be8b48318a9b72e, type: 2}
