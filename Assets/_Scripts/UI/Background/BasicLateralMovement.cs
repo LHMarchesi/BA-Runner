@@ -13,6 +13,7 @@ public class BasicLateralMovement : MonoBehaviour
 
     void Start()
     {
+        speedData = LevelManager.instance.CurrentLevel.speedData;
         Image img = GetComponent<Image>();
 
         material = Instantiate(img.material);

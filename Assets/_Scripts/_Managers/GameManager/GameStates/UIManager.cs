@@ -25,7 +25,7 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        var currentLevel = GameManager.Instance.CurrentLevel;
+        var currentLevel = LevelManager.instance.CurrentLevel;
         if (currentLevel != null && BackgroundImage != null)
         {
             BackgroundImage.sprite = currentLevel.levelBackground;

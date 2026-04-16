@@ -1332,7 +1332,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   gameData: {fileID: 11400000, guid: 8d5818e67d3f317489f07ec615e86f25, type: 2}
-  levels: []
 --- !u!4 &844575894
 Transform:
   m_ObjectHideFlags: 0
@@ -1929,6 +1928,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d281c0b25ac7cb743a461bc662d8a699, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelManager
+  levels:
+  - {fileID: 11400000, guid: 8332c665533ee024898a4a8a0cf779f8, type: 2}
+  - {fileID: 11400000, guid: c7341cd0f5e530d48a66d2732a8fb97b, type: 2}
+  - {fileID: 11400000, guid: 7a9c4caeeb7498a468589b4c9b510718, type: 2}
   progessBar: {fileID: 432736747}
 --- !u!4 &1332032281
 Transform:

@@ -52,7 +52,7 @@ public class SimpleSpawner : MonoBehaviour
     {
         while (true)
         {
-            var currentLevel = GameManager.Instance.CurrentLevel;
+            var currentLevel = LevelManager.instance.CurrentLevel;
             if (currentLevel == null || currentLevel.levelPatterns == null || currentLevel.levelPatterns.Length == 0)
             {
                 yield return new WaitForSeconds(1f); // Esperar un momento si no hay nivel configurado

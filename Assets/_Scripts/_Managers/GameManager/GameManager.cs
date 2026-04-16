@@ -12,20 +12,6 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public GameData gameData;
-    [SerializeField] public List<Level_Scriptable> levels;
-    private Dictionary<Level_Scriptable, SpeedData> initialSpeedDatas = new Dictionary<Level_Scriptable, SpeedData>();
-
-    public Level_Scriptable CurrentLevel
-    {
-        get
-        {
-            if (levels == null || levels.Count == 0) return null;
-            if (gameData.currentLevelIndex < 0 || gameData.currentLevelIndex >= levels.Count)
-                gameData.currentLevelIndex = 0; // Reset to 0 if out of bounds
-            return levels[gameData.currentLevelIndex];
-        }
-    }
-
     private StateMachine<GameState> stateMachine = new();
 
     private void Awake()
@@ -34,13 +20,7 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
-            foreach (var level in levels)
-            {
-                if (level != null && level.speedData != null)
-                {
-                    initialSpeedDatas[level] = level.speedData;
-                }
-            }
+          
           //  LoadProgress();
             InitializeStates();
         }
@@ -49,37 +29,8 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    public void SetSpeedData(SpeedData speedData)
-    {
-        CurrentLevel.speedData = speedData;
-    }
-
-    public void RestoreInitialSpeedData()
-    {
-        foreach (var level in levels)
-        {
-            if (level != null && initialSpeedDatas.ContainsKey(level))
-            {
-                level.speedData = initialSpeedDatas[level];
-                if (level.speedData != null)
-                {
-                    level.speedData.boostMultiplier = 1f;
-                    level.speedData.currentProgressionMultiplier = level.speedData.minProgressionMultiplier;
-                }
-            }
-        }
-    }
-
-    public void NextLevel()
-    {
-        gameData.currentLevelIndex++;
-        if (gameData.currentLevelIndex >= levels.Count)
-        {
-            gameData.currentLevelIndex = levels.Count - 1;
-        }
-        SaveProgress();
-    }
+    
+   
 
     void InitializeStates()
     {
@@ -102,9 +53,9 @@ public class GameManager : MonoBehaviour
         stateMachine.ChangeState(newState);
     }
 
-    public void SaveProgress()
+    public void SaveProgress(int newLevelIndex)
     {
-        PlayerPrefs.SetInt("LevelIndex", gameData.currentLevelIndex);
+        PlayerPrefs.SetInt("LevelIndex", newLevelIndex);
         PlayerPrefs.Save();
     }
 

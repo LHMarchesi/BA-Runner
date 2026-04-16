@@ -12,7 +12,6 @@ public class WinState : IState
 
     public void Awake()
     {
-        gm.NextLevel();
         UIManager.Instance.WinTranstion();
     }
 

@@ -16,7 +16,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float damping;
     [SerializeField] private AudioClip crashSound;
     [SerializeField] private AudioClip startSound;
-    [SerializeField] private SpeedData onDeathSpeedData;
 
     private Vector3 targetPosition;
     private int currentCarPosition;
@@ -29,11 +28,11 @@ public class PlayerController : MonoBehaviour
     private float currentVelocityX;
     [SerializeField] private float brakingForce;
 
-    private SpeedData speedData => GameManager.Instance.CurrentLevel?.speedData;
+    private SpeedData SpeedData;
 
     private void Start()
     {
-        
+        SpeedData = LevelManager.instance.CurrentLevel.speedData;
         targetPosition = startPosition.position;
         transform.position = targetPosition;
         baseX = transform.position.x;
@@ -99,19 +98,26 @@ public class PlayerController : MonoBehaviour
         if (!canMove) return;
         float currentX = transform.position.x;
         float distance = baseX - currentX;
-
         bool canAccelerate = Mathf.Abs(currentX - baseX) < maxDistance;
         // Boost
-        if (inputX > 0 && canAccelerate)
+        bool isBoosting = inputX > 0 && canAccelerate;
+
+        float targetBoost = isBoosting ? 2.5f : 1f;
+
+        if (SpeedData != null)
         {
-            currentVelocityX = boostForce;
-            if (speedData != null) speedData.boostMultiplier = currentVelocityX / 250; // Update boost multiplier based on current velocity          
-        }
-        else
-        {
-            if (speedData != null) speedData.boostMultiplier = 1f; // Reset boost multiplier when not boosting
+            
+            SpeedData.boostMultiplier = Mathf.Lerp(
+                SpeedData.boostMultiplier,
+                targetBoost,
+                10f * Time.deltaTime
+            );
         }
 
+        if (isBoosting)
+        {
+            currentVelocityX = boostForce;
+        }
 
         // Resorte
         float returnForce = distance * springStrength;
@@ -149,7 +155,6 @@ public class PlayerController : MonoBehaviour
         canCollide = false;
         canMove = false;
         isAlive = false;
-        GameManager.Instance.SetSpeedData(onDeathSpeedData);
         
         transform.SetParent(collision.transform);
 

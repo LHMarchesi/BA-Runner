@@ -20,10 +20,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 99ef0752c27bf4b45a69cbd1058eeddf, type: 2}
   - {fileID: 11400000, guid: 3659cce06676a3042a08b0c3e39d6599, type: 2}
   levelIndex: 2
-  maxLevelProgession: 22.5
-  timeBetweenWaves: 0.55
+  maxLevelProgession: 40.5
+  timeBetweenWaves: 0.74
   cinematicScene: CinematicScene
   gameplayScene: SampleScene
-  levelMusic: {fileID: 8300000, guid: 00be40f827bc90943b73b5260456325c, type: 3}
+  levelMusic: {fileID: 8300000, guid: fd4a6c3e460b92a438cd11cfa2b7c9c8, type: 3}
   levelBackground: {fileID: -7802648845587964238, guid: 74cf73889da21224c972f153ebc4ad94, type: 3}
   speedData: {fileID: 11400000, guid: ff98cf3aa638e934aab866d252848f99, type: 2}

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a17ed51fca997a14285ace3af51c03d2, type: 3}
   m_Name: lvl3_SpeedData
   m_EditorClassIdentifier: Assembly-CSharp::SpeedData
-  baseWorldSpeed: 2
-  boostMultiplier: 1
+  baseWorldSpeed: 1
+  boostMultiplier: 1.6
   minProgressionMultiplier: 1
-  maxProgressionMultiplier: 3
-  currentProgressionMultiplier: 0
+  maxProgressionMultiplier: 2.7
+  currentProgressionMultiplier: 2.7

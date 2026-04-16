@@ -100,13 +100,13 @@ MonoBehaviour:
   - {fileID: 0}
   maxDistance: 1300
   boostForce: 600
-  springStrength: 60
-  maxReturnForce: 2500
+  springStrength: 1000
+  maxReturnForce: 10000
   damping: 0.9
   crashSound: {fileID: 8300000, guid: 4b4b789c75704eb4ca95ee7290c29623, type: 3}
-  onDeathSpeedData: {fileID: 11400000, guid: 572ef94a402250140b84663dae8db4ad, type: 2}
+  startSound: {fileID: 0}
   canCollide: 1
-  brakingForce: 1
+  brakingForce: 2
 --- !u!114 &248399721250031833
 MonoBehaviour:
   m_ObjectHideFlags: 0
