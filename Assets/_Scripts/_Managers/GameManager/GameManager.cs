@@ -14,7 +14,16 @@ public class GameManager : MonoBehaviour
     public GameData gameData;
     [SerializeField] public List<Level_Scriptable> levels;
 
-    public Level_Scriptable CurrentLevel => levels[gameData.currentLevelIndex];
+    public Level_Scriptable CurrentLevel
+    {
+        get
+        {
+            if (levels == null || levels.Count == 0) return null;
+            if (gameData.currentLevelIndex < 0 || gameData.currentLevelIndex >= levels.Count)
+                gameData.currentLevelIndex = 0; // Reset to 0 if out of bounds
+            return levels[gameData.currentLevelIndex];
+        }
+    }
 
     private StateMachine<GameState> stateMachine = new();
 

@@ -25,7 +25,11 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        BackgroundImage.sprite = GameManager.Instance.CurrentLevel.levelBackground;
+        var currentLevel = GameManager.Instance.CurrentLevel;
+        if (currentLevel != null && BackgroundImage != null)
+        {
+            BackgroundImage.sprite = currentLevel.levelBackground;
+        }
     }
     public void ToggleLoseScreen(bool value)
     {

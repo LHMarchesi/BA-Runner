@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
     private float currentVelocityX;
     [SerializeField] private float brakingForce;
 
-    private SpeedData speedData => GameManager.Instance.CurrentLevel.speedData;
+    private SpeedData speedData => GameManager.Instance.CurrentLevel?.speedData;
 
     private void Start()
     {
@@ -99,10 +99,11 @@ public class PlayerController : MonoBehaviour
         if (inputX > 0 && canAccelerate)
         {
             currentVelocityX = boostForce;
-            speedData.boostMultiplier = currentVelocityX / 250; // Update boost multiplier based on current velocity          
-        }else
+            if (speedData != null) speedData.boostMultiplier = currentVelocityX / 250; // Update boost multiplier based on current velocity          
+        }
+        else
         {
-            speedData.boostMultiplier = 1f; // Reset boost multiplier when not boosting
+            if (speedData != null) speedData.boostMultiplier = 1f; // Reset boost multiplier when not boosting
         }
 
 
@@ -138,11 +139,14 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(!canCollide) return;
+        if(!canCollide || !isAlive) return;
+        canCollide = false;
         canMove = false;
         isAlive = false;
         GameManager.Instance.SetSpeedData(onDeathSpeedData);
+        
         transform.SetParent(collision.transform);
+
         GameManager.Instance.ChangeState(GameState.Lose);
         AudioManager.Instance.PlaySFX(crashSound);  
         //trigger end game 

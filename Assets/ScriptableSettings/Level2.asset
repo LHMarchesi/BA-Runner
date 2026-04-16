@@ -20,7 +20,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 99ef0752c27bf4b45a69cbd1058eeddf, type: 2}
   - {fileID: 11400000, guid: 3659cce06676a3042a08b0c3e39d6599, type: 2}
   levelIndex: 2
-  maxLevelProgession: 45
+  maxLevelProgession: 22.5
   timeBetweenWaves: 0.55
   cinematicScene: CinematicScene
   gameplayScene: SampleScene

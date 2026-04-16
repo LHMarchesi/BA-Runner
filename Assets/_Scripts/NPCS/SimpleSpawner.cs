@@ -37,7 +37,7 @@ public class SimpleSpawner : MonoBehaviour
     {
         foreach (GameObject obj in pool)
         {
-            if (!obj.activeInHierarchy)
+            if (!obj.activeSelf)
                 return obj;
         }
 
@@ -48,15 +48,21 @@ public class SimpleSpawner : MonoBehaviour
         return newObj;
     }
 
-    //  Loop de oleadas
     IEnumerator SpawnWaves()
     {
         while (true)
         {
-            SpawnPattern pattern = GameManager.Instance.CurrentLevel.levelPatterns[Random.Range(0, GameManager.Instance.CurrentLevel.levelPatterns.Length)];
+            var currentLevel = GameManager.Instance.CurrentLevel;
+            if (currentLevel == null || currentLevel.levelPatterns == null || currentLevel.levelPatterns.Length == 0)
+            {
+                yield return new WaitForSeconds(1f); // Esperar un momento si no hay nivel configurado
+                continue;
+            }
+
+            SpawnPattern pattern = currentLevel.levelPatterns[Random.Range(0, currentLevel.levelPatterns.Length)];
             yield return StartCoroutine(SpawnPatternRoutine(pattern));
 
-            yield return new WaitForSeconds(GameManager.Instance.CurrentLevel.timeBetweenWaves);
+            yield return new WaitForSeconds(currentLevel.timeBetweenWaves);
         }
     }
 
@@ -74,11 +80,15 @@ public class SimpleSpawner : MonoBehaviour
         GameObject enemy = GetFromPool();
 
         Transform lane = lanes[laneIndex];
+        
+        // ¡Forzar que el carril esté activado para que los hijos se puedan ver!
+        if (!lane.gameObject.activeInHierarchy) 
+        {
+            lane.gameObject.SetActive(true);
+        }
 
         enemy.transform.SetParent(lane);
-
-        RectTransform rect = enemy.GetComponent<RectTransform>();
-        rect.anchoredPosition = Vector2.zero;
+        enemy.transform.localPosition = Vector3.zero;
 
         enemy.SetActive(true);
         StartCoroutine(ReturnToPoolAfterTime(enemy, 8f));

@@ -31,13 +31,21 @@ public class LevelManager : MonoBehaviour
 
     public void IncreaseLevelProgession()
     {
-        if (levelProgession < CurrentLevel.maxLevelProgession)
+        var currentLevel = CurrentLevel;
+        if (currentLevel == null) return;
+
+        if (levelProgession < currentLevel.maxLevelProgession)
         {
             levelProgession += Time.deltaTime;
-            progessBar.UpdateProgess(levelProgession, CurrentLevel.maxLevelProgession);
+            
+            if (progessBar != null) progessBar.UpdateProgess(levelProgession, currentLevel.maxLevelProgession);
 
-            float normalized = levelProgession / CurrentLevel.maxLevelProgession;
-            SpeedData.currentProgressionMultiplier = Mathf.Lerp(SpeedData.minProgressionMultiplier, SpeedData.maxProgressionMultiplier, normalized);
+            var speedData = SpeedData;
+            if (speedData != null)
+            {
+                float normalized = levelProgession / currentLevel.maxLevelProgession;
+                speedData.currentProgressionMultiplier = Mathf.Lerp(speedData.minProgressionMultiplier, speedData.maxProgressionMultiplier, normalized);
+            }
         }
         else
         {
