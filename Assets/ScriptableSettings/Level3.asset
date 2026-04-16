@@ -22,8 +22,10 @@ MonoBehaviour:
   levelIndex: 3
   maxLevelProgession: 40
   timeBetweenWaves: 0.65
-  cinematicScene: CinematicScene
-  gameplayScene: SampleScene
-  levelMusic: {fileID: 8300000, guid: ee672d7e8b91c8d4d82339c058e2fb2e, type: 3}
+  levelMusic: {fileID: 8300000, guid: 7bcb251e2b8c9054188b2018b967b3c3, type: 3}
   levelBackground: {fileID: 5655291303808057538, guid: 56f2a105208521a4fa1285ac80a1ca71, type: 3}
   speedData: {fileID: 11400000, guid: 99fcfe5ddf168764ebbb219e3b2a61d6, type: 2}
+  introURL: https://pub-2f5fbfbd569a4e4fad15811da373cb10.r2.dev/Cinematica%20demo.mp4
+  outroURL: https://pub-2f5fbfbd569a4e4fad15811da373cb10.r2.dev/Cinematica%20demo.mp4
+  cinematicScene: CinematicsScene
+  gameplayScene: SampleScene

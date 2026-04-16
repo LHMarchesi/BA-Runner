@@ -11,12 +11,11 @@ public class CinematicState : IState
 
     public void Awake()
     {
-        //var level = gm.gameData.currentLevel;
-
-       // SceneManager.LoadScene(level.cinematicScene);
     }
 
     public void Execute() { }
 
     public void Sleep() { }
 }
+
+

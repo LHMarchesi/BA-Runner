@@ -126,15 +126,16 @@ public class PlayerController : MonoBehaviour
             currentVelocityX = boostForce;
         }
         wasBoosting = isBoosting;
-        // Resorte
-        float returnForce = distance * springStrength;
-        returnForce = Mathf.Clamp(returnForce, -maxReturnForce, maxReturnForce);
-
-        currentVelocityX += returnForce * Time.deltaTime;
+        float displacement = baseX - transform.position.x;
+        float springForce = displacement * springStrength;
+        float dampingForce = -currentVelocityX * damping;
+        float force = springForce + dampingForce;
+        // Aplicar
+        currentVelocityX += force * Time.deltaTime;
 
         if (inputX < 0)
         {
-            currentVelocityX += returnForce * brakingForce * Time.deltaTime;
+            currentVelocityX += force * brakingForce * Time.deltaTime;
 
         }
 

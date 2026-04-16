@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -8,11 +9,15 @@ public class LevelManager : MonoBehaviour
 
     private void Awake()
     {
-        if (instance == null) { instance = this; } else { Destroy(gameObject); }
+        if (instance == null) instance = this;
+        else Destroy(gameObject);
     }
+
     [SerializeField] public List<Level_Scriptable> levels;
     [SerializeField] private ProgessBar progessBar;
+
     private float levelProgession;
+
     public static Action OnLevelComplete;
 
     public Level_Scriptable CurrentLevel
@@ -20,20 +25,30 @@ public class LevelManager : MonoBehaviour
         get
         {
             if (levels == null || levels.Count == 0) return null;
-            if (GameManager.Instance.gameData.currentLevelIndex < 0 || GameManager.Instance.gameData.currentLevelIndex >= levels.Count)
-                GameManager.Instance.gameData.currentLevelIndex = 0; // Reset to 0 if out of bounds
-            return levels[GameManager.Instance.gameData.currentLevelIndex];
+
+            int index = GameManager.Instance.gameData.currentLevelIndex;
+
+            if (index < 0 || index >= levels.Count)
+            {
+                index = 0;
+                GameManager.Instance.gameData.currentLevelIndex = 0;
+            }
+
+            return levels[index];
         }
     }
+
     private void Start()
     {
         levelProgession = 0;
     }
 
-    void LoadLevel(int index)
+    public void LoadLevel()
     {
         levelProgession = 0;
-        progessBar.UpdateProgess(levelProgession, CurrentLevel.maxLevelProgession);
+
+        if (progessBar != null)
+            progessBar.UpdateProgess(levelProgession, CurrentLevel.maxLevelProgession);
     }
 
     public void IncreaseLevelProgession()
@@ -45,33 +60,52 @@ public class LevelManager : MonoBehaviour
         {
             levelProgession += Time.deltaTime;
 
-            if (progessBar != null) progessBar.UpdateProgess(levelProgession, currentLevel.maxLevelProgession);
+            if (progessBar != null)
+                progessBar.UpdateProgess(levelProgession, currentLevel.maxLevelProgession);
 
             var speedData = currentLevel.speedData;
             if (speedData != null)
             {
                 float normalized = levelProgession / currentLevel.maxLevelProgession;
-                speedData.currentProgressionMultiplier = Mathf.Lerp(speedData.minProgressionMultiplier, speedData.maxProgressionMultiplier, normalized);
+
+                speedData.currentProgressionMultiplier =
+                    Mathf.Lerp(speedData.minProgressionMultiplier,
+                               speedData.maxProgressionMultiplier,
+                               normalized);
             }
         }
         else
         {
-            GameManager.Instance.ChangeState(GameState.Win);
-            OnLevelComplete?.Invoke();
-            NextLevel();
+            LevelCompleted();
         }
     }
-   
 
-    void NextLevel()
+    void LevelCompleted()
+    {
+        Debug.Log("Nivel completado");
+
+        OnLevelComplete?.Invoke();
+
+        GameManager.Instance.IsOutro = true;
+
+        // Ir a cinemática de salida
+        SceneManager.LoadScene("CinematicsScene");
+        GameManager.Instance.ChangeState(GameState.Cinematic);
+    }
+
+    // ESTE método lo llama el CinematicManager cuando termina el OUTRO
+    public void GoToNextLevel()
     {
         int nextIndex = GameManager.Instance.gameData.currentLevelIndex + 1;
 
         if (nextIndex < levels.Count)
         {
             GameManager.Instance.gameData.currentLevelIndex = nextIndex;
-            LoadLevel(nextIndex);
             GameManager.Instance.SaveProgress(nextIndex);
+
+            GameManager.Instance.IsOutro = false;
+            SceneManager.LoadScene("CinematicsScene");
+            GameManager.Instance.ChangeState(GameState.Cinematic);
         }
         else
         {

@@ -100,8 +100,8 @@ MonoBehaviour:
   - {fileID: 0}
   maxDistance: 1300
   boostForce: 600
-  springStrength: 1000
-  maxReturnForce: 10000
+  springStrength: 80
+  maxReturnForce: 15000
   damping: 0.9
   crashSound: {fileID: 8300000, guid: 4b4b789c75704eb4ca95ee7290c29623, type: 3}
   startSound: {fileID: 0}

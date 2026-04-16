@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public GameData gameData;
     private StateMachine<GameState> stateMachine = new();
-
+    public bool IsOutro { get;  set; }
     private void Awake()
     {
         if (Instance == null)
