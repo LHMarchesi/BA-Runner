@@ -4,5 +4,4 @@ using UnityEngine;
 public class GameData : ScriptableObject
 {
     public int currentLevelIndex;
-    public Level_Scriptable currentLevel;
 }

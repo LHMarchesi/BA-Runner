@@ -53,10 +53,10 @@ public class SimpleSpawner : MonoBehaviour
     {
         while (true)
         {
-            SpawnPattern pattern = levelManager.CurrentLevel.levelPatterns[Random.Range(0, levelManager.CurrentLevel.levelPatterns.Length)];
+            SpawnPattern pattern = GameManager.Instance.CurrentLevel.levelPatterns[Random.Range(0, GameManager.Instance.CurrentLevel.levelPatterns.Length)];
             yield return StartCoroutine(SpawnPatternRoutine(pattern));
 
-            yield return new WaitForSeconds(levelManager.CurrentLevel.timeBetweenWaves);
+            yield return new WaitForSeconds(GameManager.Instance.CurrentLevel.timeBetweenWaves);
         }
     }
 

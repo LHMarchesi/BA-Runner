@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float maxReturnForce;
     [SerializeField] private float damping;
     [SerializeField] private AudioClip crashSound;
-    [SerializeField] private SpeedData speedData;
+    [SerializeField] private SpeedData onDeathSpeedData;
 
     private Vector3 targetPosition;
     private int currentCarPosition;
@@ -28,11 +28,11 @@ public class PlayerController : MonoBehaviour
     private float currentVelocityX;
     [SerializeField] private float brakingForce;
 
+    private SpeedData speedData => GameManager.Instance.CurrentLevel.speedData;
+
     private void Start()
     {
-        speedData.boostMultiplier = 1;
-        speedData.baseWorldSpeed = 1;
-        speedData.progressionMultiplier = 1;
+        
         targetPosition = startPosition.position;
         transform.position = targetPosition;
         baseX = transform.position.x;
@@ -141,9 +141,7 @@ public class PlayerController : MonoBehaviour
         if(!canCollide) return;
         canMove = false;
         isAlive = false;
-        speedData.boostMultiplier = 0;
-        speedData.baseWorldSpeed = 0;
-        speedData.progressionMultiplier = 0;
+        GameManager.Instance.SetSpeedData(onDeathSpeedData);
         transform.SetParent(collision.transform);
         GameManager.Instance.ChangeState(GameState.Lose);
         AudioManager.Instance.PlaySFX(crashSound);  

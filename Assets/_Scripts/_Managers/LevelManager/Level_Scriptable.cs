@@ -14,4 +14,6 @@ public class Level_Scriptable : ScriptableObject
     public string cinematicScene; 
     public string gameplayScene;
     public AudioClip levelMusic;
+    public Sprite levelBackground;
+    public SpeedData speedData;
 }

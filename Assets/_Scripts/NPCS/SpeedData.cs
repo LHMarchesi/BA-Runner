@@ -3,11 +3,12 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "SpeedData", menuName = "Game/SpeedData")]
 public class SpeedData : ScriptableObject
 {
-    public float baseWorldSpeed = .5f;
-
-    public float progressionMultiplier = 1f;
-    public float boostMultiplier = 1f;
+    public float baseWorldSpeed;
+    public float boostMultiplier;
+    public float minProgressionMultiplier;
+    public float maxProgressionMultiplier;
+    public float currentProgressionMultiplier;
 
     public float CurrentWorldSpeed =>
-        baseWorldSpeed * progressionMultiplier * boostMultiplier;
+        baseWorldSpeed * currentProgressionMultiplier * boostMultiplier;
 }

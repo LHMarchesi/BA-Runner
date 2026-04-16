@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa7792cd6221c7d4c8f51bb26b31ea3c, type: 3}
+  m_Name: Level1
+  m_EditorClassIdentifier: Assembly-CSharp::Level_Scriptable
+  levelPatterns:
+  - {fileID: 11400000, guid: f5b65df6f240d2b498388f6b4bc43e1e, type: 2}
+  - {fileID: 11400000, guid: 9f934b38b3792684e9659bd548173aba, type: 2}
+  - {fileID: 11400000, guid: ef7d5dc7788466e46845304513fefa69, type: 2}
+  - {fileID: 11400000, guid: 9ca471e1f2ce1de49b6c15f7f8baee05, type: 2}
+  - {fileID: 11400000, guid: 99ef0752c27bf4b45a69cbd1058eeddf, type: 2}
+  - {fileID: 11400000, guid: 3659cce06676a3042a08b0c3e39d6599, type: 2}
+  levelIndex: 1
+  maxLevelProgession: 45
+  timeBetweenWaves: 0.65
+  cinematicScene: CinematicScene
+  gameplayScene: SampleScene
+  levelMusic: {fileID: 8300000, guid: 00be40f827bc90943b73b5260456325c, type: 3}
+  levelBackground: {fileID: -2766439190625139700, guid: 6d7e9361c78fa7c4caf92a857fb501d4, type: 3}
+  speedData: {fileID: 11400000, guid: 33b0c508177c1a142be8b48318a9b72e, type: 2}

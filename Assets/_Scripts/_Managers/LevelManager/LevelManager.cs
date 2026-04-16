@@ -11,23 +11,19 @@ public class LevelManager : MonoBehaviour
         if (instance == null) { instance = this; } else { Destroy(gameObject); }
     }
     [SerializeField] private ProgessBar progessBar;
-    [SerializeField] private List<Level_Scriptable> levels;
-    [SerializeField] private SpeedData speedData;
-    private int currentLevelIndex;
     private float levelProgession;
 
     public static Action OnLevelComplete;
-    public Level_Scriptable CurrentLevel => levels[currentLevelIndex];
+    private Level_Scriptable CurrentLevel => GameManager.Instance.CurrentLevel;
+    private SpeedData SpeedData => GameManager.Instance.CurrentLevel.speedData;
 
     private void Start()
     {
-        LoadLevel(0);
         levelProgession = 0;
     }
 
     void LoadLevel(int index)
     {
-        currentLevelIndex = index;
         levelProgession = 0;
         progessBar.UpdateProgess(levelProgession, CurrentLevel.maxLevelProgession);
     }
@@ -41,7 +37,7 @@ public class LevelManager : MonoBehaviour
             progessBar.UpdateProgess(levelProgession, CurrentLevel.maxLevelProgession);
 
             float normalized = levelProgession / CurrentLevel.maxLevelProgession;
-            speedData.progressionMultiplier = Mathf.Lerp(1.5f, 3f, normalized);
+            SpeedData.currentProgressionMultiplier = Mathf.Lerp(SpeedData.minProgressionMultiplier, SpeedData.maxProgressionMultiplier, normalized);
         }
         else
         {
@@ -53,9 +49,9 @@ public class LevelManager : MonoBehaviour
 
     void NextLevel()
     {
-        if (currentLevelIndex + 1 < levels.Count)
+        if (CurrentLevel.levelIndex < GameManager.Instance.levels.Count)
         {
-            LoadLevel(currentLevelIndex + 1);
+            LoadLevel(CurrentLevel.levelIndex);
         }
         else
         {

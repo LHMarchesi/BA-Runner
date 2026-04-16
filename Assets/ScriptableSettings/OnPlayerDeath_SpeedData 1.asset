@@ -10,8 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a17ed51fca997a14285ace3af51c03d2, type: 3}
-  m_Name: SpeedData
+  m_Name: OnPlayerDeath_SpeedData 1
   m_EditorClassIdentifier: Assembly-CSharp::SpeedData
-  baseWorldSpeed: 1
-  progressionMultiplier: 1.2977198
-  boostMultiplier: 1
+  baseWorldSpeed: 0
+  boostMultiplier: 0
+  minProgressionMultiplier: 0
+  maxProgressionMultiplier: 0
+  currentProgressionMultiplier: 0

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 public enum GameState
 {
@@ -11,7 +12,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public GameData gameData;
-    public int CurrentLevelIndex => gameData.currentLevelIndex; 
+    [SerializeField] public List<Level_Scriptable> levels;
+
+    public Level_Scriptable CurrentLevel => levels[gameData.currentLevelIndex];
 
     private StateMachine<GameState> stateMachine = new();
 
@@ -21,6 +24,7 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+          //  LoadProgress();
             InitializeStates();
         }
         else
@@ -29,10 +33,17 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
+    public void SetSpeedData(SpeedData speedData)
+    {
+        CurrentLevel.speedData = speedData;
+    }
     public void NextLevel()
     {
         gameData.currentLevelIndex++;
+        if (gameData.currentLevelIndex >= levels.Count)
+        {
+            gameData.currentLevelIndex = levels.Count - 1;
+        }
         SaveProgress();
     }
 

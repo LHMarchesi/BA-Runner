@@ -6,8 +6,9 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
     [SerializeField]GameObject loseScreen;
+    [SerializeField]Image BackgroundImage;
     [SerializeField] SceneTransition transitionToCinematics;
-    
+
 
     private void Awake()
     {
@@ -20,6 +21,11 @@ public class UIManager : MonoBehaviour
             Destroy(gameObject);
         }
         loseScreen.gameObject.SetActive(false);
+    }
+
+    private void Start()
+    {
+        BackgroundImage.sprite = GameManager.Instance.CurrentLevel.levelBackground;
     }
     public void ToggleLoseScreen(bool value)
     {

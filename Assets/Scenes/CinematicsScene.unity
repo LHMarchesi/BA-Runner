@@ -488,17 +488,17 @@ RectTransform:
   m_GameObject: {fileID: 597765522}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.4989, y: 2.4989, z: 2.4989}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1325903510}
   m_Father: {fileID: 1847012363}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -156.09, y: 78.516}
   m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 1, y: 0}
 --- !u!114 &597765524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -702,10 +702,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   gameData: {fileID: 11400000, guid: 8d5818e67d3f317489f07ec615e86f25, type: 2}
-  levels:
-  - {fileID: 11400000, guid: 8332c665533ee024898a4a8a0cf779f8, type: 2}
-  - {fileID: 11400000, guid: c7341cd0f5e530d48a66d2732a8fb97b, type: 2}
-  - {fileID: 11400000, guid: 7a9c4caeeb7498a468589b4c9b510718, type: 2}
 --- !u!4 &745157475
 Transform:
   m_ObjectHideFlags: 0
@@ -826,7 +822,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Play
+  m_text: Continue
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
