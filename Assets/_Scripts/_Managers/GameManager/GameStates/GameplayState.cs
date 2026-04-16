@@ -11,6 +11,7 @@ public class GameplayState : IState
 
     public void Awake()
     {
+        gm.RestoreInitialSpeedData();
         var level = gm.CurrentLevel;
         AudioManager.Instance.PlayMusic(level.levelMusic);
         SceneManager.LoadScene(level.gameplayScene);

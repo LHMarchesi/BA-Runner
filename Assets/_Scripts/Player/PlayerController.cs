@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float maxReturnForce;
     [SerializeField] private float damping;
     [SerializeField] private AudioClip crashSound;
+    [SerializeField] private AudioClip startSound;
     [SerializeField] private SpeedData onDeathSpeedData;
 
     private Vector3 targetPosition;
@@ -37,6 +38,11 @@ public class PlayerController : MonoBehaviour
         transform.position = targetPosition;
         baseX = transform.position.x;
         LevelManager.OnLevelComplete += () => canCollide = false;
+
+        if (startSound != null)
+        {
+            AudioManager.Instance.PlaySFX(startSound);
+        }
     }
 
 

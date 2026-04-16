@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public GameData gameData;
     [SerializeField] public List<Level_Scriptable> levels;
+    private Dictionary<Level_Scriptable, SpeedData> initialSpeedDatas = new Dictionary<Level_Scriptable, SpeedData>();
 
     public Level_Scriptable CurrentLevel
     {
@@ -33,6 +34,13 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            foreach (var level in levels)
+            {
+                if (level != null && level.speedData != null)
+                {
+                    initialSpeedDatas[level] = level.speedData;
+                }
+            }
           //  LoadProgress();
             InitializeStates();
         }
@@ -46,6 +54,23 @@ public class GameManager : MonoBehaviour
     {
         CurrentLevel.speedData = speedData;
     }
+
+    public void RestoreInitialSpeedData()
+    {
+        foreach (var level in levels)
+        {
+            if (level != null && initialSpeedDatas.ContainsKey(level))
+            {
+                level.speedData = initialSpeedDatas[level];
+                if (level.speedData != null)
+                {
+                    level.speedData.boostMultiplier = 1f;
+                    level.speedData.currentProgressionMultiplier = level.speedData.minProgressionMultiplier;
+                }
+            }
+        }
+    }
+
     public void NextLevel()
     {
         gameData.currentLevelIndex++;
