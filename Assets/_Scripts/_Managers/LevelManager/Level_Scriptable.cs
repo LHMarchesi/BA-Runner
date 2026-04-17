@@ -11,6 +11,7 @@ public class Level_Scriptable : ScriptableObject
     public float timeBetweenWaves;
     public AudioClip levelMusic;
     public Sprite levelBackground;
+    public Sprite winLevelImage;
     public SpeedData speedData;
 
     [Header("Cinematics")]

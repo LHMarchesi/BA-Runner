@@ -835,6 +835,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
   audioSource: {fileID: 1590261803}
   MusicSource: {fileID: 20258287}
+  menuMusicClip: {fileID: 8300000, guid: 8d491633d8221a5458f6b41046e88fbf, type: 3}
+  cinematicsSong: {fileID: 8300000, guid: 98a53100b7a83884588fc18ef3f244a9, type: 3}
 --- !u!4 &907675715
 Transform:
   m_ObjectHideFlags: 0

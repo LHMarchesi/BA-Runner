@@ -15,7 +15,7 @@ MonoBehaviour:
   spawns:
   - laneIndex: 1
     delay: 0
-  - laneIndex: 1
+  - laneIndex: 0
     delay: 0
   - laneIndex: 0
     delay: 0.8

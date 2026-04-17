@@ -9,13 +9,19 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
     [SerializeField] GameObject loseScreen;
+    [SerializeField] GameObject winBtnContinue;
     [SerializeField] Image BackgroundImage;
     [SerializeField] Image despedidoImage;
     [SerializeField] Image countDown;
+    [SerializeField] Image WinImage;
+    [SerializeField] Image[] stars;
     [SerializeField] TextMeshProUGUI countDownText;
     [SerializeField] SceneTransition transitionToCinematics;
 
     [SerializeField] AudioClip countdownBeep;
+    [SerializeField] private AudioClip starCollectSFX;
+    [SerializeField] private AudioClip lvlCompleted;
+
     private void Awake()
     {
         if (Instance == null)
@@ -80,6 +86,51 @@ public class UIManager : MonoBehaviour
 
     public void WinTranstion()
     {
-        transitionToCinematics.StartTransition();
+       StartCoroutine(WinSequence());
+    }
+
+    IEnumerator WinSequence()
+    {
+        foreach (var star in stars)
+        {
+            star.gameObject.SetActive(false);
+        }
+        winBtnContinue.gameObject.SetActive(false);
+        WinImage.sprite = LevelManager.instance.CurrentLevel.winLevelImage;
+        WinImage.gameObject.SetActive(true);
+        WinImage.color = new Color(1, 1, 1, 0);
+
+        yield return WinImage.DOFade(1, 0.5f).WaitForCompletion();
+
+        yield return new WaitForSeconds(0.5f);
+
+        foreach (var star in stars)
+        {
+            star.gameObject.SetActive(true);
+            star.transform.localScale = Vector3.zero;
+            star.color = new Color(1, 1, 1, 0);
+           
+        }
+
+        for (int i = 0; i < stars.Length; i++)
+        {
+            var star = stars[i];
+            star.DOFade(1, 0.5f).WaitForCompletion();
+            Sequence seq = DOTween.Sequence();
+
+            seq.Append(star.transform.DOScale(1.3f, 0.2f).SetEase(Ease.OutBack)); // crece con rebote
+            seq.Append(star.transform.DOScale(1f, 0.1f)); // vuelve a tamaño normal
+
+            // pequeño stretch (feeling extra)
+            seq.Join(star.transform.DOScaleY(0.8f, 0.1f).SetLoops(2, LoopType.Yoyo));
+
+            yield return seq.WaitForCompletion();
+            AudioManager.Instance.PlaySFX(starCollectSFX);
+            yield return new WaitForSeconds(0.5f); // delay entre estrellas
+        }
+
+        AudioManager.Instance.PlaySFX(lvlCompleted);
+        yield return new WaitForSeconds(.2f);
+        winBtnContinue.gameObject.SetActive(true);
     }
 }

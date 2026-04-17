@@ -76,14 +76,11 @@ public class LevelManager : MonoBehaviour
     void LevelCompleted()
     {
         Debug.Log("Nivel completado");
-
+        GameManager.Instance.ChangeState(GameState.Win);
         OnLevelComplete?.Invoke();
 
         GameManager.Instance.IsOutro = true;
 
-        // Ir a cinemática de salida
-        SceneManager.LoadScene("CinematicsScene");
-        GameManager.Instance.ChangeState(GameState.Cinematic);
     }
 
     // ESTE método lo llama el CinematicManager cuando termina el OUTRO

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: lvl3_SpeedData
   m_EditorClassIdentifier: Assembly-CSharp::SpeedData
   baseWorldSpeed: 1
-  boostMultiplier: 1.6
+  boostMultiplier: 1.0000012
   minProgressionMultiplier: 1
-  maxProgressionMultiplier: 2.7
-  currentProgressionMultiplier: 2.7
+  maxProgressionMultiplier: 2.3
+  currentProgressionMultiplier: 1.5299317

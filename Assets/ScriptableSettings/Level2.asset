@@ -23,9 +23,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3580331051a74f54b9c078d1d83390e4, type: 2}
   levelIndex: 2
   maxLevelProgession: 40.5
-  timeBetweenWaves: 0.54
-  levelMusic: {fileID: 8300000, guid: ee672d7e8b91c8d4d82339c058e2fb2e, type: 3}
+  timeBetweenWaves: 0.66
+  levelMusic: {fileID: 8300000, guid: 5f58d3cfcbbddb44f96c31fa7c0250ff, type: 3}
   levelBackground: {fileID: -7802648845587964238, guid: 74cf73889da21224c972f153ebc4ad94, type: 3}
+  winLevelImage: {fileID: -4008118935663125149, guid: d986d5e9fedfec74e80a36dfaae3e44a, type: 3}
   speedData: {fileID: 11400000, guid: ff98cf3aa638e934aab866d252848f99, type: 2}
   introURL: https://pub-2f5fbfbd569a4e4fad15811da373cb10.r2.dev/Cinematica%20demo.mp4
   outroURL: https://pub-2f5fbfbd569a4e4fad15811da373cb10.r2.dev/Cinematica%20demo.mp4

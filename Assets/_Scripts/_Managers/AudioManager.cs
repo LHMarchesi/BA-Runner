@@ -6,6 +6,8 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioSource MusicSource;
+    [SerializeField] public AudioClip menuMusicClip;
+    [SerializeField] public AudioClip cinematicsSong;
 
     private void Awake()
     {

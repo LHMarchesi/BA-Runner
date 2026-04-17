@@ -15,16 +15,16 @@ MonoBehaviour:
   levelPatterns:
   - {fileID: 11400000, guid: f5b65df6f240d2b498388f6b4bc43e1e, type: 2}
   - {fileID: 11400000, guid: 9f934b38b3792684e9659bd548173aba, type: 2}
+  - {fileID: 11400000, guid: ef7d5dc7788466e46845304513fefa69, type: 2}
+  - {fileID: 11400000, guid: 9ca471e1f2ce1de49b6c15f7f8baee05, type: 2}
   - {fileID: 11400000, guid: 99ef0752c27bf4b45a69cbd1058eeddf, type: 2}
-  - {fileID: 11400000, guid: 7cc342f43372c5840bd91938efca655a, type: 2}
-  - {fileID: 11400000, guid: 3580331051a74f54b9c078d1d83390e4, type: 2}
-  - {fileID: 11400000, guid: 3c1e5917ff087ca4c877cb37e1a41e14, type: 2}
-  - {fileID: 11400000, guid: e9f6f2bb35f8fc94cae4062e3292ff6d, type: 2}
+  - {fileID: 11400000, guid: 3659cce06676a3042a08b0c3e39d6599, type: 2}
   levelIndex: 1
   maxLevelProgession: 39
   timeBetweenWaves: 0.85
   levelMusic: {fileID: 8300000, guid: ee672d7e8b91c8d4d82339c058e2fb2e, type: 3}
   levelBackground: {fileID: -2766439190625139700, guid: 6d7e9361c78fa7c4caf92a857fb501d4, type: 3}
+  winLevelImage: {fileID: -2050412739486785372, guid: 1af6e7653d9c258499c01435be889df7, type: 3}
   speedData: {fileID: 11400000, guid: 33b0c508177c1a142be8b48318a9b72e, type: 2}
   introURL: https://pub-2f5fbfbd569a4e4fad15811da373cb10.r2.dev/Cinematica%20demo.mp4
   outroURL: https://pub-2f5fbfbd569a4e4fad15811da373cb10.r2.dev/Cinematica%20demo.mp4
