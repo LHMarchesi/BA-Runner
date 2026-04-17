@@ -21,13 +21,13 @@ public class LoseState : IState
 
     public void Sleep()
     {
-        UIManager.Instance.ToggleLoseScreen(false);
+        UIManager.Instance.ToggleLoseSequence(false);
     }
 
     IEnumerator LoseRoutine()
     {
         // mostrar pantalla de derrota
         yield return new WaitForSeconds(1.5f);
-        UIManager.Instance.ToggleLoseScreen(true);
+        UIManager.Instance.ToggleLoseSequence(true);
     }
 }

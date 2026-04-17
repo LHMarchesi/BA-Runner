@@ -23,7 +23,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3580331051a74f54b9c078d1d83390e4, type: 2}
   levelIndex: 2
   maxLevelProgession: 40.5
-  timeBetweenWaves: 0.74
+  timeBetweenWaves: 0.54
   levelMusic: {fileID: 8300000, guid: ee672d7e8b91c8d4d82339c058e2fb2e, type: 3}
   levelBackground: {fileID: -7802648845587964238, guid: 74cf73889da21224c972f153ebc4ad94, type: 3}
   speedData: {fileID: 11400000, guid: ff98cf3aa638e934aab866d252848f99, type: 2}
