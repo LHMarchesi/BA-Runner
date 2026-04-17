@@ -20,13 +20,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 99ef0752c27bf4b45a69cbd1058eeddf, type: 2}
   - {fileID: 11400000, guid: 3659cce06676a3042a08b0c3e39d6599, type: 2}
   levelIndex: 1
-  maxLevelProgession: 39
+  maxLevelProgession: 55
   timeBetweenWaves: 0.85
   levelMusic: {fileID: 8300000, guid: ee672d7e8b91c8d4d82339c058e2fb2e, type: 3}
   levelBackground: {fileID: -2766439190625139700, guid: 6d7e9361c78fa7c4caf92a857fb501d4, type: 3}
   winLevelImage: {fileID: -2050412739486785372, guid: 1af6e7653d9c258499c01435be889df7, type: 3}
   speedData: {fileID: 11400000, guid: 33b0c508177c1a142be8b48318a9b72e, type: 2}
-  introURL: https://pub-2f5fbfbd569a4e4fad15811da373cb10.r2.dev/Cinematica%20demo.mp4
-  outroURL: https://pub-2f5fbfbd569a4e4fad15811da373cb10.r2.dev/Cinematica%20demo.mp4
+  introURL: https://pub-2f5fbfbd569a4e4fad15811da373cb10.r2.dev/cinematica1.mp4
+  outroURL: https://pub-2f5fbfbd569a4e4fad15811da373cb10.r2.dev/cinematica2.mp4
   cinematicScene: CinematicsScene
   gameplayScene: SampleScene

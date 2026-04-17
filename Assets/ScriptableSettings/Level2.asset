@@ -22,7 +22,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3c1e5917ff087ca4c877cb37e1a41e14, type: 2}
   - {fileID: 11400000, guid: 3580331051a74f54b9c078d1d83390e4, type: 2}
   levelIndex: 2
-  maxLevelProgession: 40.5
+  maxLevelProgession: 55
   timeBetweenWaves: 0.66
   levelMusic: {fileID: 8300000, guid: 5f58d3cfcbbddb44f96c31fa7c0250ff, type: 3}
   levelBackground: {fileID: -7802648845587964238, guid: 74cf73889da21224c972f153ebc4ad94, type: 3}
