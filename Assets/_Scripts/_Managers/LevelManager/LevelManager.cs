@@ -43,14 +43,6 @@ public class LevelManager : MonoBehaviour
         levelProgession = 0;
     }
 
-    public void LoadLevel()
-    {
-        levelProgession = 0;
-
-        if (progessBar != null)
-            progessBar.UpdateProgess(levelProgession, CurrentLevel.maxLevelProgession);
-    }
-
     public void IncreaseLevelProgession()
     {
         var currentLevel = CurrentLevel;
@@ -58,12 +50,10 @@ public class LevelManager : MonoBehaviour
 
         if (levelProgession < currentLevel.maxLevelProgession)
         {
-            levelProgession += Time.deltaTime;
-
-            if (progessBar != null)
-                progessBar.UpdateProgess(levelProgession, currentLevel.maxLevelProgession);
-
             var speedData = currentLevel.speedData;
+            float boostImpact = Mathf.Pow(speedData.boostMultiplier, 1.5f);
+            levelProgession += Time.deltaTime * boostImpact;
+
             if (speedData != null)
             {
                 float normalized = levelProgession / currentLevel.maxLevelProgession;
@@ -73,6 +63,9 @@ public class LevelManager : MonoBehaviour
                                speedData.maxProgressionMultiplier,
                                normalized);
             }
+
+            if (progessBar != null)
+                progessBar.UpdateProgess(levelProgession, currentLevel.maxLevelProgession);
         }
         else
         {
