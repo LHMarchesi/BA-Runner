@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 public enum GameState
 {
@@ -13,7 +12,6 @@ public enum GameState
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    public GameData GameData;
     private StateMachine<GameState> stateMachine = new();
     public bool IsOutro { get; set; }
 
@@ -36,7 +34,6 @@ public class GameManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
 
-            //  LoadProgress();
             InitializeStates();
         }
         else
@@ -79,23 +76,6 @@ public class GameManager : MonoBehaviour
         stateMachine.ChangeState(newState);
     }
 
-    public void SaveProgress(int newLevelIndex)
-    {
-        PlayerPrefs.SetInt("LevelIndex", newLevelIndex);
-        PlayerPrefs.Save();
-    }
-
-    public void LoadProgress()
-    {
-        if (PlayerPrefs.HasKey("LevelIndex"))
-        {
-            GameData.currentLevelIndex = PlayerPrefs.GetInt("LevelIndex");
-        }
-        else
-        {
-            GameData.currentLevelIndex = 0; // default
-        }
-    }
 
     private void OnDisable()
     {

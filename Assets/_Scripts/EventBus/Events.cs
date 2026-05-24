@@ -13,4 +13,10 @@ public struct OnPlayerDeathEvent : IEvent
 public struct OnLevelStartEvent : IEvent
 {
     public SpeedData levelSpeedData;
+    public int levelIndex;
+}
+
+public struct OnLevelUpdateEvent : IEvent
+{
+    public float levelProgession;
 }

@@ -5,11 +5,11 @@ public class SurvivalManager : MonoBehaviour
 {
     private float survivalTime;
     [SerializeField] private TextMeshProUGUI text;
-    private SpeedData speedData;
+    private Level_Scriptable currentLevel;
 
     void Start()
     {
-        speedData = LevelManager.instance.CurrentLevel.speedData;
+        currentLevel = ProgressionManager.Instance.CurrentLevel;
     }
 
     void Update()
@@ -18,9 +18,9 @@ public class SurvivalManager : MonoBehaviour
 
         float difficulty = survivalTime / 30f; // cada 30s escala
         text.text = $"Survival Time: {survivalTime:F1}s\nDifficulty: {difficulty:F2}";
-        speedData.currentProgressionMultiplier = Mathf.Lerp(
-            speedData.minProgressionMultiplier,
-            speedData.maxProgressionMultiplier + difficulty,
+        currentLevel.speedData.currentProgressionMultiplier = Mathf.Lerp(
+            currentLevel.speedData.minProgressionMultiplier,
+            currentLevel.speedData.maxProgressionMultiplier + difficulty,
             difficulty
         );
     }

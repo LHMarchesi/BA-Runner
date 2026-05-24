@@ -15,7 +15,7 @@ public class Npc_Car : MonoBehaviour
             int randomIndex = Random.Range(0, sprites.Length);
             image.sprite = sprites[randomIndex];
         }
-        speedData = LevelManager.instance.CurrentLevel.speedData;
+        speedData = ProgressionManager.Instance.CurrentLevel.speedData;
     }
 
     private void Update()

@@ -20,8 +20,10 @@ public class GameplayState : IState
     {
         sceneLoaded = true;
 
-        var level = LevelManager.instance.CurrentLevel;
+        var level = ProgressionManager.Instance.CurrentLevel;
         AudioManager.Instance.PlayMusic(level.levelMusic);
+
+        EventBus<OnLevelStartEvent>.Raise(new OnLevelStartEvent { levelSpeedData = level.speedData });
 
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
@@ -29,9 +31,8 @@ public class GameplayState : IState
     public void Execute()
     {
         if (!sceneLoaded) return;
-        if (LevelManager.instance == null) return;
 
-        LevelManager.instance.IncreaseLevelProgession();
+        EventBus<OnLevelUpdateEvent>.Raise(new OnLevelUpdateEvent());
     }
 
     public void Sleep()

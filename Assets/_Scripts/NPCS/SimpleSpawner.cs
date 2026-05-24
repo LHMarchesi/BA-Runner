@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class SimpleSpawner : MonoBehaviour
 {
-    [SerializeField] LevelManager levelManager;
     [Header("Spawn Points")]
     [SerializeField] private Transform[] lanes; // asignar 4 en inspector
 
@@ -52,7 +51,7 @@ public class SimpleSpawner : MonoBehaviour
     {
         while (true)
         {
-            var currentLevel = LevelManager.instance.CurrentLevel;
+            var currentLevel = ProgressionManager.Instance.CurrentLevel;
             if (currentLevel == null || currentLevel.levelPatterns == null || currentLevel.levelPatterns.Length == 0)
             {
                 yield return new WaitForSeconds(1f); // Esperar un momento si no hay nivel configurado

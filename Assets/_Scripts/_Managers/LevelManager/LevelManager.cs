@@ -1,57 +1,43 @@
-using System;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    public static LevelManager instance;
-
-
-    private void Awake()
-    {
-        if (instance == null) instance = this;
-        else Destroy(gameObject);
-    }
-
-    [SerializeField] public List<Level_Scriptable> levels;
     [SerializeField] private ProgessBar progessBar;
 
     private float levelProgession;
     private float completionTime;
     private bool levelCompleted;
-    public Level_Scriptable CurrentLevel
+   
+    EventBinding<OnLevelUpdateEvent> OnLevelUpdateEvent;
+    EventBinding<OnLevelStartEvent> OnLevelStartEvent;
+    Level_Scriptable currentLevel => ProgressionManager.Instance.CurrentLevel;
+
+    private void OnEnable()
     {
-        get
-        {
-            if (levels == null || levels.Count == 0) return null;
+        OnLevelStartEvent = new EventBinding<OnLevelStartEvent>(OnLevelStart);
+        EventBus<OnLevelStartEvent>.Register(OnLevelStartEvent);
+        
 
-            int index = GameManager.Instance.GameData.currentLevelIndex;
-
-            if (index < 0 || index >= levels.Count)
-            {
-                index = 0;
-                GameManager.Instance.GameData.currentLevelIndex = 0;
-            }
-
-            return levels[index];
-        }
+        OnLevelUpdateEvent = new EventBinding<OnLevelUpdateEvent>(OnLevelUpdate);
+        EventBus<OnLevelUpdateEvent>.Register(OnLevelUpdateEvent);
     }
 
-
-    private void Start()
+    private void OnLevelUpdate(OnLevelUpdateEvent e)
     {
-        EventBus<OnLevelStartEvent>.Raise(new OnLevelStartEvent { levelSpeedData = CurrentLevel.speedData });
+        IncreaseLevelProgession();
+        e.levelProgession = levelProgession; 
+    }
+    private void OnLevelStart(OnLevelStartEvent e)
+    {
         levelProgession = 0;
         completionTime = 0;
         levelCompleted = false;
     }
 
-
-    public void IncreaseLevelProgession()
+    private void IncreaseLevelProgession()
     {
         if (levelCompleted) return;
-        var currentLevel = CurrentLevel;
+        var currentLevel = this.currentLevel;
         if (currentLevel == null) return;
         completionTime += Time.deltaTime;
 
@@ -89,26 +75,5 @@ public class LevelManager : MonoBehaviour
         if (time <= 90) return 2;
 
         return 1;
-    }
-
-    // ESTE método lo llama el CinematicManager cuando termina el OUTRO
-    public void GoToNextLevel()
-    {
-        int nextIndex = GameManager.Instance.GameData.currentLevelIndex + 1;
-
-        if (nextIndex < levels.Count)
-        {
-            GameManager.Instance.GameData.currentLevelIndex = nextIndex;
-            GameManager.Instance.SaveProgress(nextIndex);
-
-            GameManager.Instance.IsOutro = false;
-            SceneManager.LoadScene("CinematicsScene");
-            GameManager.Instance.ChangeState(GameState.Cinematic);
-        }
-        else
-        {
-            SceneManager.LoadScene("Credits");
-            GameManager.Instance.ChangeState(GameState.Credits);
-        }
     }
 }

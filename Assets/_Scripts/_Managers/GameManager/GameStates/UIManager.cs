@@ -33,7 +33,7 @@ public class UIManager : MonoBehaviour
     {
         loseScreen.gameObject.SetActive(false);
 
-        var currentLevel = LevelManager.instance.CurrentLevel;
+        var currentLevel = ProgressionManager.Instance.CurrentLevel;
         if (currentLevel != null && BackgroundImage != null)
         {
             BackgroundImage.sprite = currentLevel.levelBackground;
@@ -82,7 +82,7 @@ public class UIManager : MonoBehaviour
             star.gameObject.SetActive(false);
         }
         winBtnContinue.gameObject.SetActive(false);
-        WinImage.sprite = LevelManager.instance.CurrentLevel.winLevelImage;
+        WinImage.sprite = ProgressionManager.Instance.CurrentLevel.winLevelImage;
         WinImage.gameObject.SetActive(true);
         WinImage.color = new Color(1, 1, 1, 0);
 
