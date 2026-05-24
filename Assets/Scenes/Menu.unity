@@ -684,6 +684,7 @@ GameObject:
   - component: {fileID: 597765526}
   - component: {fileID: 597765525}
   - component: {fileID: 597765524}
+  - component: {fileID: 597765527}
   m_Layer: 5
   m_Name: PLay
   m_TagString: Untagged
@@ -817,6 +818,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 597765522}
   m_CullTransparentMesh: 1
+--- !u!225 &597765527
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597765522}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &689033637
 GameObject:
   m_ObjectHideFlags: 0
@@ -925,7 +938,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c21797cccda391e42a60ec944df8f0ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  GameData: {fileID: 11400000, guid: 8d5818e67d3f317489f07ec615e86f25, type: 2}
 --- !u!4 &745157475
 Transform:
   m_ObjectHideFlags: 0
@@ -1364,6 +1376,7 @@ GameObject:
   - component: {fileID: 1847012362}
   - component: {fileID: 1847012361}
   - component: {fileID: 1847012360}
+  - component: {fileID: 1847012364}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1457,6 +1470,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1847012364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847012359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8691891e80413774baa12256b36cc961, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MainMenu_UiHandler
+  playButton: {fileID: 597765522}
+  survivalButton: {fileID: 1896130267}
+  menuAppearSFX: {fileID: 8300000, guid: 62dad0d1ee3a90fe0a1174e43f58fcd3, type: 3}
 --- !u!1 &1896130267
 GameObject:
   m_ObjectHideFlags: 0
@@ -1469,6 +1497,7 @@ GameObject:
   - component: {fileID: 1896130271}
   - component: {fileID: 1896130270}
   - component: {fileID: 1896130269}
+  - component: {fileID: 1896130272}
   m_Layer: 5
   m_Name: PLay (1)
   m_TagString: Untagged
@@ -1493,7 +1522,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -357}
+  m_AnchoredPosition: {x: 0, y: -380.1}
   m_SizeDelta: {x: 160.27, y: 64.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1896130269
@@ -1602,7 +1631,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1896130267}
   m_CullTransparentMesh: 1
---- !u!1 &2087744009
+--- !u!225 &1896130272
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896130267}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!1 &2133841794
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1610,42 +1651,42 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2087744011}
-  - component: {fileID: 2087744010}
+  - component: {fileID: 2133841796}
+  - component: {fileID: 2133841795}
   m_Layer: 0
-  m_Name: LevelManager
+  m_Name: ProgressionManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2087744010
+--- !u!114 &2133841795
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2087744009}
+  m_GameObject: {fileID: 2133841794}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d281c0b25ac7cb743a461bc662d8a699, type: 3}
+  m_Script: {fileID: 11500000, guid: 499731de12116094ea02618cc53c7108, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LevelManager
+  m_EditorClassIdentifier: Assembly-CSharp::ProgressionManager
   levels:
   - {fileID: 11400000, guid: 8332c665533ee024898a4a8a0cf779f8, type: 2}
   - {fileID: 11400000, guid: c7341cd0f5e530d48a66d2732a8fb97b, type: 2}
   - {fileID: 11400000, guid: 7a9c4caeeb7498a468589b4c9b510718, type: 2}
-  progessBar: {fileID: 0}
---- !u!4 &2087744011
+  GameData: {fileID: 11400000, guid: 8d5818e67d3f317489f07ec615e86f25, type: 2}
+--- !u!4 &2133841796
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2087744009}
+  m_GameObject: {fileID: 2133841794}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -28.67323, y: 14.04358, z: 0}
+  m_LocalPosition: {x: -570.50433, y: 0.00002, z: -83.17068}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1662,4 +1703,4 @@ SceneRoots:
   - {fileID: 907675715}
   - {fileID: 1718852741}
   - {fileID: 1827997828}
-  - {fileID: 2087744011}
+  - {fileID: 2133841796}

@@ -20,3 +20,7 @@ public struct OnLevelUpdateEvent : IEvent
 {
     public float levelProgession;
 }
+
+public struct OnEnterMenuEvent : IEvent
+{
+}

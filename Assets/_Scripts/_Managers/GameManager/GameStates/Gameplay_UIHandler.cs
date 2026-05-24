@@ -1,11 +1,12 @@
 using DG.Tweening;
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class UIManager : MonoBehaviour
+public class Gameplay_UIHandler : MonoBehaviour
 {
     [SerializeField] GameObject loseScreen;
     [SerializeField] GameObject winBtnContinue;

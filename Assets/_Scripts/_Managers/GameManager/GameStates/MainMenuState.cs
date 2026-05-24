@@ -23,6 +23,7 @@ public class MainMenuState : IState
         AudioManager.Instance.PlayMusic(AudioManager.Instance.menuMusicClip);
 
         SceneManager.sceneLoaded -= OnSceneLoaded;
+        EventBus<OnEnterMenuEvent>.Raise(new OnEnterMenuEvent());
     }
 
 

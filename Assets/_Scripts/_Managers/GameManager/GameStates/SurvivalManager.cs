@@ -3,24 +3,20 @@ using UnityEngine;
 
 public class SurvivalManager : MonoBehaviour
 {
-    private float survivalTime;
+    private float progessionTime;
     [SerializeField] private TextMeshProUGUI text;
-    private Level_Scriptable currentLevel;
+    [SerializeField] Level_Scriptable levelSurvival;
 
-    void Start()
-    {
-        currentLevel = ProgressionManager.Instance.CurrentLevel;
-    }
 
     void Update()
     {
-        survivalTime += Time.deltaTime;
+        progessionTime += Time.deltaTime;
 
-        float difficulty = survivalTime / 30f; // cada 30s escala
-        text.text = $"Survival Time: {survivalTime:F1}s\nDifficulty: {difficulty:F2}";
-        currentLevel.speedData.currentProgressionMultiplier = Mathf.Lerp(
-            currentLevel.speedData.minProgressionMultiplier,
-            currentLevel.speedData.maxProgressionMultiplier + difficulty,
+        float difficulty = progessionTime / 30f; // cada 30s escala
+        text.text = $"Survival Time: {progessionTime:F1}s\nDifficulty: {difficulty:F2}";
+        levelSurvival.speedData.currentProgressionMultiplier = Mathf.Lerp(
+            levelSurvival.speedData.minProgressionMultiplier,
+            levelSurvival.speedData.maxProgressionMultiplier + difficulty,
             difficulty
         );
     }
