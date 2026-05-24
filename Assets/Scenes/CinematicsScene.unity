@@ -670,8 +670,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 1208040086343421634, guid: 34c56d72e5819a54da4cc666f3f1d44c, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -843,6 +843,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
   audioSource: {fileID: 1590261803}
   MusicSource: {fileID: 20258287}
+  menuMusicClip: {fileID: 0}
+  cinematicsSong: {fileID: 0}
 --- !u!4 &907675715
 Transform:
   m_ObjectHideFlags: 0

@@ -6,22 +6,37 @@ public enum GameState
     Cinematic,
     Playing,
     Win,
-    Lose
+    Lose,
+    Credits,
+    Survival
 }
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    public GameData gameData;
+    public GameData GameData;
     private StateMachine<GameState> stateMachine = new();
-    public bool IsOutro { get;  set; }
+    public bool IsOutro { get; set; }
+
+    EventBinding<OnLevelCompletedEvent> levelResultBinding;
+    EventBinding<OnPlayerDeathEvent> playerDeathBinding;
+
+    private void OnEnable()
+    {
+        levelResultBinding = new EventBinding<OnLevelCompletedEvent>(OnLevelCompleted);
+        EventBus<OnLevelCompletedEvent>.Register(levelResultBinding);
+
+        playerDeathBinding = new EventBinding<OnPlayerDeathEvent>(OnPlayerDeath);
+        EventBus<OnPlayerDeathEvent>.Register(playerDeathBinding);
+    }
+
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
-          
-          //  LoadProgress();
+
+            //  LoadProgress();
             InitializeStates();
         }
         else
@@ -29,8 +44,6 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    
-   
 
     void InitializeStates()
     {
@@ -39,6 +52,8 @@ public class GameManager : MonoBehaviour
         stateMachine.AddState(new GameplayState(this), GameState.Playing);
         stateMachine.AddState(new WinState(this), GameState.Win);
         stateMachine.AddState(new LoseState(this), GameState.Lose);
+        stateMachine.AddState(new CreditsState(this), GameState.Credits);
+        stateMachine.AddState(new CreditsState(this), GameState.Survival);
 
         stateMachine.ChangeState(GameState.MainMenu);
     }
@@ -46,6 +61,17 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         stateMachine.Update();
+    }
+
+    void OnLevelCompleted(OnLevelCompletedEvent e)
+    {
+        ChangeState(GameState.Win);
+        IsOutro = true;
+    }
+
+    void OnPlayerDeath(OnPlayerDeathEvent e)
+    {
+        ChangeState(GameState.Lose);
     }
 
     public void ChangeState(GameState newState)
@@ -63,11 +89,16 @@ public class GameManager : MonoBehaviour
     {
         if (PlayerPrefs.HasKey("LevelIndex"))
         {
-            gameData.currentLevelIndex = PlayerPrefs.GetInt("LevelIndex");
+            GameData.currentLevelIndex = PlayerPrefs.GetInt("LevelIndex");
         }
         else
         {
-            gameData.currentLevelIndex = 0; // default
+            GameData.currentLevelIndex = 0; // default
         }
+    }
+
+    private void OnDisable()
+    {
+        EventBus<OnLevelCompletedEvent>.Deregister(levelResultBinding);
     }
 }

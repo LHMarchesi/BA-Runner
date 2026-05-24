@@ -4,6 +4,7 @@ using UnityEngine;
 public class LoseState : IState
 {
     GameManager gm;
+  
     public LoseState(GameManager gm)
     {
         this.gm = gm;
@@ -11,7 +12,6 @@ public class LoseState : IState
 
     public void Awake()
     {
-        gm.StartCoroutine(LoseRoutine());
     }
 
     public void Execute()
@@ -21,13 +21,5 @@ public class LoseState : IState
 
     public void Sleep()
     {
-        UIManager.Instance.ToggleLoseSequence(false);
-    }
-
-    IEnumerator LoseRoutine()
-    {
-        // mostrar pantalla de derrota
-        yield return new WaitForSeconds(1.5f);
-        UIManager.Instance.ToggleLoseSequence(true);
     }
 }

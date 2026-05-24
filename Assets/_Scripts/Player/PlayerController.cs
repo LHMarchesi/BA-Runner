@@ -1,5 +1,6 @@
 using System;
 using System.Buffers.Text;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Windows;
@@ -29,16 +30,38 @@ public class PlayerController : MonoBehaviour
     private float inputX;
     private float currentVelocityX;
     [SerializeField] private float brakingForce;
-
     private SpeedData SpeedData;
+    private bool wasBoosting;
+
+
+    EventBinding<OnLevelCompletedEvent> levelResultBinding;
+    EventBinding<OnLevelStartEvent> levelStartBinding;
+
+
+    private void OnEnable()
+    {
+        levelResultBinding = new EventBinding<OnLevelCompletedEvent>(OnLevelCompleted);
+        EventBus<OnLevelCompletedEvent>.Register(levelResultBinding);
+
+        levelStartBinding = new EventBinding<OnLevelStartEvent>(OnLevelStart);
+        EventBus<OnLevelStartEvent>.Register(levelStartBinding);
+    }
+
+    private void OnLevelStart(OnLevelStartEvent e)
+    {
+        SpeedData = e.levelSpeedData;
+    }
+
+    private void OnLevelCompleted(OnLevelCompletedEvent e)
+    {
+        canCollide = false;
+    }
 
     private void Start()
     {
-        SpeedData = LevelManager.instance.CurrentLevel.speedData;
         targetPosition = startPosition.position;
         transform.position = targetPosition;
         baseX = transform.position.x;
-        LevelManager.OnLevelComplete += () => canCollide = false;
 
         if (startSound != null)
         {
@@ -69,7 +92,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
     private void Move()
     {
         AudioManager.Instance.PlaySFX(moveLaneSound);
@@ -95,7 +117,7 @@ public class PlayerController : MonoBehaviour
       transform.position.z
   );
     }
-    private bool wasBoosting;
+
     private void HandleBoost()
     {
         if (!canMove) return;
@@ -109,14 +131,14 @@ public class PlayerController : MonoBehaviour
 
         if (SpeedData != null)
         {
-            
-            SpeedData.boostMultiplier = Mathf.Lerp(
-                SpeedData.boostMultiplier,
+
+            SpeedData.playerBoostMultiplier = Mathf.Lerp(
+                SpeedData.playerBoostMultiplier,
                 targetBoost,
                 10f * Time.deltaTime
             );
         }
-      
+
         if (isBoosting)
         {
             if (!wasBoosting)
@@ -142,6 +164,7 @@ public class PlayerController : MonoBehaviour
         // Damping
         currentVelocityX *= damping;
     }
+
     private void UpdatePosition()
     {
         Transform lane = lanes[currentCarPosition];
@@ -159,15 +182,18 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(!canCollide || !isAlive) return;
+        if (!canCollide || !isAlive) return;
         canCollide = false;
         canMove = false;
         isAlive = false;
-        
+
         transform.SetParent(collision.transform);
 
-        GameManager.Instance.ChangeState(GameState.Lose);
-        AudioManager.Instance.PlaySFX(crashSound);  
+        EventBus<OnPlayerDeathEvent>.Raise(new OnPlayerDeathEvent());
+      
+        AudioManager.Instance.PlaySFX(crashSound);
         //trigger end game 
     }
+
+
 }

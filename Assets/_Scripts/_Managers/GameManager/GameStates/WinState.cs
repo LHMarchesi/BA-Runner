@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting.InputSystem;
 using UnityEngine;
 
 public class WinState : IState
@@ -12,7 +13,6 @@ public class WinState : IState
 
     public void Awake()
     {
-        UIManager.Instance.WinTranstion();
     }
 
     public void Execute()

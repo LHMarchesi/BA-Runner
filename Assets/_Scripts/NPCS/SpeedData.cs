@@ -4,11 +4,11 @@ using UnityEngine;
 public class SpeedData : ScriptableObject
 {
     public float baseWorldSpeed;
-    public float boostMultiplier;
+    public float playerBoostMultiplier;
     public float minProgressionMultiplier;
     public float maxProgressionMultiplier;
     public float currentProgressionMultiplier;
 
     public float CurrentWorldSpeed =>
-        baseWorldSpeed * currentProgressionMultiplier * boostMultiplier;
+        baseWorldSpeed * currentProgressionMultiplier * playerBoostMultiplier;
 }

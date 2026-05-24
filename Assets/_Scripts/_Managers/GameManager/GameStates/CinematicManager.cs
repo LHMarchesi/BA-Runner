@@ -14,7 +14,7 @@ public class CinematicManager : MonoBehaviour
     {
         continueButton.SetActive(false);
 
-        int index = GameManager.Instance.gameData.currentLevelIndex;
+        int index = GameManager.Instance.GameData.currentLevelIndex;
         currentLevel = LevelManager.instance.levels[index];
 
         isOutro = GameManager.Instance.IsOutro;

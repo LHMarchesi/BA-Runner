@@ -7,7 +7,6 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    public static UIManager Instance;
     [SerializeField] GameObject loseScreen;
     [SerializeField] GameObject winBtnContinue;
     [SerializeField] Image BackgroundImage;
@@ -22,35 +21,27 @@ public class UIManager : MonoBehaviour
     [SerializeField] private AudioClip starCollectSFX;
     [SerializeField] private AudioClip lvlCompleted;
 
-    private void Awake()
+    EventBinding<OnLevelCompletedEvent> levelResultBinding;
+    EventBinding<OnPlayerDeathEvent> playerDeathBinding;
+
+    private void OnEnable()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-        loseScreen.gameObject.SetActive(false);
+        InitializeEvents();
     }
 
     private void Start()
     {
+        loseScreen.gameObject.SetActive(false);
+
         var currentLevel = LevelManager.instance.CurrentLevel;
         if (currentLevel != null && BackgroundImage != null)
         {
             BackgroundImage.sprite = currentLevel.levelBackground;
         }
     }
-    public void ToggleLoseSequence(bool value)
-    {
-        loseScreen.gameObject.SetActive(value);
-        StartCoroutine(LoseSequence());
-    }
-
     IEnumerator LoseSequence()
     {
+        loseScreen.gameObject.SetActive(true);
         despedidoImage.gameObject.SetActive(true);
         despedidoImage.color = new Color(1, 1, 1, 0);
 
@@ -84,12 +75,7 @@ public class UIManager : MonoBehaviour
         GameManager.Instance.ChangeState(GameState.Playing);
     }
 
-    public void WinTranstion()
-    {
-       StartCoroutine(WinSequence());
-    }
-
-    IEnumerator WinSequence()
+    IEnumerator WinSequence(int starsEarned)
     {
         foreach (var star in stars)
         {
@@ -104,22 +90,23 @@ public class UIManager : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
 
-        foreach (var star in stars)
+        for (int i = 0; i < starsEarned; i++)
         {
+            var star = stars[i];
             star.gameObject.SetActive(true);
             star.transform.localScale = Vector3.zero;
             star.color = new Color(1, 1, 1, 0);
-           
+
         }
 
-        for (int i = 0; i < stars.Length; i++)
+        for (int i = 0; i < starsEarned; i++)
         {
             var star = stars[i];
             star.DOFade(1, 0.5f).WaitForCompletion();
-            Sequence seq = DOTween.Sequence();
+            DG.Tweening.Sequence seq = DOTween.Sequence();
 
             seq.Append(star.transform.DOScale(1.3f, 0.2f).SetEase(Ease.OutBack)); // crece con rebote
-            seq.Append(star.transform.DOScale(1f, 0.1f)); // vuelve a tamaño normal
+            seq.Append(star.transform.DOScale(1.4f, 0.1f)); // vuelve a tamaño normal
 
             // pequeño stretch (feeling extra)
             seq.Join(star.transform.DOScaleY(0.8f, 0.1f).SetLoops(2, LoopType.Yoyo));
@@ -132,5 +119,32 @@ public class UIManager : MonoBehaviour
         AudioManager.Instance.PlaySFX(lvlCompleted);
         yield return new WaitForSeconds(.2f);
         winBtnContinue.gameObject.SetActive(true);
+    }
+
+
+    void InitializeEvents()
+    {
+        levelResultBinding = new EventBinding<OnLevelCompletedEvent>(OnLevelResult);
+        EventBus<OnLevelCompletedEvent>.Register(levelResultBinding);
+
+        playerDeathBinding = new EventBinding<OnPlayerDeathEvent>(OnPlayerDeath);
+        EventBus<OnPlayerDeathEvent>.Register(playerDeathBinding);
+    }
+
+    void OnLevelResult(OnLevelCompletedEvent e)
+    {
+        StartCoroutine(WinSequence(e.stars));
+    }
+
+    void OnPlayerDeath(OnPlayerDeathEvent e)
+    {
+        StartCoroutine(LoseSequence());
+    }
+
+
+    private void OnDisable()
+    {
+        EventBus<OnLevelCompletedEvent>.Deregister(levelResultBinding);
+        EventBus<OnPlayerDeathEvent>.Deregister(playerDeathBinding);
     }
 }

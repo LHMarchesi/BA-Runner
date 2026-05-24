@@ -7,7 +7,7 @@ public class SceneTransition : MonoBehaviour
 {
     [SerializeField] private Image imageToFade;
     [SerializeField] private float fadeDuration = 0.5f;
-    public enum transitionTo { MainMenu, Gameplay, Cinematics, Credits }
+    public enum transitionTo { MainMenu, Gameplay, Cinematics, Credits, Survival }
     public transitionTo transitionTarget;
     public void StartTransition()
     {
@@ -23,7 +23,7 @@ public class SceneTransition : MonoBehaviour
             switch (transitionTarget)
             {
                 case transitionTo.MainMenu:
-                    sceneToLoad = "MainMenu";
+                    sceneToLoad = "Menu";
                     GameManager.Instance.ChangeState(GameState.MainMenu);
                     break;
                 case transitionTo.Gameplay:
@@ -37,6 +37,10 @@ public class SceneTransition : MonoBehaviour
                 case transitionTo.Credits:
                     sceneToLoad = "CreditsScene";
                     //GameManager.Instance.ChangeState(GameState.Credits);
+                    break;
+                case transitionTo.Survival:
+                    sceneToLoad = "SurvivalScene";
+                    GameManager.Instance.ChangeState(GameState.Survival);
                     break;
                 default:
                     break;
