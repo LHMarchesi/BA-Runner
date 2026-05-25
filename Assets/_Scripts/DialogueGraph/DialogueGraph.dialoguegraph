@@ -402,9 +402,11 @@ MonoBehaviour:
           m_KeyList:
           - Speaker
           - Dialogue
+          - Image
           m_ValueList:
           - rid: 1834148681910845700
           - rid: 1834148681910845701
+          - rid: 1834148681910845982
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -475,9 +477,11 @@ MonoBehaviour:
           m_KeyList:
           - Speaker
           - Dialogue
+          - Image
           m_ValueList:
           - rid: 1834148681910845702
           - rid: 1834148681910845703
+          - rid: 1834148681910845983
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -793,9 +797,11 @@ MonoBehaviour:
           m_KeyList:
           - Speaker
           - Dialogue
+          - Image
           m_ValueList:
           - rid: 1834148681910845728
           - rid: 1834148681910845729
+          - rid: 1834148681910845984
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -874,9 +880,11 @@ MonoBehaviour:
           m_KeyList:
           - Speaker
           - Dialogue
+          - Image
           m_ValueList:
           - rid: 1834148681910845736
           - rid: 1834148681910845737
+          - rid: 1834148681910845985
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -987,9 +995,11 @@ MonoBehaviour:
           m_KeyList:
           - Speaker
           - Dialogue
+          - Image
           m_ValueList:
           - rid: 1834148681910845752
           - rid: 1834148681910845753
+          - rid: 1834148681910845986
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -1025,9 +1035,11 @@ MonoBehaviour:
           m_KeyList:
           - Speaker
           - Dialogue
+          - Image
           m_ValueList:
           - rid: 1834148681910845755
           - rid: 1834148681910845756
+          - rid: 1834148681910845987
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -1322,12 +1334,14 @@ MonoBehaviour:
           - Dialogue
           - Choice Text 0
           - Choice Text 1
+          - Image
           m_ValueList:
           - rid: 1834148681910845772
           - rid: 1834148681910845773
           - rid: 1834148681910845774
           - rid: 1834148681910845816
           - rid: 1834148681910845817
+          - rid: 1834148681910845988
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -1494,3 +1508,31 @@ MonoBehaviour:
           m_PortDirection: 1
           m_PortOrientation: 0
           m_Title: in
+    - rid: 1834148681910845982
+      type: {class: 'Constant`1[[UnityEngine.Sprite, UnityEngine.CoreModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: -2308506900631384283, guid: 9d0bc5555783dae42865f159040f930b, type: 3}
+    - rid: 1834148681910845983
+      type: {class: 'Constant`1[[UnityEngine.Sprite, UnityEngine.CoreModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 8277597649702612361, guid: 3332c2c1cc3a66d4ca12a9892ece306a, type: 3}
+    - rid: 1834148681910845984
+      type: {class: 'Constant`1[[UnityEngine.Sprite, UnityEngine.CoreModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: -7376593159069771280, guid: be1ee397e329c0c48affcd5876accf12, type: 3}
+    - rid: 1834148681910845985
+      type: {class: 'Constant`1[[UnityEngine.Sprite, UnityEngine.CoreModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 2448936742506046143, guid: fb387ca1f43c9334394f8252620cb0be, type: 3}
+    - rid: 1834148681910845986
+      type: {class: 'Constant`1[[UnityEngine.Sprite, UnityEngine.CoreModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 8277597649702612361, guid: 3332c2c1cc3a66d4ca12a9892ece306a, type: 3}
+    - rid: 1834148681910845987
+      type: {class: 'Constant`1[[UnityEngine.Sprite, UnityEngine.CoreModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: -7376593159069771280, guid: be1ee397e329c0c48affcd5876accf12, type: 3}
+    - rid: 1834148681910845988
+      type: {class: 'Constant`1[[UnityEngine.Sprite, UnityEngine.CoreModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: -489850366977500951, guid: 7729c1233eaac9748970c504e58eabde, type: 3}

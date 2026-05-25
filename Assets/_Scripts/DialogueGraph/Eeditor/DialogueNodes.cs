@@ -36,6 +36,7 @@ public class DialogueNode : Node
 
         context.AddInputPort<string>("Speaker").Build();
         context.AddInputPort<string>("Dialogue").Build();
+        context.AddInputPort<Sprite>("Image").Build();
     }
 }
 
@@ -51,6 +52,7 @@ public class ChoiceNode : Node
 
         context.AddInputPort<string>("Speaker").Build();
         context.AddInputPort<string>("Dialogue").Build();
+        context.AddInputPort<Sprite>("Image").Build();
 
         var option = GetNodeOptionByName(optionID);
         option.TryGetValue(out int portCount);
