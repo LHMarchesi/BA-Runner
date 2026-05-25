@@ -88,6 +88,9 @@ public class DialogueManager : MonoBehaviour
                 }
             }
         }
+
+        if (currentNode.Choices.Count == 0 && currentNode.Delay > 0f)
+            autoAdvanceCoroutine = StartCoroutine(AutoAdvanceCoroutine(currentNode.Delay));
     }
 
     private void EndDialogue()
