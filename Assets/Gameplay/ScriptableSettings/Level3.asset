@@ -15,8 +15,8 @@ MonoBehaviour:
   Variants:
   - RequiredFlags:
     - NollevarVincent
-    NextLevel: {fileID: 11400000}
-  DefaultNextLevel: {fileID: 11400000}
+    NextLevel: {fileID: 11400000, guid: c7341cd0f5e530d48a66d2732a8fb97b, type: 2}
+  DefaultNextLevel: {fileID: 11400000, guid: c7341cd0f5e530d48a66d2732a8fb97b, type: 2}
   levelPatterns:
   - {fileID: 11400000, guid: f5b65df6f240d2b498388f6b4bc43e1e, type: 2}
   - {fileID: 11400000, guid: 9f934b38b3792684e9659bd548173aba, type: 2}

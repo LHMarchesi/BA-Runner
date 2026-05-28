@@ -14,10 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Level_Scriptable
   Variants:
   - RequiredFlags:
-    - NollevarVincent
-    NextLevel: {fileID: 11400000, guid: 7a9c4caeeb7498a468589b4c9b510718, type: 2}
-  - RequiredFlags:
-    - Llevar a Vincent
+    - LlevarVincent
     NextLevel: {fileID: 11400000, guid: 7a9c4caeeb7498a468589b4c9b510718, type: 2}
   DefaultNextLevel: {fileID: 11400000}
   levelPatterns:

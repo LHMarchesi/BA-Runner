@@ -112,7 +112,7 @@ public class DialogueManager : MonoBehaviour
                     {
                         Debug.Log($"[Choice] Elegida: '{capturedChoice.ChoiceText}' | FlagsToSet: [{string.Join(", ", capturedChoice.FlagsToSet)}]");
                         ProgressionManager.Instance.ApplyChoice(capturedChoice);
-                        Debug.Log($"[Flags] HasFlag 'LlevarVincent': {ProgressionManager.Instance.HasFlag("LlevarVincent")}");
+                        Debug.Log($"[Flags] HasFlag {capturedChoice.FlagsToSet}: {ProgressionManager.Instance.HasFlag(capturedChoice.FlagsToSet[0])}");
                         AdvanceNodeByChoice(capturedChoice);
                     });
                 }

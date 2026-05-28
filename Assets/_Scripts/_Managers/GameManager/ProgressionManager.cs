@@ -18,7 +18,7 @@ public class ProgressionManager : MonoBehaviour
     public void SetFlag(string flag) => _activeFlags.Add(flag);
     public void ClearFlag(string flag) => _activeFlags.Remove(flag);
     public bool HasFlag(string flag) => _activeFlags.Contains(flag);
-
+    public void ClearAllFlags() => _activeFlags.Clear();
     public void ApplyChoice(ChoiceData choice)
     {
         foreach (var flag in choice.FlagsToSet) SetFlag(flag);
@@ -26,7 +26,14 @@ public class ProgressionManager : MonoBehaviour
     }
 
     // ── Progresión ───────────────────────────────────────────────────────────
-
+    public void ResetProgress()
+    {
+        _activeFlags.Clear();
+        CurrentLevel = startingLevel;
+        PlayerPrefs.DeleteKey("CurrentLevel");
+        PlayerPrefs.DeleteKey("ActiveFlags");
+        PlayerPrefs.Save();
+    }
     public void AdvanceLevel()
     {
         Level_Scriptable next = EvaluateNextLevel();
