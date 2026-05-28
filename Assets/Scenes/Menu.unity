@@ -1672,10 +1672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 499731de12116094ea02618cc53c7108, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ProgressionManager
-  levels:
-  - {fileID: 11400000, guid: 8332c665533ee024898a4a8a0cf779f8, type: 2}
-  - {fileID: 11400000, guid: c7341cd0f5e530d48a66d2732a8fb97b, type: 2}
-  - {fileID: 11400000, guid: 7a9c4caeeb7498a468589b4c9b510718, type: 2}
+  startingLevel: {fileID: 11400000, guid: 8332c665533ee024898a4a8a0cf779f8, type: 2}
   GameData: {fileID: 11400000, guid: 8d5818e67d3f317489f07ec615e86f25, type: 2}
 --- !u!4 &2133841796
 Transform:

@@ -26,10 +26,8 @@ public class DialogueManager : MonoBehaviour
     private Dictionary<string, RuntimeDialogueNode> nodeLookup = new Dictionary<string, RuntimeDialogueNode>();
     private RuntimeDialogueNode currentNode;
 
-
     public Slider delayProgressBar;
     private Coroutine autoAdvanceCoroutine;
-    private int currentLevelIndex;
     private bool isOutro;
 
     private void Start()
@@ -41,7 +39,6 @@ public class DialogueManager : MonoBehaviour
 
     private void EnterCinematics()
     {
-        currentLevelIndex = ProgressionManager.Instance.CurrentLevelIndex;
         isOutro = GameManager.Instance.IsOutro;
         SetRuntineGraphFromLevel();
         InitializeNode();
@@ -108,19 +105,15 @@ public class DialogueManager : MonoBehaviour
                 {
                     buttonText.text = choice.ChoiceText;
                 }
-
+                ChoiceData capturedChoice = choice;
                 if (button != null)
                 {
                     button.onClick.AddListener(() =>
                     {
-                        if (!string.IsNullOrEmpty(choice.DestinationNodeID))
-                        {
-                            ShowDialogue(choice.DestinationNodeID);
-                        }
-                        else
-                        {
-                            AdvanceNode();
-                        }
+                        Debug.Log($"[Choice] Elegida: '{capturedChoice.ChoiceText}' | FlagsToSet: [{string.Join(", ", capturedChoice.FlagsToSet)}]");
+                        ProgressionManager.Instance.ApplyChoice(capturedChoice);
+                        Debug.Log($"[Flags] HasFlag 'LlevarVincent': {ProgressionManager.Instance.HasFlag("LlevarVincent")}");
+                        AdvanceNodeByChoice(capturedChoice);
                     });
                 }
             }
@@ -143,6 +136,19 @@ public class DialogueManager : MonoBehaviour
         currentNode = null;
 
         foreach (Transform child in choiceButtonContainer) { Destroy(child.gameObject); }
+    }
+
+    private void AdvanceNodeByChoice(ChoiceData choice)
+    {
+        StopAutoAdvance();
+        string destination = !string.IsNullOrEmpty(choice.DestinationNodeID)
+            ? choice.DestinationNodeID
+            : currentNode.NextNodeID; // fallback al nodo siguiente lineal
+
+        if (!string.IsNullOrEmpty(destination))
+            ShowDialogue(destination);
+        else
+            EndDialogue();
     }
     private void AdvanceNode()
     {

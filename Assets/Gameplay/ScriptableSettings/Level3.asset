@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa7792cd6221c7d4c8f51bb26b31ea3c, type: 3}
   m_Name: Level3
   m_EditorClassIdentifier: Assembly-CSharp::Level_Scriptable
+  Variants:
+  - RequiredFlags:
+    - NollevarVincent
+    NextLevel: {fileID: 11400000}
+  DefaultNextLevel: {fileID: 11400000}
   levelPatterns:
   - {fileID: 11400000, guid: f5b65df6f240d2b498388f6b4bc43e1e, type: 2}
   - {fileID: 11400000, guid: 9f934b38b3792684e9659bd548173aba, type: 2}
@@ -24,7 +29,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e9f6f2bb35f8fc94cae4062e3292ff6d, type: 2}
   - {fileID: 11400000, guid: 7cc342f43372c5840bd91938efca655a, type: 2}
   - {fileID: 11400000, guid: 7cc342f43372c5840bd91938efca655a, type: 2}
-  levelIndex: 3
   maxLevelProgession: 55
   timeBetweenWaves: 0.58
   levelMusic: {fileID: 8300000, guid: 7bcb251e2b8c9054188b2018b967b3c3, type: 3}
@@ -32,6 +36,6 @@ MonoBehaviour:
   winLevelImage: {fileID: -8761723963282235746, guid: 135aec174b0332c4792026ad20631c79, type: 3}
   speedData: {fileID: 11400000, guid: 99fcfe5ddf168764ebbb219e3b2a61d6, type: 2}
   introDialogueGraph: {fileID: 3965311268370046156, guid: 839641f325c648e4a881fecd28a71a77, type: 3}
-  outroDialogueGraph: {fileID: 3965311268370046156, guid: cf14786d26cb8e24dacaed5723289f20, type: 3}
+  outroDialogueGraph: {fileID: 3965311268370046156, guid: 839641f325c648e4a881fecd28a71a77, type: 3}
   cinematicScene: CinematicsScene
   gameplayScene: SampleScene

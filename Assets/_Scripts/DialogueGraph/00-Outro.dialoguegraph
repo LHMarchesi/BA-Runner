@@ -61,10 +61,10 @@ MonoBehaviour:
         m_LocalSubgraphs: []
         m_LastKnownBounds:
           serializedVersion: 2
-          x: 314
-          y: -213.33334
-          width: 2254
-          height: 596.6666
+          x: 314.4
+          y: -225.6
+          width: 2230.4001
+          height: 413.6
         m_GraphElementMetaData:
         - m_Guid:
             m_Value0: 8114451142013973726
@@ -379,7 +379,7 @@ MonoBehaviour:
           serializedVersion: 2
           Hash: d2487e829abc06869cd67ca5c415e3a3
         m_Version: 2
-        m_Position: {x: 914.48145, y: 103.985504}
+        m_Position: {x: 950.8607, y: -149.27057}
         m_Title: 
         m_Tooltip: 
         m_NodePreviewModel:
@@ -526,7 +526,7 @@ MonoBehaviour:
           serializedVersion: 2
           Hash: 6c9abf5d170eb12e63ba7209fda07885
         m_Version: 2
-        m_Position: {x: 1652.5308, y: -213.4061}
+        m_Position: {x: 1701.1989, y: -215.83951}
         m_Title: 
         m_Tooltip: 
         m_NodePreviewModel:
@@ -565,7 +565,7 @@ MonoBehaviour:
     - rid: 1834148681910845729
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: Elegiste la rama 1
+        m_Value: 
     - rid: 1834148681910845730
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data: 
@@ -579,7 +579,7 @@ MonoBehaviour:
           serializedVersion: 2
           Hash: e248e331592e99dcb76f9d44416f384f
         m_Version: 2
-        m_Position: {x: 2055.6, y: -137.20001}
+        m_Position: {x: 2033.0161, y: -225.40039}
         m_Title: DialogueNode
         m_Tooltip: 
         m_NodePreviewModel:
@@ -618,7 +618,7 @@ MonoBehaviour:
     - rid: 1834148681910845737
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: Pasando al nivel 1 Rama 1
+        m_Value: 
     - rid: 1834148681910845738
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data: 
@@ -664,7 +664,7 @@ MonoBehaviour:
           serializedVersion: 2
           Hash: afb95e6a5c8b2e5195a79eaa0ed7a155
         m_Version: 2
-        m_Position: {x: 1713.6052, y: 199.39644}
+        m_Position: {x: 1699.3091, y: 3.872757}
         m_Title: DialogueNode
         m_Tooltip: 
         m_NodePreviewModel:
@@ -706,7 +706,7 @@ MonoBehaviour:
           serializedVersion: 2
           Hash: 60a3d1f049c770e12bc840ceab76081b
         m_Version: 2
-        m_Position: {x: 2042.0024, y: 122.217896}
+        m_Position: {x: 2034.6426, y: 5.377922}
         m_Title: DialogueNode
         m_Tooltip: 
         m_NodePreviewModel:
@@ -745,7 +745,7 @@ MonoBehaviour:
     - rid: 1834148681910845753
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: Elegiste la rama 2
+        m_Value: 
     - rid: 1834148681910845754
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data: 
@@ -756,7 +756,7 @@ MonoBehaviour:
     - rid: 1834148681910845756
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: Pasando al nivel 2 Rama 1
+        m_Value: 
     - rid: 1834148681910845757
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp}
       data: 
@@ -802,7 +802,7 @@ MonoBehaviour:
           serializedVersion: 2
           Hash: 18f5a8892a81a75dab1c2caa8306692c
         m_Version: 2
-        m_Position: {x: 2452.9998, y: -130.44}
+        m_Position: {x: 2423.233, y: -222.29051}
         m_Title: EndNode
         m_Tooltip: 
         m_NodePreviewModel:
@@ -871,7 +871,7 @@ MonoBehaviour:
           serializedVersion: 2
           Hash: f0e59c9028eceb9c2080f172d203e779
         m_Version: 2
-        m_Position: {x: 2428.5205, y: 147.08003}
+        m_Position: {x: 2430.3606, y: 1.7200317}
         m_Title: EndNode
         m_Tooltip: 
         m_NodePreviewModel:
@@ -940,7 +940,7 @@ MonoBehaviour:
           serializedVersion: 2
           Hash: cfceaa5573c77194b248bf7ff12e8a98
         m_Version: 2
-        m_Position: {x: 1255.1803, y: 52.42028}
+        m_Position: {x: 1268.0961, y: -180.7286}
         m_Title: 
         m_Tooltip: 
         m_NodePreviewModel:
@@ -952,15 +952,23 @@ MonoBehaviour:
           - Speaker
           - Dialogue
           - Image
-          - Choice Text 1
-          - Choice Text 0
+          - Choice 0 Text
+          - Choice 0 Flags
+          - Choice 0 ClearFlags
+          - Choice 1 Text
+          - Choice 1 Flags
+          - Choice 1 ClearFlags
           m_ValueList:
           - rid: 1834148681910845772
           - rid: 1834148681910845773
           - rid: 1834148681910845774
           - rid: 1834148681910845988
-          - rid: 2521248921042550864
-          - rid: 2521248921042550865
+          - rid: 1834148769938276425
+          - rid: 1834148769938276426
+          - rid: 1834148769938276427
+          - rid: 1834148769938276428
+          - rid: 1834148769938276429
+          - rid: 1834148769938276430
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -1062,24 +1070,40 @@ MonoBehaviour:
     - rid: 1834148681910845991
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 0
+        m_Value: 6
     - rid: 1834148681910845992
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 0
+        m_Value: 6
     - rid: 1834148681910845993
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 0
+        m_Value: 6
     - rid: 1834148681910845994
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 0
-    - rid: 2521248921042550864
+        m_Value: 6
+    - rid: 1834148769938276425
+      type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: Llevar a Vincent
+    - rid: 1834148769938276426
+      type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: LlevarVincent
+    - rid: 1834148769938276427
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
         m_Value: 
-    - rid: 2521248921042550865
+    - rid: 1834148769938276428
+      type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: No llevar a Vincent
+    - rid: 1834148769938276429
+      type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: NollevarVincent
+    - rid: 1834148769938276430
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
         m_Value: 

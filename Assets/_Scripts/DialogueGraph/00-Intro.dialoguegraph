@@ -53,10 +53,10 @@ MonoBehaviour:
         m_LocalSubgraphs: []
         m_LastKnownBounds:
           serializedVersion: 2
-          x: 314
-          y: -213.33334
-          width: 2254
-          height: 501.33334
+          x: 314.4
+          y: -151.20001
+          width: 2029.6
+          height: 192.8
         m_GraphElementMetaData:
         - m_Guid:
             m_Value0: 8114451142013973726
@@ -307,7 +307,7 @@ MonoBehaviour:
           serializedVersion: 2
           Hash: d2487e829abc06869cd67ca5c415e3a3
         m_Version: 2
-        m_Position: {x: 914.48145, y: 103.985504}
+        m_Position: {x: 1063.4426, y: -151.37643}
         m_Title: 
         m_Tooltip: 
         m_NodePreviewModel:
@@ -454,7 +454,7 @@ MonoBehaviour:
           serializedVersion: 2
           Hash: 6c9abf5d170eb12e63ba7209fda07885
         m_Version: 2
-        m_Position: {x: 1652.5308, y: -213.4061}
+        m_Position: {x: 1439.7291, y: -141.05351}
         m_Title: 
         m_Tooltip: 
         m_NodePreviewModel:
@@ -507,7 +507,7 @@ MonoBehaviour:
           serializedVersion: 2
           Hash: e248e331592e99dcb76f9d44416f384f
         m_Version: 2
-        m_Position: {x: 2055.6, y: -137.20001}
+        m_Position: {x: 1806.6222, y: -141.45605}
         m_Title: DialogueNode
         m_Tooltip: 
         m_NodePreviewModel:
@@ -592,7 +592,7 @@ MonoBehaviour:
           serializedVersion: 2
           Hash: 18f5a8892a81a75dab1c2caa8306692c
         m_Version: 2
-        m_Position: {x: 2452.9998, y: -130.44}
+        m_Position: {x: 2229.5579, y: -130.44}
         m_Title: EndNode
         m_Tooltip: 
         m_NodePreviewModel:
@@ -670,19 +670,19 @@ MonoBehaviour:
     - rid: 1834148681910845989
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 8
+        m_Value: 6
     - rid: 1834148681910845990
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 5
+        m_Value: 6
     - rid: 1834148681910845991
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 0
+        m_Value: 6
     - rid: 1834148681910845992
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 0
+        m_Value: 6
     - rid: 2521248960271876181
       type: {class: WireModel, ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:

@@ -59,7 +59,9 @@ public class ChoiceNode : Node
         option.TryGetValue(out int portCount);
         for (int i = 0; i < portCount; i++)
         {
-            context.AddInputPort<string>($"Choice Text {i}").Build();
+            context.AddInputPort<string>($"Choice {i} Text").Build();
+            context.AddInputPort<string>($"Choice {i} Flags").Build();
+            context.AddInputPort<string>($"Choice {i} ClearFlags").Build();
             context.AddOutputPort($"Choice {i}").Build();
         }
     }

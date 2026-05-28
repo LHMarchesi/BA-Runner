@@ -73,16 +73,35 @@ public class DialogueGraphImporter : ScriptedImporter
         foreach (var outputPort in choiceOutputPorts)
         {
             var index = outputPort.name.Substring("Choice ".Length);
-            var textPort = node.GetInputPortByName($"Choice Text {index}");
+
+            var textPort = node.GetInputPortByName($"Choice {index} Text");
+            var flagsPort = node.GetInputPortByName($"Choice {index} Flags");       // nuevo
+            var clearFlagsPort = node.GetInputPortByName($"Choice {index} ClearFlags"); // nuevo
 
             var choiceData = new ChoiceData
             {
                 ChoiceText = GetPortValue<string>(textPort),
-                DestinationNodeID = outputPort.firstConnectedPort != null ? nodeIDMap[outputPort.firstConnectedPort.GetNode()] : null
+                DestinationNodeID = outputPort.firstConnectedPort != null
+                                        ? nodeIDMap[outputPort.firstConnectedPort.GetNode()]
+                                        : null,
+
+                FlagsToSet = ParseFlags(GetPortValue<string>(flagsPort)),
+                FlagsToClear = ParseFlags(GetPortValue<string>(clearFlagsPort)),
             };
 
             runtimeNode.Choices.Add(choiceData);
         }
+    }
+
+    private List<string> ParseFlags(string raw)
+    {
+        if (string.IsNullOrWhiteSpace(raw))
+            return new List<string>();
+
+        return raw.Split(',', StringSplitOptions.RemoveEmptyEntries)
+                  .Select(f => f.Trim())
+                  .Where(f => f.Length > 0)
+                  .ToList();
     }
 
     private T GetPortValue<T>(IPort port)

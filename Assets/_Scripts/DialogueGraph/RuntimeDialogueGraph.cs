@@ -25,4 +25,7 @@ public class  ChoiceData
 {
     public string ChoiceText;
     public string DestinationNodeID;
+    [Header("Narrative Flags")]
+    public List<string> FlagsToSet = new();   
+    public List<string> FlagsToClear = new();
 }

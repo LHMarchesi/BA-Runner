@@ -1169,6 +1169,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1325903509}
   m_CullTransparentMesh: 1
+--- !u!1 &1340996128
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1340996130}
+  - component: {fileID: 1340996129}
+  m_Layer: 0
+  m_Name: ProgressionManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1340996129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1340996128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 499731de12116094ea02618cc53c7108, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ProgressionManager
+  levels:
+  - {fileID: 11400000, guid: 8332c665533ee024898a4a8a0cf779f8, type: 2}
+  - {fileID: 11400000, guid: c7341cd0f5e530d48a66d2732a8fb97b, type: 2}
+  - {fileID: 11400000, guid: 7a9c4caeeb7498a468589b4c9b510718, type: 2}
+  GameData: {fileID: 11400000, guid: 8d5818e67d3f317489f07ec615e86f25, type: 2}
+--- !u!4 &1340996130
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1340996128}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -570.50433, y: 0.00002, z: -83.17068}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1413977449
 GameObject:
   m_ObjectHideFlags: 0
@@ -1920,3 +1969,4 @@ SceneRoots:
   - {fileID: 745157475}
   - {fileID: 907675715}
   - {fileID: 1536353638}
+  - {fileID: 1340996130}
