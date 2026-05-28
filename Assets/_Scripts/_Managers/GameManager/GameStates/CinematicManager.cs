@@ -18,9 +18,12 @@ public class CinematicManager : MonoBehaviour
 
         isOutro = GameManager.Instance.IsOutro;
 
-        PlayCinematic();
+        // PlayCinematic();
+    //    PlayGraph();
     }
 
+
+    /*
     void PlayCinematic()
     {
         string url = isOutro ? currentLevel.outroURL : currentLevel.introURL;
@@ -71,6 +74,8 @@ public class CinematicManager : MonoBehaviour
     {
         continueButton.SetActive(true);
     }
+    */
+
 
     public void OnContinuePressed()
     {

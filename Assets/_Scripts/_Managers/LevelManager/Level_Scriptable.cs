@@ -15,8 +15,8 @@ public class Level_Scriptable : ScriptableObject
     public SpeedData speedData;
 
     [Header("Cinematics")]
-    public string introURL;
-    public string outroURL;
+    public RuntimeDialogueGraph introDialogueGraph;
+    public RuntimeDialogueGraph outroDialogueGraph;
 
     [Header("Scenes")]
     public string cinematicScene; 

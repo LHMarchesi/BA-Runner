@@ -23,4 +23,6 @@ public struct OnLevelUpdateEvent : IEvent
 
 public struct OnEnterMenuEvent : IEvent
 {
+}public struct OnEnterCinematics : IEvent
+{
 }

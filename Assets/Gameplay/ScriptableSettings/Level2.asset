@@ -28,7 +28,7 @@ MonoBehaviour:
   levelBackground: {fileID: -7802648845587964238, guid: 74cf73889da21224c972f153ebc4ad94, type: 3}
   winLevelImage: {fileID: -1417863568847704615, guid: e09e3ad1a6089744dbb9a891eea4d578, type: 3}
   speedData: {fileID: 11400000, guid: ff98cf3aa638e934aab866d252848f99, type: 2}
-  introURL: https://pub-2f5fbfbd569a4e4fad15811da373cb10.r2.dev/introlvl2.mp4
-  outroURL: https://pub-2f5fbfbd569a4e4fad15811da373cb10.r2.dev/outrolvl2.mp4
+  introDialogueGraph: {fileID: 3965311268370046156, guid: 839641f325c648e4a881fecd28a71a77, type: 3}
+  outroDialogueGraph: {fileID: 3965311268370046156, guid: cf14786d26cb8e24dacaed5723289f20, type: 3}
   cinematicScene: CinematicsScene
   gameplayScene: SampleScene

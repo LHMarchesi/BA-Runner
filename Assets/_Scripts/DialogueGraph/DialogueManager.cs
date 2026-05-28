@@ -4,14 +4,19 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
+
+//Necesito que si es el ultimo dialogo muestre boton de continue, ademas este DialogueManager tendria que tener saber que nivel esta jugando y de ahi tomar el RuntimeGraph
+
 {
-    public RuntimeDialogueGraph RuntimeGraph;
+    public RuntimeDialogueGraph CurrentRuntimeGraph;
 
     [Header("UIComponents")]
     public GameObject dialoguePanel;
+    public Button continueButton;
     public Image backgroundImage;
     public TextMeshProUGUI SpeakerNameText;
     public TextMeshProUGUI DialogueText;
@@ -21,23 +26,56 @@ public class DialogueManager : MonoBehaviour
     private Dictionary<string, RuntimeDialogueNode> nodeLookup = new Dictionary<string, RuntimeDialogueNode>();
     private RuntimeDialogueNode currentNode;
 
+
     public Slider delayProgressBar;
     private Coroutine autoAdvanceCoroutine;
+    private int currentLevelIndex;
+    private bool isOutro;
+
     private void Start()
     {
-        foreach (var node in RuntimeGraph.AllNodes)
+        EnterCinematics();
+        continueButton.gameObject.SetActive(false);
+    }
+
+
+    private void EnterCinematics()
+    {
+        currentLevelIndex = ProgressionManager.Instance.CurrentLevelIndex;
+        isOutro = GameManager.Instance.IsOutro;
+        SetRuntineGraphFromLevel();
+        InitializeNode();
+    }
+
+    private void SetRuntineGraphFromLevel()
+    {
+        Level_Scriptable currentLevel = ProgressionManager.Instance.CurrentLevel;
+        if (isOutro)
+        {
+            CurrentRuntimeGraph = currentLevel.outroDialogueGraph;  // supongamos que tienes este campo
+        }
+        else
+        {
+            CurrentRuntimeGraph = currentLevel.introDialogueGraph;  // igual para intro
+        }
+    }
+
+    private void InitializeNode()
+    {
+        foreach (var node in CurrentRuntimeGraph.AllNodes)
         {
             nodeLookup[node.NodeID] = node;
         }
-        if (!string.IsNullOrEmpty(RuntimeGraph.EntryNodeID))
+        if (!string.IsNullOrEmpty(CurrentRuntimeGraph.EntryNodeID))
         {
-            ShowDialogue(RuntimeGraph.EntryNodeID);
+            ShowDialogue(CurrentRuntimeGraph.EntryNodeID);
         }
         else
         {
             EndDialogue();
         }
     }
+
 
     private void ShowDialogue(string entryNodeID)
     {
@@ -54,7 +92,6 @@ public class DialogueManager : MonoBehaviour
         backgroundImage.gameObject.SetActive(true);
         SpeakerNameText.text = currentNode.SpeakerName;
         DialogueText.text = currentNode.DialogueText;
-        //Image component can be added to the dialogue panel and set here based on the speaker or other node data if needed.
 
         foreach (Transform child in choiceButtonContainer)
         {
@@ -82,20 +119,27 @@ public class DialogueManager : MonoBehaviour
                         }
                         else
                         {
-                            EndDialogue();
+                            AdvanceNode();
                         }
                     });
                 }
             }
         }
-
-        if (currentNode.Choices.Count == 0 && currentNode.Delay > 0f)
-            autoAdvanceCoroutine = StartCoroutine(AutoAdvanceCoroutine(currentNode.Delay));
+        else
+        {
+            if (currentNode.Delay > 0f)
+                autoAdvanceCoroutine = StartCoroutine(AutoAdvanceCoroutine(currentNode.Delay));
+        }
     }
 
     private void EndDialogue()
     {
-        dialoguePanel.SetActive(false);
+        continueButton.gameObject.SetActive(true);
+        continueButton.onClick.RemoveAllListeners();
+        continueButton.onClick.AddListener(() =>
+        {
+            OnContinuePressed();
+        });
         currentNode = null;
 
         foreach (Transform child in choiceButtonContainer) { Destroy(child.gameObject); }
@@ -108,7 +152,9 @@ public class DialogueManager : MonoBehaviour
         if (!string.IsNullOrEmpty(currentNode.NextNodeID))
             ShowDialogue(currentNode.NextNodeID);
         else
+        {
             EndDialogue();
+        }
     }
 
     private IEnumerator AutoAdvanceCoroutine(float delay)
@@ -144,6 +190,25 @@ public class DialogueManager : MonoBehaviour
         }
         if (delayProgressBar != null)
             delayProgressBar.gameObject.SetActive(false);
+    }
+
+
+    public void OnContinuePressed()
+    {
+        if (isOutro)
+        {
+            ProgressionManager.Instance.AdvanceLevel();
+        }
+        else
+        {
+            LoadGameplay();
+        }
+    }
+
+    void LoadGameplay()
+    {
+        SceneManager.LoadScene("SampleScene"); // tu escena real
+        GameManager.Instance.ChangeState(GameState.Playing);
     }
 
     // ── Input ─────────────────────────────────────────────────────────────────

@@ -31,7 +31,7 @@ MonoBehaviour:
   levelBackground: {fileID: 5655291303808057538, guid: 56f2a105208521a4fa1285ac80a1ca71, type: 3}
   winLevelImage: {fileID: -8761723963282235746, guid: 135aec174b0332c4792026ad20631c79, type: 3}
   speedData: {fileID: 11400000, guid: 99fcfe5ddf168764ebbb219e3b2a61d6, type: 2}
-  introURL: https://pub-2f5fbfbd569a4e4fad15811da373cb10.r2.dev/Cinematica%20demo.mp4
-  outroURL: https://pub-2f5fbfbd569a4e4fad15811da373cb10.r2.dev/lvl3Cienmtic_Outro.mp4
+  introDialogueGraph: {fileID: 3965311268370046156, guid: 839641f325c648e4a881fecd28a71a77, type: 3}
+  outroDialogueGraph: {fileID: 3965311268370046156, guid: cf14786d26cb8e24dacaed5723289f20, type: 3}
   cinematicScene: CinematicsScene
   gameplayScene: SampleScene
