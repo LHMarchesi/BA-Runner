@@ -17,25 +17,19 @@ MonoBehaviour:
     - NollevarVincent
     NextLevel: {fileID: 11400000, guid: c7341cd0f5e530d48a66d2732a8fb97b, type: 2}
   DefaultNextLevel: {fileID: 11400000, guid: c7341cd0f5e530d48a66d2732a8fb97b, type: 2}
-  levelPatterns:
-  - {fileID: 11400000, guid: f5b65df6f240d2b498388f6b4bc43e1e, type: 2}
-  - {fileID: 11400000, guid: 9f934b38b3792684e9659bd548173aba, type: 2}
-  - {fileID: 11400000, guid: ef7d5dc7788466e46845304513fefa69, type: 2}
-  - {fileID: 11400000, guid: 9ca471e1f2ce1de49b6c15f7f8baee05, type: 2}
-  - {fileID: 11400000, guid: 99ef0752c27bf4b45a69cbd1058eeddf, type: 2}
-  - {fileID: 11400000, guid: 3659cce06676a3042a08b0c3e39d6599, type: 2}
-  - {fileID: 11400000, guid: 3c1e5917ff087ca4c877cb37e1a41e14, type: 2}
-  - {fileID: 11400000, guid: 3580331051a74f54b9c078d1d83390e4, type: 2}
-  - {fileID: 11400000, guid: e9f6f2bb35f8fc94cae4062e3292ff6d, type: 2}
-  - {fileID: 11400000, guid: 7cc342f43372c5840bd91938efca655a, type: 2}
-  - {fileID: 11400000, guid: 7cc342f43372c5840bd91938efca655a, type: 2}
   maxLevelProgession: 55
-  timeBetweenWaves: 0.58
   levelMusic: {fileID: 8300000, guid: 7bcb251e2b8c9054188b2018b967b3c3, type: 3}
   levelBackground: {fileID: 5655291303808057538, guid: 56f2a105208521a4fa1285ac80a1ca71, type: 3}
   winLevelImage: {fileID: -8761723963282235746, guid: 135aec174b0332c4792026ad20631c79, type: 3}
-  speedData: {fileID: 11400000, guid: 99fcfe5ddf168764ebbb219e3b2a61d6, type: 2}
+  stages:
+  - stageName: 
+    speedData: {fileID: 11400000, guid: 99fcfe5ddf168764ebbb219e3b2a61d6, type: 2}
+    levelPatterns:
+    - {fileID: 11400000, guid: 99ef0752c27bf4b45a69cbd1058eeddf, type: 2}
+    - {fileID: 11400000, guid: 9f934b38b3792684e9659bd548173aba, type: 2}
+    timeBetweenWaves: 2
+    progressionRequired: 0
+    displayedSpeed: 90
+    signPrefab: {fileID: 4905991386913827093, guid: 04310586beb18704ea309e0dd7cf8001, type: 3}
   introDialogueGraph: {fileID: 3965311268370046156, guid: 839641f325c648e4a881fecd28a71a77, type: 3}
   outroDialogueGraph: {fileID: 3965311268370046156, guid: 839641f325c648e4a881fecd28a71a77, type: 3}
-  cinematicScene: CinematicsScene
-  gameplayScene: SampleScene
