@@ -1301,6 +1301,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SceneTransition
   imageToFade: {fileID: 470733614}
   fadeDuration: 0.5
+  clearNarrativeFlags: 1
   transitionTarget: 2
 --- !u!4 &1718852741
 Transform:
@@ -1348,6 +1349,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SceneTransition
   imageToFade: {fileID: 470733614}
   fadeDuration: 0.5
+  clearNarrativeFlags: 0
   transitionTarget: 4
 --- !u!4 &1827997828
 Transform:

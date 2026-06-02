@@ -32,11 +32,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float brakingForce;
     private SpeedData SpeedData;
     private bool wasBoosting;
-
+    [SerializeField] WorldSpeed WorldSpeed;
 
     EventBinding<OnLevelCompletedEvent> levelResultBinding;
     EventBinding<OnLevelStartEvent> levelStartBinding;
-
+    private float currentPlayerBoostMultiplier;
 
     private void OnEnable()
     {
@@ -129,11 +129,11 @@ public class PlayerController : MonoBehaviour
 
         float targetBoost = isBoosting ? 2.5f : 1f;
 
-        if (SpeedData != null)
+        if (WorldSpeed != null)
         {
 
-            SpeedData.playerBoostMultiplier = Mathf.Lerp(
-                SpeedData.playerBoostMultiplier,
+            WorldSpeed.PlayerBoostMultiplier = Mathf.Lerp(
+                WorldSpeed.PlayerBoostMultiplier,
                 targetBoost,
                 10f * Time.deltaTime
             );

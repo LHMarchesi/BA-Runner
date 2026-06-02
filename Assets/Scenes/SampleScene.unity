@@ -561,10 +561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 499731de12116094ea02618cc53c7108, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ProgressionManager
-  levels:
-  - {fileID: 11400000, guid: 8332c665533ee024898a4a8a0cf779f8, type: 2}
-  - {fileID: 11400000, guid: c7341cd0f5e530d48a66d2732a8fb97b, type: 2}
-  - {fileID: 11400000, guid: 7a9c4caeeb7498a468589b4c9b510718, type: 2}
+  startingLevel: {fileID: 0}
   GameData: {fileID: 11400000, guid: 8d5818e67d3f317489f07ec615e86f25, type: 2}
 --- !u!4 &349740412
 Transform:
@@ -1298,6 +1295,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Npc_Car
   speedData: {fileID: 0}
   speed: 0
+  worldSpeedMultiplier: 0
   sprites: []
 --- !u!114 &598113876
 MonoBehaviour:
@@ -1539,6 +1537,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Npc_Car
   speedData: {fileID: 0}
   speed: 0
+  worldSpeedMultiplier: 0
   sprites: []
 --- !u!114 &648262435
 MonoBehaviour:
@@ -1751,6 +1750,7 @@ RectTransform:
   - {fileID: 165493580}
   - {fileID: 1481587190}
   - {fileID: 1913328136}
+  - {fileID: 1364248920}
   - {fileID: 1150641005}
   - {fileID: 164751944}
   - {fileID: 1043460846}
@@ -2063,6 +2063,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Npc_Car
   speedData: {fileID: 0}
   speed: 0
+  worldSpeedMultiplier: 0
   sprites: []
 --- !u!114 &794404680
 MonoBehaviour:
@@ -2644,7 +2645,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BasicLateralMovement
   speed: 0.5
   isUsingSpeedData: 1
-  currentLevel: {fileID: 0}
+  worldSpeed: {fileID: 1307682262}
 --- !u!114 &1150641007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2735,6 +2736,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Npc_Car
   speedData: {fileID: 0}
   speed: 0
+  worldSpeedMultiplier: 0
   sprites: []
 --- !u!114 &1297423645
 MonoBehaviour:
@@ -2774,6 +2776,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1297423642}
   m_CullTransparentMesh: 1
+--- !u!1 &1307682261
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1307682263}
+  - component: {fileID: 1307682262}
+  m_Layer: 0
+  m_Name: WorldSpeed
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1307682262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307682261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58579d738af5e674e9638faf73cf46e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WorldSpeed
+--- !u!4 &1307682263
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307682261}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -593.8795, y: -316.2224, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1332032279
 GameObject:
   m_ObjectHideFlags: 0
@@ -2804,6 +2850,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelManager
   progessBar: {fileID: 432736747}
+  signSpawnTransfomr: {fileID: 1364248920}
+  currentStage:
+    stageName: 
+    speedData: {fileID: 0}
+    levelPatterns: []
+    timeBetweenWaves: 0
+    progressionRequired: 0
+    displayedSpeed: 0
+    signPrefab: {fileID: 0}
+  WorldSpeed: {fileID: 1307682262}
 --- !u!4 &1332032281
 Transform:
   m_ObjectHideFlags: 0
@@ -2855,6 +2911,41 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1364248919
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1364248920}
+  m_Layer: 5
+  m_Name: SpeedSingLane
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1364248920
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1364248919}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 742882706}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 1162, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1377862744
 GameObject:
   m_ObjectHideFlags: 0
@@ -2886,6 +2977,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SceneTransition
   imageToFade: {fileID: 162933125}
   fadeDuration: 0.5
+  clearNarrativeFlags: 0
   transitionTarget: 2
 --- !u!4 &1377862746
 Transform:
@@ -3069,7 +3161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BasicLateralMovement
   speed: 0.01
   isUsingSpeedData: 0
-  currentLevel: {fileID: 0}
+  worldSpeed: {fileID: 1307682262}
 --- !u!114 &1481587192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3378,7 +3470,9 @@ MonoBehaviour:
   - {fileID: 648262433}
   - {fileID: 1297423643}
   - {fileID: 794404678}
-  npcPrefab: {fileID: 4691921660047537743, guid: e7479db8dbafd434587a4df2c0af2e61, type: 3}
+  npcPrefab: {fileID: 7502237706231732570, guid: e7479db8dbafd434587a4df2c0af2e61, type: 3}
+  worldSpeed: {fileID: 1307682262}
+  LevelManager: {fileID: 1332032280}
   poolSize: 20
 --- !u!4 &1805791355
 Transform:
@@ -3635,7 +3729,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BasicLateralMovement
   speed: 0.5
   isUsingSpeedData: 1
-  currentLevel: {fileID: 0}
+  worldSpeed: {fileID: 1307682262}
 --- !u!1 &1929279377
 GameObject:
   m_ObjectHideFlags: 0
@@ -3742,6 +3836,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SceneTransition
   imageToFade: {fileID: 162933125}
   fadeDuration: 0.5
+  clearNarrativeFlags: 0
   transitionTarget: 1
 --- !u!4 &2043365271
 Transform:
@@ -3988,6 +4083,10 @@ PrefabInstance:
       value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 8672301451433408647, guid: 07b24961ec04ae94aa86875b9cf7a7f8, type: 3}
+      propertyPath: WorldSpeed
+      value: 
+      objectReference: {fileID: 1307682262}
+    - target: {fileID: 8672301451433408647, guid: 07b24961ec04ae94aa86875b9cf7a7f8, type: 3}
       propertyPath: crashSound
       value: 
       objectReference: {fileID: 8300000, guid: 1fb7bdd4777bf6feba371d99fbd9078d, type: 3}
@@ -4037,3 +4136,4 @@ SceneRoots:
   - {fileID: 2043365271}
   - {fileID: 1377862746}
   - {fileID: 349740412}
+  - {fileID: 1307682263}

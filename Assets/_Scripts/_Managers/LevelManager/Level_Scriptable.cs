@@ -9,21 +9,17 @@ public class Level_Scriptable : ScriptableObject
     public Level_Scriptable DefaultNextLevel;
 
     [Header("Gameplay")]
-    public SpawnPattern[] levelPatterns;
     public float maxLevelProgession;
-    public float timeBetweenWaves;
     public AudioClip levelMusic;
     public Sprite levelBackground;
     public Sprite winLevelImage;
-    public SpeedData speedData;
+
+    [Header("Level Stages")]
+    public List<LevelStage> stages = new();
 
     [Header("Cinematics")]
     public RuntimeDialogueGraph introDialogueGraph;
     public RuntimeDialogueGraph outroDialogueGraph;
-
-    [Header("Scenes")]
-    public string cinematicScene; 
-    public string gameplayScene;
 }
 
 [System.Serializable]
@@ -32,4 +28,25 @@ public class LevelVariant
     [Tooltip("Todas deben estar activas (AND)")]
     public List<string> RequiredFlags = new List<string>();
     public Level_Scriptable NextLevel;
+}
+
+[System.Serializable]
+public class LevelStage
+{
+    [Header("Stage Info")]
+    public string stageName;
+
+    [Header("Stage SpeedData")]
+    public SpeedData speedData;
+
+    [Header("Stage Patterns")]
+    public SpawnPattern[] levelPatterns;
+    public float timeBetweenWaves;
+
+    [Range(0, 1)]
+    public float progressionRequired;
+
+    [Header("Sign")]
+    public int displayedSpeed;
+    public GameObject signPrefab;
 }

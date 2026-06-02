@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,7 +10,10 @@ public class SimpleSpawner : MonoBehaviour
     [SerializeField] private Transform[] lanes; // asignar 4 en inspector
 
     [Header("Enemy")]
-    [SerializeField] private GameObject npcPrefab;
+    [SerializeField] private Obstacle npcPrefab;
+
+    [SerializeField] WorldSpeed worldSpeed;
+    [SerializeField] LevelManager LevelManager;
 
     [Header("Pool")]
     [SerializeField] private int poolSize = 20;
@@ -26,9 +30,10 @@ public class SimpleSpawner : MonoBehaviour
     {
         for (int i = 0; i < poolSize; i++)
         {
-            GameObject obj = Instantiate(npcPrefab);
-            obj.SetActive(false);
-            pool.Add(obj);
+            Obstacle obstacle = Instantiate(npcPrefab);
+            obstacle.Initialize(worldSpeed);
+            obstacle.gameObject.SetActive(false);
+            pool.Add(obstacle.gameObject);
         }
     }
 
@@ -41,10 +46,11 @@ public class SimpleSpawner : MonoBehaviour
         }
 
         // expandir pool si se queda corto
-        GameObject newObj = Instantiate(npcPrefab);
-        newObj.SetActive(false);
-        pool.Add(newObj);
-        return newObj;
+        Obstacle obstacle = Instantiate(npcPrefab);
+        obstacle.Initialize(worldSpeed);
+        obstacle.gameObject.SetActive(false);
+        pool.Add(obstacle.gameObject);
+        return obstacle.gameObject;
     }
 
     IEnumerator SpawnWaves()
@@ -52,16 +58,16 @@ public class SimpleSpawner : MonoBehaviour
         while (true)
         {
             var currentLevel = ProgressionManager.Instance.CurrentLevel;
-            if (currentLevel == null || currentLevel.levelPatterns == null || currentLevel.levelPatterns.Length == 0)
+            if (currentLevel == null || LevelManager.CurrentStage.levelPatterns == null || LevelManager.CurrentStage.levelPatterns.Length == 0)
             {
                 yield return new WaitForSeconds(1f); // Esperar un momento si no hay nivel configurado
                 continue;
             }
 
-            SpawnPattern pattern = currentLevel.levelPatterns[Random.Range(0, currentLevel.levelPatterns.Length)];
+            SpawnPattern pattern = LevelManager.CurrentStage.levelPatterns[Random.Range(0, LevelManager.CurrentStage.levelPatterns.Length)];
             yield return StartCoroutine(SpawnPatternRoutine(pattern));
 
-            yield return new WaitForSeconds(currentLevel.timeBetweenWaves);
+            yield return new WaitForSeconds(LevelManager.CurrentStage.timeBetweenWaves);
         }
     }
 

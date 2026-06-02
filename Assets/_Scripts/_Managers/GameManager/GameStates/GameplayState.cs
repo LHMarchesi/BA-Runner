@@ -23,7 +23,7 @@ public class GameplayState : IState
         var level = ProgressionManager.Instance.CurrentLevel;
         AudioManager.Instance.PlayMusic(level.levelMusic);
 
-        EventBus<OnLevelStartEvent>.Raise(new OnLevelStartEvent { levelSpeedData = level.speedData });
+        EventBus<OnLevelStartEvent>.Raise(new OnLevelStartEvent { });
 
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }

@@ -22,6 +22,6 @@ MonoBehaviour:
   - laneIndex: 2
     delay: 0.8
   - laneIndex: 1
-    delay: 0.2
+    delay: 0.8
   - laneIndex: 2
-    delay: 0
+    delay: 0.8
