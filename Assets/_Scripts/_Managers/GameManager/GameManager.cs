@@ -7,13 +7,15 @@ public enum GameState
     Win,
     Lose,
     Credits,
-    Survival
+    Survival,
+    Pause,
 }
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     private StateMachine<GameState> stateMachine = new();
     public bool IsOutro { get; set; }
+    public bool IsPausing { get; set; }
 
     EventBinding<OnLevelCompletedEvent> levelResultBinding;
     EventBinding<OnPlayerDeathEvent> playerDeathBinding;
@@ -51,6 +53,7 @@ public class GameManager : MonoBehaviour
         stateMachine.AddState(new LoseState(this), GameState.Lose);
         stateMachine.AddState(new CreditsState(this), GameState.Credits);
         stateMachine.AddState(new CreditsState(this), GameState.Survival);
+        stateMachine.AddState(new PauseState(this), GameState.Pause);
 
         stateMachine.ChangeState(GameState.MainMenu);
     }

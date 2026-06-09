@@ -36,7 +36,10 @@ public class PlayerController : MonoBehaviour
 
     EventBinding<OnLevelCompletedEvent> levelResultBinding;
     EventBinding<OnLevelStartEvent> levelStartBinding;
+    EventBinding<OnPauseEvent> pauseEventBinding; 
+    
     private float currentPlayerBoostMultiplier;
+    private bool gameIsPaused = false; 
 
     private void OnEnable()
     {
@@ -45,6 +48,15 @@ public class PlayerController : MonoBehaviour
 
         levelStartBinding = new EventBinding<OnLevelStartEvent>(OnLevelStart);
         EventBus<OnLevelStartEvent>.Register(levelStartBinding);
+
+        pauseEventBinding = new EventBinding<OnPauseEvent>(OnPauseEventTriggered);
+        EventBus<OnPauseEvent>.Register(pauseEventBinding);
+    }
+
+    private void OnDisable()
+    {
+        EventBus<OnLevelCompletedEvent>.Deregister(levelResultBinding);
+        EventBus<OnPauseEvent>.Deregister(pauseEventBinding); 
     }
 
     private void OnLevelStart(OnLevelStartEvent e)
@@ -55,6 +67,26 @@ public class PlayerController : MonoBehaviour
     private void OnLevelCompleted(OnLevelCompletedEvent e)
     {
         canCollide = false;
+    }
+
+    private void OnPauseEventTriggered(OnPauseEvent e)
+    {
+        gameIsPaused = e.isPaused;
+    }
+
+    public void OnPause(InputAction.CallbackContext context)
+    {
+        if (!context.started || !isAlive) return;
+
+        if (!gameIsPaused)
+        {
+            GameManager.Instance.IsPausing = true;
+            GameManager.Instance.ChangeState(GameState.Pause);
+        }
+        else
+        {
+            GameManager.Instance.ChangeState(GameState.Playing);
+        }
     }
 
     private void Start()
@@ -69,11 +101,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
     public void OnMove(InputAction.CallbackContext context)
     {
-        Vector2 input = context.ReadValue<Vector2>();
+        if (gameIsPaused) return; 
 
+        Vector2 input = context.ReadValue<Vector2>();
         inputX = input.x;
 
         if (!context.started || !canMove) return;
@@ -97,7 +129,7 @@ public class PlayerController : MonoBehaviour
         AudioManager.Instance.PlaySFX(moveLaneSound);
         canMove = false;
         UpdatePosition();
-        Invoke(nameof(ResetMove), 0.1f); // cooldown
+        Invoke(nameof(ResetMove), 0.1f); 
     }
 
     private void ResetMove()
@@ -107,31 +139,46 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (!isAlive) return;
+        if (!isAlive || gameIsPaused) return; 
+        
         HandleBoost();
+
         transform.position += Vector3.right * currentVelocityX * Time.deltaTime;
 
+        float minX = baseX - maxDistance;
+        float maxX = baseX + maxDistance;
+
+        if (transform.position.x < minX)
+        {
+            transform.position = new Vector3(minX, transform.position.y, transform.position.z);
+            currentVelocityX = 0; // Matamos la fuerza acumulada para que no tiemble
+        }
+        else if (transform.position.x > maxX)
+        {
+            transform.position = new Vector3(maxX, transform.position.y, transform.position.z);
+            currentVelocityX = 0; // Matamos la fuerza acumulada para que no tiemble
+        }
+
+        // 2. Aplicamos el movimiento vertical suavizado
         transform.position = new Vector3(
-      transform.position.x,
-      Mathf.Lerp(transform.position.y, targetPosition.y, 10f * Time.deltaTime),
-      transform.position.z
-  );
+            transform.position.x,
+            Mathf.Lerp(transform.position.y, targetPosition.y, 10f * Time.deltaTime),
+            transform.position.z
+        );
     }
 
     private void HandleBoost()
     {
         if (!canMove) return;
         float currentX = transform.position.x;
-        float distance = baseX - currentX;
-        bool canAccelerate = Mathf.Abs(currentX - baseX) < maxDistance;
-        // Boost
+        
+        bool canAccelerate = (baseX - currentX) < maxDistance;
         bool isBoosting = inputX > 0 && canAccelerate;
 
         float targetBoost = isBoosting ? 2.5f : 1f;
 
         if (WorldSpeed != null)
         {
-
             WorldSpeed.PlayerBoostMultiplier = Mathf.Lerp(
                 WorldSpeed.PlayerBoostMultiplier,
                 targetBoost,
@@ -148,20 +195,20 @@ public class PlayerController : MonoBehaviour
             currentVelocityX = boostForce;
         }
         wasBoosting = isBoosting;
+
         float displacement = baseX - transform.position.x;
         float springForce = displacement * springStrength;
         float dampingForce = -currentVelocityX * damping;
         float force = springForce + dampingForce;
-        // Aplicar
+        
         currentVelocityX += force * Time.deltaTime;
+
 
         if (inputX < 0)
         {
-            currentVelocityX += force * brakingForce * Time.deltaTime;
-
+            currentVelocityX -= brakingForce * Time.deltaTime;
         }
 
-        // Damping
         currentVelocityX *= damping;
     }
 
@@ -177,7 +224,6 @@ public class PlayerController : MonoBehaviour
             startPosition.position.y + currentCarPosition * laneOffset,
             startPosition.position.z
         );
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -190,10 +236,7 @@ public class PlayerController : MonoBehaviour
         transform.SetParent(collision.transform);
 
         EventBus<OnPlayerDeathEvent>.Raise(new OnPlayerDeathEvent());
-      
+        
         AudioManager.Instance.PlaySFX(crashSound);
-        //trigger end game 
     }
-
-
 }

@@ -1,3 +1,4 @@
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameplayState : IState
@@ -12,6 +13,7 @@ public class GameplayState : IState
 
     public void Awake()
     {
+        if (sceneLoaded) return; 
 
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
@@ -31,12 +33,19 @@ public class GameplayState : IState
     public void Execute()
     {
         if (!sceneLoaded) return;
-
         EventBus<OnLevelUpdateEvent>.Raise(new OnLevelUpdateEvent());
     }
 
     public void Sleep()
     {
+        if (gm.IsPausing)
+        {
+            gm.IsPausing = false; 
+            return; 
+        }
+
+        sceneLoaded = false; 
+        
         AudioManager.Instance.StopMusic();
     }
 }
