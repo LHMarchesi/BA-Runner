@@ -297,6 +297,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9067550661899556513}
   - component: {fileID: -6818341355854166943}
+  - component: {fileID: -5986252386926889434}
   m_Layer: 5
   m_Name: SpeedSign
   m_TagString: Untagged
@@ -340,4 +341,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Obstacle
   speedData: {fileID: 0}
   speed: 600
+  worldSpeed: {fileID: 0}
   sprites: []
+--- !u!114 &-5986252386926889434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4905991386913827093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44981a5c2f2b9d84dab64ccdf027f222, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StraightMoveBehavior

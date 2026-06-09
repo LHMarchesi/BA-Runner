@@ -9,6 +9,7 @@ public class LevelManager : MonoBehaviour
     public LevelStage CurrentStage => currentStage;
     [SerializeField] private ProgessBar progessBar;
     [SerializeField] private Transform signSpawnTransfomr;
+    [SerializeField] private ObstacleConfig singConfig;
     [SerializeField] private LevelStage currentStage;
     [SerializeField] WorldSpeed WorldSpeed;
     private float levelProgession;
@@ -78,11 +79,9 @@ public class LevelManager : MonoBehaviour
 
     private void ShowSpeedSign(LevelStage nextStage)
     {
-        GameObject sign = Instantiate(nextStage.signPrefab, signSpawnTransfomr);
+        Obstacle sign = Instantiate(singConfig.prefab.gameObject, signSpawnTransfomr).GetComponent<Obstacle>();
         TextMeshProUGUI text = sign.GetComponentInChildren<TextMeshProUGUI>();
-        Obstacle obstacle = sign.GetComponent<Obstacle>();
-        obstacle.SetSpeedData(nextStage.speedData);
-        obstacle.Initialize(WorldSpeed);
+        sign.Initialize(WorldSpeed, singConfig);
         text.text = nextStage.displayedSpeed.ToString();
     }
 

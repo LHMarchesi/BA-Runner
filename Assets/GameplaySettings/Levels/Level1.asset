@@ -27,44 +27,25 @@ MonoBehaviour:
   stages:
   - stageName: 1%
     speedData: {fileID: 11400000, guid: 33b0c508177c1a142be8b48318a9b72e, type: 2}
-    levelPatterns:
-    - {fileID: 11400000, guid: 3580331051a74f54b9c078d1d83390e4, type: 2}
-    - {fileID: 11400000, guid: 3c1e5917ff087ca4c877cb37e1a41e14, type: 2}
-    - {fileID: 11400000, guid: 3580331051a74f54b9c078d1d83390e4, type: 2}
-    - {fileID: 11400000, guid: f5b65df6f240d2b498388f6b4bc43e1e, type: 2}
-    timeBetweenWaves: 1
+    waveConfig: {fileID: 11400000, guid: 1b0233f6b19bdeb44ba56f4f0b4fb7d7, type: 2}
     progressionRequired: 0.001
     displayedSpeed: 40
     signPrefab: {fileID: 4905991386913827093, guid: 04310586beb18704ea309e0dd7cf8001, type: 3}
   - stageName: 15%
     speedData: {fileID: 11400000, guid: ff98cf3aa638e934aab866d252848f99, type: 2}
-    levelPatterns:
-    - {fileID: 11400000, guid: 9f934b38b3792684e9659bd548173aba, type: 2}
-    - {fileID: 11400000, guid: f5b65df6f240d2b498388f6b4bc43e1e, type: 2}
-    - {fileID: 11400000, guid: 3659cce06676a3042a08b0c3e39d6599, type: 2}
-    timeBetweenWaves: 1
+    waveConfig: {fileID: 11400000, guid: 1b0233f6b19bdeb44ba56f4f0b4fb7d7, type: 2}
     progressionRequired: 0.323
     displayedSpeed: 60
     signPrefab: {fileID: 4905991386913827093, guid: 04310586beb18704ea309e0dd7cf8001, type: 3}
   - stageName: 50%
     speedData: {fileID: 11400000, guid: 99fcfe5ddf168764ebbb219e3b2a61d6, type: 2}
-    levelPatterns:
-    - {fileID: 11400000, guid: 3580331051a74f54b9c078d1d83390e4, type: 2}
-    - {fileID: 11400000, guid: 3c1e5917ff087ca4c877cb37e1a41e14, type: 2}
-    - {fileID: 11400000, guid: 7cc342f43372c5840bd91938efca655a, type: 2}
-    - {fileID: 11400000, guid: f5b65df6f240d2b498388f6b4bc43e1e, type: 2}
-    timeBetweenWaves: 0.76
+    waveConfig: {fileID: 11400000, guid: 1b0233f6b19bdeb44ba56f4f0b4fb7d7, type: 2}
     progressionRequired: 0.5
     displayedSpeed: 90
     signPrefab: {fileID: 4905991386913827093, guid: 04310586beb18704ea309e0dd7cf8001, type: 3}
   - stageName: 80%
     speedData: {fileID: 11400000, guid: a5f14f9e38b6aae489cd0b9d94ab2934, type: 2}
-    levelPatterns:
-    - {fileID: 11400000, guid: 9f934b38b3792684e9659bd548173aba, type: 2}
-    - {fileID: 11400000, guid: f5b65df6f240d2b498388f6b4bc43e1e, type: 2}
-    - {fileID: 11400000, guid: 3659cce06676a3042a08b0c3e39d6599, type: 2}
-    - {fileID: 11400000, guid: 7cc342f43372c5840bd91938efca655a, type: 2}
-    timeBetweenWaves: 0.66
+    waveConfig: {fileID: 11400000, guid: 1b0233f6b19bdeb44ba56f4f0b4fb7d7, type: 2}
     progressionRequired: 0.854
     displayedSpeed: 110
     signPrefab: {fileID: 4905991386913827093, guid: 04310586beb18704ea309e0dd7cf8001, type: 3}

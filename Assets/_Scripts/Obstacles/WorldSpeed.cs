@@ -7,10 +7,14 @@ public class WorldSpeed : MonoBehaviour
 
     private SpeedData currentSpeedData;
 
-    public float CurrentWorldSpeed =>
-        currentSpeedData.baseWorldSpeed *
-        ProgressionMultiplier *
-         Mathf.Lerp(1f, PlayerBoostMultiplier, 2f);
+    public float CurrentWorldSpeed
+    {
+        get
+        {
+            if (currentSpeedData == null) return 0f;
+            return currentSpeedData.baseWorldSpeed * ProgressionMultiplier * PlayerBoostMultiplier;
+        }
+    }
 
     public void SetSpeedData(SpeedData speedData)
     {

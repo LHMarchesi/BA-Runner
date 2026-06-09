@@ -13,13 +13,18 @@ MonoBehaviour:
   m_Name: 3EnDiagonalLuego2_SpawnPattern 2
   m_EditorClassIdentifier: Assembly-CSharp::SpawnPattern
   spawns:
-  - laneIndex: 3
+  - obstacleConfig: {fileID: 11400000, guid: f08bd68d6a6ba4646a6b5f4564cd5cbf, type: 2}
+    laneIndex: 3
     delay: 0
-  - laneIndex: 2
+  - obstacleConfig: {fileID: 11400000, guid: f08bd68d6a6ba4646a6b5f4564cd5cbf, type: 2}
+    laneIndex: 2
     delay: 0.4
-  - laneIndex: 1
+  - obstacleConfig: {fileID: 11400000, guid: f08bd68d6a6ba4646a6b5f4564cd5cbf, type: 2}
+    laneIndex: 1
     delay: 0.4
-  - laneIndex: 0
+  - obstacleConfig: {fileID: 11400000, guid: f08bd68d6a6ba4646a6b5f4564cd5cbf, type: 2}
+    laneIndex: 0
     delay: 0
-  - laneIndex: 2
+  - obstacleConfig: {fileID: 11400000, guid: f08bd68d6a6ba4646a6b5f4564cd5cbf, type: 2}
+    laneIndex: 2
     delay: 0

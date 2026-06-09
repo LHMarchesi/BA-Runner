@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 7502237706231732570}
   - component: {fileID: -167357517310235788}
   - component: {fileID: 6968278738962382352}
+  - component: {fileID: -7128634764213041947}
   m_Layer: 5
-  m_Name: Npc_Car
+  m_Name: Bus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37,8 +38,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2020, y: -362}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 2080.081, y: -362}
+  m_SizeDelta: {x: 200.1356, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &222531398910112579
 CanvasRenderer:
@@ -68,7 +69,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -3888109967018907179, guid: a8ea5ac8226ea0644b52f0c7b5a2532c, type: 3}
+  m_Sprite: {fileID: -3855390878696569443, guid: 784aad86e31fc1d42ae092148b55a4f2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -90,11 +91,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 215d598a606ad8f4a8b038a27e65a5a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  speedData: {fileID: 11400000, guid: 33b0c508177c1a142be8b48318a9b72e, type: 2}
-  speed: 600
+  speed: 450
+  worldSpeed: {fileID: 0}
   sprites:
-  - {fileID: -5165881585636880259, guid: 605af93f9ace40b4c9c97ac90b07cd08, type: 3}
-  - {fileID: -3888109967018907179, guid: a8ea5ac8226ea0644b52f0c7b5a2532c, type: 3}
+  - {fileID: -3855390878696569443, guid: 784aad86e31fc1d42ae092148b55a4f2, type: 3}
 --- !u!50 &-167357517310235788
 Rigidbody2D:
   serializedVersion: 5
@@ -156,7 +156,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.73706055, y: -10.761116}
+  m_Offset: {x: -1.775795, y: 0.26441956}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -166,5 +166,17 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 87.91211, y: 33.712418}
+  m_Size: {x: 149.65352, y: 76.559326}
   m_EdgeRadius: 0
+--- !u!114 &-7128634764213041947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4691921660047537743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44981a5c2f2b9d84dab64ccdf027f222, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StraightMoveBehavior

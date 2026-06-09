@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-
 [CreateAssetMenu(fileName = "Level_Scriptable", menuName = "Scriptable Objects/Level_Scriptable")]
 public class Level_Scriptable : ScriptableObject
 {
@@ -40,13 +39,11 @@ public class LevelStage
     public SpeedData speedData;
 
     [Header("Stage Patterns")]
-    public SpawnPattern[] levelPatterns;
-    public float timeBetweenWaves;
+    public WaveConfig waveConfig;
 
     [Range(0, 1)]
     public float progressionRequired;
 
     [Header("Sign")]
     public int displayedSpeed;
-    public GameObject signPrefab;
 }

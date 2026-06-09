@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: Bus
+  m_EditorClassIdentifier: Assembly-CSharp::ObstacleConfig
+  prefab: {fileID: 7502237706231732570, guid: db878b44c74fa7048be5cf3ca59a79e3, type: 3}
+  defaultPoolSize: 10
+  despawnXThreshold: -3000

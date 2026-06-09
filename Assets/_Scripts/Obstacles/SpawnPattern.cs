@@ -4,11 +4,15 @@ using UnityEngine;
 public class SpawnPattern : ScriptableObject
 {
     [System.Serializable]
-    public struct SpawnData
+    public struct SpawnEntry
     {
+        public ObstacleConfig obstacleConfig;
+
         public int laneIndex;
         public float delay;
+
+        public Vector2 positionOffset;
     }
 
-    public SpawnData[] spawns;
+    public SpawnEntry[] spawns;
 }
