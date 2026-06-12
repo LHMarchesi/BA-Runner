@@ -31,7 +31,7 @@ public class Obstacle : MonoBehaviour
     {
         if (behaviors == null) return;
         foreach (var b in behaviors)
-            b.OnSpawned();
+            b.OnSpawned(config);
     }
 
     private void Update()

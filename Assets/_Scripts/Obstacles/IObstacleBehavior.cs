@@ -1,7 +1,7 @@
 public interface IObstacleBehavior
 {
    
-    void OnSpawned();
+    void OnSpawned(ObstacleConfig config);
 
     void Tick(float worldSpeed);
 

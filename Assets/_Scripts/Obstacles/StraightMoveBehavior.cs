@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class StraightMoveBehavior : MonoBehaviour, IObstacleBehavior
 {
-    public void OnSpawned() { }
+    public void OnSpawned(ObstacleConfig config) { }
 
     public void Tick(float worldSpeed)
     {
