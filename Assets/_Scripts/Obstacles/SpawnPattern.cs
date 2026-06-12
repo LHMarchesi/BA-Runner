@@ -13,6 +13,7 @@ public class SpawnPattern : ScriptableObject
 
         public Vector2 positionOffset;
     }
+   
 
     public SpawnEntry[] spawns;
 }

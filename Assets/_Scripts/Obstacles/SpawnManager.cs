@@ -4,7 +4,8 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     [Header("Spawn Points")]
-    [SerializeField] private Transform[] lanes; // asignar 4 en inspector
+    [SerializeField] private Transform[] frontLanes;
+    [SerializeField] private Transform[] rearLanes;
 
     [SerializeField] WorldSpeed worldSpeed;
     [SerializeField] LevelManager levelManager;
@@ -141,6 +142,7 @@ public class SpawnManager : MonoBehaviour
     private void SpawnObstacle(SpawnPattern.SpawnEntry entry)
     {
         Obstacle obstacle = pool.Get(entry.obstacleConfig, worldSpeed);
+        Transform[] lanes = entry.obstacleConfig.spawnSide == ObstacleConfig.SpawnSide.Front ? frontLanes : rearLanes;
         Transform lane = lanes[entry.laneIndex];
 
         obstacle.transform.SetParent(lane, worldPositionStays: false);

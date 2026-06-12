@@ -30,24 +30,20 @@ MonoBehaviour:
     waveConfig: {fileID: 11400000, guid: 1b0233f6b19bdeb44ba56f4f0b4fb7d7, type: 2}
     progressionRequired: 0.001
     displayedSpeed: 40
-    signPrefab: {fileID: 4905991386913827093, guid: 04310586beb18704ea309e0dd7cf8001, type: 3}
   - stageName: 15%
     speedData: {fileID: 11400000, guid: ff98cf3aa638e934aab866d252848f99, type: 2}
     waveConfig: {fileID: 11400000, guid: 1b0233f6b19bdeb44ba56f4f0b4fb7d7, type: 2}
     progressionRequired: 0.323
     displayedSpeed: 60
-    signPrefab: {fileID: 4905991386913827093, guid: 04310586beb18704ea309e0dd7cf8001, type: 3}
   - stageName: 50%
     speedData: {fileID: 11400000, guid: 99fcfe5ddf168764ebbb219e3b2a61d6, type: 2}
     waveConfig: {fileID: 11400000, guid: 1b0233f6b19bdeb44ba56f4f0b4fb7d7, type: 2}
     progressionRequired: 0.5
     displayedSpeed: 90
-    signPrefab: {fileID: 4905991386913827093, guid: 04310586beb18704ea309e0dd7cf8001, type: 3}
   - stageName: 80%
     speedData: {fileID: 11400000, guid: a5f14f9e38b6aae489cd0b9d94ab2934, type: 2}
     waveConfig: {fileID: 11400000, guid: 1b0233f6b19bdeb44ba56f4f0b4fb7d7, type: 2}
     progressionRequired: 0.854
     displayedSpeed: 110
-    signPrefab: {fileID: 4905991386913827093, guid: 04310586beb18704ea309e0dd7cf8001, type: 3}
   introDialogueGraph: {fileID: 3965311268370046156, guid: 839641f325c648e4a881fecd28a71a77, type: 3}
   outroDialogueGraph: {fileID: 3965311268370046156, guid: cf14786d26cb8e24dacaed5723289f20, type: 3}

@@ -1,24 +1,16 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "ObstacleConfig", menuName = "Game/Obstacle Config")]
+[CreateAssetMenu(fileName = "ObstacleConfig", menuName = "Obstacles/Obstacle Config")]
 public class ObstacleConfig : ScriptableObject
 {
     public Obstacle prefab;
     public int defaultPoolSize;
     public float despawnXThreshold;
-}
-
-[CreateAssetMenu(fileName = "ChangingLaneObstacleConfig", menuName = "Game/Obstacle Config/Changing Lane")]
-
-public class ChangingLaneObstacleConfig : ObstacleConfig
-{
-    public enum LaneChangeDirection
+    public enum SpawnSide
     {
-        Up,
-        Down,
+        Front,
+        Rear
     }
-    [Header("Lane Change")]
-    public LaneChangeDirection changeDirection;          
-    [Range(0, 5)] public float changeDelay;
-    public float laneChangeSpeed;
-}   
+
+    public SpawnSide spawnSide;
+}

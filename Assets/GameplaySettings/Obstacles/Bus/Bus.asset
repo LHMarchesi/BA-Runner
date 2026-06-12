@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 1a794138c78c69549bc27d295b049799, type: 3}
   m_Name: Bus
   m_EditorClassIdentifier: Assembly-CSharp::ObstacleConfig
   prefab: {fileID: 7502237706231732570, guid: db878b44c74fa7048be5cf3ca59a79e3, type: 3}
   defaultPoolSize: 10
   despawnXThreshold: -3000
+  spawnSide: 0
