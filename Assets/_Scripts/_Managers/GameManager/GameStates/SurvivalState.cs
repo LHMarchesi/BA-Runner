@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using UnityEngine.SceneManagement;
 
 public class SurvivalState : IState
@@ -22,11 +23,14 @@ public class SurvivalState : IState
         AudioManager.Instance.PlayMusic(AudioManager.Instance.survivalSong);
 
         SceneManager.sceneLoaded -= OnSceneLoaded;
+        EventBus<OnLevelStartEvent>.Raise(new OnLevelStartEvent { });
+
+        Debug.WriteLine("enter survival State");
     }
 
     public void Execute()
     {
-        // gameplay corre solo
+      
     }
 
     public void Sleep()

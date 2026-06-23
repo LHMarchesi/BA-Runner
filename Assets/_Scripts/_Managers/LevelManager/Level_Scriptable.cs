@@ -47,3 +47,27 @@ public class LevelStage
     [Header("Sign")]
     public int displayedSpeed;
 }
+
+
+[System.Serializable]
+public class RoadSection
+{
+    public string stageName;
+
+    public float progressionRequired;
+
+    public SpeedData worldSpeedData;
+
+    public WaveConfig waveConfig;
+
+    public EnvironmentPreset environment;
+
+    public int displayedSpeed;
+}
+
+
+[System.Serializable]
+public class EnvironmentPreset
+{
+    public Sprite background;
+}

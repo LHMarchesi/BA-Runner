@@ -8,8 +8,8 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] private Transform[] rearLanes;
 
     [SerializeField] WorldSpeed worldSpeed;
-    [SerializeField] LevelManager levelManager;
-
+    
+    private WaveConfig currentWaveConfig;
     private MultiTypePool pool;
     private Coroutine spawnCoroutine;
 
@@ -18,15 +18,18 @@ public class SpawnManager : MonoBehaviour
     private EventBinding<OnLevelStartEvent> onLevelStart;
     private EventBinding<OnLevelCompletedEvent> onLevelCompleted;
     private EventBinding<OnRoadStageChanged> onStageChanged;
+    private EventBinding<OnRoadSectionChanged> onSectionChanged;
 
     private void OnEnable()
     {
         onLevelStart = new EventBinding<OnLevelStartEvent>(HandleLevelStart);
         onLevelCompleted = new EventBinding<OnLevelCompletedEvent>(HandleLevelCompleted);
         onStageChanged = new EventBinding<OnRoadStageChanged>(HandleStageChanged);
+        onSectionChanged = new EventBinding<OnRoadSectionChanged>(HandleRoadSectionChanged);
 
         EventBus<OnLevelStartEvent>.Register(onLevelStart);
         EventBus<OnLevelCompletedEvent>.Register(onLevelCompleted);
+        EventBus<OnRoadSectionChanged>.Register(onSectionChanged);
         EventBus<OnRoadStageChanged>.Register(onStageChanged);
     }
 
@@ -36,14 +39,29 @@ public class SpawnManager : MonoBehaviour
     {
         StopSpawning();
         sequentialPatternIndex = 0;
-        PrewarmForStage(levelManager.CurrentStage);
         StartSpawning();
+    }
+
+    private void Start()
+    {
+        StopSpawning();
+        sequentialPatternIndex = 0;
+        StartSpawning();
+    }
+
+    private void HandleRoadSectionChanged(OnRoadSectionChanged e)
+    {
+        sequentialPatternIndex = 0;
+        currentWaveConfig = e.roadSection.waveConfig;
+
+        Prewarm(currentWaveConfig);
     }
 
     private void HandleStageChanged(OnRoadStageChanged e)
     {
         sequentialPatternIndex = 0;
-        PrewarmForStage(e.stage);
+        currentWaveConfig = e.stage.waveConfig;
+        Prewarm(currentWaveConfig);
     }
 
     private void HandleLevelCompleted(OnLevelCompletedEvent e)
@@ -58,25 +76,29 @@ public class SpawnManager : MonoBehaviour
 
     // ── Prewarming ──────────────────────────────────────────────────────
 
-    private void PrewarmForStage(LevelStage stage)
+    private void Prewarm(WaveConfig waveConfig)
     {
-        var waveConfig = stage?.waveConfig;
-        if (waveConfig == null) return;
+        if (waveConfig == null)
+            return;
 
         foreach (var pattern in waveConfig.patterns)
         {
-            if (pattern == null) continue;
+            if (pattern == null)
+                continue;
 
             foreach (var entry in pattern.spawns)
             {
                 if (entry.obstacleConfig != null)
-                    pool.Prewarm(entry.obstacleConfig, worldSpeed);
+                {
+                    pool.Prewarm(
+                        entry.obstacleConfig,
+                        worldSpeed);
+                }
             }
         }
     }
 
     // ── Spawn loop ──────────────────────────────────────────────────────
-
     private void StartSpawning()
     {
         spawnCoroutine = StartCoroutine(SpawnLoop());
@@ -93,19 +115,21 @@ public class SpawnManager : MonoBehaviour
     {
         while (true)
         {
-            // Leer la stage activa en cada iteración para capturar cambios.
-            var waveConfig = levelManager.CurrentStage?.waveConfig;
-
-            if (waveConfig == null || waveConfig.patterns == null || waveConfig.patterns.Length == 0)
+            if (currentWaveConfig == null ||
+                currentWaveConfig.patterns == null ||
+                currentWaveConfig.patterns.Length == 0)
             {
-                yield return new WaitForSeconds(1f);
+                yield return null;
                 continue;
             }
 
-            SpawnPattern pattern = PickPattern(waveConfig);
-            yield return StartCoroutine(ExecutePattern(pattern));
+            SpawnPattern pattern =
+                PickPattern(currentWaveConfig);
 
-            yield return new WaitForSeconds(waveConfig.timeBetweenWaves);
+            yield return ExecutePattern(pattern);
+
+            yield return new WaitForSeconds(
+                currentWaveConfig.timeBetweenWaves);
         }
     }
 
@@ -143,7 +167,7 @@ public class SpawnManager : MonoBehaviour
     {
         Obstacle obstacle = pool.Get(entry.obstacleConfig, worldSpeed);
         Transform[] lanes = entry.obstacleConfig.spawnSide == ObstacleConfig.SpawnSide.Front ? frontLanes : rearLanes;
-        Transform lane = lanes[entry.laneIndex];
+        Transform lane = lanes[entry.laneIndex].GetComponentInChildren<Transform>();
 
         obstacle.transform.SetParent(lane, worldPositionStays: false);
         obstacle.transform.localPosition = Vector3.zero;
@@ -157,6 +181,7 @@ public class SpawnManager : MonoBehaviour
     {
         EventBus<OnLevelStartEvent>.Deregister(onLevelStart);
         EventBus<OnLevelCompletedEvent>.Deregister(onLevelCompleted);
+        EventBus<OnRoadSectionChanged>.Deregister(onSectionChanged);
         EventBus<OnRoadStageChanged>.Deregister(onStageChanged);
         StopSpawning();
     }

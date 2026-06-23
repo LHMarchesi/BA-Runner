@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea8d79229d23edf4791d6c46bb48002c, type: 3}
+  m_Name: WaveConfig 1
+  m_EditorClassIdentifier: Assembly-CSharp::WaveConfig
+  patterns:
+  - {fileID: 11400000, guid: 5e5d7f1d9a5c11e4595edbe343655d15, type: 2}
+  - {fileID: 11400000, guid: 91e3bc31fc875be4caf9685702e1b532, type: 2}
+  - {fileID: 11400000, guid: b4f452e71d1bdce42ae293deec436f98, type: 2}
+  - {fileID: 11400000, guid: a780f1a55e68edf489a32f0f4c07ae47, type: 2}
+  - {fileID: 11400000, guid: f9738483ad38bd641b1ec6fd8058c3ad, type: 2}
+  - {fileID: 11400000, guid: 4b65077ea1df03f45bbb1387683511c3, type: 2}
+  randomizeOrder: 1
+  timeBetweenWaves: 2
