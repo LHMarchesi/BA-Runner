@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa7792cd6221c7d4c8f51bb26b31ea3c, type: 3}
+  m_Name: Survival
+  m_EditorClassIdentifier: Assembly-CSharp::Level_Scriptable
+  Variants: []
+  DefaultNextLevel: {fileID: 0}
+  maxLevelProgession: 999
+  levelMusic: {fileID: 0}
+  levelBackground: {fileID: -2766439190625139700, guid: 6d7e9361c78fa7c4caf92a857fb501d4, type: 3}
+  winLevelImage: {fileID: -1417863568847704615, guid: e09e3ad1a6089744dbb9a891eea4d578, type: 3}
+  stages:
+  - stageName: 
+    speedData: {fileID: 11400000, guid: 33b0c508177c1a142be8b48318a9b72e, type: 2}
+    waveConfig: {fileID: 11400000, guid: 1b0233f6b19bdeb44ba56f4f0b4fb7d7, type: 2}
+    progressionRequired: 0
+    displayedSpeed: 40
+  - stageName: 
+    speedData: {fileID: 11400000, guid: 33b0c508177c1a142be8b48318a9b72e, type: 2}
+    waveConfig: {fileID: 11400000, guid: 1b0233f6b19bdeb44ba56f4f0b4fb7d7, type: 2}
+    progressionRequired: 0.094
+    displayedSpeed: 40
+  introDialogueGraph: {fileID: 0}
+  outroDialogueGraph: {fileID: 0}

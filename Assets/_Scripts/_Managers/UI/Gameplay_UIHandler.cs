@@ -24,7 +24,7 @@ public class Gameplay_UIHandler : MonoBehaviour
 
     EventBinding<OnLevelCompletedEvent> levelResultBinding;
     EventBinding<OnPlayerDeathEvent> playerDeathBinding;
-
+    private EventBinding<OnRoadEnvironmentChanged> envBinding;
     private void OnEnable()
     {
         InitializeEvents();
@@ -122,9 +122,28 @@ public class Gameplay_UIHandler : MonoBehaviour
         winBtnContinue.gameObject.SetActive(true);
     }
 
+    private void OnEnvironmentChanged(OnRoadEnvironmentChanged e)
+    {
+        StartCoroutine(TransitionBackground(e.environmentPreset));
+    }
+
+    private IEnumerator TransitionBackground(EnvironmentPreset env)
+    {
+        if (env == null || env.background == null)
+            yield break;
+
+        yield return BackgroundImage.DOFade(0, 0.25f).WaitForCompletion();
+
+        BackgroundImage.sprite = env.background;
+
+        yield return BackgroundImage.DOFade(1, 0.25f).WaitForCompletion();
+    }
 
     void InitializeEvents()
     {
+        envBinding = new EventBinding<OnRoadEnvironmentChanged>(OnEnvironmentChanged);
+        EventBus<OnRoadEnvironmentChanged>.Register(envBinding);
+
         levelResultBinding = new EventBinding<OnLevelCompletedEvent>(OnLevelResult);
         EventBus<OnLevelCompletedEvent>.Register(levelResultBinding);
 

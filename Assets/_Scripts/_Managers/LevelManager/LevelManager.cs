@@ -3,6 +3,7 @@ using System.Xml;
 using TMPro;
 using UnityEditor.SceneManagement;
 using UnityEngine;
+using static System.Collections.Specialized.BitVector32;
 
 public class LevelManager : MonoBehaviour
 {
@@ -31,21 +32,40 @@ public class LevelManager : MonoBehaviour
         EventBus<OnLevelUpdateEvent>.Register(OnLevelUpdateEvent);
     }
 
+    private void OnDisable()
+    {
+        EventBus<OnLevelStartEvent>.Deregister(OnLevelStartEvent);
+        EventBus<OnLevelUpdateEvent>.Deregister(OnLevelUpdateEvent);
+    }
+
     private void OnLevelUpdate(OnLevelUpdateEvent e)
     {
         IncreaseLevelProgession();
         CheckStageProgress();
         e.levelProgession = levelProgession;
     }
+
     private void OnLevelStart(OnLevelStartEvent e)
     {
         levelProgession = 0;
         completionTime = 0;
         currentStageIndex = 0;
         levelCompleted = false;
-
         currentStage = currentLevel.stages[0];
         WorldSpeed.SetSpeedData(currentStage.speedData);
+       
+        EventBus<OnRoadEnvironmentChanged>.Raise(
+          new OnRoadEnvironmentChanged
+          {
+              environmentPreset = currentStage.environment
+          });
+        EventBus<OnRoadStageChanged>.Raise(
+    new OnRoadStageChanged
+    {
+        stage = currentStage
+    });
+
+
         ShowSpeedSign(currentStage);
     }
 
@@ -64,6 +84,11 @@ public class LevelManager : MonoBehaviour
 
         if (normalized >= nextStage.progressionRequired)
         {
+               EventBus<OnRoadEnvironmentChanged>.Raise(
+             new OnRoadEnvironmentChanged
+            {
+                environmentPreset = nextStage.environment
+            });
             currentStageIndex++;
             EventBus<OnRoadStageChanged>.Raise(
                 new OnRoadStageChanged

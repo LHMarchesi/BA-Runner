@@ -46,6 +46,8 @@ public class LevelStage
 
     [Header("Sign")]
     public int displayedSpeed;
+
+    public EnvironmentPreset environment;
 }
 
 
