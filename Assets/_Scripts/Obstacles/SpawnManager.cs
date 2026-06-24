@@ -42,6 +42,13 @@ public class SpawnManager : MonoBehaviour
         StartSpawning();
     }
 
+    private void Start()
+    {
+        StopSpawning();
+        sequentialPatternIndex = 0;
+        StartSpawning();
+    }
+
 
     private void HandleRoadSectionChanged(OnRoadSectionChanged e)
     {

@@ -1,8 +1,10 @@
 using DG.Tweening;
 using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
 public class SurvivalUIManager : MonoBehaviour
@@ -17,6 +19,7 @@ public class SurvivalUIManager : MonoBehaviour
 
     [Header("End Screen")]
     [SerializeField] private GameObject endScreen;
+    [SerializeField] private InputField enterNameField;
 
     private EventBinding<OnRoadEnvironmentChanged> envBinding;
     private EventBinding<OnPlayerDeathEvent> onDeathBinding;
@@ -100,6 +103,7 @@ public class SurvivalUIManager : MonoBehaviour
     
     private void OnUpdateEvent(OnLevelUpdateEvent e)
     {
+        lastScore = e.score;
         scoreText.text = $"SCORE: {e.score}";
         distanceText.text = $"DISTANCE: {e.distance:0.0} m";
         loopText.text = $"STAGE: {e.loops}";
@@ -109,18 +113,29 @@ public class SurvivalUIManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI countDownText;
     [SerializeField] Image countDown;
     [SerializeField] AudioClip countdownBeep;
-
+    [SerializeField] LeaderboardUI leaderboardUI;
+    private bool scoreSaved;
+    private float lastScore;
     IEnumerator LoseSequence()
     {
         endScreen.gameObject.SetActive(true);
         despedidoImage.gameObject.SetActive(true);
+        enterNameField.gameObject.SetActive(false);
         despedidoImage.color = new Color(1, 1, 1, 0);
 
         yield return despedidoImage.DOFade(1, 0.5f).WaitForCompletion();
 
         yield return new WaitForSeconds(3f);
 
+
+        bool isHighScore =
+    LeaderBoardManager.IsHighScore(lastScore);
+
+        enterNameField.gameObject.SetActive(isHighScore);
+
         // Mostrar countdown
+
+
         countDown.gameObject.SetActive(true);
         countDownText.gameObject.SetActive(true);
         countDown.color = new Color(1, 1, 1, 0);
@@ -144,7 +159,24 @@ public class SurvivalUIManager : MonoBehaviour
         SceneManager.LoadScene("SampleScene");
         GameManager.Instance.ChangeState(GameState.Playing);
     }
+    public void SaveScore()
+    {
+        if (scoreSaved)
+            return;
 
+        string playerName = enterNameField.text.Trim();
+
+        if (string.IsNullOrEmpty(playerName))
+            playerName = "PLAYER";
+
+        LeaderBoardManager.AddScore(playerName, lastScore);
+
+        scoreSaved = true;
+
+        enterNameField.gameObject.SetActive(false);
+
+        leaderboardUI.Refresh();
+    }
     #endregion
 
     private void OnDisable()

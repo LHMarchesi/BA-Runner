@@ -14,6 +14,7 @@ public class SurvivalState : IState
     public void Awake()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
+        EventBus<OnLevelStartEvent>.Raise(new OnLevelStartEvent { });
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -23,7 +24,8 @@ public class SurvivalState : IState
         AudioManager.Instance.PlayMusic(AudioManager.Instance.survivalSong);
 
         SceneManager.sceneLoaded -= OnSceneLoaded;
-        EventBus<OnLevelStartEvent>.Raise(new OnLevelStartEvent { });
+
+        
 
         Debug.WriteLine("enter survival State");
     }
