@@ -3273,6 +3273,8 @@ MonoBehaviour:
     waveConfig: {fileID: 0}
     progressionRequired: 0
     displayedSpeed: 0
+    environment:
+      background: {fileID: 0}
   WorldSpeed: {fileID: 1307682262}
 --- !u!4 &1332032281
 Transform:
@@ -3966,7 +3968,6 @@ MonoBehaviour:
   - {fileID: 1199130220}
   - {fileID: 1121086004}
   worldSpeed: {fileID: 1307682262}
-  levelManager: {fileID: 1332032280}
 --- !u!4 &1805791355
 Transform:
   m_ObjectHideFlags: 0
