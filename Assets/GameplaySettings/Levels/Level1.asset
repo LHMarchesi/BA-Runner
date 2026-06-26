@@ -28,29 +28,8 @@ MonoBehaviour:
   - stageName: 1%
     speedData: {fileID: 11400000, guid: 33b0c508177c1a142be8b48318a9b72e, type: 2}
     waveConfig: {fileID: 11400000, guid: 1b0233f6b19bdeb44ba56f4f0b4fb7d7, type: 2}
-    progressionRequired: 0.001
-    displayedSpeed: 40
-    environment:
-      background: {fileID: -2766439190625139700, guid: 6d7e9361c78fa7c4caf92a857fb501d4, type: 3}
-  - stageName: 15%
-    speedData: {fileID: 11400000, guid: ff98cf3aa638e934aab866d252848f99, type: 2}
-    waveConfig: {fileID: 11400000, guid: 1b0233f6b19bdeb44ba56f4f0b4fb7d7, type: 2}
-    progressionRequired: 0.323
+    progressionRequired: 0
     displayedSpeed: 60
-    environment:
-      background: {fileID: -7802648845587964238, guid: 74cf73889da21224c972f153ebc4ad94, type: 3}
-  - stageName: 50%
-    speedData: {fileID: 11400000, guid: 99fcfe5ddf168764ebbb219e3b2a61d6, type: 2}
-    waveConfig: {fileID: 11400000, guid: 1b0233f6b19bdeb44ba56f4f0b4fb7d7, type: 2}
-    progressionRequired: 0.5
-    displayedSpeed: 90
-    environment:
-      background: {fileID: 9104194065543597027, guid: 9dcc0368de793f04dbcd50c9f5ee0b60, type: 3}
-  - stageName: 80%
-    speedData: {fileID: 11400000, guid: a5f14f9e38b6aae489cd0b9d94ab2934, type: 2}
-    waveConfig: {fileID: 11400000, guid: 1b0233f6b19bdeb44ba56f4f0b4fb7d7, type: 2}
-    progressionRequired: 0.854
-    displayedSpeed: 110
     environment:
       background: {fileID: -2766439190625139700, guid: 6d7e9361c78fa7c4caf92a857fb501d4, type: 3}
   introDialogueGraph: {fileID: 3965311268370046156, guid: 839641f325c648e4a881fecd28a71a77, type: 3}
