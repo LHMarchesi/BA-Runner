@@ -76,6 +76,9 @@ public class MainMenu_UiHandler : MonoBehaviour
 
     private void OnDisable()
     {
+        navigateAction.action.performed -= OnNavigate;
+        submitAction.action.performed -= OnSubmit;
+
         EventBus<OnEnterMenuEvent>.Deregister(onEnterMenuBinding);
     }
 

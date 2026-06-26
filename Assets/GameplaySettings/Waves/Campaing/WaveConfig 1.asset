@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ea8d79229d23edf4791d6c46bb48002c, type: 3}
-  m_Name: WaveConfig
+  m_Name: WaveConfig 1
   m_EditorClassIdentifier: Assembly-CSharp::WaveConfig
   patterns:
   - {fileID: 11400000, guid: 5e5d7f1d9a5c11e4595edbe343655d15, type: 2}
