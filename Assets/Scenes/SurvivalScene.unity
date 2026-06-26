@@ -699,7 +699,6 @@ GameObject:
   - component: {fileID: 179452614}
   - component: {fileID: 179452618}
   - component: {fileID: 179452617}
-  - component: {fileID: 179452616}
   - component: {fileID: 179452615}
   m_Layer: 0
   m_Name: Edificios Parallax
@@ -736,21 +735,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Parallax
   Speed: 0.5
---- !u!114 &179452616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 179452613}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 444757c7f30da3845a9999021d4d10dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BasicLateralMovement
-  speed: 0.5
-  isUsingSpeedData: 0
-  worldSpeed: {fileID: 73024254}
 --- !u!23 &179452617
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3837,7 +3821,6 @@ GameObject:
   - component: {fileID: 1811387236}
   - component: {fileID: 1811387240}
   - component: {fileID: 1811387239}
-  - component: {fileID: 1811387238}
   - component: {fileID: 1811387241}
   m_Layer: 0
   m_Name: Background
@@ -3861,21 +3844,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1114253415}
   m_LocalEulerAnglesHint: {x: 90, y: 180, z: 0}
---- !u!114 &1811387238
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1811387235}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 444757c7f30da3845a9999021d4d10dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BasicLateralMovement
-  speed: 0.01
-  isUsingSpeedData: 0
-  worldSpeed: {fileID: 73024254}
 --- !u!23 &1811387239
 MeshRenderer:
   m_ObjectHideFlags: 0
