@@ -8,9 +8,11 @@ public class SceneTransition : MonoBehaviour
     [SerializeField] private Image imageToFade;
     [SerializeField] private float fadeDuration = 0.5f;
     [SerializeField] private bool clearNarrativeFlags;
-    public enum transitionTo { MainMenu, Gameplay, Cinematics, Credits, Survival }
+    public enum transitionTo { MainMenu, Gameplay, Cinematics, Credits, Survival, Exit }
     public transitionTo transitionTarget;
-    public void StartTransition()
+
+
+    public void StartTransition(transitionTo transition)
     {
         if (imageToFade == null)
         {
@@ -21,32 +23,41 @@ public class SceneTransition : MonoBehaviour
         imageToFade.DOFade(1f, fadeDuration).OnComplete(() =>
         {
             string sceneToLoad = "";
-            switch (transitionTarget)
+
+            switch (transition)
             {
                 case transitionTo.MainMenu:
                     sceneToLoad = "Menu";
                     GameManager.Instance.ChangeState(GameState.MainMenu);
                     break;
+
                 case transitionTo.Gameplay:
                     sceneToLoad = "SampleScene";
                     GameManager.Instance.ChangeState(GameState.Playing);
                     break;
+
                 case transitionTo.Cinematics:
-                    if (clearNarrativeFlags) ProgressionManager.Instance.ResetProgress();
+                    if (clearNarrativeFlags)
+                        ProgressionManager.Instance.ResetProgress();
+
                     sceneToLoad = "CinematicsScene";
                     GameManager.Instance.ChangeState(GameState.Cinematic);
                     break;
+
                 case transitionTo.Credits:
                     sceneToLoad = "CreditsScene";
-                    //GameManager.Instance.ChangeState(GameState.Credits);
                     break;
+
                 case transitionTo.Survival:
                     sceneToLoad = "SurvivalScene";
                     GameManager.Instance.ChangeState(GameState.Survival);
                     break;
-                default:
-                    break;
+
+                case transitionTo.Exit:
+                    Application.Quit();
+                    return;
             }
+
             SceneManager.LoadScene(sceneToLoad);
         });
     }
