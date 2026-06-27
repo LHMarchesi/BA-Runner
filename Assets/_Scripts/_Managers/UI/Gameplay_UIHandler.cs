@@ -165,6 +165,7 @@ public class Gameplay_UIHandler : MonoBehaviour
     private void OnDisable()
     {
         EventBus<OnLevelCompletedEvent>.Deregister(levelResultBinding);
+        EventBus<OnRoadEnvironmentChanged>.Deregister(envBinding);
         EventBus<OnPlayerDeathEvent>.Deregister(playerDeathBinding);
     }
 }

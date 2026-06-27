@@ -23,7 +23,7 @@ MonoBehaviour:
   maxLevelProgession: 100
   levelMusic: {fileID: 8300000, guid: ee672d7e8b91c8d4d82339c058e2fb2e, type: 3}
   levelBackground: {fileID: -2766439190625139700, guid: 6d7e9361c78fa7c4caf92a857fb501d4, type: 3}
-  winLevelImage: {fileID: -2050412739486785372, guid: 1af6e7653d9c258499c01435be889df7, type: 3}
+  winLevelImage: {fileID: 1456492039419807305, guid: 558b9754aeb34cb45893db9274a8ef6e, type: 3}
   stages:
   - stageName: 1%
     speedData: {fileID: 11400000, guid: 33b0c508177c1a142be8b48318a9b72e, type: 2}
