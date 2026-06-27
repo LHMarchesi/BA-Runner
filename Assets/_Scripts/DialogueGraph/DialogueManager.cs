@@ -29,6 +29,7 @@ public class DialogueManager : MonoBehaviour
     public Slider delayProgressBar;
     private Coroutine autoAdvanceCoroutine;
     private bool isOutro;
+    private bool dialogueEnded;
 
     private void Start()
     {
@@ -59,6 +60,7 @@ public class DialogueManager : MonoBehaviour
 
     private void InitializeNode()
     {
+        dialogueEnded = false;
         foreach (var node in CurrentRuntimeGraph.AllNodes)
         {
             nodeLookup[node.NodeID] = node;
@@ -128,6 +130,7 @@ public class DialogueManager : MonoBehaviour
     private void EndDialogue()
     {
         continueButton.gameObject.SetActive(true);
+        dialogueEnded = true;
         continueButton.onClick.RemoveAllListeners();
         continueButton.onClick.AddListener(() =>
         {
@@ -221,10 +224,32 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
-        if (Mouse.current.leftButton.wasPressedThisFrame && currentNode != null && currentNode.Choices.Count == 0)
+        bool mousePressed =
+        Mouse.current != null &&
+        Mouse.current.leftButton.wasPressedThisFrame;
+
+        bool keyPressed =
+            Keyboard.current != null &&
+            Keyboard.current.anyKey.wasPressedThisFrame;
+
+        if (!mousePressed && !keyPressed)
+            return;
+
+        if (dialogueEnded)
         {
-            AdvanceNode();
+            OnContinuePressed();
+            return;
+        }
+
+        if (currentNode == null)
+            return;
+
+        if (currentNode.Choices.Count == 0)
+        {
+            if (string.IsNullOrEmpty(currentNode.NextNodeID))
+                OnContinuePressed();
+            else
+                AdvanceNode();
         }
     }
-
 }

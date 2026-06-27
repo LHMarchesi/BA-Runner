@@ -61,4 +61,53 @@ public class SceneTransition : MonoBehaviour
             SceneManager.LoadScene(sceneToLoad);
         });
     }
+    public void StartTransition( )
+    {
+        if (imageToFade == null)
+        {
+            Debug.LogWarning("No has asignado ninguna imagen para el Fade Out.");
+            return;
+        }
+
+        imageToFade.DOFade(1f, fadeDuration).OnComplete(() =>
+        {
+            string sceneToLoad = "";
+
+            switch (transitionTarget)
+            {
+                case transitionTo.MainMenu:
+                    sceneToLoad = "Menu";
+                    GameManager.Instance.ChangeState(GameState.MainMenu);
+                    break;
+
+                case transitionTo.Gameplay:
+                    sceneToLoad = "SampleScene";
+                    GameManager.Instance.ChangeState(GameState.Playing);
+                    break;
+
+                case transitionTo.Cinematics:
+                    if (clearNarrativeFlags)
+                        ProgressionManager.Instance.ResetProgress();
+
+                    sceneToLoad = "CinematicsScene";
+                    GameManager.Instance.ChangeState(GameState.Cinematic);
+                    break;
+
+                case transitionTo.Credits:
+                    sceneToLoad = "CreditsScene";
+                    break;
+
+                case transitionTo.Survival:
+                    sceneToLoad = "SurvivalScene";
+                    GameManager.Instance.ChangeState(GameState.Survival);
+                    break;
+
+                case transitionTo.Exit:
+                    Application.Quit();
+                    return;
+            }
+
+            SceneManager.LoadScene(sceneToLoad);
+        });
+    }
 }
