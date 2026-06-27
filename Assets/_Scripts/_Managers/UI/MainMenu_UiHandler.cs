@@ -9,7 +9,7 @@ public class MainMenu_UiHandler : MonoBehaviour
     [SerializeField] Image pressAnyKeyimage;
     [SerializeField] private Button[] buttons;
     [SerializeField] private RectTransform indicator;
-    [SerializeField] RawImage modeSelectImage;
+    [SerializeField] Image modeSelectImage;
     [SerializeField] Image firstBackgroundImage;
     private int currentButtonIndex = 0;
     [SerializeField] AudioClip menuAppearSFX;
@@ -151,9 +151,6 @@ public class MainMenu_UiHandler : MonoBehaviour
 
         Sequence seqq = DOTween.Sequence();
         modeSelectImage.gameObject.SetActive(true);
-        Color c = modeSelectImage.color;
-        c.a = 0f;
-        modeSelectImage.color = c;
         seqq.Append(modeSelectImage.DOFade(1f, 1.35f));
         for (int i = 0; i < buttons.Length; i++)
         {
