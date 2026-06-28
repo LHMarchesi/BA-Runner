@@ -1,25 +1,16 @@
 fileFormatVersion: 2
-guid: 6ec99a3924ef6f544aaa5fe2976d8fa7
+guid: a1889e6729d999047bd171257edf0af1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4289961280963518489
-    second: Pv8HBC_0
+      213: 6424889891442532904
+    second: Layer_2_0
   - first:
-      213: -5422990340388989581
-    second: Pv8HBC_1
+      213: 6283109615319886965
+    second: Layer_2_1
   - first:
-      213: -6743163649959358971
-    second: Pv8HBC_2
-  - first:
-      213: 2636094839791372260
-    second: Pv8HBC_3
-  - first:
-      213: -8727440495744248002
-    second: Pv8HBC_4
-  - first:
-      213: -237651597998008425
-    second: Pv8HBC_5
+      213: -222009130528700703
+    second: Layer_2_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -61,7 +52,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -115,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Pv8HBC_0
+      name: Layer_2_0
       rect:
         serializedVersion: 2
-        x: 473
-        y: 275
-        width: 64
-        height: 42
+        x: 195
+        y: 0
+        width: 454
+        height: 1048
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,20 +121,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7ef5df3b1fef674c0800000000000000
-      internalID: -4289961280963518489
+      spriteID: 8222e64d05bc92950800000000000000
+      internalID: 6424889891442532904
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pv8HBC_1
+      name: Layer_2_1
       rect:
         serializedVersion: 2
-        x: 527
-        y: 303
-        width: 12
-        height: 12
+        x: 1008
+        y: 75
+        width: 608
+        height: 909
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3755db4840badb4b0800000000000000
-      internalID: -5422990340388989581
+      spriteID: 57cabf1e7e6123750800000000000000
+      internalID: 6283109615319886965
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pv8HBC_2
+      name: Layer_2_2
       rect:
         serializedVersion: 2
-        x: 31
-        y: 209
-        width: 118
-        height: 58
+        x: 2600
+        y: 145
+        width: 502
+        height: 935
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,74 +165,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 50e88dd13687b62a0800000000000000
-      internalID: -6743163649959358971
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pv8HBC_3
-      rect:
-        serializedVersion: 2
-        x: 117
-        y: 257
-        width: 20
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4e741084a4a459420800000000000000
-      internalID: 2636094839791372260
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pv8HBC_4
-      rect:
-        serializedVersion: 2
-        x: 197
-        y: 197
-        width: 252
-        height: 88
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e371ecceb17e1e680800000000000000
-      internalID: -8727440495744248002
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pv8HBC_5
-      rect:
-        serializedVersion: 2
-        x: 525
-        y: 205
-        width: 94
-        height: 52
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 79756097121b3bcf0800000000000000
-      internalID: -237651597998008425
+      spriteID: 1e681fd3fd34becf0800000000000000
+      internalID: -222009130528700703
       vertices: []
       indices: 
       edges: []
@@ -250,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -260,12 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Pv8HBC_0: -4289961280963518489
-      Pv8HBC_1: -5422990340388989581
-      Pv8HBC_2: -6743163649959358971
-      Pv8HBC_3: 2636094839791372260
-      Pv8HBC_4: -8727440495744248002
-      Pv8HBC_5: -237651597998008425
+      Layer_2_0: 6424889891442532904
+      Layer_2_1: 6283109615319886965
+      Layer_2_2: -222009130528700703
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
