@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 public enum GameState
 {
@@ -19,6 +20,7 @@ public class GameManager : MonoBehaviour
 
     EventBinding<OnLevelCompletedEvent> levelResultBinding;
     EventBinding<OnPlayerDeathEvent> playerDeathBinding;
+    EventBinding<OnPauseEvent> pauseBinding;
 
     private void OnEnable()
     {
@@ -28,6 +30,7 @@ public class GameManager : MonoBehaviour
         playerDeathBinding = new EventBinding<OnPlayerDeathEvent>(OnPlayerDeath);
         EventBus<OnPlayerDeathEvent>.Register(playerDeathBinding);
     }
+
 
     private void Awake()
     {

@@ -1,4 +1,5 @@
 using DG.Tweening;
+using System;
 using System.Collections;
 using TMPro;
 using Unity.VisualScripting;
@@ -20,11 +21,13 @@ public class SurvivalUIManager : MonoBehaviour
     [Header("End Screen")]
     [SerializeField] private GameObject endScreen;
     [SerializeField] private InputField enterNameField;
+    [SerializeField] private GameObject PausePanel;
 
     private EventBinding<OnRoadEnvironmentChanged> envBinding;
     private EventBinding<OnPlayerDeathEvent> onDeathBinding;
     private EventBinding<OnRoadSectionChanged> sectionBinding;
     private EventBinding<OnLevelUpdateEvent> updateEventBinding;
+    private EventBinding<OnPauseEvent> pauseEventBinding;
 
     private void OnEnable()
     {
@@ -37,6 +40,26 @@ public class SurvivalUIManager : MonoBehaviour
         updateEventBinding = new EventBinding<OnLevelUpdateEvent>(OnUpdateEvent);
         EventBus<OnLevelUpdateEvent>.Register(updateEventBinding);
 
+        pauseEventBinding = new EventBinding<OnPauseEvent>(OnPauseEventTriggered);
+        EventBus<OnPauseEvent>.Register(pauseEventBinding);
+
+    }
+
+    public void ResumeGame()
+    {
+        GameManager.Instance.ChangeState(GameState.Playing);
+    }
+
+    private void OnPauseEventTriggered(OnPauseEvent @event)
+    {
+        if (@event.isPaused)
+        {
+            PausePanel.SetActive(true);
+        }
+        else
+        {
+            PausePanel.SetActive(false);
+        }
     }
 
     private void Start()
@@ -184,5 +207,6 @@ public class SurvivalUIManager : MonoBehaviour
         EventBus<OnRoadEnvironmentChanged>.Deregister(envBinding);
         EventBus<OnPlayerDeathEvent>.Deregister(onDeathBinding);
         EventBus<OnRoadSectionChanged>.Deregister(sectionBinding);
+        EventBus<OnPauseEvent>.Deregister(pauseEventBinding);
     }
 }

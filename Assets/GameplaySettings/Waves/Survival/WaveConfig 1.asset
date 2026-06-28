@@ -19,5 +19,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a780f1a55e68edf489a32f0f4c07ae47, type: 2}
   - {fileID: 11400000, guid: f9738483ad38bd641b1ec6fd8058c3ad, type: 2}
   - {fileID: 11400000, guid: 4b65077ea1df03f45bbb1387683511c3, type: 2}
-  randomizeOrder: 1
-  timeBetweenWaves: 2
+  randomizeOrder: 0
+  timeBetweenWaves: 4
