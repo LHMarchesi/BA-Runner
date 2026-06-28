@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: LaneChangerFrom3_4
   m_EditorClassIdentifier: Assembly-CSharp::SpawnPattern
   spawns:
-  - obstacleConfig: {fileID: 11400000, guid: ff3af140f3daf9a4ab8ed054b369f92b, type: 2}
+  - obstacleConfig: {fileID: 11400000, guid: 79eabdeec81e55444926e8b7d88ec327, type: 2}
     laneIndex: 2
     delay: 0
     positionOffset: {x: 0, y: 0}

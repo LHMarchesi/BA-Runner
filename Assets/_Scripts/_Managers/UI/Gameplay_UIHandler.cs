@@ -12,6 +12,7 @@ public class Gameplay_UIHandler : MonoBehaviour
     [SerializeField] GameObject winBtnContinue;
     [SerializeField] Image BackgroundImage;
     [SerializeField] Image despedidoImage;
+    [SerializeField] GameObject pausePanel;
     [SerializeField] Image countDown;
     [SerializeField] Image WinImage;
     [SerializeField] Image[] stars;
@@ -25,9 +26,23 @@ public class Gameplay_UIHandler : MonoBehaviour
     EventBinding<OnLevelCompletedEvent> levelResultBinding;
     EventBinding<OnPlayerDeathEvent> playerDeathBinding;
     private EventBinding<OnRoadEnvironmentChanged> envBinding;
+    private EventBinding<OnPauseEvent> pauseEventBinding;
     private void OnEnable()
     {
         InitializeEvents();
+
+    }
+
+    private void OnPauseEventTriggered(OnPauseEvent @event)
+    {
+        if (@event.isPaused)
+        {
+            pausePanel.SetActive(true);
+        }
+        else
+        {
+            pausePanel.SetActive(false);
+        }
     }
 
     private void Start()
@@ -39,6 +54,11 @@ public class Gameplay_UIHandler : MonoBehaviour
         {
             BackgroundImage.sprite = currentLevel.levelBackground;
         }
+    }
+
+    public void ResumeGame()
+    {
+        GameManager.Instance.ChangeState(GameState.Playing);
     }
     IEnumerator LoseSequence()
     {
@@ -149,6 +169,9 @@ public class Gameplay_UIHandler : MonoBehaviour
 
         playerDeathBinding = new EventBinding<OnPlayerDeathEvent>(OnPlayerDeath);
         EventBus<OnPlayerDeathEvent>.Register(playerDeathBinding);
+
+        pauseEventBinding = new EventBinding<OnPauseEvent>(OnPauseEventTriggered);
+        EventBus<OnPauseEvent>.Register(pauseEventBinding);
     }
 
     void OnLevelResult(OnLevelCompletedEvent e)
