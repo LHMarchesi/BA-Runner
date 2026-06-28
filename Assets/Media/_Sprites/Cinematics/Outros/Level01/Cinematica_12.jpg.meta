@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 56f2a105208521a4fa1285ac80a1ca71
+guid: 95d6f8bc2b7d8fe42a20c7e18e10b780
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5655291303808057538
-    second: General_Paz_vista_larga_0
+      213: -931778331248522076
+    second: Cinematica_12_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -40,9 +40,9 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
-    wrapW: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -113,12 +113,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: General_Paz_vista_larga_0
+      name: Cinematica_12_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 3768
+        width: 1920
         height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2c0c5d05a71ab7e40800000000000000
-      internalID: 5655291303808057538
+      spriteID: 4ac86846b88a113f0800000000000000
+      internalID: -931778331248522076
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      General_Paz_vista_larga_0: 5655291303808057538
+      Cinematica_12_0: -931778331248522076
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

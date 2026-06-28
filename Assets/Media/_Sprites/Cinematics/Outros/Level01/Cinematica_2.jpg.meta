@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9dcc0368de793f04dbcd50c9f5ee0b60
+guid: a3e04f0c5fae1294da90a0ad33e537c0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 9104194065543597027
-    second: MediaGeneralPaz_0
+      213: -6892754390172367641
+    second: Cinematica_2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MediaGeneralPaz_0
+      name: Cinematica_2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1306
-        height: 734
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3eb02fa3448985e70800000000000000
-      internalID: 9104194065543597027
+      spriteID: 7e403c9c6640850a0800000000000000
+      internalID: -6892754390172367641
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      MediaGeneralPaz_0: 9104194065543597027
+      Cinematica_2_0: -6892754390172367641
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

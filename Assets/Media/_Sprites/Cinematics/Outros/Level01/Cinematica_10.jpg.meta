@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8e34dd3585fb9d743a12ef5b37762067
+guid: a60509125a7c7d14fb81ea459f7d8ed3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 9032018868289725615
-    second: Pantalla_de_inicio_final_0
+      213: -8124489774069408519
+    second: Cinematica_10_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Pantalla_de_inicio_final_0
+      name: Cinematica_10_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fa4e8099e4d285d70800000000000000
-      internalID: 9032018868289725615
+      spriteID: 9fc9c4b8893004f80800000000000000
+      internalID: -8124489774069408519
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Pantalla_de_inicio_final_0: 9032018868289725615
+      Cinematica_10_0: -8124489774069408519
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

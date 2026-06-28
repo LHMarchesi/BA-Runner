@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e09e3ad1a6089744dbb9a891eea4d578
+guid: 5e79e5038c6f12742b4db583d6d36183
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1417863568847704615
-    second: Pantalla_de_victoria_lv2_0
+      213: 5379443176516234194
+    second: Cinematica_14_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Pantalla_de_victoria_lv2_0
+      name: Cinematica_14_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9dd6dd6a89cb25ce0800000000000000
-      internalID: -1417863568847704615
+      spriteID: 2db26a9411f97aa40800000000000000
+      internalID: 5379443176516234194
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Pantalla_de_victoria_lv2_0: -1417863568847704615
+      Cinematica_14_0: 5379443176516234194
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
