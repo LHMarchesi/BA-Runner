@@ -32,5 +32,5 @@ MonoBehaviour:
     displayedSpeed: 60
     environment:
       background: {fileID: -2766439190625139700, guid: 6d7e9361c78fa7c4caf92a857fb501d4, type: 3}
-  introDialogueGraph: {fileID: 3965311268370046156, guid: 839641f325c648e4a881fecd28a71a77, type: 3}
+  introDialogueGraph: {fileID: 3965311268370046156, guid: 15ec117d145092e49b142ac23de4af66, type: 3}
   outroDialogueGraph: {fileID: 3965311268370046156, guid: cf14786d26cb8e24dacaed5723289f20, type: 3}
