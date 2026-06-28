@@ -716,8 +716,8 @@ Transform:
   m_GameObject: {fileID: 179452613}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0.7071068, w: 0}
-  m_LocalPosition: {x: 39, y: 161, z: -21}
-  m_LocalScale: {x: 204.74, y: 0.9816043, z: 75.508026}
+  m_LocalPosition: {x: -155, y: -50, z: -21}
+  m_LocalScale: {x: 154.24927, y: 0.502395, z: 38.645767}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1114253415}
@@ -2819,8 +2819,8 @@ Transform:
   m_GameObject: {fileID: 1023796351}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0.7071068, w: 0}
-  m_LocalPosition: {x: 51, y: 52, z: -19}
-  m_LocalScale: {x: 215.7, y: 1.0341508, z: 79.550064}
+  m_LocalPosition: {x: -201.1306, y: -63, z: -19}
+  m_LocalScale: {x: 152.39606, y: 0.54956514, z: 42.274242}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1114253415}
@@ -5008,8 +5008,8 @@ Transform:
   m_GameObject: {fileID: 1748734548}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0.7071068, w: 0}
-  m_LocalPosition: {x: -1, y: 22, z: -20}
-  m_LocalScale: {x: 193.9, y: 0.92963296, z: 71.51023}
+  m_LocalPosition: {x: -188.0254, y: -97, z: -20}
+  m_LocalScale: {x: 152.46776, y: 0.50566584, z: 38.897373}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1114253415}
@@ -6225,6 +6225,10 @@ PrefabInstance:
       value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 8672301451433408647, guid: 07b24961ec04ae94aa86875b9cf7a7f8, type: 3}
+      propertyPath: boostForce
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 8672301451433408647, guid: 07b24961ec04ae94aa86875b9cf7a7f8, type: 3}
       propertyPath: crashSound
       value: 
       objectReference: {fileID: 8300000, guid: 1fb7bdd4777bf6feba371d99fbd9078d, type: 3}
@@ -6237,9 +6241,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 3b172ee4713a4acd389dcfec6c83d329, type: 3}
     - target: {fileID: 8672301451433408647, guid: 07b24961ec04ae94aa86875b9cf7a7f8, type: 3}
+      propertyPath: maxDistance
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 8672301451433408647, guid: 07b24961ec04ae94aa86875b9cf7a7f8, type: 3}
       propertyPath: startPosition
       value: 
       objectReference: {fileID: 165493580}
+    - target: {fileID: 8672301451433408647, guid: 07b24961ec04ae94aa86875b9cf7a7f8, type: 3}
+      propertyPath: maxReturnForce
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 8672301451433408647, guid: 07b24961ec04ae94aa86875b9cf7a7f8, type: 3}
       propertyPath: springStrength
       value: 500

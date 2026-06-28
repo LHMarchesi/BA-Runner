@@ -6269,6 +6269,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1307682262}
     - target: {fileID: 8672301451433408647, guid: 07b24961ec04ae94aa86875b9cf7a7f8, type: 3}
+      propertyPath: boostForce
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 8672301451433408647, guid: 07b24961ec04ae94aa86875b9cf7a7f8, type: 3}
       propertyPath: crashSound
       value: 
       objectReference: {fileID: 8300000, guid: 1fb7bdd4777bf6feba371d99fbd9078d, type: 3}
@@ -6281,9 +6285,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 3b172ee4713a4acd389dcfec6c83d329, type: 3}
     - target: {fileID: 8672301451433408647, guid: 07b24961ec04ae94aa86875b9cf7a7f8, type: 3}
+      propertyPath: maxDistance
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 8672301451433408647, guid: 07b24961ec04ae94aa86875b9cf7a7f8, type: 3}
       propertyPath: startPosition
       value: 
       objectReference: {fileID: 165493580}
+    - target: {fileID: 8672301451433408647, guid: 07b24961ec04ae94aa86875b9cf7a7f8, type: 3}
+      propertyPath: maxReturnForce
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 8672301451433408647, guid: 07b24961ec04ae94aa86875b9cf7a7f8, type: 3}
       propertyPath: springStrength
       value: 500
