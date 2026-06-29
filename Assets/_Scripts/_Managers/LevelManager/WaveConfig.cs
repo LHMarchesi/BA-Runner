@@ -5,5 +5,5 @@ public class WaveConfig : ScriptableObject
 {
     public SpawnPattern[] patterns;
     public bool randomizeOrder;
-    public float timeBetweenWaves;
+    public float distanceBetweenWaves;
 }

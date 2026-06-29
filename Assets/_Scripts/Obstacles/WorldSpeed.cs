@@ -30,4 +30,7 @@ public class WorldSpeed : MonoBehaviour
                 currentSpeedData.maxProgressionMultiplier,
                 normalized);
     }
+
+    public float DistanceThisFrame =>
+    CurrentWorldSpeed * Time.deltaTime;
 }

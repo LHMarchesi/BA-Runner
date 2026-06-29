@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: SpaceDown_TRIPLESPORT
   m_EditorClassIdentifier: Assembly-CSharp::SpawnPattern
   spawns:
-  - obstacleConfig: {fileID: 11400000, guid: 0298d22e8ec343b47a08480ef74096c6, type: 2}
+  - obstacleConfig: {fileID: 11400000, guid: 8d781005a03462d4eb1be72eb65d9ddc, type: 2}
     laneIndex: 0
-    delay: 0
+    distanceOffset: 4
     positionOffset: {x: 0, y: 0}
-  - obstacleConfig: {fileID: 11400000, guid: 0298d22e8ec343b47a08480ef74096c6, type: 2}
+  - obstacleConfig: {fileID: 11400000, guid: f08bd68d6a6ba4646a6b5f4564cd5cbf, type: 2}
     laneIndex: 1
-    delay: 0
+    distanceOffset: 0.5
     positionOffset: {x: 0, y: 0}
-  - obstacleConfig: {fileID: 11400000, guid: 0298d22e8ec343b47a08480ef74096c6, type: 2}
+  - obstacleConfig: {fileID: 11400000, guid: 8d781005a03462d4eb1be72eb65d9ddc, type: 2}
     laneIndex: 2
-    delay: 0
+    distanceOffset: 0.5
     positionOffset: {x: 0, y: 0}

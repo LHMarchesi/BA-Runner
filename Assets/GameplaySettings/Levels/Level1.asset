@@ -20,7 +20,7 @@ MonoBehaviour:
     - NollevarVincent
     NextLevel: {fileID: 11400000, guid: 7a9c4caeeb7498a468589b4c9b510718, type: 2}
   DefaultNextLevel: {fileID: 11400000}
-  maxLevelProgession: 100
+  maxLevelProgession: 110
   levelMusic: {fileID: 8300000, guid: ee672d7e8b91c8d4d82339c058e2fb2e, type: 3}
   levelBackground: {fileID: -2766439190625139700, guid: 6d7e9361c78fa7c4caf92a857fb501d4, type: 3}
   winLevelImage: {fileID: 1456492039419807305, guid: 946b3e07dddd844448ba1f17c784abb2, type: 3}
@@ -30,6 +30,13 @@ MonoBehaviour:
     waveConfig: {fileID: 11400000, guid: 1b0233f6b19bdeb44ba56f4f0b4fb7d7, type: 2}
     progressionRequired: 0
     displayedSpeed: 60
+    environment:
+      background: {fileID: -2766439190625139700, guid: 6d7e9361c78fa7c4caf92a857fb501d4, type: 3}
+  - stageName: 1%
+    speedData: {fileID: 11400000, guid: ff98cf3aa638e934aab866d252848f99, type: 2}
+    waveConfig: {fileID: 11400000, guid: 619ba1ef37943f34084e2c47ffa73b23, type: 2}
+    progressionRequired: 0.406
+    displayedSpeed: 80
     environment:
       background: {fileID: -2766439190625139700, guid: 6d7e9361c78fa7c4caf92a857fb501d4, type: 3}
   introDialogueGraph: {fileID: 3965311268370046156, guid: 15ec117d145092e49b142ac23de4af66, type: 3}

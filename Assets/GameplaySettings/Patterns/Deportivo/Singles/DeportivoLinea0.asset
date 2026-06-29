@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DeportivoLinea0
   m_EditorClassIdentifier: Assembly-CSharp::SpawnPattern
   spawns:
-  - obstacleConfig: {fileID: 11400000, guid: 0298d22e8ec343b47a08480ef74096c6, type: 2}
+  - obstacleConfig: {fileID: 11400000, guid: 8d781005a03462d4eb1be72eb65d9ddc, type: 2}
     laneIndex: 0
-    delay: 1
+    distanceOffset: 0
     positionOffset: {x: 0, y: 0}

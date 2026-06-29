@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     private int currentCarPosition;
     private int maxPosition = 3;
     private float baseX;
-    private bool canMove = true;
+    private bool canChangeLane = true;
     private bool isAlive = true;
     public bool canCollide = true;
     private float inputX;
@@ -36,10 +36,10 @@ public class PlayerController : MonoBehaviour
 
     EventBinding<OnLevelCompletedEvent> levelResultBinding;
     EventBinding<OnLevelStartEvent> levelStartBinding;
-    EventBinding<OnPauseEvent> pauseEventBinding; 
-    
+    EventBinding<OnPauseEvent> pauseEventBinding;
+
     private float currentPlayerBoostMultiplier;
-    private bool gameIsPaused = false; 
+    private bool gameIsPaused = false;
 
     private void OnEnable()
     {
@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
     private void OnDisable()
     {
         EventBus<OnLevelCompletedEvent>.Deregister(levelResultBinding);
-        EventBus<OnPauseEvent>.Deregister(pauseEventBinding); 
+        EventBus<OnPauseEvent>.Deregister(pauseEventBinding);
     }
 
     private void OnLevelStart(OnLevelStartEvent e)
@@ -103,12 +103,14 @@ public class PlayerController : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        if (gameIsPaused) return; 
-
         Vector2 input = context.ReadValue<Vector2>();
         inputX = input.x;
 
-        if (!context.started || !canMove) return;
+        if (gameIsPaused)
+            return;
+
+        if (!canChangeLane)
+            return;
 
         float vertical = input.y;
 
@@ -127,20 +129,20 @@ public class PlayerController : MonoBehaviour
     private void Move()
     {
         AudioManager.Instance.PlaySFX(moveLaneSound);
-        canMove = false;
+        canChangeLane = false;
         UpdatePosition();
-        Invoke(nameof(ResetMove), 0.1f); 
+        Invoke(nameof(ResetLaneChange), 0.1f);
     }
 
-    private void ResetMove()
+    private void ResetLaneChange()
     {
-        canMove = true;
+        canChangeLane = true;
     }
 
     private void Update()
     {
-        if (!isAlive || gameIsPaused) return; 
-        
+        if (!isAlive || gameIsPaused) return;
+
         HandleBoost();
 
         transform.position += Vector3.right * currentVelocityX * Time.deltaTime;
@@ -169,9 +171,8 @@ public class PlayerController : MonoBehaviour
 
     private void HandleBoost()
     {
-        if (!canMove) return;
         float currentX = transform.position.x;
-        
+
         bool canAccelerate = (baseX - currentX) < maxDistance;
         bool isBoosting = inputX > 0 && canAccelerate;
 
@@ -200,7 +201,7 @@ public class PlayerController : MonoBehaviour
         float springForce = displacement * springStrength;
         float dampingForce = -currentVelocityX * damping;
         float force = springForce + dampingForce;
-        
+
         currentVelocityX += force * Time.deltaTime;
 
 
@@ -230,13 +231,13 @@ public class PlayerController : MonoBehaviour
     {
         if (!canCollide || !isAlive) return;
         canCollide = false;
-        canMove = false;
+        canChangeLane = false;
         isAlive = false;
 
         transform.SetParent(collision.transform);
 
         EventBus<OnPlayerDeathEvent>.Raise(new OnPlayerDeathEvent());
-        
+
         AudioManager.Instance.PlaySFX(crashSound);
     }
 }

@@ -116,8 +116,7 @@ public class LevelManager : MonoBehaviour
         if (levelProgession < currentLevel.maxLevelProgession)
         {
             var speedData = currentStage.speedData;
-            float boostImpact = Mathf.Pow(WorldSpeed.PlayerBoostMultiplier, 1.5f);
-            levelProgession += Time.deltaTime * boostImpact;
+            levelProgession += WorldSpeed.DistanceThisFrame;
 
             if (speedData != null)
             {

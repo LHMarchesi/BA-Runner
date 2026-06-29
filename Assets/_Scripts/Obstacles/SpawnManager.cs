@@ -129,8 +129,7 @@ public class SpawnManager : MonoBehaviour
 
             yield return ExecutePattern(pattern);
 
-            yield return new WaitForSeconds(
-                currentWaveConfig.timeBetweenWaves);
+            yield return WaitDistance(currentWaveConfig.distanceBetweenWaves);
         }
     }
 
@@ -153,12 +152,23 @@ public class SpawnManager : MonoBehaviour
     /// </summary>
     private IEnumerator ExecutePattern(SpawnPattern pattern)
     {
+        Debug.Log("Executing Pattern: " +  pattern.name);
         foreach (var entry in pattern.spawns)
         {
-            if (entry.delay > 0f)
-                yield return new WaitForSeconds(entry.delay);
+            yield return WaitDistance(entry.distanceOffset);
 
             SpawnObstacle(entry);
+        }
+    }
+
+    private IEnumerator WaitDistance(float distance)
+    {
+        float travelled = 0;
+
+        while (travelled < distance)
+        {
+            travelled += worldSpeed.DistanceThisFrame;
+            yield return null;
         }
     }
 

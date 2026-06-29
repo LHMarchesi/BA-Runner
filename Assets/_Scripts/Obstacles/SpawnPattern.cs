@@ -9,7 +9,7 @@ public class SpawnPattern : ScriptableObject
         public ObstacleConfig obstacleConfig;
 
         public int laneIndex;
-        public float delay;
+        public float distanceOffset;
 
         public Vector2 positionOffset;
     }
