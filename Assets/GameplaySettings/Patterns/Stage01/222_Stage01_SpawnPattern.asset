@@ -23,10 +23,18 @@ MonoBehaviour:
     positionOffset: {x: 0, y: 0}
   - obstacleConfig: {fileID: 11400000, guid: f08bd68d6a6ba4646a6b5f4564cd5cbf, type: 2}
     laneIndex: 2
+    delay: 0
+    positionOffset: {x: 0, y: 0}
+  - obstacleConfig: {fileID: 11400000, guid: f08bd68d6a6ba4646a6b5f4564cd5cbf, type: 2}
+    laneIndex: 2
     delay: 2
     positionOffset: {x: 0, y: 0}
   - obstacleConfig: {fileID: 11400000, guid: f08bd68d6a6ba4646a6b5f4564cd5cbf, type: 2}
     laneIndex: 3
+    delay: 0
+    positionOffset: {x: 0, y: 0}
+  - obstacleConfig: {fileID: 11400000, guid: f08bd68d6a6ba4646a6b5f4564cd5cbf, type: 2}
+    laneIndex: 0
     delay: 0
     positionOffset: {x: 0, y: 0}
   - obstacleConfig: {fileID: 11400000, guid: f08bd68d6a6ba4646a6b5f4564cd5cbf, type: 2}
@@ -35,5 +43,9 @@ MonoBehaviour:
     positionOffset: {x: 0, y: 0}
   - obstacleConfig: {fileID: 11400000, guid: f08bd68d6a6ba4646a6b5f4564cd5cbf, type: 2}
     laneIndex: 1
+    delay: 0
+    positionOffset: {x: 0, y: 0}
+  - obstacleConfig: {fileID: 11400000, guid: f08bd68d6a6ba4646a6b5f4564cd5cbf, type: 2}
+    laneIndex: 3
     delay: 0
     positionOffset: {x: 0, y: 0}

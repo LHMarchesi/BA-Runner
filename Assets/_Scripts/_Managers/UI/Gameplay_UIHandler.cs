@@ -10,6 +10,7 @@ public class Gameplay_UIHandler : MonoBehaviour
 {
     [SerializeField] GameObject loseScreen;
     [SerializeField] GameObject winBtnContinue;
+    [SerializeField] GameObject restartBtn;
     [SerializeField] Image BackgroundImage;
     [SerializeField] Image despedidoImage;
     [SerializeField] GameObject pausePanel;
@@ -103,6 +104,7 @@ public class Gameplay_UIHandler : MonoBehaviour
             star.gameObject.SetActive(false);
         }
         winBtnContinue.gameObject.SetActive(false);
+        restartBtn.gameObject.SetActive(false);
         WinImage.sprite = ProgressionManager.Instance.CurrentLevel.winLevelImage;
         WinImage.gameObject.SetActive(true);
         WinImage.color = new Color(1, 1, 1, 0);
@@ -140,6 +142,9 @@ public class Gameplay_UIHandler : MonoBehaviour
         AudioManager.Instance.PlaySFX(lvlCompleted);
         yield return new WaitForSeconds(.2f);
         winBtnContinue.gameObject.SetActive(true);
+        yield return new WaitForSeconds(.5f);
+        restartBtn.gameObject.SetActive(true);
+
     }
 
     private void OnEnvironmentChanged(OnRoadEnvironmentChanged e)

@@ -13,24 +13,20 @@ MonoBehaviour:
   m_Name: Level2
   m_EditorClassIdentifier: Assembly-CSharp::Level_Scriptable
   Variants:
-  - RequiredFlags:
-    - LlevarVincent
+  - RequiredFlags: []
     NextLevel: {fileID: 11400000, guid: 7a9c4caeeb7498a468589b4c9b510718, type: 2}
   DefaultNextLevel: {fileID: 11400000}
   maxLevelProgession: 55
   levelMusic: {fileID: 8300000, guid: 5f58d3cfcbbddb44f96c31fa7c0250ff, type: 3}
-  levelBackground: {fileID: -7802648845587964238, guid: 74cf73889da21224c972f153ebc4ad94, type: 3}
-  winLevelImage: {fileID: -1417863568847704615, guid: e09e3ad1a6089744dbb9a891eea4d578, type: 3}
+  levelBackground: {fileID: -5269008594975316225, guid: dd380522864d3f34fb162e8fdedb49e5, type: 3}
+  winLevelImage: {fileID: -5269008594975316225, guid: dd380522864d3f34fb162e8fdedb49e5, type: 3}
   stages:
   - stageName: 
     speedData: {fileID: 11400000, guid: ff98cf3aa638e934aab866d252848f99, type: 2}
-    levelPatterns:
-    - {fileID: 11400000, guid: 99ef0752c27bf4b45a69cbd1058eeddf, type: 2}
-    - {fileID: 11400000, guid: 3580331051a74f54b9c078d1d83390e4, type: 2}
-    - {fileID: 11400000, guid: 7cc342f43372c5840bd91938efca655a, type: 2}
-    timeBetweenWaves: 0
+    waveConfig: {fileID: 11400000, guid: 1b0233f6b19bdeb44ba56f4f0b4fb7d7, type: 2}
     progressionRequired: 0
     displayedSpeed: 60
-    signPrefab: {fileID: 4905991386913827093, guid: 04310586beb18704ea309e0dd7cf8001, type: 3}
+    environment:
+      background: {fileID: -5269008594975316225, guid: dd380522864d3f34fb162e8fdedb49e5, type: 3}
   introDialogueGraph: {fileID: 3965311268370046156, guid: 839641f325c648e4a881fecd28a71a77, type: 3}
   outroDialogueGraph: {fileID: 3965311268370046156, guid: 839641f325c648e4a881fecd28a71a77, type: 3}

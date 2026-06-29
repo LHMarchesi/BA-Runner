@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 71f861651a76ca946822db7e727eca1f
+guid: 946b3e07dddd844448ba1f17c784abb2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7656858726361775409
-    second: settings-icon-2_0
+      213: 1456492039419807305
+    second: Pantalla_de_victoria_lv1__0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -96,17 +96,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: settings-icon-2_0
+      name: Pantalla_de_victoria_lv1__0
       rect:
         serializedVersion: 2
-        x: 20
-        y: 10
-        width: 472
-        height: 492
+        x: 0
+        y: 0
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 13db420a170a24a60800000000000000
-      internalID: 7656858726361775409
+      spriteID: 9464dc30bcf763410800000000000000
+      internalID: 1456492039419807305
       vertices: []
       indices: 
       edges: []
@@ -125,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      settings-icon-2_0: 7656858726361775409
+      Pantalla_de_victoria_lv1__0: 1456492039419807305
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

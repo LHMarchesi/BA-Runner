@@ -17,5 +17,5 @@ MonoBehaviour:
   despawnXThreshold: -3000
   spawnSide: 0
   changeDirection: 0
-  changeDelay: 2.06
+  changeDelay: 0.99
   laneChangeSpeed: 500

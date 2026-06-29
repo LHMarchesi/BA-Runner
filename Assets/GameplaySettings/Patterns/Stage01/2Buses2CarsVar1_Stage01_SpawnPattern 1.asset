@@ -25,7 +25,7 @@ MonoBehaviour:
     laneIndex: 2
     delay: 3
     positionOffset: {x: 0, y: 0}
-  - obstacleConfig: {fileID: 11400000, guid: f08bd68d6a6ba4646a6b5f4564cd5cbf, type: 2}
-    laneIndex: 1
+  - obstacleConfig: {fileID: 11400000, guid: 3298c24866f0ce4458171723f8024a83, type: 2}
+    laneIndex: 3
     delay: 1
     positionOffset: {x: 0, y: 0}
