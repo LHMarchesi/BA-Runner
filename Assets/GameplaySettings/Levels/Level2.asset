@@ -14,16 +14,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Level_Scriptable
   Variants: []
   DefaultNextLevel: {fileID: 11400000, guid: 7a9c4caeeb7498a468589b4c9b510718, type: 2}
-  maxLevelProgession: 55
+  maxLevelProgession: 100
   levelMusic: {fileID: 8300000, guid: 5f58d3cfcbbddb44f96c31fa7c0250ff, type: 3}
   winLevelImage: {fileID: -5269008594975316225, guid: dd380522864d3f34fb162e8fdedb49e5, type: 3}
   stages:
   - stageName: 
     speedData: {fileID: 11400000, guid: ff98cf3aa638e934aab866d252848f99, type: 2}
-    waveConfig: {fileID: 11400000, guid: 1b0233f6b19bdeb44ba56f4f0b4fb7d7, type: 2}
+    waveConfig: {fileID: 11400000, guid: 80f91b2cc33db1a4198a023148b49828, type: 2}
     progressionRequired: 0
     displayedSpeed: 60
     environment:
       background: {fileID: 2100000, guid: f591256448681fb4d992612779c6426c, type: 2}
-  introDialogueGraph: {fileID: 3965311268370046156, guid: 839641f325c648e4a881fecd28a71a77, type: 3}
+  - stageName: 
+    speedData: {fileID: 11400000, guid: 99fcfe5ddf168764ebbb219e3b2a61d6, type: 2}
+    waveConfig: {fileID: 11400000, guid: d448a52da31d523459305a952378c618, type: 2}
+    progressionRequired: 0.539
+    displayedSpeed: 90
+    environment:
+      background: {fileID: 2100000, guid: f591256448681fb4d992612779c6426c, type: 2}
+  starRequirements:
+  - stars: 5
+    maxTime: 76
+  - stars: 4
+    maxTime: 80
+  - stars: 3
+    maxTime: 87
+  - stars: 2
+    maxTime: 96
+  - stars: 1
+    maxTime: 100
+  introDialogueGraph: {fileID: 0}
   outroDialogueGraph: {fileID: 3965311268370046156, guid: 21bb222ad7db78e4dabfd87ec93a7b58, type: 3}

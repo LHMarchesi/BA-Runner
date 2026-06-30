@@ -71,7 +71,28 @@ public class ProgressionManager : MonoBehaviour
         Debug.Log($"  → Sin match, usando default: {CurrentLevel.DefaultNextLevel?.name ?? "NULL (Credits)"}");
         return CurrentLevel.DefaultNextLevel;
     }
+    public void LoadLevel(string levelName)
+    {
+        Level_Scriptable level = FindLevelByName(levelName);
 
+        if (level == null)
+        {
+            Debug.LogError($"Nivel '{levelName}' no encontrado.");
+            return;
+        }
+
+        LoadLevel(level); // <-- Llama al overload que recibe un Level_Scriptable
+    }
+
+    public void LoadLevel(Level_Scriptable level)
+    {
+        CurrentLevel = level;
+        SaveProgress();
+
+        GameManager.Instance.IsOutro = false;
+        SceneManager.LoadScene("CinematicsScene");
+        GameManager.Instance.ChangeState(GameState.Cinematic);
+    }
     private bool AllFlagsActive(List<string> flags)
     {
         foreach (var f in flags)

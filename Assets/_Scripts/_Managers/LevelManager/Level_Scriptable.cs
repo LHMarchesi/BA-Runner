@@ -1,5 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
+[System.Serializable]
+public class StarRequirement
+{
+    [Range(1, 5)]
+    public int stars;
+
+    public float maxTime;
+}
 [CreateAssetMenu(fileName = "Level_Scriptable", menuName = "Scriptable Objects/Level_Scriptable")]
 public class Level_Scriptable : ScriptableObject
 {
@@ -14,6 +22,9 @@ public class Level_Scriptable : ScriptableObject
 
     [Header("Level Stages")]
     public List<LevelStage> stages = new();
+
+    [Header("Star Requirement")]
+    public StarRequirement[] starRequirements;
 
     [Header("Cinematics")]
     public RuntimeDialogueGraph introDialogueGraph;

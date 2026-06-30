@@ -21,6 +21,7 @@ public class Gameplay_UIHandler : MonoBehaviour
     [SerializeField] Image WinImage;
     [SerializeField] Image[] stars;
     [SerializeField] TextMeshProUGUI countDownText;
+    [SerializeField] TextMeshProUGUI completionTime;
     [SerializeField] SceneTransition transitionToCinematics;
 
     [SerializeField] AudioClip countdownBeep;
@@ -100,7 +101,7 @@ public class Gameplay_UIHandler : MonoBehaviour
         GameManager.Instance.ChangeState(GameState.Playing);
     }
 
-    IEnumerator WinSequence(int starsEarned)
+    IEnumerator WinSequence(int starsEarned, float completionTimeValue)
     {
         foreach (var star in stars)
         {
@@ -143,6 +144,8 @@ public class Gameplay_UIHandler : MonoBehaviour
         }
 
         AudioManager.Instance.PlaySFX(lvlCompleted);
+        TimeSpan time = TimeSpan.FromSeconds(completionTimeValue);
+        completionTime.text += $"{time.Minutes:00}:{time.Seconds:00}.{time.Milliseconds / 10:00}";
         yield return new WaitForSeconds(.2f);
         winBtnContinue.gameObject.SetActive(true);
         winBtnContinue.Select();
@@ -186,7 +189,7 @@ public class Gameplay_UIHandler : MonoBehaviour
 
     void OnLevelResult(OnLevelCompletedEvent e)
     {
-        StartCoroutine(WinSequence(e.stars));
+        StartCoroutine(WinSequence(e.stars, e.completionTime));
     }
 
     void OnPlayerDeath(OnPlayerDeathEvent e)

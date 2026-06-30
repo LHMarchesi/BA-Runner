@@ -135,12 +135,13 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    int CalculateStars(float time)
+    private int CalculateStars(float time)
     {
-        if (time <= 30) return 5;
-        if (time <= 45) return 4;
-        if (time <= 60) return 3;
-        if (time <= 90) return 2;
+        foreach (var requirement in currentLevel.starRequirements)
+        {
+            if (time <= requirement.maxTime)
+                return requirement.stars;
+        }
 
         return 1;
     }
