@@ -56,6 +56,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlayMusic(AudioClip clip)
     {
+        Debug.Log($"PlayMusic: {clip}");
         if (clip != null && MusicSource != null)
         {
             MusicSource.clip = clip;

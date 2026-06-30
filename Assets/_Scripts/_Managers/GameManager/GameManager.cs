@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
         stateMachine.AddState(new WinState(this), GameState.Win);
         stateMachine.AddState(new LoseState(this), GameState.Lose);
         stateMachine.AddState(new CreditsState(this), GameState.Credits);
-        stateMachine.AddState(new CreditsState(this), GameState.Survival);
+        stateMachine.AddState(new SurvivalState(this), GameState.Survival);
         stateMachine.AddState(new PauseState(this), GameState.Pause);
 
         stateMachine.ChangeState(GameState.MainMenu);

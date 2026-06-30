@@ -5,8 +5,6 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.SceneManagement;
-using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
 public class SurvivalUIManager : MonoBehaviour
@@ -18,6 +16,7 @@ public class SurvivalUIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI distanceText;
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI loopText;
+    [SerializeField] private TextMeshProUGUI timeText;
     [SerializeField] private SceneTransition sceneTransition;
     [SerializeField] private Button retryButton;
     [SerializeField] private Button menuButton;
@@ -32,6 +31,8 @@ public class SurvivalUIManager : MonoBehaviour
     private EventBinding<OnRoadSectionChanged> sectionBinding;
     private EventBinding<OnLevelUpdateEvent> updateEventBinding;
     private EventBinding<OnPauseEvent> pauseEventBinding;
+
+    private float survivalTime;
 
     private void OnEnable()
     {
@@ -48,7 +49,15 @@ public class SurvivalUIManager : MonoBehaviour
         EventBus<OnPauseEvent>.Register(pauseEventBinding);
 
     }
+    private void Update()
+    {
+        if (!timerRunning)
+            return;
 
+        survivalTime += Time.deltaTime;
+
+        SetTime(survivalTime);
+    }
     public void ResumeGame()
     {
         GameManager.Instance.ChangeState(GameState.Playing);
@@ -71,10 +80,12 @@ public class SurvivalUIManager : MonoBehaviour
 
     private void Start()
     {
+        timerRunning = true;
         endScreen.SetActive(false);
         SetDistance(0);
         SetLoop(0);
         SetScore(0);
+        SetTime(0);
     }
 
     #region ENVIRONMENT (BACKGROUND)
@@ -102,7 +113,13 @@ public class SurvivalUIManager : MonoBehaviour
     {
         distanceText.text = $"{value:0.0} m";
     }
+    public void SetTime(float seconds)
+    {
+        int minutes = Mathf.FloorToInt(seconds / 60f);
+        int secs = Mathf.FloorToInt(seconds % 60f);
 
+        timeText.text = $"TIME: {minutes:00}:{secs:00}";
+    }
     public void SetScore(int value)
     {
         scoreText.text = value.ToString();
@@ -120,7 +137,17 @@ public class SurvivalUIManager : MonoBehaviour
 
     private void OnSurvivalEnded(OnPlayerDeathEvent e)
     {
+        timerRunning = false;
         StartCoroutine(LoseSequence());
+
+        float efficiency = e.distance / Mathf.Max(survivalTime, 1f);
+
+        int finalScore = Mathf.RoundToInt(
+            e.distance +
+            efficiency * 100f +
+            e.loops * 200f);
+
+        lastScore = finalScore;
 
         scoreText.text = $"SCORE: {e.score}";
         distanceText.text = $"DISTANCE: {e.distance:0.0} m";
@@ -142,6 +169,8 @@ public class SurvivalUIManager : MonoBehaviour
     [SerializeField] LeaderboardUI leaderboardUI;
     private bool scoreSaved;
     private float lastScore;
+    private bool timerRunning;
+
     IEnumerator LoseSequence()
     {
         endScreen.gameObject.SetActive(true);

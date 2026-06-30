@@ -2617,7 +2617,7 @@ MonoBehaviour:
   ControlSFX: {fileID: 24300002, guid: 44f5093fc871e1a41b67f2c8cfe17bdd, type: 2}
   menuMusicClip: {fileID: 8300000, guid: cf69d1b0038e01248b5d344c2b8d756c, type: 3}
   cinematicsSong: {fileID: 8300000, guid: 98a53100b7a83884588fc18ef3f244a9, type: 3}
-  survivalSong: {fileID: 8300000, guid: 7bcb251e2b8c9054188b2018b967b3c3, type: 3}
+  survivalSong: {fileID: 8300000, guid: 5f58d3cfcbbddb44f96c31fa7c0250ff, type: 3}
 --- !u!4 &907675715
 Transform:
   m_ObjectHideFlags: 0

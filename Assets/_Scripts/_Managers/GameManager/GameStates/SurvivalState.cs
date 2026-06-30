@@ -15,19 +15,14 @@ public class SurvivalState : IState
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
         EventBus<OnLevelStartEvent>.Raise(new OnLevelStartEvent { });
+
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         sceneLoaded = true;
-
-        AudioManager.Instance.PlayMusic(AudioManager.Instance.survivalSong);
-
         SceneManager.sceneLoaded -= OnSceneLoaded;
-
-        
-
-        Debug.WriteLine("enter survival State");
+        AudioManager.Instance.PlayMusic(AudioManager.Instance.survivalSong);
     }
 
     public void Execute()
