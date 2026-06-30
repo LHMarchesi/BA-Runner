@@ -17,19 +17,34 @@ MonoBehaviour:
     - NollevarVincent
     NextLevel: {fileID: 11400000, guid: c7341cd0f5e530d48a66d2732a8fb97b, type: 2}
   DefaultNextLevel: {fileID: 11400000, guid: c7341cd0f5e530d48a66d2732a8fb97b, type: 2}
-  maxLevelProgession: 55
+  maxLevelProgession: 100
   levelMusic: {fileID: 8300000, guid: 7bcb251e2b8c9054188b2018b967b3c3, type: 3}
-  levelBackground: {fileID: 5655291303808057538, guid: 56f2a105208521a4fa1285ac80a1ca71, type: 3}
-  winLevelImage: {fileID: -8761723963282235746, guid: 135aec174b0332c4792026ad20631c79, type: 3}
+  winLevelImage: {fileID: 5655291303808057538, guid: f94a6fa1360349c47bc6464ff2941690, type: 3}
   stages:
   - stageName: 
     speedData: {fileID: 11400000, guid: 99fcfe5ddf168764ebbb219e3b2a61d6, type: 2}
-    levelPatterns:
-    - {fileID: 11400000, guid: 99ef0752c27bf4b45a69cbd1058eeddf, type: 2}
-    - {fileID: 11400000, guid: 9f934b38b3792684e9659bd548173aba, type: 2}
-    timeBetweenWaves: 2
+    waveConfig: {fileID: 11400000, guid: 4e28dcd52b89c1541986b8afe9a55408, type: 2}
     progressionRequired: 0
     displayedSpeed: 90
-    signPrefab: {fileID: 4905991386913827093, guid: 04310586beb18704ea309e0dd7cf8001, type: 3}
-  introDialogueGraph: {fileID: 3965311268370046156, guid: 839641f325c648e4a881fecd28a71a77, type: 3}
-  outroDialogueGraph: {fileID: 3965311268370046156, guid: 839641f325c648e4a881fecd28a71a77, type: 3}
+    environment:
+      background: {fileID: 2100000, guid: e5f95e7d8916fd04fb73d74ed608a479, type: 2}
+  - stageName: 
+    speedData: {fileID: 11400000, guid: a5f14f9e38b6aae489cd0b9d94ab2934, type: 2}
+    waveConfig: {fileID: 11400000, guid: 22ec5a9de548a3947908692e7083a845, type: 2}
+    progressionRequired: 0.619
+    displayedSpeed: 110
+    environment:
+      background: {fileID: 2100000, guid: e5f95e7d8916fd04fb73d74ed608a479, type: 2}
+  starRequirements:
+  - stars: 5
+    maxTime: 76
+  - stars: 4
+    maxTime: 80
+  - stars: 3
+    maxTime: 87
+  - stars: 2
+    maxTime: 96
+  - stars: 1
+    maxTime: 100
+  introDialogueGraph: {fileID: 0}
+  outroDialogueGraph: {fileID: 0}

@@ -57,6 +57,7 @@ public class Gameplay_UIHandler : MonoBehaviour
     {
         loseScreen.gameObject.SetActive(false);
         indicator.SetActive(false);
+        completionTime.gameObject.SetActive(false);
         var currentLevel = ProgressionManager.Instance.CurrentLevel;
     }
 
@@ -144,6 +145,7 @@ public class Gameplay_UIHandler : MonoBehaviour
         }
 
         AudioManager.Instance.PlaySFX(lvlCompleted);
+        completionTime.gameObject.SetActive(true); 
         TimeSpan time = TimeSpan.FromSeconds(completionTimeValue);
         completionTime.text += $"{time.Minutes:00}:{time.Seconds:00}.{time.Milliseconds / 10:00}";
         yield return new WaitForSeconds(.2f);
