@@ -18,8 +18,6 @@ public class CinematicState : IState
     {
         sceneLoaded = true;
 
-        AudioManager.Instance.PlayMusic(AudioManager.Instance.cinematicsSong);
-
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 

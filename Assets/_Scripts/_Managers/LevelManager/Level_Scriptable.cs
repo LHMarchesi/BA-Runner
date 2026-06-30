@@ -29,6 +29,10 @@ public class Level_Scriptable : ScriptableObject
     [Header("Cinematics")]
     public RuntimeDialogueGraph introDialogueGraph;
     public RuntimeDialogueGraph outroDialogueGraph;
+
+    [Header("Audio")]
+    public AudioClip introMusic;
+    public AudioClip outroMusic;
 }
 
 [System.Serializable]

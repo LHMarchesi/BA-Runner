@@ -44,7 +44,7 @@ public class DialogueManager : MonoBehaviour
         isOutro = GameManager.Instance.IsOutro;
 
         SetRuntineGraphFromLevel();
-
+        PlayCinematicMusic();
         if (CurrentRuntimeGraph == null)
         {
             if (isOutro)
@@ -218,7 +218,20 @@ public class DialogueManager : MonoBehaviour
 
         AdvanceNode();
     }
+    private void PlayCinematicMusic()
+    {
+        var level = ProgressionManager.Instance.CurrentLevel;
 
+        if (level == null)
+            return;
+
+        AudioClip clip =
+            isOutro
+            ? level.outroMusic
+            : level.introMusic;
+
+        AudioManager.Instance.PlayMusic(clip);
+    }
     private void StopAutoAdvance()
     {
         if (autoAdvanceCoroutine != null)

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -7,7 +8,7 @@ public class MenuNavigation : MonoBehaviour
 
     private GameObject lastSelected;
     private MenuButton lastButton;
-
+    private Coroutine restoreSelectionRoutine;
     private void Update()
     {
         if (indicator == null)
@@ -15,13 +16,16 @@ public class MenuNavigation : MonoBehaviour
 
         if (EventSystem.current.currentSelectedGameObject == null)
         {
-            if (lastSelected != null)
-                EventSystem.current.SetSelectedGameObject(lastSelected);
+            if (restoreSelectionRoutine == null && lastSelected != null)
+            {
+                restoreSelectionRoutine = StartCoroutine(RestoreSelection());
+            }
 
             return;
         }
 
         lastSelected = EventSystem.current.currentSelectedGameObject;
+
 
         MenuButton current =
             lastSelected.GetComponent<MenuButton>();
@@ -37,4 +41,14 @@ public class MenuNavigation : MonoBehaviour
         indicator.position =
             current.IndicatorPoint.position;
     }
+
+    private IEnumerator RestoreSelection()
+    {
+        yield return null;
+
+        EventSystem.current.SetSelectedGameObject(lastSelected);
+
+        restoreSelectionRoutine = null;
+    }
 }
+
