@@ -36,21 +36,28 @@ public class ProgressionManager : MonoBehaviour
     }
     public void AdvanceLevel()
     {
-        Level_Scriptable next = EvaluateNextLevel();
-
-        if (next != null)
-        {
-            CurrentLevel = next;
-            SaveProgress();
-            GameManager.Instance.IsOutro = false;
-            SceneManager.LoadScene("CinematicsScene");
-            GameManager.Instance.ChangeState(GameState.Cinematic);
-        }
-        else
+        if (IsFinalLevel())
         {
             SceneManager.LoadScene("Credits");
             GameManager.Instance.ChangeState(GameState.Credits);
+            return;
         }
+
+        Level_Scriptable next = EvaluateNextLevel();
+
+        if (next == null)
+        {
+            Debug.LogError("No se encontró un siguiente nivel.");
+            return;
+        }
+
+        CurrentLevel = next;
+        SaveProgress();
+
+        GameManager.Instance.IsOutro = false;
+
+        SceneManager.LoadScene("CinematicsScene");
+        GameManager.Instance.ChangeState(GameState.Cinematic);
     }
 
     private Level_Scriptable EvaluateNextLevel()
@@ -70,6 +77,12 @@ public class ProgressionManager : MonoBehaviour
 
         Debug.Log($"  → Sin match, usando default: {CurrentLevel.DefaultNextLevel?.name ?? "NULL (Credits)"}");
         return CurrentLevel.DefaultNextLevel;
+    }
+
+    bool IsFinalLevel()
+    {
+        return CurrentLevel.DefaultNextLevel == null &&
+               (CurrentLevel.Variants == null || CurrentLevel.Variants.Count == 0);
     }
     public void LoadLevel(string levelName)
     {

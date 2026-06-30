@@ -13,6 +13,7 @@ public class DeveloperConsole : MonoBehaviour
 
     private void OnEnable()
     {
+        panel.gameObject.SetActive(false);
         toggleConsoleAction.action.Enable();
         toggleConsoleAction.action.performed += OnToggleConsole;
 
