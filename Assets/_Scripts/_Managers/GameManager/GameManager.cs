@@ -20,7 +20,6 @@ public class GameManager : MonoBehaviour
 
     EventBinding<OnLevelCompletedEvent> levelResultBinding;
     EventBinding<OnPlayerDeathEvent> playerDeathBinding;
-    EventBinding<OnPauseEvent> pauseBinding;
 
     private void OnEnable()
     {

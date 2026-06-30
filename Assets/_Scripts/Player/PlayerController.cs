@@ -109,7 +109,7 @@ public class PlayerController : MonoBehaviour
         if (gameIsPaused)
             return;
 
-        if (!canChangeLane)
+        if (!context.started || !canChangeLane)
             return;
 
         float vertical = input.y;

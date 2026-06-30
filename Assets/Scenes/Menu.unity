@@ -131,13 +131,14 @@ GameObject:
   - component: {fileID: 18883695}
   - component: {fileID: 18883694}
   - component: {fileID: 18883693}
+  - component: {fileID: 18883697}
   m_Layer: 5
   m_Name: CanvasButtons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &18883693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,7 +197,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 1
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 10
@@ -213,7 +214,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2013041566}
   - {fileID: 1317444648}
   - {fileID: 1896130268}
   - {fileID: 2098333037}
@@ -224,6 +224,19 @@ RectTransform:
   m_AnchoredPosition: {x: 960, y: 540}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &18883697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18883692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac6683ef1e0a2ac4eb081793e1992ba6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MenuNavigation
+  indicator: {fileID: 2013041566}
 --- !u!1 &20258286
 GameObject:
   m_ObjectHideFlags: 0
@@ -2649,13 +2662,14 @@ GameObject:
   - component: {fileID: 1317444651}
   - component: {fileID: 1317444650}
   - component: {fileID: 1317444649}
+  - component: {fileID: 1317444653}
   m_Layer: 5
   m_Name: 'PlayButton '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1317444648
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2770,6 +2784,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1317444647}
   m_CullTransparentMesh: 1
+--- !u!114 &1317444653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317444647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbebf45e7f43d5a4a8f8844d437f8fdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MenuButton
+  button: {fileID: 1317444650}
+  indicatorPoint: {fileID: 1317444648}
 --- !u!1 &1417487152
 GameObject:
   m_ObjectHideFlags: 0
@@ -3799,6 +3827,7 @@ RectTransform:
   - {fileID: 470733613}
   - {fileID: 419791362}
   - {fileID: 475949980}
+  - {fileID: 2013041566}
   - {fileID: 18883696}
   - {fileID: 2112507811}
   - {fileID: 74569810}
@@ -3826,13 +3855,12 @@ MonoBehaviour:
   - {fileID: 1317444650}
   - {fileID: 1896130269}
   - {fileID: 2098333039}
-  indicator: {fileID: 2013041566}
+  navigation: {fileID: 18883697}
+  indicator: {fileID: 2013041565}
   modeSelectImage: {fileID: 475949982}
   firstBackgroundImage: {fileID: 379252936}
   menuAppearSFX: {fileID: 8300000, guid: 62dad0d1ee3a90fe0a1174e43f58fcd3, type: 3}
   transition: {fileID: 1718852740}
-  navigateAction: {fileID: -8784545083839296357, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
-  submitAction: {fileID: -5716651666709606885, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
 --- !u!95 &1847012365
 Animator:
   serializedVersion: 7
@@ -4023,13 +4051,14 @@ GameObject:
   - component: {fileID: 1896130270}
   - component: {fileID: 1896130269}
   - component: {fileID: 1896130272}
+  - component: {fileID: 1896130273}
   m_Layer: 5
   m_Name: survivalButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1896130268
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4144,6 +4173,20 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &1896130273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896130267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbebf45e7f43d5a4a8f8844d437f8fdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MenuButton
+  button: {fileID: 1896130269}
+  indicatorPoint: {fileID: 1896130268}
 --- !u!1 &2013041565
 GameObject:
   m_ObjectHideFlags: 0
@@ -4174,7 +4217,7 @@ RectTransform:
   m_LocalScale: {x: 0.3562819, y: 0.3562819, z: 0.3562819}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 18883696}
+  m_Father: {fileID: 1847012363}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4369,13 +4412,14 @@ GameObject:
   - component: {fileID: 2098333040}
   - component: {fileID: 2098333039}
   - component: {fileID: 2098333038}
+  - component: {fileID: 2098333042}
   m_Layer: 5
   m_Name: 'ExitButton '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2098333037
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4490,6 +4534,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2098333036}
   m_CullTransparentMesh: 1
+--- !u!114 &2098333042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2098333036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbebf45e7f43d5a4a8f8844d437f8fdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MenuButton
+  button: {fileID: 2098333039}
+  indicatorPoint: {fileID: 2098333037}
 --- !u!1 &2107564824
 GameObject:
   m_ObjectHideFlags: 0
@@ -4679,7 +4737,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}

@@ -16,5 +16,5 @@ MonoBehaviour:
   defaultPoolSize: 10
   despawnXThreshold: 3000
   spawnSide: 1
-  warningDuration: 1
+  warningDuration: 2
   chargeSpeed: 1200

@@ -1,37 +1,34 @@
 fileFormatVersion: 2
-guid: 9827f816578c4b64ab7ad751e4f07676
+guid: 8cd14d26a846d124985cc3c137d31348
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3210023676133116871
-    second: Continuar_3_0
+      213: -1364067809012483430
+    second: Continuar_3_v2_0
   - first:
-      213: 1712365651984471191
-    second: Continuar_3_1
+      213: 6024333584338744118
+    second: Continuar_3_v2_1
   - first:
-      213: -6306250161316212623
-    second: Continuar_3_2
+      213: -9176986031843332601
+    second: Continuar_3_v2_2
   - first:
-      213: 6611117167863360580
-    second: Continuar_3_3
+      213: 8860425394747727566
+    second: Continuar_3_v2_3
   - first:
-      213: 1574937494581285955
-    second: Continuar_3_4
+      213: -1322541563657001352
+    second: Continuar_3_v2_4
   - first:
-      213: -3754782236716610210
-    second: Continuar_3_5
+      213: 6594572418455416571
+    second: Continuar_3_v2_5
   - first:
-      213: -7532168604597471994
-    second: Continuar_3_6
+      213: -7048340436989548276
+    second: Continuar_3_v2_6
   - first:
-      213: 2663976326699554623
-    second: Continuar_3_7
+      213: -2918217757855465695
+    second: Continuar_3_v2_7
   - first:
-      213: -6140029947091795016
-    second: Continuar_3_8
-  - first:
-      213: -89867132424431492
-    second: Continuar_3_9
+      213: 3475437285556681881
+    second: Continuar_3_v2_8
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -99,7 +96,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -140,29 +137,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Continuar_3_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 37
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 934fd775974b373d0800000000000000
-      internalID: -3210023676133116871
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Continuar_3_1
+      name: Continuar_3_v2_0
       rect:
         serializedVersion: 2
         x: 47
@@ -177,14 +152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7945d1cec7b83c710800000000000000
-      internalID: 1712365651984471191
+      spriteID: a9af34a0e8bd11de0800000000000000
+      internalID: -1364067809012483430
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Continuar_3_2
+      name: Continuar_3_v2_1
       rect:
         serializedVersion: 2
         x: 73
@@ -199,14 +174,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1705ff5e3e2bb78a0800000000000000
-      internalID: -6306250161316212623
+      spriteID: 63377f60a7bba9350800000000000000
+      internalID: 6024333584338744118
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Continuar_3_3
+      name: Continuar_3_v2_2
       rect:
         serializedVersion: 2
         x: 100
@@ -221,14 +196,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 44c6bf679086fbb50800000000000000
-      internalID: 6611117167863360580
+      spriteID: 70ea14763dbc4a080800000000000000
+      internalID: -9176986031843332601
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Continuar_3_4
+      name: Continuar_3_v2_3
       rect:
         serializedVersion: 2
         x: 129
@@ -243,14 +218,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 34416f39e4d4bd510800000000000000
-      internalID: 1574937494581285955
+      spriteID: eced9c4b3fd86fa70800000000000000
+      internalID: 8860425394747727566
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Continuar_3_5
+      name: Continuar_3_v2_4
       rect:
         serializedVersion: 2
         x: 153
@@ -265,14 +240,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e5d4f8b037554ebc0800000000000000
-      internalID: -3754782236716610210
+      spriteID: 876e889747365ade0800000000000000
+      internalID: -1322541563657001352
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Continuar_3_6
+      name: Continuar_3_v2_5
       rect:
         serializedVersion: 2
         x: 164
@@ -287,14 +262,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6053e9eaf8c587790800000000000000
-      internalID: -7532168604597471994
+      spriteID: bfeaf9fcca0a48b50800000000000000
+      internalID: 6594572418455416571
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Continuar_3_7
+      name: Continuar_3_v2_6
       rect:
         serializedVersion: 2
         x: 194
@@ -309,14 +284,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f371af2da5858f420800000000000000
-      internalID: 2663976326699554623
+      spriteID: c09673d57b34f2e90800000000000000
+      internalID: -7048340436989548276
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Continuar_3_8
+      name: Continuar_3_v2_7
       rect:
         serializedVersion: 2
         x: 220
@@ -331,14 +306,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8b3455d5b4b3acaa0800000000000000
-      internalID: -6140029947091795016
+      spriteID: 12fb9cd19686087d0800000000000000
+      internalID: -2918217757855465695
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Continuar_3_9
+      name: Continuar_3_v2_8
       rect:
         serializedVersion: 2
         x: 247
@@ -353,8 +328,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c78dbd6b15ab0cef0800000000000000
-      internalID: -89867132424431492
+      spriteID: 99cf0cc2ccb3b3030800000000000000
+      internalID: 3475437285556681881
       vertices: []
       indices: 
       edges: []
@@ -373,16 +348,15 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Continuar_3_0: -3210023676133116871
-      Continuar_3_1: 1712365651984471191
-      Continuar_3_2: -6306250161316212623
-      Continuar_3_3: 6611117167863360580
-      Continuar_3_4: 1574937494581285955
-      Continuar_3_5: -3754782236716610210
-      Continuar_3_6: -7532168604597471994
-      Continuar_3_7: 2663976326699554623
-      Continuar_3_8: -6140029947091795016
-      Continuar_3_9: -89867132424431492
+      Continuar_3_v2_0: -1364067809012483430
+      Continuar_3_v2_1: 6024333584338744118
+      Continuar_3_v2_2: -9176986031843332601
+      Continuar_3_v2_3: 8860425394747727566
+      Continuar_3_v2_4: -1322541563657001352
+      Continuar_3_v2_5: 6594572418455416571
+      Continuar_3_v2_6: -7048340436989548276
+      Continuar_3_v2_7: -2918217757855465695
+      Continuar_3_v2_8: 3475437285556681881
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

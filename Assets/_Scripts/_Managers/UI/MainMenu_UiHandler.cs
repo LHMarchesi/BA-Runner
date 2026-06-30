@@ -1,6 +1,7 @@
 using DG.Tweening;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
@@ -8,21 +9,19 @@ public class MainMenu_UiHandler : MonoBehaviour
 {
     [SerializeField] Image pressAnyKeyimage;
     [SerializeField] private Button[] buttons;
-    [SerializeField] private RectTransform indicator;
+    [SerializeField] private MenuNavigation navigation;
+    [SerializeField] private GameObject indicator;
     [SerializeField] Image modeSelectImage;
     [SerializeField] Image firstBackgroundImage;
-    private int currentButtonIndex = 0;
     [SerializeField] AudioClip menuAppearSFX;
     [SerializeField] SceneTransition transition;
     [Header("Input")]
-    [SerializeField] private InputActionReference navigateAction;
-    [SerializeField] private InputActionReference submitAction;
     EventBinding<OnEnterMenuEvent> onEnterMenuBinding;
-    private Image overlayNegro;
     bool isMenuActive = false;
 
     private void Awake()
     {
+        indicator.SetActive(false);
         PrepareImage(pressAnyKeyimage);
         PrepareButton(buttons[0].gameObject, SceneTransition.transitionTo.Cinematics);
         PrepareButton(buttons[1].gameObject, SceneTransition.transitionTo.Survival);
@@ -32,54 +31,16 @@ public class MainMenu_UiHandler : MonoBehaviour
 
     private void OnEnable()
     {
-        navigateAction.action.Enable();
-        submitAction.action.Enable();
-
-        navigateAction.action.performed += OnNavigate;
-        submitAction.action.performed += OnSubmit;
-
         onEnterMenuBinding =
             new EventBinding<OnEnterMenuEvent>(OnEnterMenu);
 
         EventBus<OnEnterMenuEvent>.Register(onEnterMenuBinding);
     }
-    private void OnNavigate(InputAction.CallbackContext context)
-    {
-        Vector2 input = context.ReadValue<Vector2>();
-
-        if (input.y > 0.5f)
-        {
-            currentButtonIndex--;
-
-            if (currentButtonIndex < 0)
-                currentButtonIndex = buttons.Length - 1;
-
-            UpdateButtonSelection();
-        }
-        else if (input.y < -0.5f)
-        {
-            currentButtonIndex++;
-
-            if (currentButtonIndex >= buttons.Length)
-                currentButtonIndex = 0;
-
-            UpdateButtonSelection();
-        }
-    }
-
-    private void OnSubmit(InputAction.CallbackContext context)
-    {
-        if (!isMenuActive) return;
-        buttons[currentButtonIndex].Select();
-        buttons[currentButtonIndex].onClick.Invoke();
-    }
+  
 
     private void OnDisable()
     {
-        navigateAction.action.performed -= OnNavigate;
-        submitAction.action.performed -= OnSubmit;
-
-        EventBus<OnEnterMenuEvent>.Deregister(onEnterMenuBinding);
+            EventBus<OnEnterMenuEvent>.Deregister(onEnterMenuBinding);
     }
 
     private void Update()
@@ -98,8 +59,6 @@ public class MainMenu_UiHandler : MonoBehaviour
     void PrepareButton(GameObject obj, SceneTransition.transitionTo transitionTo)
     {
         obj.SetActive(false);
-
-
         Button button = obj.GetComponent<Button>();
         button.interactable = false;
         button.onClick.AddListener(() =>
@@ -107,16 +66,7 @@ public class MainMenu_UiHandler : MonoBehaviour
             transition.StartTransition(transitionTo);
         });
     }
-    private void UpdateButtonSelection()
-    {
-        if (!indicator.gameObject.activeSelf)
-            indicator.gameObject.SetActive(true);
-
-        indicator.anchoredPosition =
-            buttons[currentButtonIndex]
-            .GetComponent<RectTransform>()
-            .anchoredPosition;
-    }
+ 
     void PrepareImage(Image image)
     {
         image.gameObject.SetActive(false);
@@ -144,20 +94,24 @@ public class MainMenu_UiHandler : MonoBehaviour
     IEnumerator ModeSelectionSequence()
     {
         Sequence seq = DOTween.Sequence();
-
         seq.Append(firstBackgroundImage.DOFade(0f, 1.35f));
 
         yield return seq.WaitForCompletion();
 
         Sequence seqq = DOTween.Sequence();
         modeSelectImage.gameObject.SetActive(true);
+        navigation.gameObject.SetActive(true);
         seqq.Append(modeSelectImage.DOFade(1f, 1.35f));
         for (int i = 0; i < buttons.Length; i++)
         {
             buttons[i].gameObject.SetActive(true);
             buttons[i].interactable = true;
         }
-        UpdateButtonSelection();
+        indicator.SetActive(true);
+        buttons[0].Select();
+        EventSystem.current.SetSelectedGameObject(buttons[0].gameObject);
+       
+
         isMenuActive = true;
 
         yield return seqq.WaitForCompletion();

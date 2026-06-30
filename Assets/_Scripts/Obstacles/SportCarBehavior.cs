@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SportCarBehavior : MonoBehaviour, IObstacleBehavior
 {
@@ -11,8 +12,14 @@ public class SportCarBehavior : MonoBehaviour, IObstacleBehavior
     private State state;
     private SportCarObstacleConfig config;
     [SerializeField]private GameObject indicator;
+    [SerializeField] private RawImage indicatorImage;
+    [SerializeField] private float indicatorScrollSpeed = 0.5f;
 
     private float timer;
+    private void Awake()
+    {
+        
+    }
 
     public void OnSpawned(ObstacleConfig obstacleConfig)
     {
@@ -20,8 +27,11 @@ public class SportCarBehavior : MonoBehaviour, IObstacleBehavior
         timer = 0f;
         state = State.Warning;
 
-
         indicator.SetActive(true);
+
+        Rect uv = indicatorImage.uvRect;
+        uv.x = 0;
+        indicatorImage.uvRect = uv;
     }
 
     public void Tick(float worldSpeed)
@@ -29,7 +39,7 @@ public class SportCarBehavior : MonoBehaviour, IObstacleBehavior
         switch (state)
         {
             case State.Warning:
-
+                ScrollIndicator();
                 timer += Time.deltaTime;
 
                 if (timer >= config.warningDuration)
@@ -50,7 +60,12 @@ public class SportCarBehavior : MonoBehaviour, IObstacleBehavior
                 break;
         }
     }
-
+    private void ScrollIndicator()
+    {
+        Rect uv = indicatorImage.uvRect;
+        uv.x -= indicatorScrollSpeed * Time.deltaTime;
+        indicatorImage.uvRect = uv;
+    }
     public bool ShouldDespawn(float despawnXThreshold)
     {
         return transform.localPosition.x > despawnXThreshold;

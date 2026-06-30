@@ -3,14 +3,17 @@ using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Gameplay_UIHandler : MonoBehaviour
 {
     [SerializeField] GameObject loseScreen;
-    [SerializeField] GameObject winBtnContinue;
-    [SerializeField] GameObject restartBtn;
+    [SerializeField] GameObject indicator;
+    [SerializeField] Button winBtnContinue;
+    [SerializeField] Button winRestartBtn;
+    [SerializeField] Button loseRestartBtn;
     [SerializeField] MeshRenderer BackgroundImage;
     [SerializeField] Image despedidoImage;
     [SerializeField] GameObject pausePanel;
@@ -39,6 +42,9 @@ public class Gameplay_UIHandler : MonoBehaviour
         if (@event.isPaused)
         {
             pausePanel.SetActive(true);
+            Button button = pausePanel.GetComponentInChildren<Button>();
+            button.Select();
+            EventSystem.current.SetSelectedGameObject(button.gameObject);
         }
         else
         {
@@ -49,7 +55,7 @@ public class Gameplay_UIHandler : MonoBehaviour
     private void Start()
     {
         loseScreen.gameObject.SetActive(false);
-
+        indicator.SetActive(false);
         var currentLevel = ProgressionManager.Instance.CurrentLevel;
     }
 
@@ -70,7 +76,8 @@ public class Gameplay_UIHandler : MonoBehaviour
         // Mostrar countdown
         countDown.gameObject.SetActive(true);
         countDownText.gameObject.SetActive(true);
-
+        loseRestartBtn.Select();
+        EventSystem.current.SetSelectedGameObject(loseRestartBtn.gameObject);
         countDown.color = new Color(1, 1, 1, 0);
         countDownText.alpha = 0;
 
@@ -100,7 +107,7 @@ public class Gameplay_UIHandler : MonoBehaviour
             star.gameObject.SetActive(false);
         }
         winBtnContinue.gameObject.SetActive(false);
-        restartBtn.gameObject.SetActive(false);
+        winRestartBtn.gameObject.SetActive(false);
         WinImage.sprite = ProgressionManager.Instance.CurrentLevel.winLevelImage;
         WinImage.gameObject.SetActive(true);
         WinImage.color = new Color(1, 1, 1, 0);
@@ -138,8 +145,12 @@ public class Gameplay_UIHandler : MonoBehaviour
         AudioManager.Instance.PlaySFX(lvlCompleted);
         yield return new WaitForSeconds(.2f);
         winBtnContinue.gameObject.SetActive(true);
+        winBtnContinue.Select();
+        EventSystem.current.SetSelectedGameObject(winBtnContinue.gameObject);
+        indicator.SetActive(true);
+
         yield return new WaitForSeconds(.5f);
-        restartBtn.gameObject.SetActive(true);
+        winRestartBtn.gameObject.SetActive(true);
 
     }
 
@@ -189,5 +200,6 @@ public class Gameplay_UIHandler : MonoBehaviour
         EventBus<OnLevelCompletedEvent>.Deregister(levelResultBinding);
         EventBus<OnRoadEnvironmentChanged>.Deregister(envBinding);
         EventBus<OnPlayerDeathEvent>.Deregister(playerDeathBinding);
+        EventBus<OnPauseEvent>.Deregister(pauseEventBinding);
     }
 }

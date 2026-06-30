@@ -19,7 +19,7 @@ MonoBehaviour:
     waveConfig:
     - {fileID: 11400000, guid: 1b0233f6b19bdeb44ba56f4f0b4fb7d7, type: 2}
     environment:
-      background: {fileID: -7802648845587964238, guid: 74cf73889da21224c972f153ebc4ad94, type: 3}
+      background: {fileID: 2100000, guid: f591256448681fb4d992612779c6426c, type: 2}
     displayedSpeed: 60
   - stageName: BarrioChino
     progressionRequired: 100
@@ -27,7 +27,7 @@ MonoBehaviour:
     waveConfig:
     - {fileID: 11400000, guid: 619ba1ef37943f34084e2c47ffa73b23, type: 2}
     environment:
-      background: {fileID: -7802648845587964238, guid: 74cf73889da21224c972f153ebc4ad94, type: 3}
+      background: {fileID: 2100000, guid: f591256448681fb4d992612779c6426c, type: 2}
     displayedSpeed: 80
   - stageName: BarrioChino
     progressionRequired: 200
@@ -35,5 +35,5 @@ MonoBehaviour:
     waveConfig:
     - {fileID: 11400000, guid: 653728d0f952116409129098f4f970a8, type: 2}
     environment:
-      background: {fileID: -7802648845587964238, guid: 74cf73889da21224c972f153ebc4ad94, type: 3}
+      background: {fileID: 2100000, guid: f591256448681fb4d992612779c6426c, type: 2}
     displayedSpeed: 90

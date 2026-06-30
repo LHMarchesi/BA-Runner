@@ -4,6 +4,7 @@ using System.Collections;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
@@ -19,6 +20,7 @@ public class SurvivalUIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI loopText;
     [SerializeField] private SceneTransition sceneTransition;
     [SerializeField] private Button retryButton;
+    [SerializeField] private Button menuButton;
 
     [Header("End Screen")]
     [SerializeField] private GameObject endScreen;
@@ -57,6 +59,9 @@ public class SurvivalUIManager : MonoBehaviour
         if (@event.isPaused)
         {
             PausePanel.SetActive(true);
+            Button button = PausePanel.GetComponentInChildren<Button>();
+            button.Select();
+            EventSystem.current.SetSelectedGameObject(button.gameObject);
         }
         else
         {
@@ -158,7 +163,8 @@ public class SurvivalUIManager : MonoBehaviour
 
 
         countDown.gameObject.SetActive(true);
-        countDownText.gameObject.SetActive(true);
+        retryButton.Select();
+        EventSystem.current.SetSelectedGameObject(retryButton.gameObject);
         countDown.color = new Color(1, 1, 1, 0);
         countDownText.alpha = 0;
 
