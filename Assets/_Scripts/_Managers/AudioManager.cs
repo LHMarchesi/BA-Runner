@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
@@ -6,6 +7,8 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioSource MusicSource;
+    [SerializeField] private AudioMixerGroup ControlSFX;
+
     [SerializeField] public AudioClip menuMusicClip;
     [SerializeField] public AudioClip cinematicsSong;
     [SerializeField] public AudioClip survivalSong;
@@ -16,11 +19,16 @@ public class AudioManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
-            
+
             audioSource = GetComponent<AudioSource>();
             if (audioSource == null)
             {
                 audioSource = gameObject.AddComponent<AudioSource>();
+            }
+
+            if (ControlSFX != null)
+            {
+                audioSource.outputAudioMixerGroup = ControlSFX;
             }
         }
         else
@@ -33,23 +41,22 @@ public class AudioManager : MonoBehaviour
     {
         if (clip != null)
         {
-            audioSource.pitch = Random.Range(0.95f, 1.3f); // Agrega una ligera variación de tono para evitar la repetición monótona
+            audioSource.pitch = Random.Range(0.95f, 1.3f);
             audioSource.PlayOneShot(clip);
         }
     }
 
     public void StopMusic()
     {
-        if (MusicSource.isPlaying)
+        if (MusicSource != null && MusicSource.isPlaying)
         {
             MusicSource.Stop();
         }
     }
 
-
     public void PlayMusic(AudioClip clip)
     {
-        if (clip != null)
+        if (clip != null && MusicSource != null)
         {
             MusicSource.clip = clip;
             MusicSource.time = 0f;

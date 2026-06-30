@@ -2222,7 +2222,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 711871319}
+      - m_Target: {fileID: 1590261805}
         m_TargetAssemblyTypeName: ControlSFX, Assembly-CSharp
         m_MethodName: ControldeSFX
         m_Mode: 0
@@ -2592,6 +2592,7 @@ GameObject:
   m_Component:
   - component: {fileID: 907675715}
   - component: {fileID: 907675714}
+  - component: {fileID: 907675716}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -2613,6 +2614,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
   audioSource: {fileID: 1590261803}
   MusicSource: {fileID: 20258287}
+  ControlSFX: {fileID: 24300002, guid: 44f5093fc871e1a41b67f2c8cfe17bdd, type: 2}
   menuMusicClip: {fileID: 8300000, guid: cf69d1b0038e01248b5d344c2b8d756c, type: 3}
   cinematicsSong: {fileID: 8300000, guid: 98a53100b7a83884588fc18ef3f244a9, type: 3}
   survivalSong: {fileID: 8300000, guid: 7bcb251e2b8c9054188b2018b967b3c3, type: 3}
@@ -2633,6 +2635,19 @@ Transform:
   - {fileID: 1590261804}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &907675716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907675713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecf836de80852064cac16ed18126ec18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ControlSFX
+  audioMixer: {fileID: 24100000, guid: 44f5093fc871e1a41b67f2c8cfe17bdd, type: 2}
 --- !u!1 &978898469
 GameObject:
   m_ObjectHideFlags: 0
@@ -3381,6 +3396,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1590261804}
   - component: {fileID: 1590261803}
+  - component: {fileID: 1590261805}
   m_Layer: 0
   m_Name: SFXSource
   m_TagString: Untagged
@@ -3500,6 +3516,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 907675715}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1590261805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590261802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecf836de80852064cac16ed18126ec18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ControlSFX
+  audioMixer: {fileID: 24100000, guid: 44f5093fc871e1a41b67f2c8cfe17bdd, type: 2}
 --- !u!1 &1597846694
 GameObject:
   m_ObjectHideFlags: 0
