@@ -60,7 +60,7 @@ public class RoadSection
 
     public SpeedData worldSpeedData;
 
-    public WaveConfig waveConfig;
+    public WaveConfig[] waveConfig;
 
     public EnvironmentPreset environment;
 

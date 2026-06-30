@@ -17,6 +17,8 @@ public class SurvivalUIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI distanceText;
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI loopText;
+    [SerializeField] private SceneTransition sceneTransition;
+    [SerializeField] private Button retryButton;
 
     [Header("End Screen")]
     [SerializeField] private GameObject endScreen;
@@ -166,7 +168,10 @@ public class SurvivalUIManager : MonoBehaviour
 
         yield return countDown.DOFade(1, 0.5f).WaitForCompletion();
         yield return countDownText.DOFade(1, 0.5f).WaitForCompletion();
-
+        retryButton.onClick.AddListener(() =>
+        {
+            sceneTransition.StartTransition(SceneTransition.transitionTo.Survival);   
+        });
         //  Countdown retro
         for (int i = 10; i >= 0; i--)
         {
@@ -178,9 +183,7 @@ public class SurvivalUIManager : MonoBehaviour
 
             yield return new WaitForSeconds(1f);
         }
-
-        SceneManager.LoadScene("SampleScene");
-        GameManager.Instance.ChangeState(GameState.Playing);
+        sceneTransition.StartTransition(SceneTransition.transitionTo.Survival);
     }
     public void SaveScore()
     {

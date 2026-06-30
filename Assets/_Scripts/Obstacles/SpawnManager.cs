@@ -53,7 +53,7 @@ public class SpawnManager : MonoBehaviour
     private void HandleRoadSectionChanged(OnRoadSectionChanged e)
     {
         sequentialPatternIndex = 0;
-        currentWaveConfig = e.roadSection.waveConfig;
+        currentWaveConfig = e.roadSection.waveConfig[0];
 
         Prewarm(currentWaveConfig);
     }
@@ -152,7 +152,7 @@ public class SpawnManager : MonoBehaviour
     /// </summary>
     private IEnumerator ExecutePattern(SpawnPattern pattern)
     {
-        Debug.Log("Executing Pattern: " +  pattern.name);
+       // Debug.Log("Executing Pattern: " +  pattern.name);
         foreach (var entry in pattern.spawns)
         {
             yield return WaitDistance(entry.distanceOffset);

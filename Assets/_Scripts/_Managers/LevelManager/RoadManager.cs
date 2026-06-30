@@ -75,31 +75,30 @@ public class RoadManager : MonoBehaviour
         }
     }
 
-    void EnterSection(RoadSection section)
+    void EnterSection(RoadSection newSection)
     {
-        currentSection = section;
+        currentSection = newSection;
 
-        worldSpeed.SetSpeedData(section.worldSpeedData);
+        worldSpeed.SetSpeedData(newSection.worldSpeedData);
 
         EventBus<OnRoadSectionChanged>.Raise(
             new OnRoadSectionChanged
             {
-                roadSection = section
+                roadSection = newSection
             });
 
-        if (section.waveConfig != null)
+        if (newSection.waveConfig != null && newSection.waveConfig.Length > 0)
         {
             EventBus<OnWaveConfigChanged>.Raise(
                 new OnWaveConfigChanged
                 {
-                    waveConfig = section.waveConfig
+                    waveConfigs = newSection.waveConfig
                 });
         }
-
         EventBus<OnRoadEnvironmentChanged>.Raise(
       new OnRoadEnvironmentChanged
       {
-          environmentPreset = section.environment
+          environmentPreset = newSection.environment
       });
     }
 }

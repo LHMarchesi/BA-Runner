@@ -1947,6 +1947,8 @@ MonoBehaviour:
   distanceText: {fileID: 1087692430}
   scoreText: {fileID: 26897279}
   loopText: {fileID: 1293683955}
+  sceneTransition: {fileID: 2043365270}
+  retryButton: {fileID: 1187554932}
   endScreen: {fileID: 1595015076}
   enterNameField: {fileID: 2087697815}
   PausePanel: {fileID: 1852922789}
@@ -5285,6 +5287,10 @@ PrefabInstance:
       propertyPath: damping
       value: 0.8
       objectReference: {fileID: 0}
+    - target: {fileID: 8672301451433408647, guid: 07b24961ec04ae94aa86875b9cf7a7f8, type: 3}
+      propertyPath: WorldSpeed
+      value: 
+      objectReference: {fileID: 73024254}
     - target: {fileID: 8672301451433408647, guid: 07b24961ec04ae94aa86875b9cf7a7f8, type: 3}
       propertyPath: boostForce
       value: 500

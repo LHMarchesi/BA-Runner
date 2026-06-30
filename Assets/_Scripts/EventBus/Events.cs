@@ -53,5 +53,5 @@ public struct OnRoadSectionChanged : IEvent
 
 public struct OnWaveConfigChanged : IEvent
 {
-    public WaveConfig waveConfig;
+    public WaveConfig[] waveConfigs;
 }

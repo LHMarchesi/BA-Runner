@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SpawnPattern
   spawns:
   - obstacleConfig: {fileID: 11400000, guid: 8d781005a03462d4eb1be72eb65d9ddc, type: 2}
-    laneIndex: 0
+    laneIndex: 1
     distanceOffset: 3
     positionOffset: {x: 0, y: 0}
   - obstacleConfig: {fileID: 11400000, guid: 8d781005a03462d4eb1be72eb65d9ddc, type: 2}
     laneIndex: 3
-    distanceOffset: 0
+    distanceOffset: 0.25
     positionOffset: {x: 0, y: 0}

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 469fb7bbdcf4c9c479afe2b61db96fa5, type: 3}
-  m_Name: 3EnLineaVar2_SpawnPattern
+  m_Name: 2EnLineaVar3_SpawnPattern
   m_EditorClassIdentifier: Assembly-CSharp::SpawnPattern
   spawns:
   - obstacleConfig: {fileID: 11400000, guid: f08bd68d6a6ba4646a6b5f4564cd5cbf, type: 2}
