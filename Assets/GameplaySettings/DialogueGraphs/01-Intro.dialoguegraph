@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 790b4d75d92f4b0984310a268dbd952f, type: 3}
-  m_Name: 01Intro
+  m_Name: 01-Intro
   m_EditorClassIdentifier: Unity.GraphToolkit.Editor::Unity.GraphToolkit.Editor.Implementation.GraphObjectImp
   m_GraphModel:
     rid: 8065501182869897423
@@ -28,7 +28,7 @@ MonoBehaviour:
         m_HashGuid:
           serializedVersion: 2
           Hash: 33524cfe7a6b7749f31f85de3cf62dc5
-        m_Name: 
+        m_Name: 01-Intro
         m_GraphNodeModels:
         - rid: 8065501182869897426
         - rid: 8065501182869897428

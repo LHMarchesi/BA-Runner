@@ -11,7 +11,7 @@ using UnityEngine.UI;
 public class SurvivalUIManager : MonoBehaviour
 {
     [Header("Background")]
-    [SerializeField] private Image backgroundImage;
+    [SerializeField] private MeshRenderer backgroundImage;
 
     [Header("Run UI")]
     [SerializeField] private TextMeshProUGUI distanceText;
@@ -84,11 +84,7 @@ public class SurvivalUIManager : MonoBehaviour
         if (env == null || env.background == null)
             yield break;
 
-        yield return backgroundImage.DOFade(0, 0.25f).WaitForCompletion();
-
-        backgroundImage.sprite = env.background;
-
-        yield return backgroundImage.DOFade(1, 0.25f).WaitForCompletion();
+        backgroundImage.material = env.background;
     }
 
 

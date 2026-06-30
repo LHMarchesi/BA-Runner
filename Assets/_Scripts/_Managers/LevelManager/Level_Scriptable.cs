@@ -10,7 +10,6 @@ public class Level_Scriptable : ScriptableObject
     [Header("Gameplay")]
     public float maxLevelProgession;
     public AudioClip levelMusic;
-    public Sprite levelBackground;
     public Sprite winLevelImage;
 
     [Header("Level Stages")]
@@ -71,5 +70,5 @@ public class RoadSection
 [System.Serializable]
 public class EnvironmentPreset
 {
-    public Sprite background;
+    public Material background;
 }

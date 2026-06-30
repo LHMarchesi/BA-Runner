@@ -23,5 +23,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6f6258193e739e94e9d68680620d4505, type: 2}
   - {fileID: 11400000, guid: 061927e6e2c1f364db1bcbaf1fb1e483, type: 2}
   - {fileID: 11400000, guid: 40100bd0ae26fdc438fa86a69c569e80, type: 2}
+  - {fileID: 11400000, guid: e667f3474185fd34fb9c1265f2bc0da6, type: 2}
+  - {fileID: 11400000, guid: e667f3474185fd34fb9c1265f2bc0da6, type: 2}
+  - {fileID: 11400000, guid: e667f3474185fd34fb9c1265f2bc0da6, type: 2}
   randomizeOrder: 0
   distanceBetweenWaves: 2

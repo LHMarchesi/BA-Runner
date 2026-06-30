@@ -1417,7 +1417,7 @@ Transform:
   m_GameObject: {fileID: 399122804}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0.7071068, w: 0}
-  m_LocalPosition: {x: 176.5719, y: 118, z: -7}
+  m_LocalPosition: {x: 197, y: 118, z: -7}
   m_LocalScale: {x: 232.53627, y: 1.11487, z: 85.75923}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2339,7 +2339,7 @@ MonoBehaviour:
   loseScreen: {fileID: 1595015076}
   winBtnContinue: {fileID: 2133203581}
   restartBtn: {fileID: 350575405}
-  BackgroundImage: {fileID: 1481587192}
+  BackgroundImage: {fileID: 399122807}
   despedidoImage: {fileID: 809592513}
   pausePanel: {fileID: 1634081180}
   countDown: {fileID: 761721668}

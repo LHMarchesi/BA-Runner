@@ -1943,7 +1943,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7ddb4cab5ac59f4086cd56b92e26549, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SurvivalUIManager
-  backgroundImage: {fileID: 1481587192}
+  backgroundImage: {fileID: 1811387239}
   distanceText: {fileID: 1087692430}
   scoreText: {fileID: 26897279}
   loopText: {fileID: 1293683955}

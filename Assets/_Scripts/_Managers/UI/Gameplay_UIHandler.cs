@@ -11,7 +11,7 @@ public class Gameplay_UIHandler : MonoBehaviour
     [SerializeField] GameObject loseScreen;
     [SerializeField] GameObject winBtnContinue;
     [SerializeField] GameObject restartBtn;
-    [SerializeField] Image BackgroundImage;
+    [SerializeField] MeshRenderer BackgroundImage;
     [SerializeField] Image despedidoImage;
     [SerializeField] GameObject pausePanel;
     [SerializeField] Image countDown;
@@ -51,10 +51,6 @@ public class Gameplay_UIHandler : MonoBehaviour
         loseScreen.gameObject.SetActive(false);
 
         var currentLevel = ProgressionManager.Instance.CurrentLevel;
-        if (currentLevel != null && BackgroundImage != null)
-        {
-            BackgroundImage.sprite = currentLevel.levelBackground;
-        }
     }
 
     public void ResumeGame()
@@ -157,11 +153,9 @@ public class Gameplay_UIHandler : MonoBehaviour
         if (env == null || env.background == null)
             yield break;
 
-        yield return BackgroundImage.DOFade(0, 0.25f).WaitForCompletion();
 
-        BackgroundImage.sprite = env.background;
+        BackgroundImage.material = env.background;
 
-        yield return BackgroundImage.DOFade(1, 0.25f).WaitForCompletion();
     }
 
     void InitializeEvents()

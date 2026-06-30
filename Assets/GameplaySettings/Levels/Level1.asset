@@ -13,16 +13,14 @@ MonoBehaviour:
   m_Name: Level1
   m_EditorClassIdentifier: Assembly-CSharp::Level_Scriptable
   Variants:
-  - RequiredFlags:
-    - LlevarVincent
+  - RequiredFlags: []
     NextLevel: {fileID: 11400000, guid: c7341cd0f5e530d48a66d2732a8fb97b, type: 2}
   - RequiredFlags:
     - NollevarVincent
     NextLevel: {fileID: 11400000, guid: 7a9c4caeeb7498a468589b4c9b510718, type: 2}
-  DefaultNextLevel: {fileID: 11400000}
+  DefaultNextLevel: {fileID: 11400000, guid: c7341cd0f5e530d48a66d2732a8fb97b, type: 2}
   maxLevelProgession: 110
   levelMusic: {fileID: 8300000, guid: ee672d7e8b91c8d4d82339c058e2fb2e, type: 3}
-  levelBackground: {fileID: -2766439190625139700, guid: 6d7e9361c78fa7c4caf92a857fb501d4, type: 3}
   winLevelImage: {fileID: 21300000, guid: 946b3e07dddd844448ba1f17c784abb2, type: 3}
   stages:
   - stageName: 1%
@@ -31,13 +29,13 @@ MonoBehaviour:
     progressionRequired: 0
     displayedSpeed: 60
     environment:
-      background: {fileID: -2766439190625139700, guid: 6d7e9361c78fa7c4caf92a857fb501d4, type: 3}
+      background: {fileID: 2100000, guid: 113c14ab047b9b1489bea9ed6d9c109b, type: 2}
   - stageName: 1%
     speedData: {fileID: 11400000, guid: ff98cf3aa638e934aab866d252848f99, type: 2}
     waveConfig: {fileID: 11400000, guid: 619ba1ef37943f34084e2c47ffa73b23, type: 2}
     progressionRequired: 0.406
     displayedSpeed: 80
     environment:
-      background: {fileID: -2766439190625139700, guid: 6d7e9361c78fa7c4caf92a857fb501d4, type: 3}
+      background: {fileID: 2100000, guid: 113c14ab047b9b1489bea9ed6d9c109b, type: 2}
   introDialogueGraph: {fileID: 3965311268370046156, guid: 15ec117d145092e49b142ac23de4af66, type: 3}
   outroDialogueGraph: {fileID: 3965311268370046156, guid: cf14786d26cb8e24dacaed5723289f20, type: 3}

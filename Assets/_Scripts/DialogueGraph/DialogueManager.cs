@@ -35,36 +35,65 @@ public class DialogueManager : MonoBehaviour
     {
         EnterCinematics();
         continueButton.gameObject.SetActive(false);
+        delayProgressBar.gameObject.SetActive(false);
     }
 
 
     private void EnterCinematics()
     {
         isOutro = GameManager.Instance.IsOutro;
+
         SetRuntineGraphFromLevel();
+
+        if (CurrentRuntimeGraph == null)
+        {
+            if (isOutro)
+            {
+                ProgressionManager.Instance.AdvanceLevel();
+            }
+            else
+            {
+                LoadGameplay();
+            }
+
+            return;
+        }
+
         InitializeNode();
     }
 
     private void SetRuntineGraphFromLevel()
     {
         Level_Scriptable currentLevel = ProgressionManager.Instance.CurrentLevel;
-        if (isOutro)
+
+        if (currentLevel == null)
         {
-            CurrentRuntimeGraph = currentLevel.outroDialogueGraph;  // supongamos que tienes este campo
+            CurrentRuntimeGraph = null;
+            return;
         }
-        else
-        {
-            CurrentRuntimeGraph = currentLevel.introDialogueGraph;  // igual para intro
-        }
+
+        CurrentRuntimeGraph = isOutro
+            ? currentLevel.outroDialogueGraph
+            : currentLevel.introDialogueGraph;
     }
 
     private void InitializeNode()
     {
+        delayProgressBar.gameObject.SetActive(true);
+        if (CurrentRuntimeGraph == null)
+        {
+            EndDialogue();
+            return;
+        }
+
         dialogueEnded = false;
+        nodeLookup.Clear();
+
         foreach (var node in CurrentRuntimeGraph.AllNodes)
         {
             nodeLookup[node.NodeID] = node;
         }
+
         if (!string.IsNullOrEmpty(CurrentRuntimeGraph.EntryNodeID))
         {
             ShowDialogue(CurrentRuntimeGraph.EntryNodeID);
