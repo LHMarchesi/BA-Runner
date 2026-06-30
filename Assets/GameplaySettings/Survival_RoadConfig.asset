@@ -37,3 +37,35 @@ MonoBehaviour:
     environment:
       background: {fileID: 0}
     displayedSpeed: 90
+  - stageName: BarrioChino
+    progressionRequired: 390
+    worldSpeedData: {fileID: 11400000, guid: 99fcfe5ddf168764ebbb219e3b2a61d6, type: 2}
+    waveConfig:
+    - {fileID: 11400000, guid: 22ec5a9de548a3947908692e7083a845, type: 2}
+    environment:
+      background: {fileID: 0}
+    displayedSpeed: 90
+  - stageName: BarrioChino
+    progressionRequired: 500
+    worldSpeedData: {fileID: 11400000, guid: 99fcfe5ddf168764ebbb219e3b2a61d6, type: 2}
+    waveConfig:
+    - {fileID: 11400000, guid: e7f8a42fed10939458608cdf6c28880c, type: 2}
+    environment:
+      background: {fileID: 0}
+    displayedSpeed: 90
+  - stageName: BarrioChino
+    progressionRequired: 500
+    worldSpeedData: {fileID: 11400000, guid: 99fcfe5ddf168764ebbb219e3b2a61d6, type: 2}
+    waveConfig:
+    - {fileID: 11400000, guid: e7f8a42fed10939458608cdf6c28880c, type: 2}
+    environment:
+      background: {fileID: 0}
+    displayedSpeed: 90
+  - stageName: BarrioChino
+    progressionRequired: 750
+    worldSpeedData: {fileID: 11400000, guid: a5f14f9e38b6aae489cd0b9d94ab2934, type: 2}
+    waveConfig:
+    - {fileID: 11400000, guid: 0e0c669d4192a9847a012e7550a29e3b, type: 2}
+    environment:
+      background: {fileID: 0}
+    displayedSpeed: 90
