@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: 7f70d6dbb845d524ab7901c5a9c29fe4
+guid: 7583e1b08b1d1b24cb77a49c23de062b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5896395253292355540
-    second: Flecha_hacia_la_derecha_pixelada_0
+      213: -8539213970463880620
+    second: Settings_v2_0
+  - first:
+      213: 7950026861927987078
+    second: Settings_v2_1
+  - first:
+      213: 6067885505984290219
+    second: Settings_v2_2
+  - first:
+      213: 2605228287999768661
+    second: Settings_v2_3
+  - first:
+      213: 8460522819674350388
+    second: Settings_v2_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +108,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Flecha_hacia_la_derecha_pixelada_0
+      name: Settings_v2_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 40
-        height: 42
+        x: 63
+        y: 882
+        width: 167
+        height: 141
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +127,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c20b530f1cbcb2ea0800000000000000
-      internalID: -5896395253292355540
+      spriteID: 45a8275f22e9e7980800000000000000
+      internalID: -8539213970463880620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings_v2_1
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 117
+        width: 1698
+        height: 847
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 687f7045f4b245e60800000000000000
+      internalID: 7950026861927987078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings_v2_2
+      rect:
+        serializedVersion: 2
+        x: 1695
+        y: 877
+        width: 162
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bad5fe9f7b5753450800000000000000
+      internalID: 6067885505984290219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings_v2_3
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 58
+        width: 162
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55876092351a72420800000000000000
+      internalID: 2605228287999768661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings_v2_4
+      rect:
+        serializedVersion: 2
+        x: 1690
+        y: 58
+        width: 167
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 433a6c0cda0d96570800000000000000
+      internalID: 8460522819674350388
       vertices: []
       indices: 
       edges: []
@@ -148,7 +235,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Flecha_hacia_la_derecha_pixelada_0: -5896395253292355540
+      Settings_v2_0: -8539213970463880620
+      Settings_v2_1: 7950026861927987078
+      Settings_v2_2: 6067885505984290219
+      Settings_v2_3: 2605228287999768661
+      Settings_v2_4: 8460522819674350388
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
