@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea8d79229d23edf4791d6c46bb48002c, type: 3}
+  m_Name: STAGE_6
+  m_EditorClassIdentifier: Assembly-CSharp::WaveConfig
+  patterns:
+  - {fileID: 11400000, guid: 744eeff2870524f40980e355736276d6, type: 2}
+  - {fileID: 11400000, guid: 285f6edb60fb81b438835856d1384aa7, type: 2}
+  - {fileID: 11400000, guid: dc1064973613b404297a306e0d7eabd9, type: 2}
+  - {fileID: 11400000, guid: 87481078117d99e40a5fe8234c62ac83, type: 2}
+  - {fileID: 11400000, guid: cddc2ddd4c874ca4387d0d73eb51a86c, type: 2}
+  - {fileID: 11400000, guid: 4dc4269934b9e1a468bb8e9169502e50, type: 2}
+  - {fileID: 11400000, guid: c30e91442582f654ba28c82c2542ab57, type: 2}
+  - {fileID: 11400000, guid: 52230e00138b27a4fbc00bf2c69ac67b, type: 2}
+  - {fileID: 11400000, guid: 8ca4bd218dce8df41be819c72aaee76a, type: 2}
+  randomizeOrder: 1
+  distanceBetweenWaves: 2

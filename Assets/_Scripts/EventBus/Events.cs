@@ -25,6 +25,7 @@ public struct OnLevelUpdateEvent : IEvent
     public float score;
     public float distance;
     public float loops;
+    public float time;
 }
 
 public struct OnEnterMenuEvent : IEvent

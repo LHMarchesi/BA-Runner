@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: Stage02-Level3
   m_EditorClassIdentifier: Assembly-CSharp::WaveConfig
   patterns:
+  - {fileID: 11400000, guid: 7cfb555bf943c274c94ee338c18c8153, type: 2}
+  - {fileID: 11400000, guid: 7cfb555bf943c274c94ee338c18c8153, type: 2}
+  - {fileID: 11400000, guid: 7cfb555bf943c274c94ee338c18c8153, type: 2}
   - {fileID: 11400000, guid: d3ee88128395c1a4f813df193662f8d4, type: 2}
   - {fileID: 11400000, guid: 7df0ddd4996c29a46a3f3c0965160e18, type: 2}
   - {fileID: 11400000, guid: d3ee88128395c1a4f813df193662f8d4, type: 2}
