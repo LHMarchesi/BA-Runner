@@ -152,7 +152,7 @@ public class SpawnManager : MonoBehaviour
     /// </summary>
     private IEnumerator ExecutePattern(SpawnPattern pattern)
     {
-       Debug.Log("Executing Pattern: " +  pattern.name);
+      // Debug.Log("Executing Pattern: " +  pattern.name);
         foreach (var entry in pattern.spawns)
         {
             yield return WaitDistance(entry.distanceOffset);
