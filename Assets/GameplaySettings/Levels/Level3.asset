@@ -16,7 +16,7 @@ MonoBehaviour:
   DefaultNextLevel: {fileID: 0}
   maxLevelProgession: 100
   levelMusic: {fileID: 8300000, guid: 7bcb251e2b8c9054188b2018b967b3c3, type: 3}
-  winLevelImage: {fileID: 5655291303808057538, guid: f94a6fa1360349c47bc6464ff2941690, type: 3}
+  winLevelImage: {fileID: -3403888387946602753, guid: 1b57bb4e2d77f624b8f6b7977732abe4, type: 3}
   stages:
   - stageName: 
     speedData: {fileID: 11400000, guid: 99fcfe5ddf168764ebbb219e3b2a61d6, type: 2}
