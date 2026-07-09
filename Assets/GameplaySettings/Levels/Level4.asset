@@ -10,32 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa7792cd6221c7d4c8f51bb26b31ea3c, type: 3}
-  m_Name: Level3
+  m_Name: Level4
   m_EditorClassIdentifier: Assembly-CSharp::Level_Scriptable
   Variants:
   - RequiredFlags:
-    - ConAuto
-    NextLevel: {fileID: 11400000, guid: 4e9fb1c1e4e4b0c4081ae3292e8ce699, type: 2}
+    - EsTodoLoQueSeHacer
+    NextLevel: {fileID: 0}
   - RequiredFlags:
-    - SinAuto
+    - NuncaMeDetuveAPensarlo
     NextLevel: {fileID: 0}
   DefaultNextLevel: {fileID: 0}
   maxLevelProgession: 100
   levelMusic: {fileID: 8300000, guid: 7bcb251e2b8c9054188b2018b967b3c3, type: 3}
-  winLevelImage: {fileID: -3403888387946602753, guid: 1b57bb4e2d77f624b8f6b7977732abe4, type: 3}
+  winLevelImage: {fileID: -3368911279512379501, guid: 5383fe5e472f1dc4a8862516aea2a99a, type: 3}
   stages:
   - stageName: 
-    speedData: {fileID: 11400000, guid: 99fcfe5ddf168764ebbb219e3b2a61d6, type: 2}
+    speedData: {fileID: 11400000, guid: ff98cf3aa638e934aab866d252848f99, type: 2}
     waveConfig: {fileID: 11400000, guid: 4e28dcd52b89c1541986b8afe9a55408, type: 2}
     progressionRequired: 0
-    displayedSpeed: 90
-    environment:
-      background: {fileID: 2100000, guid: e5f95e7d8916fd04fb73d74ed608a479, type: 2}
-  - stageName: 
-    speedData: {fileID: 11400000, guid: a5f14f9e38b6aae489cd0b9d94ab2934, type: 2}
-    waveConfig: {fileID: 11400000, guid: 22ec5a9de548a3947908692e7083a845, type: 2}
-    progressionRequired: 0.619
-    displayedSpeed: 110
+    displayedSpeed: 60
     environment:
       background: {fileID: 2100000, guid: e5f95e7d8916fd04fb73d74ed608a479, type: 2}
   starRequirements:
@@ -49,7 +42,7 @@ MonoBehaviour:
     maxTime: 45
   - stars: 1
     maxTime: 60
-  introDialogueGraph: {fileID: 0}
-  outroDialogueGraph: {fileID: 3965311268370046156, guid: 5284f676c5028a6449339b1b29f3a599, type: 3}
+  introDialogueGraph: {fileID: 3965311268370046156, guid: bf7d890fe5f057c4192d14feb3412dbf, type: 3}
+  outroDialogueGraph: {fileID: 3965311268370046156, guid: 5ff641cd1baeb3249bdc3d8c916ef23d, type: 3}
   introMusic: {fileID: 0}
   outroMusic: {fileID: 8300000, guid: 98a53100b7a83884588fc18ef3f244a9, type: 3}
