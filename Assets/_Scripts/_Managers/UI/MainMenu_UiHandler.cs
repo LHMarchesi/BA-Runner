@@ -26,6 +26,7 @@ public class MainMenu_UiHandler : MonoBehaviour
         PrepareButton(buttons[0].gameObject, SceneTransition.transitionTo.Cinematics);
         PrepareButton(buttons[1].gameObject, SceneTransition.transitionTo.Survival);
         PrepareButton(buttons[2].gameObject, SceneTransition.transitionTo.Exit);
+        PrepareButton(buttons[3].gameObject, SceneTransition.transitionTo.LevelSelector);
 
     }
 

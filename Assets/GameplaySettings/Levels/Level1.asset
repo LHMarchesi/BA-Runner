@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa7792cd6221c7d4c8f51bb26b31ea3c, type: 3}
   m_Name: Level1
   m_EditorClassIdentifier: Assembly-CSharp::Level_Scriptable
+  levelID: Constitucion
   Variants:
   - RequiredFlags: []
     NextLevel: {fileID: 11400000, guid: c7341cd0f5e530d48a66d2732a8fb97b, type: 2}

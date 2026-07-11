@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa7792cd6221c7d4c8f51bb26b31ea3c, type: 3}
   m_Name: Level2
   m_EditorClassIdentifier: Assembly-CSharp::Level_Scriptable
+  levelID: Costanera Norte
   Variants: []
   DefaultNextLevel: {fileID: 11400000, guid: 7a9c4caeeb7498a468589b4c9b510718, type: 2}
   maxLevelProgession: 100

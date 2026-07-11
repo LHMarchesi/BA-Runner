@@ -11,10 +11,19 @@ public class StarRequirement
 [CreateAssetMenu(fileName = "Level_Scriptable", menuName = "Scriptable Objects/Level_Scriptable")]
 public class Level_Scriptable : ScriptableObject
 {
+    [Header("Identity")]
+    [SerializeField] private string levelID;
+    public string LevelID
+    {
+        get
+        {
+            return string.IsNullOrEmpty(levelID) ? name : levelID;
+        }
+    }
+
     [Header("Flag Variants")]
     public List<LevelVariant> Variants = new List<LevelVariant>();
     public Level_Scriptable DefaultNextLevel;
-
     [Header("Gameplay")]
     public float maxLevelProgession;
     public AudioClip levelMusic;
@@ -25,7 +34,29 @@ public class Level_Scriptable : ScriptableObject
 
     [Header("Star Requirement")]
     public StarRequirement[] starRequirements;
+    public int GetStarsForTime(float completionTime)
+    {
+        if (starRequirements == null || starRequirements.Length == 0)
+            return 1;
 
+        int bestStars = 0;
+
+        foreach (StarRequirement requirement in starRequirements)
+        {
+            if (requirement == null)
+                continue;
+
+            if (completionTime <= requirement.maxTime)
+            {
+                bestStars = Mathf.Max(bestStars, requirement.stars);
+            }
+        }
+
+        if (bestStars <= 0)
+            bestStars = 1;
+
+        return Mathf.Clamp(bestStars, 1, 5);
+    }
     [Header("Cinematics")]
     public RuntimeDialogueGraph introDialogueGraph;
     public RuntimeDialogueGraph outroDialogueGraph;

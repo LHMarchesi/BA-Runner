@@ -8,7 +8,7 @@ public class SceneTransition : MonoBehaviour
     [SerializeField] private Image imageToFade;
     [SerializeField] private float fadeDuration = 0.5f;
     [SerializeField] private bool clearNarrativeFlags;
-    public enum transitionTo { MainMenu, Gameplay, Cinematics, Credits, Survival, Exit }
+    public enum transitionTo { MainMenu, Gameplay, Cinematics, Credits, Survival, Exit, LevelSelector }
     public transitionTo transitionTarget;
 
 
@@ -28,6 +28,11 @@ public class SceneTransition : MonoBehaviour
             {
                 case transitionTo.MainMenu:
                     sceneToLoad = "Menu";
+                    GameManager.Instance.ChangeState(GameState.MainMenu);
+                    break;
+
+                case transitionTo.LevelSelector:
+                    sceneToLoad = "LevelSelector";
                     GameManager.Instance.ChangeState(GameState.MainMenu);
                     break;
 

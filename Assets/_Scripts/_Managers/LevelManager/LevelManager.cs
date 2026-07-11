@@ -131,6 +131,7 @@ public class LevelManager : MonoBehaviour
         else
         {
             levelCompleted = true;
+            ProgressionManager.Instance.RegisterLevelCompletionTime(completionTime);
             EventBus<OnLevelCompletedEvent>.Raise(new OnLevelCompletedEvent { stars = CalculateStars(completionTime), completionTime = this.completionTime });
         }
     }
