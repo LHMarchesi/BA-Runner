@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa7792cd6221c7d4c8f51bb26b31ea3c, type: 3}
   m_Name: Level4
   m_EditorClassIdentifier: Assembly-CSharp::Level_Scriptable
+  levelID: La Boca
   Variants:
   - RequiredFlags:
     - EsTodoLoQueSeHacer
-    NextLevel: {fileID: 0}
+    NextLevel: {fileID: 11400000, guid: 25c914e4791e71d42aa3d3abd985560e, type: 2}
   - RequiredFlags:
     - NuncaMeDetuveAPensarlo
     NextLevel: {fileID: 0}
@@ -30,7 +31,7 @@ MonoBehaviour:
     progressionRequired: 0
     displayedSpeed: 60
     environment:
-      background: {fileID: 2100000, guid: e5f95e7d8916fd04fb73d74ed608a479, type: 2}
+      background: {fileID: 2100000, guid: 4d74597f3744299439f267039cc51ac2, type: 2}
   starRequirements:
   - stars: 5
     maxTime: 32

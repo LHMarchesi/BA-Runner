@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa7792cd6221c7d4c8f51bb26b31ea3c, type: 3}
+  m_Name: Level5_PathA
+  m_EditorClassIdentifier: Assembly-CSharp::Level_Scriptable
+  levelID: Retiro
+  Variants:
+  - RequiredFlags:
+    - EsTodoLoQueSeHacer
+    NextLevel: {fileID: 0}
+  - RequiredFlags:
+    - NuncaMeDetuveAPensarlo
+    NextLevel: {fileID: 0}
+  DefaultNextLevel: {fileID: 0}
+  maxLevelProgession: 100
+  levelMusic: {fileID: 8300000, guid: 7bcb251e2b8c9054188b2018b967b3c3, type: 3}
+  winLevelImage: {fileID: -3368911279512379501, guid: 5383fe5e472f1dc4a8862516aea2a99a, type: 3}
+  stages:
+  - stageName: 
+    speedData: {fileID: 11400000, guid: ff98cf3aa638e934aab866d252848f99, type: 2}
+    waveConfig: {fileID: 11400000, guid: 4e28dcd52b89c1541986b8afe9a55408, type: 2}
+    progressionRequired: 0
+    displayedSpeed: 60
+    environment:
+      background: {fileID: 2100000, guid: 93669228c753ce0409ed9071fecab364, type: 2}
+  starRequirements:
+  - stars: 5
+    maxTime: 32
+  - stars: 4
+    maxTime: 35
+  - stars: 3
+    maxTime: 40
+  - stars: 2
+    maxTime: 45
+  - stars: 1
+    maxTime: 60
+  introDialogueGraph: {fileID: 3965311268370046156, guid: a0b70bd17bf87c647adc4ddee0507588, type: 3}
+  outroDialogueGraph: {fileID: 3965311268370046156, guid: 4499f42736139c1459850f2b3877b6d6, type: 3}
+  introMusic: {fileID: 0}
+  outroMusic: {fileID: 8300000, guid: 98a53100b7a83884588fc18ef3f244a9, type: 3}

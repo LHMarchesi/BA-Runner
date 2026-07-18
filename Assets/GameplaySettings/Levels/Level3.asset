@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa7792cd6221c7d4c8f51bb26b31ea3c, type: 3}
   m_Name: Level3
   m_EditorClassIdentifier: Assembly-CSharp::Level_Scriptable
+  levelID: Autopista Gral. Paz
   Variants:
   - RequiredFlags:
     - ConAuto
     NextLevel: {fileID: 11400000, guid: 4e9fb1c1e4e4b0c4081ae3292e8ce699, type: 2}
   - RequiredFlags:
     - SinAuto
-    NextLevel: {fileID: 0}
+    NextLevel: {fileID: 11400000, guid: 9cb8c63a89b07a141a5b0352d8d767fd, type: 2}
   DefaultNextLevel: {fileID: 0}
   maxLevelProgession: 100
   levelMusic: {fileID: 8300000, guid: 7bcb251e2b8c9054188b2018b967b3c3, type: 3}

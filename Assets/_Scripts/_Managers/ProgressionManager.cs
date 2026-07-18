@@ -88,11 +88,15 @@ public class ProgressionManager : MonoBehaviour
         if (choice == null)
             return;
 
+        // Aplicamos todas las flags sin guardar después de cada una.
         if (choice.FlagsToSet != null)
         {
             foreach (string flag in choice.FlagsToSet)
             {
-                SetFlag(flag);
+                if (string.IsNullOrEmpty(flag))
+                    continue;
+
+                _activeFlags.Add(flag);
             }
         }
 
@@ -100,13 +104,53 @@ public class ProgressionManager : MonoBehaviour
         {
             foreach (string flag in choice.FlagsToClear)
             {
-                ClearFlag(flag);
+                if (string.IsNullOrEmpty(flag))
+                    continue;
+
+                _activeFlags.Remove(flag);
             }
         }
+
+        // Después de aplicar la decisión, descubrimos inmediatamente
+        // el nivel correspondiente a la rama elegida.
+        DiscoverSelectedVariant();
 
         SaveProgress();
     }
 
+    private void DiscoverSelectedVariant()
+    {
+        if (CurrentLevel == null || CurrentLevel.Variants == null)
+            return;
+
+        foreach (LevelVariant variant in CurrentLevel.Variants)
+        {
+            if (variant == null || variant.NextLevel == null)
+                continue;
+
+            // No descubrimos variantes sin requisitos desde una elección.
+            // Esto evita desbloquear accidentalmente una transición genérica.
+            if (variant.RequiredFlags == null ||
+                variant.RequiredFlags.Count == 0)
+            {
+                continue;
+            }
+
+            if (!AllFlagsActive(variant.RequiredFlags))
+                continue;
+
+            DiscoverLevel(variant.NextLevel);
+
+            Debug.Log(
+                $"[Progression] Nivel descubierto por elección: " +
+                $"{variant.NextLevel.name}"
+            );
+
+            // EvaluateNextLevel también utiliza la primera variante coincidente,
+            // así que hacemos lo mismo.
+            return;
+        }
+    }
     // ── Descubrimiento ───────────────────────────────────────────────────────
 
     public bool IsLevelDiscovered(Level_Scriptable level)
@@ -119,10 +163,13 @@ public class ProgressionManager : MonoBehaviour
 
     public void DiscoverLevel(Level_Scriptable level)
     {
-        if (level == null)
+        if (level == null || string.IsNullOrEmpty(level.LevelID))
             return;
 
-        _discoveredLevelIDs.Add(level.LevelID);
+        bool wasAdded = _discoveredLevelIDs.Add(level.LevelID);
+
+        if (!wasAdded)
+            return;
         SaveProgress();
     }
 

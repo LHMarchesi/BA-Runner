@@ -14,13 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WaveConfig
   patterns:
   - {fileID: 11400000, guid: ff7114cb097d7c444a0d00438fbcac1d, type: 2}
-  - {fileID: 11400000, guid: ef7d5dc7788466e46845304513fefa69, type: 2}
-  - {fileID: 11400000, guid: 9f934b38b3792684e9659bd548173aba, type: 2}
-  - {fileID: 11400000, guid: 21d3b71861253e74e9a1d9409900efec, type: 2}
-  - {fileID: 11400000, guid: 08e204f50c3ef1941827958b244402fc, type: 2}
   - {fileID: 11400000, guid: db9574e4b40aa0648ba52e7ae16c8570, type: 2}
-  - {fileID: 11400000, guid: 08e204f50c3ef1941827958b244402fc, type: 2}
-  - {fileID: 11400000, guid: 9f934b38b3792684e9659bd548173aba, type: 2}
-  - {fileID: 11400000, guid: 9f934b38b3792684e9659bd548173aba, type: 2}
+  - {fileID: 11400000, guid: db9574e4b40aa0648ba52e7ae16c8570, type: 2}
+  - {fileID: 11400000, guid: ff7114cb097d7c444a0d00438fbcac1d, type: 2}
+  - {fileID: 11400000, guid: d3ee88128395c1a4f813df193662f8d4, type: 2}
+  - {fileID: 11400000, guid: 982e84828a67c8e49a3c255f62c765a7, type: 2}
   randomizeOrder: 0
-  distanceBetweenWaves: 1.8
+  distanceBetweenWaves: 0.8

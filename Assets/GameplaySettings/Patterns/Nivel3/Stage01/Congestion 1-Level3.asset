@@ -18,20 +18,24 @@ MonoBehaviour:
     distanceOffset: 0
     positionOffset: {x: 0, y: 0}
   - obstacleConfig: {fileID: 11400000, guid: f08bd68d6a6ba4646a6b5f4564cd5cbf, type: 2}
-    laneIndex: 2
-    distanceOffset: 0
+    laneIndex: 1
+    distanceOffset: 1
     positionOffset: {x: 0, y: 0}
   - obstacleConfig: {fileID: 11400000, guid: f08bd68d6a6ba4646a6b5f4564cd5cbf, type: 2}
-    laneIndex: 1
-    distanceOffset: 0.6
+    laneIndex: 0
+    distanceOffset: 0.2
     positionOffset: {x: 0, y: 0}
   - obstacleConfig: {fileID: 11400000, guid: f08bd68d6a6ba4646a6b5f4564cd5cbf, type: 2}
     laneIndex: 3
-    distanceOffset: 0.6
+    distanceOffset: 0.2
     positionOffset: {x: 0, y: 0}
   - obstacleConfig: {fileID: 11400000, guid: f08bd68d6a6ba4646a6b5f4564cd5cbf, type: 2}
     laneIndex: 2
-    distanceOffset: 0.6
+    distanceOffset: 0.8
+    positionOffset: {x: 0, y: 0}
+  - obstacleConfig: {fileID: 11400000, guid: f08bd68d6a6ba4646a6b5f4564cd5cbf, type: 2}
+    laneIndex: 0
+    distanceOffset: 0.2
     positionOffset: {x: 0, y: 0}
   - obstacleConfig: {fileID: 11400000, guid: f08bd68d6a6ba4646a6b5f4564cd5cbf, type: 2}
     laneIndex: 3
