@@ -318,11 +318,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7809963124171448822, guid: 507c6b7a145d45b44ab099467901354d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 187.3526
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7809963124171448822, guid: 507c6b7a145d45b44ab099467901354d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 60.31671
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7809963124171448822, guid: 507c6b7a145d45b44ab099467901354d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -581,11 +581,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7809963124171448822, guid: 507c6b7a145d45b44ab099467901354d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 187.3526
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7809963124171448822, guid: 507c6b7a145d45b44ab099467901354d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 60.31671
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7809963124171448822, guid: 507c6b7a145d45b44ab099467901354d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -733,7 +733,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &523552519
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1448,7 +1448,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 345, y: 174}
+  m_AnchoredPosition: {x: -10, y: 174}
   m_SizeDelta: {x: 1304.6659, y: 92.996}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1093136614
@@ -1610,6 +1610,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ProgressionManager
   startingLevel: {fileID: 0}
   GameData: {fileID: 11400000, guid: 8d5818e67d3f317489f07ec615e86f25, type: 2}
+  cinematicsSceneName: CinematicsScene
+  creditsSceneName: Credits
 --- !u!4 &1340996130
 Transform:
   m_ObjectHideFlags: 0

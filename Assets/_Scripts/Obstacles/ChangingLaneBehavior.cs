@@ -6,13 +6,15 @@ public class ChangingLaneBehavior : MonoBehaviour, IObstacleBehavior
 
     private bool isChangingLane;
     private bool hasChangedLane;
-    private float timer;
-    private Vector3 targetPosition;
+
+    private float distanceTravelled;
     private float targetY;
-    public void OnSpawned(ObstacleConfig config)
+
+    public void OnSpawned(ObstacleConfig obstacleConfig)
     {
-        this.config = config as ChangingLaneObstacleConfig;
-        timer = 0f;
+        config = obstacleConfig as ChangingLaneObstacleConfig;
+
+        distanceTravelled = 0f;
         isChangingLane = false;
         hasChangedLane = false;
     }
@@ -23,26 +25,33 @@ public class ChangingLaneBehavior : MonoBehaviour, IObstacleBehavior
             return;
 
         Vector3 pos = transform.localPosition;
-        pos.x -= worldSpeed * Time.deltaTime;
+
+        // Distancia recorrida durante este frame.
+        float frameDistance = Mathf.Abs(worldSpeed) * Time.deltaTime;
+
+        // Movimiento normal del obstáculo.
+        pos.x -= frameDistance;
 
         if (!isChangingLane && !hasChangedLane)
         {
-            timer += Time.deltaTime;
+            distanceTravelled += frameDistance;
 
-            if (timer >= config.changeDelay)
+            if (distanceTravelled >= config.changeDistance)
             {
                 float laneOffset =
-                    config.changeDirection == ChangingLaneObstacleConfig.LaneChangeDirection.Up
+                    config.changeDirection ==
+                    ChangingLaneObstacleConfig.LaneChangeDirection.Up
                         ? 100f
                         : -100f;
 
                 targetY = pos.y + laneOffset;
+
                 isChangingLane = true;
                 hasChangedLane = true;
             }
         }
 
-        // Mover sólo en Y
+        // Movimiento únicamente en Y durante el cambio de carril.
         if (isChangingLane)
         {
             pos.y = Mathf.MoveTowards(
@@ -51,7 +60,7 @@ public class ChangingLaneBehavior : MonoBehaviour, IObstacleBehavior
                 config.laneChangeSpeed * Time.deltaTime
             );
 
-            if (Mathf.Abs(pos.y - targetY) < 0.01f)
+            if (Mathf.Approximately(pos.y, targetY))
             {
                 pos.y = targetY;
                 isChangingLane = false;
@@ -65,4 +74,4 @@ public class ChangingLaneBehavior : MonoBehaviour, IObstacleBehavior
     {
         return transform.localPosition.x < despawnXThreshold;
     }
-}   
+}

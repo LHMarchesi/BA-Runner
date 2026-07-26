@@ -24,7 +24,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private List<Button> choiceButtons = new List<Button>();
 
     [Header("Delay")]
-    [SerializeField] private Slider delayProgressBar;
+   // [SerializeField] private Slider delayProgressBar;
 
     private Dictionary<string, RuntimeDialogueNode> nodeLookup = new Dictionary<string, RuntimeDialogueNode>();
 
@@ -41,8 +41,8 @@ public class DialogueManager : MonoBehaviour
     {
         continueButton.gameObject.SetActive(false);
 
-        if (delayProgressBar != null)
-            delayProgressBar.gameObject.SetActive(false);
+    //    if (delayProgressBar != null)
+         //   delayProgressBar.gameObject.SetActive(false);
 
         ClearChoiceButtons();
 
@@ -317,24 +317,24 @@ public class DialogueManager : MonoBehaviour
     {
         float elapsed = 0f;
 
-        if (delayProgressBar != null)
+      //  if (delayProgressBar != null)
         {
-            delayProgressBar.gameObject.SetActive(true);
-            delayProgressBar.value = 0f;
+      //      delayProgressBar.gameObject.SetActive(true);
+      //      delayProgressBar.value = 0f;
         }
 
         while (elapsed < delay)
         {
             elapsed += Time.deltaTime;
 
-            if (delayProgressBar != null)
-                delayProgressBar.value = elapsed / delay;
+          //  if (delayProgressBar != null)
+              //  delayProgressBar.value = elapsed / delay;
 
             yield return null;
         }
 
-        if (delayProgressBar != null)
-            delayProgressBar.gameObject.SetActive(false);
+      //  if (delayProgressBar != null)
+         //   delayProgressBar.gameObject.SetActive(false);
 
         AdvanceNode();
     }
@@ -347,8 +347,8 @@ public class DialogueManager : MonoBehaviour
             autoAdvanceCoroutine = null;
         }
 
-        if (delayProgressBar != null)
-            delayProgressBar.gameObject.SetActive(false);
+      //  if (delayProgressBar != null)
+         //   delayProgressBar.gameObject.SetActive(false);
     }
 
     private void SelectAfterLayout(GameObject target)

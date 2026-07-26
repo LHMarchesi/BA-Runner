@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa7792cd6221c7d4c8f51bb26b31ea3c, type: 3}
+  m_Name: Level6_PathB
+  m_EditorClassIdentifier: Assembly-CSharp::Level_Scriptable
+  levelID: ...
+  Variants: []
+  DefaultNextLevel: {fileID: 0}
+  maxLevelProgession: 100
+  levelMusic: {fileID: 8300000, guid: 97367b10cbec9744e8dd4b93f5ee5ded, type: 3}
+  winLevelImage: {fileID: 0}
+  stages:
+  - stageName: 
+    speedData: {fileID: 11400000, guid: ff98cf3aa638e934aab866d252848f99, type: 2}
+    waveConfig: {fileID: 11400000, guid: cc331a6e9f66b7340a745d2e088ef768, type: 2}
+    progressionRequired: 0
+    displayedSpeed: 80
+    environment:
+      background: {fileID: 0}
+  starRequirements:
+  - stars: 5
+    maxTime: 32
+  - stars: 4
+    maxTime: 35
+  - stars: 3
+    maxTime: 40
+  - stars: 2
+    maxTime: 45
+  - stars: 1
+    maxTime: 60
+  introDialogueGraph: {fileID: 3965311268370046156, guid: 15ec4bb7124940d49be201e461a84df0, type: 3}
+  outroDialogueGraph: {fileID: 0}
+  introMusic: {fileID: 8300000, guid: f2946434619dcde41b0c99ffa4ffc2e4, type: 3}
+  outroMusic: {fileID: 0}

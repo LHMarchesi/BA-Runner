@@ -19,5 +19,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ff7114cb097d7c444a0d00438fbcac1d, type: 2}
   - {fileID: 11400000, guid: d3ee88128395c1a4f813df193662f8d4, type: 2}
   - {fileID: 11400000, guid: 982e84828a67c8e49a3c255f62c765a7, type: 2}
+  - {fileID: 11400000, guid: 84fae75020fb5ec4b872b09622cf531b, type: 2}
+  - {fileID: 11400000, guid: e8bfee351ef4e9d48b3f9f48b8afd2e4, type: 2}
   randomizeOrder: 0
   distanceBetweenWaves: 0.8

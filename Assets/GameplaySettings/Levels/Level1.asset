@@ -34,17 +34,17 @@ MonoBehaviour:
   - stageName: 1%
     speedData: {fileID: 11400000, guid: ff98cf3aa638e934aab866d252848f99, type: 2}
     waveConfig: {fileID: 11400000, guid: 619ba1ef37943f34084e2c47ffa73b23, type: 2}
-    progressionRequired: 0.406
+    progressionRequired: 0.835
     displayedSpeed: 80
     environment:
       background: {fileID: 2100000, guid: 113c14ab047b9b1489bea9ed6d9c109b, type: 2}
   starRequirements:
   - stars: 5
-    maxTime: 80
+    maxTime: 59
   - stars: 4
-    maxTime: 85
+    maxTime: 60
   - stars: 3
-    maxTime: 90
+    maxTime: 78
   - stars: 2
     maxTime: 100
   - stars: 1

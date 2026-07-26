@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+
 public enum LevelNodeState
 {
     Hidden,
@@ -9,6 +10,7 @@ public enum LevelNodeState
     Completed,
     Current
 }
+
 public class LevelNodeUI : MonoBehaviour
 {
     [Header("Data")]
@@ -19,8 +21,13 @@ public class LevelNodeUI : MonoBehaviour
     [Header("UI")]
     [SerializeField] private Button button;
     [SerializeField] private TextMeshProUGUI levelNameText;
-    [SerializeField] private GameObject completedVisual;
-    [SerializeField] private GameObject currentVisual;
+
+    [Header("State Visuals")]
+    [Tooltip("Imagen que indica que este es el nivel actual.")]
+    [SerializeField] private Image currentVisual;
+
+    [Tooltip("Tilde que aparece encima cuando el nivel está completado.")]
+    [SerializeField] private Image completedVisual;
 
     [Header("Stars")]
     [SerializeField] private GameObject starsRoot;
@@ -75,11 +82,19 @@ public class LevelNodeUI : MonoBehaviour
                 state == LevelNodeState.Current;
         }
 
-        if (completedVisual != null)
-            completedVisual.SetActive(state == LevelNodeState.Completed);
-
+        // Imagen que marca el nivel actual.
         if (currentVisual != null)
-            currentVisual.SetActive(state == LevelNodeState.Current);
+        {
+            currentVisual.enabled =
+                state == LevelNodeState.Current;
+        }
+
+        // Tilde que aparece encima del botón.
+        if (completedVisual != null)
+        {
+            completedVisual.enabled =
+                state == LevelNodeState.Completed;
+        }
 
         int stars = ProgressionManager.Instance.GetStarsForLevel(level);
         SetStars(stars);
@@ -101,7 +116,10 @@ public class LevelNodeUI : MonoBehaviour
 
             if (fullStarSprite != null && emptyStarSprite != null)
             {
-                starImage.sprite = i < starCount ? fullStarSprite : emptyStarSprite;
+                starImage.sprite =
+                    i < starCount
+                        ? fullStarSprite
+                        : emptyStarSprite;
             }
             else
             {

@@ -11,6 +11,6 @@ public class ChangingLaneObstacleConfig : ObstacleConfig
     }
     [Header("Lane Change")]
     public LaneChangeDirection changeDirection;          
-    [Range(0, 5)] public float changeDelay;
+     public float changeDistance;
     public float laneChangeSpeed;
 }

@@ -13,25 +13,19 @@ MonoBehaviour:
   m_Name: Level6_PathA
   m_EditorClassIdentifier: Assembly-CSharp::Level_Scriptable
   levelID: ...
-  Variants:
-  - RequiredFlags:
-    - EsTodoLoQueSeHacer
-    NextLevel: {fileID: 11400000, guid: 25c914e4791e71d42aa3d3abd985560e, type: 2}
-  - RequiredFlags:
-    - NuncaMeDetuveAPensarlo
-    NextLevel: {fileID: 0}
+  Variants: []
   DefaultNextLevel: {fileID: 0}
   maxLevelProgession: 100
-  levelMusic: {fileID: 8300000, guid: 7bcb251e2b8c9054188b2018b967b3c3, type: 3}
+  levelMusic: {fileID: 8300000, guid: 97367b10cbec9744e8dd4b93f5ee5ded, type: 3}
   winLevelImage: {fileID: -3368911279512379501, guid: 5383fe5e472f1dc4a8862516aea2a99a, type: 3}
   stages:
   - stageName: 
-    speedData: {fileID: 11400000, guid: ff98cf3aa638e934aab866d252848f99, type: 2}
-    waveConfig: {fileID: 11400000, guid: 4e28dcd52b89c1541986b8afe9a55408, type: 2}
+    speedData: {fileID: 11400000, guid: 99fcfe5ddf168764ebbb219e3b2a61d6, type: 2}
+    waveConfig: {fileID: 11400000, guid: cc331a6e9f66b7340a745d2e088ef768, type: 2}
     progressionRequired: 0
-    displayedSpeed: 60
+    displayedSpeed: 80
     environment:
-      background: {fileID: 2100000, guid: 93669228c753ce0409ed9071fecab364, type: 2}
+      background: {fileID: 0}
   starRequirements:
   - stars: 5
     maxTime: 32
@@ -43,7 +37,7 @@ MonoBehaviour:
     maxTime: 45
   - stars: 1
     maxTime: 60
-  introDialogueGraph: {fileID: 3965311268370046156, guid: bf7d890fe5f057c4192d14feb3412dbf, type: 3}
-  outroDialogueGraph: {fileID: 3965311268370046156, guid: 5ff641cd1baeb3249bdc3d8c916ef23d, type: 3}
+  introDialogueGraph: {fileID: 0}
+  outroDialogueGraph: {fileID: 0}
   introMusic: {fileID: 0}
   outroMusic: {fileID: 8300000, guid: 98a53100b7a83884588fc18ef3f244a9, type: 3}

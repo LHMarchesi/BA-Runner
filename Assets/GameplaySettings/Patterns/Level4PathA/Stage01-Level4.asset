@@ -13,9 +13,12 @@ MonoBehaviour:
   m_Name: Stage01-Level4
   m_EditorClassIdentifier: Assembly-CSharp::WaveConfig
   patterns:
-  - {fileID: 11400000, guid: da8d0aafe178a594abfa1ba22c5f9957, type: 2}
-  - {fileID: 11400000, guid: cddc2ddd4c874ca4387d0d73eb51a86c, type: 2}
-  - {fileID: 11400000, guid: 32e90fb00e94dd047ad5f0b8c6d7ae34, type: 2}
-  - {fileID: 11400000, guid: 3580331051a74f54b9c078d1d83390e4, type: 2}
+  - {fileID: 11400000, guid: 520b1f7504786b8418bf19d82228a752, type: 2}
+  - {fileID: 11400000, guid: 1fc3ff3a6c134e14da5b34a3a13401cd, type: 2}
+  - {fileID: 11400000, guid: d872c5a6d2d091f4dbbd0ce21e7fd1d9, type: 2}
+  - {fileID: 11400000, guid: 907e6a3f68c42f74987c3f2663172278, type: 2}
+  - {fileID: 11400000, guid: 21dca4ed2d1f01041bf649e1c72da311, type: 2}
+  - {fileID: 11400000, guid: 30469b6e16593764c85962ab9cedee0f, type: 2}
+  - {fileID: 11400000, guid: 1e0bcaaecd927b4498c3635bfc188502, type: 2}
   randomizeOrder: 0
   distanceBetweenWaves: 0.8

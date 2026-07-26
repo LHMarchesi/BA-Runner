@@ -35,21 +35,21 @@ MonoBehaviour:
   - stageName: 
     speedData: {fileID: 11400000, guid: a5f14f9e38b6aae489cd0b9d94ab2934, type: 2}
     waveConfig: {fileID: 11400000, guid: 22ec5a9de548a3947908692e7083a845, type: 2}
-    progressionRequired: 0.619
+    progressionRequired: 0.817
     displayedSpeed: 110
     environment:
       background: {fileID: 2100000, guid: e5f95e7d8916fd04fb73d74ed608a479, type: 2}
   starRequirements:
   - stars: 5
-    maxTime: 32
+    maxTime: 41
   - stars: 4
-    maxTime: 35
-  - stars: 3
-    maxTime: 40
-  - stars: 2
     maxTime: 45
-  - stars: 1
+  - stars: 3
+    maxTime: 50
+  - stars: 2
     maxTime: 60
+  - stars: 1
+    maxTime: 70
   introDialogueGraph: {fileID: 0}
   outroDialogueGraph: {fileID: 3965311268370046156, guid: 5284f676c5028a6449339b1b29f3a599, type: 3}
   introMusic: {fileID: 0}
