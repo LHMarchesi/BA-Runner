@@ -49,7 +49,7 @@ public class LevelManager : MonoBehaviour
         levelCompleted = false;
         currentStage = currentLevel.stages[0];
         WorldSpeed.SetSpeedData(currentStage.speedData);
-       
+
         EventBus<OnRoadEnvironmentChanged>.Raise(
           new OnRoadEnvironmentChanged
           {
@@ -80,11 +80,11 @@ public class LevelManager : MonoBehaviour
 
         if (normalized >= nextStage.progressionRequired)
         {
-               EventBus<OnRoadEnvironmentChanged>.Raise(
-             new OnRoadEnvironmentChanged
-            {
-                environmentPreset = nextStage.environment
-            });
+            EventBus<OnRoadEnvironmentChanged>.Raise(
+          new OnRoadEnvironmentChanged
+          {
+              environmentPreset = nextStage.environment
+          });
             currentStageIndex++;
             EventBus<OnRoadStageChanged>.Raise(
                 new OnRoadStageChanged
@@ -131,10 +131,17 @@ public class LevelManager : MonoBehaviour
         else
         {
             levelCompleted = true;
-            ProgressionManager.Instance.RegisterLevelCompletionTime(completionTime);
+            bool isNewRecord = ProgressionManager.Instance.RegisterLevelCompletionTime(currentLevel, completionTime);
+            Debug.Log(
+        isNewRecord
+            ? "¡Nuevo mejor tiempo!"
+            : "Nivel completado sin nuevo récord."
+    );
             EventBus<OnLevelCompletedEvent>.Raise(new OnLevelCompletedEvent { stars = CalculateStars(completionTime), completionTime = this.completionTime });
         }
     }
+
+
 
     private int CalculateStars(float time)
     {

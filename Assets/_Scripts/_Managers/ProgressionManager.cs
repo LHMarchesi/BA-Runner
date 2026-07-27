@@ -33,6 +33,78 @@ public class ProgressionManager : MonoBehaviour
     private const string BestStarsKey = "BestStars";
     private const string BestTimesKey = "BestTimes";
 
+    public bool RegisterLevelCompletionTime(
+     Level_Scriptable level,
+     float completionTime
+ )
+    {
+        if (level == null || completionTime <= 0f)
+            return false;
+
+        string key = GetBestTimeKey(level);
+
+        int newTimeMilliseconds =
+            Mathf.RoundToInt(completionTime * 1000f);
+
+        bool hasPreviousTime =
+            PlayerPrefs.HasKey(key);
+
+        if (hasPreviousTime)
+        {
+            int previousTimeMilliseconds =
+                PlayerPrefs.GetInt(key);
+
+            // El nuevo tiempo no supera el récord.
+            if (
+                newTimeMilliseconds >=
+                previousTimeMilliseconds
+            )
+            {
+                return false;
+            }
+        }
+
+        PlayerPrefs.SetInt(
+            key,
+            newTimeMilliseconds
+        );
+
+        PlayerPrefs.Save();
+
+        // Devuelve true cuando es un nuevo récord.
+        return true;
+    }
+
+    public bool TryGetBestLevelTime(
+    Level_Scriptable level,
+    out float bestTime
+)
+    {
+        bestTime = 0f;
+
+        if (level == null)
+            return false;
+
+        string key = GetBestTimeKey(level);
+
+        if (!PlayerPrefs.HasKey(key))
+            return false;
+
+        int milliseconds =
+            PlayerPrefs.GetInt(key);
+
+        bestTime =
+            milliseconds / 1000f;
+
+        return true;
+    }
+
+    private string GetBestTimeKey(
+        Level_Scriptable level
+    )
+    {
+        return BestTimesKey + level.LevelID;
+    }
     // ── Unity ────────────────────────────────────────────────────────────────
 
     private void Awake()
@@ -213,11 +285,6 @@ public class ProgressionManager : MonoBehaviour
         return Mathf.Infinity;
     }
 
-    public void RegisterLevelCompletionTime(float completionTime)
-    {
-        _pendingCompletionTime = Mathf.Max(0f, completionTime);
-    }
-
     public void CompleteLevel(Level_Scriptable level, float completionTime)
     {
         if (level == null)
@@ -320,12 +387,6 @@ public class ProgressionManager : MonoBehaviour
         }
 
         SceneManager.LoadScene(cinematicsSceneName);
-    }
-
-    public void AdvanceLevel(float completionTime)
-    {
-        RegisterLevelCompletionTime(completionTime);
-        AdvanceLevel();
     }
 
     private Level_Scriptable EvaluateNextLevel()

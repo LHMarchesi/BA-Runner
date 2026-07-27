@@ -18,6 +18,11 @@ public class LevelNodeUI : MonoBehaviour
 
     public Level_Scriptable Level => level;
 
+    [Header("Background")]
+    [Tooltip("Imagen de fondo que se muestra al seleccionar este nivel.")]
+    [SerializeField] private Sprite backgroundSprite;
+
+    public Sprite BackgroundSprite => backgroundSprite;
     [Header("UI")]
     [SerializeField] private Button button;
     [SerializeField] private TextMeshProUGUI levelNameText;
@@ -28,6 +33,13 @@ public class LevelNodeUI : MonoBehaviour
 
     [Tooltip("Tilde que aparece encima cuando el nivel está completado.")]
     [SerializeField] private Image completedVisual;
+
+    [Header("Completion Time")]
+    [SerializeField] private GameObject bestTimeRoot;
+    [SerializeField] private TextMeshProUGUI bestTimeText;
+
+    [Tooltip("Texto que aparece antes del tiempo.")]
+    [SerializeField] private string bestTimePrefix = "BEST ";
 
     [Header("Stars")]
     [SerializeField] private GameObject starsRoot;
@@ -86,7 +98,9 @@ public class LevelNodeUI : MonoBehaviour
         if (currentVisual != null)
         {
             currentVisual.enabled =
-                state == LevelNodeState.Current;
+                state == LevelNodeState.Current  || 
+                state == LevelNodeState.Completed ||
+                state == LevelNodeState.Unlocked;
         }
 
         // Tilde que aparece encima del botón.
@@ -98,6 +112,7 @@ public class LevelNodeUI : MonoBehaviour
 
         int stars = ProgressionManager.Instance.GetStarsForLevel(level);
         SetStars(stars);
+        RefreshBestTime();
     }
 
     private void SetStars(int starCount)
@@ -128,6 +143,83 @@ public class LevelNodeUI : MonoBehaviour
         }
     }
 
+    private void RefreshBestTime()
+    {
+        if (
+            level == null ||
+            ProgressionManager.Instance == null
+        )
+        {
+            SetBestTimeVisible(false);
+            return;
+        }
+
+        bool hasBestTime =
+            ProgressionManager.Instance
+                .TryGetBestLevelTime(
+                    level,
+                    out float bestTime
+                );
+
+        if (!hasBestTime)
+        {
+            SetBestTimeVisible(false);
+            return;
+        }
+
+        SetBestTimeVisible(true);
+
+        if (bestTimeText != null)
+        {
+            bestTimeText.text =
+                bestTimePrefix +
+                FormatTime(bestTime);
+        }
+    }
+
+    private void SetBestTimeVisible(bool visible)
+    {
+        if (bestTimeRoot != null)
+        {
+            bestTimeRoot.SetActive(visible);
+            return;
+        }
+
+        if (bestTimeText != null)
+        {
+            bestTimeText.gameObject
+                .SetActive(visible);
+        }
+    }
+
+    private string FormatTime(float totalSeconds)
+    {
+        totalSeconds =
+            Mathf.Max(0f, totalSeconds);
+
+        int minutes =
+            Mathf.FloorToInt(
+                totalSeconds / 60f
+            );
+
+        int seconds =
+            Mathf.FloorToInt(
+                totalSeconds % 60f
+            );
+
+        int centiseconds =
+            Mathf.FloorToInt(
+                totalSeconds * 100f
+            ) % 100;
+
+        return string.Format(
+            "{0:00}:{1:00}.{2:00}",
+            minutes,
+            seconds,
+            centiseconds
+        );
+    }
+
     private void OnPressed()
     {
         if (level == null || manager == null)
@@ -136,3 +228,6 @@ public class LevelNodeUI : MonoBehaviour
         manager.SelectLevel(level);
     }
 }
+
+
+

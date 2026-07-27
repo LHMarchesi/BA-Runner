@@ -19,7 +19,7 @@ MonoBehaviour:
     NextLevel: {fileID: 11400000, guid: 25c914e4791e71d42aa3d3abd985560e, type: 2}
   - RequiredFlags:
     - NuncaMeDetuveAPensarlo
-    NextLevel: {fileID: 0}
+    NextLevel: {fileID: 11400000, guid: 9cb8c63a89b07a141a5b0352d8d767fd, type: 2}
   DefaultNextLevel: {fileID: 0}
   maxLevelProgession: 100
   levelMusic: {fileID: 8300000, guid: 7bcb251e2b8c9054188b2018b967b3c3, type: 3}
