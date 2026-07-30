@@ -34,13 +34,13 @@ MonoBehaviour:
       background: {fileID: 2100000, guid: 4d74597f3744299439f267039cc51ac2, type: 2}
   starRequirements:
   - stars: 5
-    maxTime: 32
+    maxTime: 41.1
   - stars: 4
-    maxTime: 35
+    maxTime: 44
   - stars: 3
-    maxTime: 40
+    maxTime: 48.9
   - stars: 2
-    maxTime: 45
+    maxTime: 52.7
   - stars: 1
     maxTime: 60
   introDialogueGraph: {fileID: 3965311268370046156, guid: bf7d890fe5f057c4192d14feb3412dbf, type: 3}

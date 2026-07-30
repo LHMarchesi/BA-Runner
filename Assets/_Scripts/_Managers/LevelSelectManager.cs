@@ -73,6 +73,7 @@ public class LevelSelectManager : MonoBehaviour
                 continue;
 
             LevelNodeState state = GetStateForLevel(node.Level);
+
             node.SetState(state);
         }
 

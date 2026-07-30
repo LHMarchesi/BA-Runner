@@ -176,27 +176,94 @@ public class SpawnManager : MonoBehaviour
 
     private void SpawnObstacle(SpawnPattern.SpawnEntry entry)
     {
-        Obstacle obstacle = pool.Get(entry.obstacleConfig, worldSpeed);
-        Transform[] lanes = entry.obstacleConfig.spawnSide == ObstacleConfig.SpawnSide.Front ? frontLanes : rearLanes;
+        Obstacle obstacle =
+            pool.Get(
+                entry.obstacleConfig,
+                worldSpeed
+            );
 
-        if (entry.laneIndex < 0 || entry.laneIndex >= lanes.Length)
+        Transform[] lanes =
+            entry.obstacleConfig.spawnSide ==
+            ObstacleConfig.SpawnSide.Front
+                ? frontLanes
+                : rearLanes;
+
+        if (entry.laneIndex < 0 ||
+            entry.laneIndex >= lanes.Length)
         {
             Debug.LogError(
                 $"LaneIndex inválido.\n" +
                 $"Side: {entry.obstacleConfig.spawnSide}\n" +
                 $"Index: {entry.laneIndex}\n" +
-                $"Lanes: {lanes.Length}"
+                $"Lanes disponibles: {lanes.Length}"
             );
+
+            pool.Return(
+                entry.obstacleConfig,
+                obstacle
+            );
+
             return;
         }
-        Transform lane = lanes[entry.laneIndex];
-        obstacle.transform.SetParent(lane, worldPositionStays: false);
-        obstacle.transform.localPosition = Vector3.zero;
 
-        ObstacleConfig capturedConfig = entry.obstacleConfig;
-        obstacle.OnDespawn = () => pool.Return(capturedConfig, obstacle);
-      
+        Transform lane =
+            lanes[entry.laneIndex];
+
+        obstacle.transform.SetParent(
+            lane,
+            worldPositionStays: false
+        );
+
+        obstacle.transform.localPosition =
+            Vector3.zero;
+
+        obstacle.transform.localScale =
+            Vector3.one;
+
+        obstacle.transform.localRotation =
+            Quaternion.identity;
+
+        ObstacleConfig capturedConfig =
+            entry.obstacleConfig;
+
+        obstacle.OnDespawn = () =>
+            pool.Return(
+                capturedConfig,
+                obstacle
+            );
+
+        /*
+         * Primero activamos el obstáculo.
+         *
+         * Si OnSpawned se ejecuta desde OnEnable,
+         * lo hará en este momento.
+         */
         obstacle.gameObject.SetActive(true);
+
+        /*
+         * Después de OnSpawned configuramos los carriles,
+         * para que OnSpawned no vuelva a borrarlos.
+         */
+        ChangingLaneBehavior changingLane =
+            obstacle.GetComponent<
+                ChangingLaneBehavior
+            >();
+
+        if (changingLane == null)
+        {
+            changingLane =
+                obstacle.GetComponentInChildren<
+                    ChangingLaneBehavior
+                >(true);
+        }
+
+        if (changingLane != null)
+        {
+            changingLane.ConfigureLanes(
+                lanes,
+                entry.laneIndex
+            );
+        }
     }
     private void OnDisable()
     {

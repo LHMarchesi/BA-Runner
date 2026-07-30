@@ -23,6 +23,7 @@ public class LevelNodeUI : MonoBehaviour
     [SerializeField] private Sprite backgroundSprite;
 
     public Sprite BackgroundSprite => backgroundSprite;
+
     [Header("UI")]
     [SerializeField] private Button button;
     [SerializeField] private TextMeshProUGUI levelNameText;
@@ -43,21 +44,26 @@ public class LevelNodeUI : MonoBehaviour
 
     [Header("Stars")]
     [SerializeField] private GameObject starsRoot;
-    [SerializeField] private List<Image> starImages = new List<Image>();
+    [SerializeField]
+    private List<Image> starImages =
+        new List<Image>();
+
     [SerializeField] private Sprite fullStarSprite;
     [SerializeField] private Sprite emptyStarSprite;
 
     private LevelSelectManager manager;
+    private LevelNodeState currentState;
 
     private void Reset()
     {
         button = GetComponent<Button>();
 
         if (button == null)
-            button = GetComponentInChildren<Button>();
+            button = GetComponentInChildren<Button>(true);
     }
 
-    public void Initialize(LevelSelectManager levelSelectManager)
+    public void Initialize(
+        LevelSelectManager levelSelectManager)
     {
         manager = levelSelectManager;
 
@@ -65,7 +71,7 @@ public class LevelNodeUI : MonoBehaviour
             button = GetComponent<Button>();
 
         if (button == null)
-            button = GetComponentInChildren<Button>();
+            button = GetComponentInChildren<Button>(true);
 
         if (button != null)
         {
@@ -74,12 +80,24 @@ public class LevelNodeUI : MonoBehaviour
         }
 
         if (levelNameText != null && level != null)
+        {
             levelNameText.text = level.LevelID;
+        }
+
+        /*
+         * Actualizamos la información guardada inmediatamente.
+         * SetState volverá a actualizarla después cuando el
+         * LevelSelectManager determine el estado del nivel.
+         */
+        RefreshProgress();
     }
 
     public void SetState(LevelNodeState state)
     {
-        bool isHidden = state == LevelNodeState.Hidden;
+        currentState = state;
+
+        bool isHidden =
+            state == LevelNodeState.Hidden;
 
         gameObject.SetActive(!isHidden);
 
@@ -94,31 +112,64 @@ public class LevelNodeUI : MonoBehaviour
                 state == LevelNodeState.Current;
         }
 
-        // Imagen que marca el nivel actual.
+        /*
+         * Mantenemos la lógica visual que ya tenías.
+         *
+         * Actualmente esta imagen aparece en todos los
+         * estados visibles.
+         */
         if (currentVisual != null)
         {
             currentVisual.enabled =
-                state == LevelNodeState.Current  || 
+                state == LevelNodeState.Current ||
                 state == LevelNodeState.Completed ||
                 state == LevelNodeState.Unlocked;
         }
 
-        // Tilde que aparece encima del botón.
         if (completedVisual != null)
         {
             completedVisual.enabled =
                 state == LevelNodeState.Completed;
         }
 
-        int stars = ProgressionManager.Instance.GetStarsForLevel(level);
-        SetStars(stars);
+        /*
+         * Aunque el estado siga siendo Completed,
+         * las estrellas y el mejor tiempo pueden haber cambiado.
+         */
+        RefreshProgress();
+    }
+
+    public void RefreshProgress()
+    {
+        if (level == null ||
+            ProgressionManager.Instance == null)
+        {
+            SetStars(0);
+            SetBestTimeVisible(false);
+            return;
+        }
+
+        int bestStars =
+            ProgressionManager.Instance
+                .GetStarsForLevel(level);
+
+        SetStars(bestStars);
         RefreshBestTime();
     }
 
     private void SetStars(int starCount)
     {
+        int clampedStarCount =
+            Mathf.Clamp(
+                starCount,
+                0,
+                starImages.Count
+            );
+
         if (starsRoot != null)
+        {
             starsRoot.SetActive(true);
+        }
 
         for (int i = 0; i < starImages.Count; i++)
         {
@@ -127,28 +178,38 @@ public class LevelNodeUI : MonoBehaviour
             if (starImage == null)
                 continue;
 
-            starImage.gameObject.SetActive(true);
-
-            if (fullStarSprite != null && emptyStarSprite != null)
+            /*
+             * Cuando hay sprites llenos y vacíos,
+             * todas las estrellas permanecen visibles.
+             */
+            if (fullStarSprite != null &&
+                emptyStarSprite != null)
             {
+                starImage.gameObject.SetActive(true);
+
                 starImage.sprite =
-                    i < starCount
+                    i < clampedStarCount
                         ? fullStarSprite
                         : emptyStarSprite;
             }
             else
             {
-                starImage.gameObject.SetActive(i < starCount);
+                /*
+                 * Si no se configuraron ambos sprites,
+                 * usamos el sistema alternativo de
+                 * activar solamente las estrellas obtenidas.
+                 */
+                starImage.gameObject.SetActive(
+                    i < clampedStarCount
+                );
             }
         }
     }
 
     private void RefreshBestTime()
     {
-        if (
-            level == null ||
-            ProgressionManager.Instance == null
-        )
+        if (level == null ||
+            ProgressionManager.Instance == null)
         {
             SetBestTimeVisible(false);
             return;
@@ -187,8 +248,9 @@ public class LevelNodeUI : MonoBehaviour
 
         if (bestTimeText != null)
         {
-            bestTimeText.gameObject
-                .SetActive(visible);
+            bestTimeText.gameObject.SetActive(
+                visible
+            );
         }
     }
 
@@ -228,6 +290,3 @@ public class LevelNodeUI : MonoBehaviour
         manager.SelectLevel(level);
     }
 }
-
-
-
