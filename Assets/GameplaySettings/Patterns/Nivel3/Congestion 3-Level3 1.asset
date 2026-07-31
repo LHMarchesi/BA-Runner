@@ -41,7 +41,3 @@ MonoBehaviour:
     laneIndex: 3
     distanceOffset: 0
     positionOffset: {x: 0, y: 0}
-  - obstacleConfig: {fileID: 11400000, guid: 8d781005a03462d4eb1be72eb65d9ddc, type: 2}
-    laneIndex: 2
-    distanceOffset: 0
-    positionOffset: {x: 0, y: 0}

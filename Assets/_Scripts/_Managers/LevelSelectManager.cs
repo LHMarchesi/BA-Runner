@@ -170,33 +170,6 @@ public class LevelSelectManager : MonoBehaviour
 
     private LevelNodeUI FindPreferredNode()
     {
-        Level_Scriptable preferredLevel = null;
-
-        if (ProgressionManager.Instance != null)
-        {
-            preferredLevel =
-                ProgressionManager.Instance.CurrentLevel;
-        }
-
-        // Primero intentamos seleccionar el nivel actual
-        // o el último nivel guardado.
-        if (preferredLevel != null)
-        {
-            foreach (LevelNodeUI node in levelNodes)
-            {
-                if (
-                    node != null &&
-                    node.Level == preferredLevel &&
-                    IsNodeSelectable(node)
-                )
-                {
-                    return node;
-                }
-            }
-        }
-
-        // Si no existe un nivel actual seleccionable,
-        // usamos el primero disponible de la lista.
         foreach (LevelNodeUI node in levelNodes)
         {
             if (IsNodeSelectable(node))

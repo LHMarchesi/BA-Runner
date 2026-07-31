@@ -139,7 +139,7 @@ public class SurvivalUIManager : MonoBehaviour
     {
         timerRunning = false;
         StartCoroutine(LoseSequence());
-
+        AudioManager.Instance.StopMusic();
         float efficiency = e.distance / Mathf.Max(survivalTime, 1f);
 
         int finalScore = Mathf.RoundToInt(

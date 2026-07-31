@@ -13,15 +13,9 @@ MonoBehaviour:
   m_Name: STAGE_01
   m_EditorClassIdentifier: Assembly-CSharp::WaveConfig
   patterns:
-  - {fileID: 11400000, guid: f9738483ad38bd641b1ec6fd8058c3ad, type: 2}
-  - {fileID: 11400000, guid: 3659cce06676a3042a08b0c3e39d6599, type: 2}
-  - {fileID: 11400000, guid: fd78ffa1a86153549bc22fac058d5858, type: 2}
-  - {fileID: 11400000, guid: 21d3b71861253e74e9a1d9409900efec, type: 2}
-  - {fileID: 11400000, guid: f9738483ad38bd641b1ec6fd8058c3ad, type: 2}
-  - {fileID: 11400000, guid: 3659cce06676a3042a08b0c3e39d6599, type: 2}
-  - {fileID: 11400000, guid: fd78ffa1a86153549bc22fac058d5858, type: 2}
-  - {fileID: 11400000, guid: 3580331051a74f54b9c078d1d83390e4, type: 2}
-  - {fileID: 11400000, guid: b7645a9e4e3e46543bad48d7796473ff, type: 2}
-  - {fileID: 11400000, guid: 4539b93e22b850449ab4624bb6e39bc6, type: 2}
-  randomizeOrder: 0
-  distanceBetweenWaves: 2
+  - {fileID: 11400000, guid: 6f5088364a7d6f1439ddeb9dbcdd7442, type: 2}
+  - {fileID: 11400000, guid: 7df0ddd4996c29a46a3f3c0965160e18, type: 2}
+  - {fileID: 11400000, guid: db9574e4b40aa0648ba52e7ae16c8570, type: 2}
+  - {fileID: 11400000, guid: d3ee88128395c1a4f813df193662f8d4, type: 2}
+  randomizeOrder: 1
+  distanceBetweenWaves: 1

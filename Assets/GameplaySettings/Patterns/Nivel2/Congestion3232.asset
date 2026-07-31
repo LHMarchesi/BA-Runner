@@ -15,7 +15,7 @@ MonoBehaviour:
   spawns:
   - obstacleConfig: {fileID: 11400000, guid: f08bd68d6a6ba4646a6b5f4564cd5cbf, type: 2}
     laneIndex: 0
-    distanceOffset: 0
+    distanceOffset: 0.8
     positionOffset: {x: 0, y: 0}
   - obstacleConfig: {fileID: 11400000, guid: f08bd68d6a6ba4646a6b5f4564cd5cbf, type: 2}
     laneIndex: 1

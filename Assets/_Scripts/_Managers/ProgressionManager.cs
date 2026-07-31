@@ -34,12 +34,13 @@ public class ProgressionManager : MonoBehaviour
     private const string BestTimesKey = "BestTimes";
 
     public bool RegisterLevelCompletionTime(
-     Level_Scriptable level,
-     float completionTime
- )
+        Level_Scriptable level,
+        float completionTime)
     {
         if (level == null || completionTime <= 0f)
             return false;
+
+        _pendingCompletionTime = completionTime;
 
         string key = GetBestTimeKey(level);
 
@@ -49,30 +50,29 @@ public class ProgressionManager : MonoBehaviour
         bool hasPreviousTime =
             PlayerPrefs.HasKey(key);
 
+        bool isNewRecord = true;
+
         if (hasPreviousTime)
         {
             int previousTimeMilliseconds =
                 PlayerPrefs.GetInt(key);
 
-            // El nuevo tiempo no supera el récord.
-            if (
-                newTimeMilliseconds >=
-                previousTimeMilliseconds
-            )
-            {
-                return false;
-            }
+            isNewRecord =
+                newTimeMilliseconds <
+                previousTimeMilliseconds;
         }
 
-        PlayerPrefs.SetInt(
-            key,
-            newTimeMilliseconds
-        );
+        if (isNewRecord)
+        {
+            PlayerPrefs.SetInt(
+                key,
+                newTimeMilliseconds
+            );
 
-        PlayerPrefs.Save();
+            PlayerPrefs.Save();
+        }
 
-        // Devuelve true cuando es un nuevo récord.
-        return true;
+        return isNewRecord;
     }
 
     public bool TryGetBestLevelTime(
@@ -213,13 +213,6 @@ public class ProgressionManager : MonoBehaviour
 
             DiscoverLevel(variant.NextLevel);
 
-            Debug.Log(
-                $"[Progression] Nivel descubierto por elección: " +
-                $"{variant.NextLevel.name}"
-            );
-
-            // EvaluateNextLevel también utiliza la primera variante coincidente,
-            // así que hacemos lo mismo.
             return;
         }
     }
@@ -316,8 +309,6 @@ public class ProgressionManager : MonoBehaviour
         }
 
         SaveProgress();
-
-        Debug.Log($"[Progression] Level completed: {level.name} | Time: {completionTime:F2} | Stars: {earnedStars}");
     }
 
     // ── Progresión ───────────────────────────────────────────────────────────
@@ -354,13 +345,20 @@ public class ProgressionManager : MonoBehaviour
             DiscoverStartingLevelIfNeeded();
         }
 
-        float completionTime = _pendingCompletionTime >= 0f
-            ? _pendingCompletionTime
-            : Mathf.Infinity;
+        if (_pendingCompletionTime < 0f)
+        {
+            return;
+        }
+
+        float completionTime =
+            _pendingCompletionTime;
 
         _pendingCompletionTime = -1f;
 
-        CompleteLevel(CurrentLevel, completionTime);
+        CompleteLevel(
+            CurrentLevel,
+            completionTime
+        );
 
         Level_Scriptable next = EvaluateNextLevel();
 
