@@ -38,6 +38,6 @@ MonoBehaviour:
   - stars: 1
     maxTime: 60
   introDialogueGraph: {fileID: 3965311268370046156, guid: 15ec4bb7124940d49be201e461a84df0, type: 3}
-  outroDialogueGraph: {fileID: 0}
+  outroDialogueGraph: {fileID: 3965311268370046156, guid: e4f22f94e7bf8e24986479da4ca37dd2, type: 3}
   introMusic: {fileID: 8300000, guid: f2946434619dcde41b0c99ffa4ffc2e4, type: 3}
   outroMusic: {fileID: 0}

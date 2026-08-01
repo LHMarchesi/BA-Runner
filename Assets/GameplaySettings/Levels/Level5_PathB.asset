@@ -37,7 +37,7 @@ MonoBehaviour:
     maxTime: 45
   - stars: 1
     maxTime: 60
-  introDialogueGraph: {fileID: 3965311268370046156, guid: bf7d890fe5f057c4192d14feb3412dbf, type: 3}
-  outroDialogueGraph: {fileID: 3965311268370046156, guid: 5ff641cd1baeb3249bdc3d8c916ef23d, type: 3}
+  introDialogueGraph: {fileID: 3965311268370046156, guid: a0b70bd17bf87c647adc4ddee0507588, type: 3}
+  outroDialogueGraph: {fileID: 0}
   introMusic: {fileID: 0}
   outroMusic: {fileID: 8300000, guid: 98a53100b7a83884588fc18ef3f244a9, type: 3}

@@ -15,10 +15,10 @@ MonoBehaviour:
   levelID: Barrio Chino
   Variants:
   - RequiredFlags:
-    - EsTodoLoQueSeHacer
+    - EvitarHablar
     NextLevel: {fileID: 11400000, guid: 23aa1e71a52bed14eb230499cf6b95c0, type: 2}
   - RequiredFlags:
-    - NuncaMeDetuveAPensarlo
+    - NoCreoDinero
     NextLevel: {fileID: 11400000, guid: f92bf9f71554fe84382ee444e8aec151, type: 2}
   DefaultNextLevel: {fileID: 0}
   maxLevelProgession: 100
