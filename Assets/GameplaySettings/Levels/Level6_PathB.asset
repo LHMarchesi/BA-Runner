@@ -17,7 +17,7 @@ MonoBehaviour:
   DefaultNextLevel: {fileID: 0}
   maxLevelProgession: 100
   levelMusic: {fileID: 8300000, guid: 97367b10cbec9744e8dd4b93f5ee5ded, type: 3}
-  winLevelImage: {fileID: 0}
+  winLevelImage: {fileID: -8151781588263760431, guid: 4b5e37de2f147fd409a7461a4c56eb85, type: 3}
   stages:
   - stageName: 
     speedData: {fileID: 11400000, guid: ff98cf3aa638e934aab866d252848f99, type: 2}
@@ -37,7 +37,7 @@ MonoBehaviour:
     maxTime: 45
   - stars: 1
     maxTime: 60
-  introDialogueGraph: {fileID: 3965311268370046156, guid: 15ec4bb7124940d49be201e461a84df0, type: 3}
+  introDialogueGraph: {fileID: 0}
   outroDialogueGraph: {fileID: 3965311268370046156, guid: e4f22f94e7bf8e24986479da4ca37dd2, type: 3}
   introMusic: {fileID: 8300000, guid: f2946434619dcde41b0c99ffa4ffc2e4, type: 3}
   outroMusic: {fileID: 0}

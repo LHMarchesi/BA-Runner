@@ -16,6 +16,7 @@ public class RuntimeDialogueNode
     public string DialogueText;
     public float Delay;
     public Sprite Image;
+    public bool ChoicesAreExclusive = true;
     public List<ChoiceData> Choices = new List<ChoiceData>();
     public string NextNodeID;
 }

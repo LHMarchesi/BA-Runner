@@ -26,31 +26,68 @@ public class DialogueManager : MonoBehaviour
     [Header("Delay")]
     [SerializeField] private Slider delayProgressBar;
 
-    private Dictionary<string, RuntimeDialogueNode> nodeLookup = new Dictionary<string, RuntimeDialogueNode>();
+    private readonly Dictionary<string, RuntimeDialogueNode> nodeLookup =
+        new Dictionary<string, RuntimeDialogueNode>();
 
     private RuntimeDialogueNode currentNode;
 
     private Coroutine autoAdvanceCoroutine;
     private Coroutine selectRoutine;
+    private Coroutine continueTransitionCoroutine;
 
     private bool isOutro;
     private bool dialogueEnded;
     private bool isTransitioning;
 
+    /*
+     * Evita que el clic o Submit usado para elegir una opción
+     * también active Continue durante el mismo frame.
+     */
+    private int inputBlockedUntilFrame = -1;
+
     private void Start()
     {
-        continueButton.gameObject.SetActive(false);
+        dialogueEnded = false;
+        isTransitioning = false;
 
-       if (delayProgressBar != null)
+        if (continueButton == null)
+        {
+            Debug.LogError(
+                "[Dialogue] Continue Button no está asignado en el Inspector."
+            );
+
+            return;
+        }
+
+        /*
+         * El listener se registra una única vez.
+         * EndDialogue solamente muestra y habilita el botón.
+         */
+        continueButton.gameObject.SetActive(false);
+        continueButton.interactable = false;
+        continueButton.onClick.RemoveListener(HandleContinueButton);
+        continueButton.onClick.AddListener(HandleContinueButton);
+
+        if (delayProgressBar != null)
+        {
             delayProgressBar.gameObject.SetActive(false);
+        }
 
         ClearChoiceButtons();
-
         EnterCinematics();
     }
 
     private void EnterCinematics()
     {
+        if (GameManager.Instance == null)
+        {
+            Debug.LogError(
+                "[Dialogue] GameManager.Instance es null."
+            );
+
+            return;
+        }
+
         isOutro = GameManager.Instance.IsOutro;
 
         SetRuntimeGraphFromLevel();
@@ -60,6 +97,15 @@ public class DialogueManager : MonoBehaviour
         {
             if (isOutro)
             {
+                if (ProgressionManager.Instance == null)
+                {
+                    Debug.LogError(
+                        "[Dialogue] ProgressionManager.Instance es null."
+                    );
+
+                    return;
+                }
+
                 ProgressionManager.Instance.AdvanceLevel();
             }
             else
@@ -75,7 +121,18 @@ public class DialogueManager : MonoBehaviour
 
     private void SetRuntimeGraphFromLevel()
     {
-        Level_Scriptable currentLevel = ProgressionManager.Instance.CurrentLevel;
+        if (ProgressionManager.Instance == null)
+        {
+            Debug.LogError(
+                "[Dialogue] ProgressionManager.Instance es null."
+            );
+
+            CurrentRuntimeGraph = null;
+            return;
+        }
+
+        Level_Scriptable currentLevel =
+            ProgressionManager.Instance.CurrentLevel;
 
         if (currentLevel == null)
         {
@@ -101,49 +158,160 @@ public class DialogueManager : MonoBehaviour
 
         nodeLookup.Clear();
 
-        foreach (var node in CurrentRuntimeGraph.AllNodes)
+        foreach (RuntimeDialogueNode node in CurrentRuntimeGraph.AllNodes)
         {
-            nodeLookup[node.NodeID] = node;
+            if (node == null)
+                continue;
+
+            if (string.IsNullOrWhiteSpace(node.NodeID))
+            {
+                Debug.LogWarning(
+                    "[Dialogue] Se encontró un nodo sin NodeID."
+                );
+
+                continue;
+            }
+
+            string nodeID = node.NodeID.Trim();
+
+            if (nodeLookup.ContainsKey(nodeID))
+            {
+                Debug.LogWarning(
+                    $"[Dialogue] NodeID duplicado: {nodeID}"
+                );
+            }
+
+            nodeLookup[nodeID] = node;
         }
 
-        if (!string.IsNullOrEmpty(CurrentRuntimeGraph.EntryNodeID))
+        ValidateGraphConnections();
+
+        if (!string.IsNullOrWhiteSpace(CurrentRuntimeGraph.EntryNodeID))
         {
-            ShowDialogue(CurrentRuntimeGraph.EntryNodeID);
+            ShowDialogue(
+                CurrentRuntimeGraph.EntryNodeID.Trim()
+            );
         }
         else
         {
+            Debug.LogWarning(
+                "[Dialogue] El grafo no tiene EntryNodeID."
+            );
+
             EndDialogue();
+        }
+    }
+
+    private void ValidateGraphConnections()
+    {
+        if (CurrentRuntimeGraph == null)
+            return;
+
+        foreach (RuntimeDialogueNode node in CurrentRuntimeGraph.AllNodes)
+        {
+            if (node == null)
+                continue;
+
+            if (!string.IsNullOrWhiteSpace(node.NextNodeID))
+            {
+                string nextNodeID =
+                    node.NextNodeID.Trim();
+
+                if (!nodeLookup.ContainsKey(nextNodeID))
+                {
+                    Debug.LogError(
+                        $"[Dialogue Validation] El nodo '{node.NodeID}' tiene " +
+                        $"NextNodeID roto: '{nextNodeID}'."
+                    );
+                }
+            }
+
+            if (node.Choices == null)
+                continue;
+
+            foreach (ChoiceData choice in node.Choices)
+            {
+                if (choice == null ||
+                    string.IsNullOrWhiteSpace(choice.DestinationNodeID))
+                {
+                    continue;
+                }
+
+                string destination =
+                    choice.DestinationNodeID.Trim();
+
+                if (!nodeLookup.ContainsKey(destination))
+                {
+                    Debug.LogError(
+                        $"[Dialogue Validation] La elección " +
+                        $"'{choice.ChoiceText}' del nodo '{node.NodeID}' " +
+                        $"apunta al nodo inexistente '{destination}'."
+                    );
+                }
+            }
         }
     }
 
     private void ShowDialogue(string nodeID)
     {
-        if (!nodeLookup.ContainsKey(nodeID))
+        if (string.IsNullOrWhiteSpace(nodeID))
         {
+            Debug.LogWarning(
+                "[Dialogue] Se intentó mostrar un NodeID vacío."
+            );
+
+            EndDialogue();
+            return;
+        }
+
+        nodeID = nodeID.Trim();
+
+        if (!nodeLookup.TryGetValue(
+                nodeID,
+                out RuntimeDialogueNode node
+            ))
+        {
+            Debug.LogError(
+                $"[Dialogue] No se encontró el nodo '{nodeID}'."
+            );
+
             EndDialogue();
             return;
         }
 
         StopAutoAdvance();
 
-        currentNode = nodeLookup[nodeID];
+        currentNode = node;
         dialogueEnded = false;
 
-        dialoguePanel.SetActive(true);
+        if (dialoguePanel != null)
+        {
+            dialoguePanel.SetActive(true);
+        }
 
         continueButton.gameObject.SetActive(false);
+        continueButton.interactable = false;
 
         if (backgroundImage != null)
         {
             backgroundImage.sprite = currentNode.Image;
-            backgroundImage.gameObject.SetActive(currentNode.Image != null);
+
+            backgroundImage.gameObject.SetActive(
+                currentNode.Image != null
+            );
         }
 
         if (SpeakerNameText != null)
-            SpeakerNameText.text = currentNode.SpeakerName;
+        {
+            SpeakerNameText.text =
+                currentNode.SpeakerName;
+        }
 
         if (DialogueText != null)
-            DialogueText.text = currentNode.DialogueText;
+        {
+            DialogueText.text =
+                currentNode.DialogueText;
+        }
 
         ClearChoiceButtons();
 
@@ -154,27 +322,44 @@ public class DialogueManager : MonoBehaviour
         if (hasChoices)
         {
             SetupChoiceButtons(currentNode.Choices);
+            return;
         }
-        else
+
+        if (currentNode.Delay > 0f)
         {
-            if (currentNode.Delay > 0f)
-            {
-                autoAdvanceCoroutine = StartCoroutine(AutoAdvanceCoroutine(currentNode.Delay));
-            }
+            autoAdvanceCoroutine = StartCoroutine(
+                AutoAdvanceCoroutine(currentNode.Delay)
+            );
         }
     }
 
-    private void SetupChoiceButtons(List<ChoiceData> choices)
+    private void SetupChoiceButtons(
+        List<ChoiceData> choices
+    )
     {
         ClearChoiceButtons();
 
-        int activeButtonCount = Mathf.Min(choices.Count, choiceButtons.Count);
+        if (choices == null || choices.Count == 0)
+        {
+            EndDialogue();
+            return;
+        }
+
+        bool choicesAreExclusive =
+            currentNode != null &&
+            currentNode.ChoicesAreExclusive;
+
+        int activeButtonCount =
+            Mathf.Min(
+                choices.Count,
+                choiceButtons.Count
+            );
 
         if (choices.Count > choiceButtons.Count)
         {
             Debug.LogWarning(
-                $"Hay más choices ({choices.Count}) que botones disponibles ({choiceButtons.Count}). " +
-                $"Solo se mostrarán {choiceButtons.Count}."
+                $"[Dialogue] Hay {choices.Count} elecciones, pero solamente " +
+                $"{choiceButtons.Count} botones disponibles."
             );
         }
 
@@ -183,21 +368,84 @@ public class DialogueManager : MonoBehaviour
             ChoiceData capturedChoice = choices[i];
             Button button = choiceButtons[i];
 
+            if (button == null)
+            {
+                Debug.LogWarning(
+                    $"[Dialogue] Choice Button {i} no está asignado."
+                );
+
+                continue;
+            }
+
+            if (button == continueButton)
+            {
+                Debug.LogError(
+                    "[Dialogue] Continue Button está incluido en choiceButtons. " +
+                    "Elimínalo de esa lista en el Inspector."
+                );
+
+                continue;
+            }
+
             button.gameObject.SetActive(true);
             button.interactable = true;
             button.onClick.RemoveAllListeners();
 
+            TextMeshProUGUI buttonText =
+                button.GetComponentInChildren<TextMeshProUGUI>();
+
+            if (buttonText != null &&
+                capturedChoice != null)
+            {
+                buttonText.text =
+                    capturedChoice.ChoiceText;
+            }
+
             button.onClick.AddListener(() =>
             {
-                Debug.Log($"[Choice] Elegida: '{capturedChoice.ChoiceText}'");
+                BlockDialogueInputForCurrentFrame();
 
-                ProgressionManager.Instance.ApplyChoice(capturedChoice);
-
-                if (capturedChoice.FlagsToSet != null && capturedChoice.FlagsToSet.Count > 0)
+                if (capturedChoice == null)
                 {
+                    Debug.LogError(
+                        "[Dialogue] La ChoiceData seleccionada es null."
+                    );
+
+                    EndDialogue();
+                    return;
+                }
+
+                Debug.Log(
+                    $"[Choice] Elegida: '{capturedChoice.ChoiceText}'"
+                );
+
+                ClearChoiceButtons();
+
+                if (ProgressionManager.Instance == null)
+                {
+                    Debug.LogError(
+                        "[Dialogue] ProgressionManager.Instance es null."
+                    );
+
+                    EndDialogue();
+                    return;
+                }
+
+                ProgressionManager.Instance.ApplyChoice(
+                    capturedChoice,
+                    choices,
+                    choicesAreExclusive
+                );
+
+                if (capturedChoice.FlagsToSet != null &&
+                    capturedChoice.FlagsToSet.Count > 0)
+                {
+                    string firstFlag =
+                        capturedChoice.FlagsToSet[0];
+
                     Debug.Log(
-                        $"[Flags] HasFlag {capturedChoice.FlagsToSet[0]}: " +
-                        $"{ProgressionManager.Instance.HasFlag(capturedChoice.FlagsToSet[0])}"
+                        $"[Flags] HasFlag {firstFlag}: " +
+                        $"{ProgressionManager.Instance.HasFlag(firstFlag)}"
                     );
                 }
 
@@ -209,11 +457,23 @@ public class DialogueManager : MonoBehaviour
 
         if (activeButtonCount > 0)
         {
-            SelectAfterLayout(choiceButtons[0].gameObject);
+            Button firstButton =
+                choiceButtons[0];
+
+            if (firstButton != null &&
+                firstButton != continueButton &&
+                firstButton.gameObject.activeInHierarchy)
+            {
+                SelectAfterLayout(
+                    firstButton.gameObject
+                );
+            }
         }
     }
 
-    private void SetupExplicitNavigation(int activeButtonCount)
+    private void SetupExplicitNavigation(
+        int activeButtonCount
+    )
     {
         if (activeButtonCount <= 0)
             return;
@@ -222,16 +482,33 @@ public class DialogueManager : MonoBehaviour
         {
             Button current = choiceButtons[i];
 
-            Navigation navigation = new Navigation();
-            navigation.mode = Navigation.Mode.Explicit;
+            if (current == null ||
+                current == continueButton)
+            {
+                continue;
+            }
 
-            Button previous = choiceButtons[(i - 1 + activeButtonCount) % activeButtonCount];
-            Button next = choiceButtons[(i + 1) % activeButtonCount];
+            Button previous =
+                choiceButtons[
+                    (i - 1 + activeButtonCount) %
+                    activeButtonCount
+                ];
 
-            navigation.selectOnUp = previous;
-            navigation.selectOnLeft = previous;
-            navigation.selectOnDown = next;
-            navigation.selectOnRight = next;
+            Button next =
+                choiceButtons[
+                    (i + 1) %
+                    activeButtonCount
+                ];
+
+            Navigation navigation =
+                new Navigation
+                {
+                    mode = Navigation.Mode.Explicit,
+                    selectOnUp = previous,
+                    selectOnLeft = previous,
+                    selectOnDown = next,
+                    selectOnRight = next
+                };
 
             current.navigation = navigation;
         }
@@ -239,12 +516,18 @@ public class DialogueManager : MonoBehaviour
 
     private void ClearChoiceButtons()
     {
+        ClearCurrentSelection();
+
         foreach (Button button in choiceButtons)
         {
-            if (button == null)
+            if (button == null ||
+                button == continueButton)
+            {
                 continue;
+            }
 
             button.onClick.RemoveAllListeners();
+            button.interactable = false;
             button.gameObject.SetActive(false);
         }
     }
@@ -252,48 +535,104 @@ public class DialogueManager : MonoBehaviour
     private void EndDialogue()
     {
         StopAutoAdvance();
-
-        dialogueEnded = true;
-        currentNode = null;
-
         ClearChoiceButtons();
+
+        currentNode = null;
+        dialogueEnded = true;
+        isTransitioning = false;
+
+        /*
+         * Solo impide que el input usado para cerrar el último
+         * nodo active Continue durante este mismo frame.
+         */
+        BlockDialogueInputForCurrentFrame();
+
+        if (continueButton == null)
+        {
+            Debug.LogError(
+                "[Dialogue] Continue Button no está asignado."
+            );
+
+            return;
+        }
 
         continueButton.gameObject.SetActive(true);
         continueButton.interactable = true;
 
-        continueButton.onClick.RemoveAllListeners();
-        continueButton.onClick.AddListener(OnContinuePressed);
+        Debug.Log(
+            $"[Dialogue] Diálogo finalizado. " +
+            $"Continue disponible. IsOutro: {isOutro}"
+        );
 
-        SelectAfterLayout(continueButton.gameObject);
+        SelectAfterLayout(
+            continueButton.gameObject
+        );
     }
 
-    private void AdvanceNodeByChoice(ChoiceData choice)
+    private void AdvanceNodeByChoice(
+        ChoiceData choice
+    )
     {
         StopAutoAdvance();
 
-        string destination = !string.IsNullOrEmpty(choice.DestinationNodeID)
-            ? choice.DestinationNodeID
-            : currentNode.NextNodeID;
-
-        if (!string.IsNullOrEmpty(destination))
+        if (choice == null)
         {
-            ShowDialogue(destination);
+            Debug.LogError(
+                "[Dialogue] AdvanceNodeByChoice recibió una ChoiceData null."
+            );
+
+            EndDialogue();
             return;
         }
 
-        EndDialogueFromChoice();
-    }
+        string destination = null;
 
-    private void EndDialogueFromChoice()
-    {
-        dialogueEnded = true;
-        currentNode = null;
+        if (!string.IsNullOrWhiteSpace(
+                choice.DestinationNodeID
+            ))
+        {
+            destination =
+                choice.DestinationNodeID.Trim();
+        }
+        else if (
+            currentNode != null &&
+            !string.IsNullOrWhiteSpace(
+                currentNode.NextNodeID
+            )
+        )
+        {
+            destination =
+                currentNode.NextNodeID.Trim();
+        }
 
-        ClearChoiceButtons();
+        if (string.IsNullOrWhiteSpace(destination))
+        {
+            Debug.Log(
+                $"[Dialogue] La elección '{choice.ChoiceText}' " +
+                "termina la cinemática."
+            );
 
-        continueButton.gameObject.SetActive(false);
+            EndDialogue();
+            return;
+        }
 
-        OnContinuePressed();
+        if (!nodeLookup.ContainsKey(destination))
+        {
+            Debug.LogError(
+                $"[Dialogue] La elección '{choice.ChoiceText}' apunta al nodo " +
+                $"inexistente '{destination}'. Se finalizará la cinemática."
+            );
+
+            EndDialogue();
+            return;
+        }
+
+        Debug.Log(
+            $"[Dialogue] La elección '{choice.ChoiceText}' continúa hacia " +
+            $"el nodo '{destination}'."
+        );
+
+        ShowDialogue(destination);
     }
 
     private void AdvanceNode()
@@ -303,9 +642,13 @@ public class DialogueManager : MonoBehaviour
         if (currentNode == null)
             return;
 
-        if (!string.IsNullOrEmpty(currentNode.NextNodeID))
+        if (!string.IsNullOrWhiteSpace(
+                currentNode.NextNodeID
+            ))
         {
-            ShowDialogue(currentNode.NextNodeID);
+            ShowDialogue(
+                currentNode.NextNodeID.Trim()
+            );
         }
         else
         {
@@ -313,28 +656,37 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    private IEnumerator AutoAdvanceCoroutine(float delay)
+    private IEnumerator AutoAdvanceCoroutine(
+        float delay
+    )
     {
         float elapsed = 0f;
 
         if (delayProgressBar != null)
         {
-          delayProgressBar.gameObject.SetActive(true);
-           delayProgressBar.value = 0f;
+            delayProgressBar.gameObject.SetActive(true);
+            delayProgressBar.value = 0f;
         }
 
         while (elapsed < delay)
         {
             elapsed += Time.deltaTime;
 
-           if (delayProgressBar != null)
-              delayProgressBar.value = elapsed / delay;
+            if (delayProgressBar != null)
+            {
+                delayProgressBar.value =
+                    Mathf.Clamp01(elapsed / delay);
+            }
 
             yield return null;
         }
 
-       if (delayProgressBar != null)
-           delayProgressBar.gameObject.SetActive(false);
+        if (delayProgressBar != null)
+        {
+            delayProgressBar.gameObject.SetActive(false);
+        }
+
+        autoAdvanceCoroutine = null;
 
         AdvanceNode();
     }
@@ -347,34 +699,73 @@ public class DialogueManager : MonoBehaviour
             autoAdvanceCoroutine = null;
         }
 
-       if (delayProgressBar != null)
-          delayProgressBar.gameObject.SetActive(false);
+        if (delayProgressBar != null)
+        {
+            delayProgressBar.gameObject.SetActive(false);
+        }
     }
 
-    private void SelectAfterLayout(GameObject target)
+    private void SelectAfterLayout(
+        GameObject target
+    )
     {
+        if (target == null)
+            return;
+
         if (selectRoutine != null)
         {
             StopCoroutine(selectRoutine);
+            selectRoutine = null;
         }
 
-        selectRoutine = StartCoroutine(SelectAfterLayoutRoutine(target));
+        selectRoutine = StartCoroutine(
+            SelectAfterLayoutRoutine(target)
+        );
     }
 
-    private IEnumerator SelectAfterLayoutRoutine(GameObject target)
+    private IEnumerator SelectAfterLayoutRoutine(
+        GameObject target
+    )
     {
         yield return null;
 
+        if (target == null ||
+            !target.activeInHierarchy)
+        {
+            selectRoutine = null;
+            yield break;
+        }
+
         Canvas.ForceUpdateCanvases();
 
-        if (choiceButtonContainer != null)
+        if (choiceButtonContainer != null &&
+            choiceButtonContainer.gameObject.activeInHierarchy)
         {
-            LayoutRebuilder.ForceRebuildLayoutImmediate(choiceButtonContainer);
+            LayoutRebuilder.ForceRebuildLayoutImmediate(
+                choiceButtonContainer
+            );
         }
 
         yield return new WaitForEndOfFrame();
 
-        Selectable selectable = target.GetComponent<Selectable>();
+        if (target == null ||
+            !target.activeInHierarchy)
+        {
+            selectRoutine = null;
+            yield break;
+        }
+
+        Selectable selectable =
+            target.GetComponent<Selectable>();
+
+        if (selectable == null ||
+            !selectable.IsActive() ||
+            !selectable.IsInteractable() ||
+            EventSystem.current == null)
+        {
+            selectRoutine = null;
+            yield break;
+        }
 
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(target);
@@ -385,7 +776,11 @@ public class DialogueManager : MonoBehaviour
 
     private void PlayCinematicMusic()
     {
-        var level = ProgressionManager.Instance.CurrentLevel;
+        if (ProgressionManager.Instance == null)
+            return;
+
+        Level_Scriptable level =
+            ProgressionManager.Instance.CurrentLevel;
 
         if (level == null)
             return;
@@ -394,35 +789,179 @@ public class DialogueManager : MonoBehaviour
             ? level.outroMusic
             : level.introMusic;
 
-        AudioManager.Instance.PlayMusic(clip);
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlayMusic(clip);
+        }
     }
 
+    /*
+     * Este es el único camino que debe ejecutar el botón Continue.
+     * Update ya no inicia transiciones cuando dialogueEnded es true.
+     */
+    private void HandleContinueButton()
+    {
+        Debug.Log(
+            $"[Dialogue] Click real sobre Continue | " +
+            $"dialogueEnded: {dialogueEnded} | " +
+            $"isTransitioning: {isTransitioning} | " +
+            $"isOutro: {isOutro}"
+        );
+
+        if (IsDialogueInputBlocked())
+        {
+            Debug.Log(
+                "[Dialogue] Continue ignorado durante el frame bloqueado."
+            );
+
+            return;
+        }
+
+        if (!dialogueEnded)
+        {
+            Debug.LogWarning(
+                "[Dialogue] Continue fue presionado antes de terminar el diálogo."
+            );
+
+            return;
+        }
+
+        if (isTransitioning)
+        {
+            Debug.LogWarning(
+                "[Dialogue] Ya existe una transición en progreso."
+            );
+
+            return;
+        }
+
+        if (continueTransitionCoroutine != null)
+        {
+            StopCoroutine(continueTransitionCoroutine);
+        }
+
+        continueTransitionCoroutine = StartCoroutine(
+            ContinueTransitionRoutine()
+        );
+    }
+
+    /*
+     * Se conserva como método público por si algún otro objeto
+     * ya lo invoca, pero redirige al mismo flujo seguro.
+     */
     public void OnContinuePressed()
     {
-        if (isTransitioning)
-            return;
+        HandleContinueButton();
+    }
 
+    private IEnumerator ContinueTransitionRoutine()
+    {
         isTransitioning = true;
 
-        if (isOutro)
+        if (continueButton != null)
         {
-            ProgressionManager.Instance.AdvanceLevel();
+            continueButton.interactable = false;
         }
-        else
+
+        ClearCurrentSelection();
+
+        /*
+         * Dejamos terminar por completo el evento de UI antes
+         * de cambiar de estado o cargar otra escena.
+         */
+        yield return null;
+
+        continueTransitionCoroutine = null;
+
+        Debug.Log(
+            $"[Dialogue] Ejecutando transición real. " +
+            $"IsOutro: {isOutro} | " +
+            $"CurrentLevel: " +
+            $"{ProgressionManager.Instance?.CurrentLevel?.name ?? "NULL"}"
+        );
+
+        try
         {
-            LoadGameplay();
+            if (isOutro)
+            {
+                if (ProgressionManager.Instance == null)
+                {
+                    Debug.LogError(
+                        "[Dialogue] ProgressionManager.Instance es null."
+                    );
+
+                    RestoreContinueButton();
+                    yield break;
+                }
+
+                ProgressionManager.Instance.AdvanceLevel();
+            }
+            else
+            {
+                LoadGameplay();
+            }
         }
+        catch (Exception exception)
+        {
+            Debug.LogError(
+                "[Dialogue] Falló la transición después de pulsar Continue."
+            );
+
+            Debug.LogException(exception);
+            RestoreContinueButton();
+        }
+    }
+
+    private void RestoreContinueButton()
+    {
+        isTransitioning = false;
+
+        if (continueButton != null)
+        {
+            continueButton.gameObject.SetActive(true);
+            continueButton.interactable = true;
+        }
+
+        SelectAfterLayout(
+            continueButton != null
+                ? continueButton.gameObject
+                : null
+        );
     }
 
     private void LoadGameplay()
     {
+        if (GameManager.Instance == null)
+        {
+            Debug.LogError(
+                "[Dialogue] GameManager.Instance es null."
+            );
+
+            RestoreContinueButton();
+            return;
+        }
+
+        GameManager.Instance.ChangeState(
+            GameState.Playing
+        );
+
         SceneManager.LoadScene("SampleScene");
-        GameManager.Instance.ChangeState(GameState.Playing);
     }
 
     private void Update()
     {
         if (isTransitioning)
+            return;
+
+        if (IsDialogueInputBlocked())
+            return;
+
+        /*
+         * Cuando aparece Continue, solamente su propio onClick
+         * puede iniciar la transición. Esto evita reutilizar el
+         * clic o Submit de la elección.
+         */
+        if (dialogueEnded)
             return;
 
         if (currentNode == null)
@@ -432,7 +971,6 @@ public class DialogueManager : MonoBehaviour
             currentNode.Choices != null &&
             currentNode.Choices.Count > 0;
 
-        
         if (hasChoices)
             return;
 
@@ -440,26 +978,79 @@ public class DialogueManager : MonoBehaviour
             Mouse.current != null &&
             Mouse.current.leftButton.wasPressedThisFrame;
 
-        bool keyPressed =
+        bool keyboardPressed =
             Keyboard.current != null &&
-            Keyboard.current.anyKey.wasPressedThisFrame;
+            (
+                Keyboard.current.enterKey.wasPressedThisFrame ||
+                Keyboard.current.numpadEnterKey.wasPressedThisFrame ||
+                Keyboard.current.spaceKey.wasPressedThisFrame
+            );
 
-        if (!mousePressed && !keyPressed)
-            return;
-
-        if (dialogueEnded)
+        if (!mousePressed &&
+            !keyboardPressed)
         {
-            OnContinuePressed();
             return;
         }
 
-        if (string.IsNullOrEmpty(currentNode.NextNodeID))
+        if (string.IsNullOrWhiteSpace(
+                currentNode.NextNodeID
+            ))
         {
             EndDialogue();
         }
         else
         {
             AdvanceNode();
+        }
+    }
+
+    private void BlockDialogueInputForCurrentFrame()
+    {
+        inputBlockedUntilFrame =
+            Time.frameCount;
+    }
+
+    private bool IsDialogueInputBlocked()
+    {
+        return Time.frameCount <=
+               inputBlockedUntilFrame;
+    }
+
+    private void ClearCurrentSelection()
+    {
+        if (selectRoutine != null)
+        {
+            StopCoroutine(selectRoutine);
+            selectRoutine = null;
+        }
+
+        if (EventSystem.current != null)
+        {
+            EventSystem.current.SetSelectedGameObject(null);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        StopAutoAdvance();
+
+        if (selectRoutine != null)
+        {
+            StopCoroutine(selectRoutine);
+            selectRoutine = null;
+        }
+
+        if (continueTransitionCoroutine != null)
+        {
+            StopCoroutine(continueTransitionCoroutine);
+            continueTransitionCoroutine = null;
+        }
+
+        if (continueButton != null)
+        {
+            continueButton.onClick.RemoveListener(
+                HandleContinueButton
+            );
         }
     }
 }

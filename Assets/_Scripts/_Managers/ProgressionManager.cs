@@ -155,27 +155,55 @@ public class ProgressionManager : MonoBehaviour
         SaveProgress();
     }
 
-    public void ApplyChoice(ChoiceData choice)
+    public void ApplyChoice(
+     ChoiceData selectedChoice,
+     IReadOnlyList<ChoiceData> siblingChoices = null,
+     bool choicesAreExclusive = false
+ )
     {
-        if (choice == null)
+        if (selectedChoice == null)
             return;
 
-        // Aplicamos todas las flags sin guardar después de cada una.
-        if (choice.FlagsToSet != null)
+        /*
+         * Primero eliminamos las flags que pertenecen a las demás
+         * opciones de esta misma decisión.
+         */
+        if (choicesAreExclusive && siblingChoices != null)
         {
-            foreach (string flag in choice.FlagsToSet)
+            foreach (ChoiceData siblingChoice in siblingChoices)
             {
-                if (string.IsNullOrEmpty(flag))
+                if (siblingChoice == null || siblingChoice.FlagsToSet == null)
                     continue;
 
-                _activeFlags.Add(flag);
+                foreach (string rawFlag in siblingChoice.FlagsToSet)
+                {
+                    string flag = NormalizeFlag(rawFlag);
+
+                    if (string.IsNullOrEmpty(flag))
+                        continue;
+
+                    bool removed = _activeFlags.Remove(flag);
+
+                    if (removed)
+                    {
+                        Debug.Log(
+                            $"[Flags] Eliminada por elección exclusiva: {flag}"
+                        );
+                    }
+                }
             }
         }
 
-        if (choice.FlagsToClear != null)
+        /*
+         * Después aplicamos las eliminaciones específicas configuradas
+         * manualmente en FlagsToClear.
+         */
+        if (selectedChoice.FlagsToClear != null)
         {
-            foreach (string flag in choice.FlagsToClear)
+            foreach (string rawFlag in selectedChoice.FlagsToClear)
             {
+                string flag = NormalizeFlag(rawFlag);
+
                 if (string.IsNullOrEmpty(flag))
                     continue;
 
@@ -183,11 +211,40 @@ public class ProgressionManager : MonoBehaviour
             }
         }
 
-        // Después de aplicar la decisión, descubrimos inmediatamente
-        // el nivel correspondiente a la rama elegida.
-        DiscoverSelectedVariant();
+        /*
+         * Finalmente activamos las flags de la opción seleccionada.
+         * Se hace al final para garantizar que la elección actual gane.
+         */
+        if (selectedChoice.FlagsToSet != null)
+        {
+            foreach (string rawFlag in selectedChoice.FlagsToSet)
+            {
+                string flag = NormalizeFlag(rawFlag);
 
+                if (string.IsNullOrEmpty(flag))
+                    continue;
+
+                _activeFlags.Add(flag);
+
+                Debug.Log($"[Flags] Activada: {flag}");
+            }
+        }
+
+        DiscoverSelectedVariant();
         SaveProgress();
+
+        Debug.Log(
+            $"[Flags] Flags activas después de elegir " +
+            $"'{selectedChoice.ChoiceText}': " +
+            $"{(_activeFlags.Count > 0 ? string.Join(", ", _activeFlags) : "(ninguna)")}"
+        );
+    }
+
+    private string NormalizeFlag(string flag)
+    {
+        return string.IsNullOrWhiteSpace(flag)
+            ? string.Empty
+            : flag.Trim();
     }
 
     private void DiscoverSelectedVariant()
@@ -278,37 +335,85 @@ public class ProgressionManager : MonoBehaviour
         return Mathf.Infinity;
     }
 
-    public void CompleteLevel(Level_Scriptable level, float completionTime)
+    public void CompleteLevel(
+       Level_Scriptable level,
+       float completionTime
+   )
     {
         if (level == null)
+        {
+            Debug.LogError(
+                "[Progression] No se puede completar un nivel null."
+            );
+
             return;
+        }
+
+        if (string.IsNullOrWhiteSpace(level.LevelID))
+        {
+            Debug.LogError(
+                $"[Progression] El nivel {level.name} no tiene LevelID."
+            );
+
+            return;
+        }
 
         string levelID = level.LevelID;
 
+        /*
+         * Aunque sea un replay sin tiempo, conservamos el nivel
+         * como completado y descubierto.
+         */
         _completedLevelIDs.Add(levelID);
         _discoveredLevelIDs.Add(levelID);
 
-        int earnedStars = level.GetStarsForTime(completionTime);
+        bool hasValidCompletionTime =
+            completionTime > 0f &&
+            !float.IsNaN(completionTime) &&
+            !float.IsInfinity(completionTime);
 
-        if (!_bestStarsByLevelID.ContainsKey(levelID))
+        if (!hasValidCompletionTime)
         {
-            _bestStarsByLevelID[levelID] = earnedStars;
-        }
-        else
-        {
-            _bestStarsByLevelID[levelID] = Mathf.Max(_bestStarsByLevelID[levelID], earnedStars);
+            Debug.Log(
+                $"[Progression] {level.name} se está avanzando sin " +
+                $"registrar un tiempo nuevo. Valor: {completionTime}. " +
+                "Se conservarán el tiempo y las estrellas anteriores."
+            );
+
+            SaveProgress();
+            return;
         }
 
-        if (!_bestTimeByLevelID.ContainsKey(levelID))
+        int earnedStars =
+            level.GetStarsForTime(completionTime);
+
+        if (!_bestStarsByLevelID.TryGetValue(
+                levelID,
+                out int previousStars
+            ) ||
+            earnedStars > previousStars)
         {
-            _bestTimeByLevelID[levelID] = completionTime;
+            _bestStarsByLevelID[levelID] =
+                earnedStars;
         }
-        else
+
+        if (!_bestTimeByLevelID.TryGetValue(
+                levelID,
+                out float previousTime
+            ) ||
+            completionTime < previousTime)
         {
-            _bestTimeByLevelID[levelID] = Mathf.Min(_bestTimeByLevelID[levelID], completionTime);
+            _bestTimeByLevelID[levelID] =
+                completionTime;
         }
 
         SaveProgress();
+
+        Debug.Log(
+            $"[Progression] Nivel completado: {level.name} | " +
+            $"Tiempo: {completionTime:F2} | " +
+            $"Estrellas: {earnedStars}"
+        );
     }
 
     // ── Progresión ───────────────────────────────────────────────────────────
@@ -339,37 +444,78 @@ public class ProgressionManager : MonoBehaviour
 
     public void AdvanceLevel()
     {
+        Debug.Log(
+            $"[Progression] AdvanceLevel iniciado | " +
+            $"CurrentLevel: {CurrentLevel?.name ?? "NULL"} | " +
+            $"PendingTime: {_pendingCompletionTime}"
+        );
+
         if (CurrentLevel == null)
         {
             CurrentLevel = startingLevel;
             DiscoverStartingLevelIfNeeded();
         }
 
-        if (_pendingCompletionTime < 0f)
+        if (CurrentLevel == null)
         {
+            Debug.LogError(
+                "[Progression] No existe CurrentLevel ni startingLevel."
+            );
+
             return;
         }
 
-        float completionTime =
-            _pendingCompletionTime;
+        Level_Scriptable completedLevel = CurrentLevel;
 
+        /*
+         * En un replay puede no existir un tiempo pendiente.
+         * Eso no debe impedir evaluar la elección y avanzar.
+         */
+        float completionTime = _pendingCompletionTime;
         _pendingCompletionTime = -1f;
 
         CompleteLevel(
-            CurrentLevel,
+            completedLevel,
             completionTime
         );
 
-        Level_Scriptable next = EvaluateNextLevel();
+        Debug.Log(
+            $"[Progression] Evaluando el siguiente nivel desde " +
+            $"{completedLevel.name}."
+        );
+
+        Level_Scriptable next =
+            EvaluateNextLevel();
+
+        Debug.Log(
+            $"[Progression] Resultado de EvaluateNextLevel: " +
+            $"{next?.name ?? "NULL"}"
+        );
 
         if (next == null)
         {
             SaveProgress();
 
             if (GameManager.Instance != null)
-                GameManager.Instance.ChangeState(GameState.Credits);
+            {
+                GameManager.Instance.ChangeState(
+                    GameState.Credits
+                );
+            }
 
-            SceneManager.LoadScene(creditsSceneName);
+            if (string.IsNullOrWhiteSpace(creditsSceneName))
+            {
+                Debug.LogError(
+                    "[Progression] creditsSceneName está vacío."
+                );
+
+                return;
+            }
+
+            SceneManager.LoadScene(
+                creditsSceneName
+            );
+
             return;
         }
 
@@ -378,13 +524,37 @@ public class ProgressionManager : MonoBehaviour
         CurrentLevel = next;
         SaveProgress();
 
+        Debug.Log(
+            $"[Progression] CurrentLevel actualizado a: " +
+            $"{CurrentLevel.name}"
+        );
+
         if (GameManager.Instance != null)
         {
             GameManager.Instance.IsOutro = false;
-            GameManager.Instance.ChangeState(GameState.Cinematic);
+
+            GameManager.Instance.ChangeState(
+                GameState.Cinematic
+            );
         }
 
-        SceneManager.LoadScene(cinematicsSceneName);
+        if (string.IsNullOrWhiteSpace(cinematicsSceneName))
+        {
+            Debug.LogError(
+                "[Progression] cinematicsSceneName está vacío."
+            );
+
+            return;
+        }
+
+        Debug.Log(
+            $"[Progression] Cargando escena: " +
+            $"{cinematicsSceneName}"
+        );
+
+        SceneManager.LoadScene(
+            cinematicsSceneName
+        );
     }
 
     private Level_Scriptable EvaluateNextLevel()
@@ -456,18 +626,45 @@ public class ProgressionManager : MonoBehaviour
 
     private bool AllFlagsActive(List<string> flags)
     {
+        /*
+         * Una variante sin requisitos no debe considerarse una coincidencia.
+         * Para una ruta sin condiciones se debe usar DefaultNextLevel.
+         */
         if (flags == null || flags.Count == 0)
-            return true;
+            return false;
 
-        foreach (string flag in flags)
+        foreach (string rawFlag in flags)
         {
-            if (!_activeFlags.Contains(flag))
+            /*
+             * NormalizeFlag elimina espacios al principio y al final.
+             * Por ejemplo:
+             * " NuncaMeDetuveAPensarlo "
+             * pasa a:
+             * "NuncaMeDetuveAPensarlo"
+             */
+            string flag = NormalizeFlag(rawFlag);
+
+            /*
+             * Una entrada vacía dentro de RequiredFlags indica
+             * una configuración inválida.
+             */
+            if (string.IsNullOrEmpty(flag))
+            {
+                Debug.LogWarning(
+                    "[Progression] Se encontró una RequiredFlag vacía."
+                );
+
                 return false;
+            }
+
+            if (!_activeFlags.Contains(flag))
+            {
+                return false;
+            }
         }
 
         return true;
     }
-
     // ── Persistencia ─────────────────────────────────────────────────────────
 
     public void SaveProgress()

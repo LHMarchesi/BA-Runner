@@ -693,7 +693,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelNodeUI
   level: {fileID: 11400000, guid: c7341cd0f5e530d48a66d2732a8fb97b, type: 2}
-  backgroundSprite: {fileID: 8940539825124958378, guid: 7737c8adbf18b5142a915a3360246ca3, type: 3}
+  backgroundSprite: {fileID: 1797876277357845263, guid: 503fd2f87db5fab47a3c10ec30ac4ba3, type: 3}
   button: {fileID: 80605155}
   levelNameText: {fileID: 670522420}
   currentVisual: {fileID: 80605156}
@@ -2744,7 +2744,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelNodeUI
   level: {fileID: 11400000, guid: 9cb8c63a89b07a141a5b0352d8d767fd, type: 2}
-  backgroundSprite: {fileID: 0}
+  backgroundSprite: {fileID: -2633767404810763971, guid: c3da201abadd6964b9430cebb9fc2631, type: 3}
   button: {fileID: 412240110}
   levelNameText: {fileID: 1705655068}
   currentVisual: {fileID: 412240111}
@@ -3419,7 +3419,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelConnectionUI
   fromLevel: {fileID: 11400000, guid: 25c914e4791e71d42aa3d3abd985560e, type: 2}
-  toLevel: {fileID: 11400000, guid: 23aa1e71a52bed14eb230499cf6b95c0, type: 2}
+  toLevel: {fileID: 11400000, guid: f92bf9f71554fe84382ee444e8aec151, type: 2}
   lineImage: {fileID: 564908270}
 --- !u!114 &564908270
 MonoBehaviour:
@@ -7576,7 +7576,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelNodeUI
   level: {fileID: 11400000, guid: 23aa1e71a52bed14eb230499cf6b95c0, type: 2}
-  backgroundSprite: {fileID: -3499332322732005943, guid: 5d0d24af0621bb146910d6519edb1c5a, type: 3}
+  backgroundSprite: {fileID: 6260993959997514737, guid: 5a449009c3046874e97cc929f48692d2, type: 3}
   button: {fileID: 947017604}
   levelNameText: {fileID: 128908008}
   currentVisual: {fileID: 947017605}
@@ -10003,7 +10003,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelNodeUI
   level: {fileID: 11400000, guid: 25c914e4791e71d42aa3d3abd985560e, type: 2}
-  backgroundSprite: {fileID: 1307248648013400858, guid: a6c1ef525a468ca41be1de61e818b01b, type: 3}
+  backgroundSprite: {fileID: 5379443176516234194, guid: 133f40b8f6c141042b7921e2e5c4e01d, type: 3}
   button: {fileID: 724024468}
   levelNameText: {fileID: 1984150410}
   currentVisual: {fileID: 724024469}

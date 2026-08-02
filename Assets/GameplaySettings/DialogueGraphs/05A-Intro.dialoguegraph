@@ -396,10 +396,10 @@ MonoBehaviour:
         m_LocalSubgraphs: []
         m_LastKnownBounds:
           serializedVersion: 2
-          x: -348.8
-          y: 705.6
-          width: 6702.4
-          height: 226.40002
+          x: -349.33334
+          y: 705.3333
+          width: 6702.667
+          height: 228
         m_GraphElementMetaData:
         - m_Guid:
             m_Value0: 3059622741841427994
@@ -981,7 +981,7 @@ MonoBehaviour:
           serializedVersion: 2
           Hash: 14e25e40a93473fdf0b295a7fb60be3c
         m_Version: 2
-        m_Position: {x: 1361.1199, y: 719.04}
+        m_Position: {x: 1361.8866, y: 719.04}
         m_Title: DialogueNode
         m_Tooltip: 
         m_NodePreviewModel:
