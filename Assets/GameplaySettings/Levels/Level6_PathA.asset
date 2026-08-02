@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa7792cd6221c7d4c8f51bb26b31ea3c, type: 3}
   m_Name: Level6_PathA
   m_EditorClassIdentifier: Assembly-CSharp::Level_Scriptable
-  levelID: ...
+  levelID: Plaza Italia
   Variants: []
   DefaultNextLevel: {fileID: 0}
   maxLevelProgession: 100
@@ -38,6 +38,6 @@ MonoBehaviour:
   - stars: 1
     maxTime: 60
   introDialogueGraph: {fileID: 0}
-  outroDialogueGraph: {fileID: 0}
+  outroDialogueGraph: {fileID: 3965311268370046156, guid: bac9e4864b9387948857eba1ac5ac450, type: 3}
   introMusic: {fileID: 0}
   outroMusic: {fileID: 8300000, guid: 98a53100b7a83884588fc18ef3f244a9, type: 3}

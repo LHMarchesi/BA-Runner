@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa7792cd6221c7d4c8f51bb26b31ea3c, type: 3}
   m_Name: Level6_PathB
   m_EditorClassIdentifier: Assembly-CSharp::Level_Scriptable
-  levelID: ...
+  levelID: Alcorta
   Variants: []
   DefaultNextLevel: {fileID: 0}
   maxLevelProgession: 100

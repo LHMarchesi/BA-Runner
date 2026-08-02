@@ -12,9 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa7792cd6221c7d4c8f51bb26b31ea3c, type: 3}
   m_Name: Level5_PathB
   m_EditorClassIdentifier: Assembly-CSharp::Level_Scriptable
-  levelID: ...
-  Variants: []
-  DefaultNextLevel: {fileID: 11400000, guid: f92bf9f71554fe84382ee444e8aec151, type: 2}
+  levelID: Palermo
+  Variants:
+  - RequiredFlags:
+    - NoHablar
+    NextLevel: {fileID: 11400000, guid: 23aa1e71a52bed14eb230499cf6b95c0, type: 2}
+  - RequiredFlags:
+    - BuenAuto
+    NextLevel: {fileID: 11400000, guid: f92bf9f71554fe84382ee444e8aec151, type: 2}
+  DefaultNextLevel: {fileID: 0}
   maxLevelProgession: 100
   levelMusic: {fileID: 8300000, guid: 7bcb251e2b8c9054188b2018b967b3c3, type: 3}
   winLevelImage: {fileID: -3368911279512379501, guid: 5383fe5e472f1dc4a8862516aea2a99a, type: 3}
@@ -37,7 +43,7 @@ MonoBehaviour:
     maxTime: 45
   - stars: 1
     maxTime: 60
-  introDialogueGraph: {fileID: 3965311268370046156, guid: a0b70bd17bf87c647adc4ddee0507588, type: 3}
-  outroDialogueGraph: {fileID: 0}
+  introDialogueGraph: {fileID: 3965311268370046156, guid: 3bc48d129eff5864988bccba9c116fa2, type: 3}
+  outroDialogueGraph: {fileID: 3965311268370046156, guid: 99c455c43e1703c40aff9b9fc88db053, type: 3}
   introMusic: {fileID: 0}
   outroMusic: {fileID: 8300000, guid: 98a53100b7a83884588fc18ef3f244a9, type: 3}
