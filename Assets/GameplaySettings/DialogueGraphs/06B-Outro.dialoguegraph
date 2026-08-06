@@ -102,7 +102,7 @@ MonoBehaviour:
     - rid: 122072312406868057
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 0
+        m_Value: 0.1
     - rid: 122072312406868058
       type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -7660,9 +7660,9 @@ MonoBehaviour:
         m_LastKnownBounds:
           serializedVersion: 2
           x: -7610
-          y: 85
-          width: 21920
-          height: 1066
+          y: 85.33333
+          width: 21922
+          height: 1066.6666
         m_GraphElementMetaData:
         - m_Guid:
             m_Value0: 6559827748066362906
@@ -9492,7 +9492,7 @@ MonoBehaviour:
           serializedVersion: 2
           Hash: 4bd8a4a9ed383ba3326c16c97105a8b6
         m_Version: 2
-        m_Position: {x: 2261.3333, y: 694.6666}
+        m_Position: {x: 2077.4229, y: 701.72656}
         m_Title: DialogueNode
         m_Tooltip: 
         m_NodePreviewModel:
@@ -9591,7 +9591,7 @@ MonoBehaviour:
           serializedVersion: 2
           Hash: 576f5875d753e7f72df31b63da11d2bf
         m_Version: 2
-        m_Position: {x: 2356.6348, y: 694.48145}
+        m_Position: {x: 2374.1235, y: 715.30945}
         m_Title: DialogueNode
         m_Tooltip: 
         m_NodePreviewModel:

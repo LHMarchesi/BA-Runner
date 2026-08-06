@@ -783,41 +783,12 @@ public class DialogueManager : MonoBehaviour
         if (node == null)
             return;
 
-        /*
-         * Guardamos las referencias localmente.
-         * La comparación == null usa la comprobación especial de Unity
-         * y detecta referencias vacías, destruidas o Missing.
-         */
         AudioClip musicClip = node.Music;
         AudioClip soundEffectClip = node.SoundEffect;
-
-        Debug.Log(
-            $"[Dialogue Audio] Nodo: {node.NodeID} | " +
-            $"Tiene música: {musicClip != null} | " +
-            $"Tiene SFX: {soundEffectClip != null} | " +
-            $"Delay SFX: {node.SoundEffectDelay}"
-        );
 
         AudioManager audioManager =
             AudioManager.Instance;
 
-        /*
-         * La cinemática debe funcionar aunque no exista AudioManager.
-         */
-        if (audioManager == null)
-        {
-            Debug.LogWarning(
-                "[Dialogue Audio] No existe AudioManager. " +
-                "El nodo continuará sin audio."
-            );
-
-            return;
-        }
-
-        /*
-         * Music null:
-         * no cambia ni detiene la música actual.
-         */
         if (musicClip != null)
         {
             audioManager.PlayMusic(

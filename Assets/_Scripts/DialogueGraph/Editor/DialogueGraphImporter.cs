@@ -48,6 +48,12 @@ public class DialogueGraphImporter : ScriptedImporter
         }
         ctx.AddObjectToAsset("RuntimeData", runtimeGraph);
         ctx.SetMainObject(runtimeGraph);
+
+        foreach (RuntimeDialogueNode savedNode in runtimeGraph.AllNodes)
+        {
+            if (savedNode == null)
+                continue;
+        }
     }
 
     private void ProcessDialogueNode(DialogueNode node, RuntimeDialogueNode runtimeNode, Dictionary<INode, string> nodeIDMap)
@@ -56,6 +62,10 @@ public class DialogueGraphImporter : ScriptedImporter
         runtimeNode.DialogueText = GetPortValue<string>(node.GetInputPortByName("Dialogue"));
         runtimeNode.Image = GetPortValue<Sprite>(node.GetInputPortByName("Image"));
         runtimeNode.Delay = GetPortValue<float>(node.GetInputPortByName("Delay"));
+        runtimeNode.Music = GetPortValue<AudioClip>(node.GetInputPortByName("Music"));
+        runtimeNode.SoundEffect = GetPortValue<AudioClip>(node.GetInputPortByName("Sound Effect"));
+        runtimeNode.SoundEffectDelay = GetPortValue<float>(node.GetInputPortByName("Sound Effect Delay"));
+
 
         var nextNodePOrt = node.GetOutputPortByName("out").firstConnectedPort;
         if (nextNodePOrt != null) { runtimeNode.NextNodeID = nodeIDMap[nextNodePOrt.GetNode()]; }
