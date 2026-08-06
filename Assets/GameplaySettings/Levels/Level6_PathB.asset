@@ -40,4 +40,4 @@ MonoBehaviour:
   introDialogueGraph: {fileID: 0}
   outroDialogueGraph: {fileID: 3965311268370046156, guid: e4f22f94e7bf8e24986479da4ca37dd2, type: 3}
   introMusic: {fileID: 8300000, guid: f2946434619dcde41b0c99ffa4ffc2e4, type: 3}
-  outroMusic: {fileID: 0}
+  outroMusic: {fileID: 8300000, guid: f2946434619dcde41b0c99ffa4ffc2e4, type: 3}

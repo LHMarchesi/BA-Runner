@@ -2549,9 +2549,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01a8065b239fa3ed28c258e2b25d5bcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
-  audioSource: {fileID: 1590261803}
-  MusicSource: {fileID: 20258287}
-  ControlSFX: {fileID: 24300002, guid: 44f5093fc871e1a41b67f2c8cfe17bdd, type: 2}
+  sfxSource: {fileID: 1590261803}
+  musicSource: {fileID: 20258287}
+  controlSFX: {fileID: 24300002, guid: c8da75bfb847890489d3c643b1425459, type: 2}
+  controlMusic: {fileID: 24300002, guid: 44f5093fc871e1a41b67f2c8cfe17bdd, type: 2}
   menuMusicClip: {fileID: 8300000, guid: cf69d1b0038e01248b5d344c2b8d756c, type: 3}
   cinematicsSong: {fileID: 8300000, guid: 98a53100b7a83884588fc18ef3f244a9, type: 3}
   survivalSong: {fileID: 8300000, guid: 5f58d3cfcbbddb44f96c31fa7c0250ff, type: 3}

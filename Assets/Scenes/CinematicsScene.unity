@@ -2043,6 +2043,7 @@ MonoBehaviour:
   choiceButtons:
   - {fileID: 422084453}
   - {fileID: 275843444}
+  dialogueSoundSource: {fileID: 1590261803}
   delayProgressBar: {fileID: 1360531678}
 --- !u!114 &1536353635
 MonoBehaviour:

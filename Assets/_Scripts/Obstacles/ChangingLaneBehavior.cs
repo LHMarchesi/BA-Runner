@@ -50,9 +50,6 @@ public class ChangingLaneBehavior : MonoBehaviour, IObstacleBehavior
         if (lanes == null ||
             lanes.Length == 0)
         {
-            Debug.LogError(
-                $"{name}: ConfigureLanes recibió un array vacío."
-            );
 
             lanesConfigured = false;
             return;
@@ -61,12 +58,6 @@ public class ChangingLaneBehavior : MonoBehaviour, IObstacleBehavior
         if (spawnLaneIndex < 0 ||
             spawnLaneIndex >= lanes.Length)
         {
-            Debug.LogError(
-                $"{name}: ConfigureLanes recibió un índice " +
-                $"inválido: {spawnLaneIndex}. " +
-                $"Cantidad de carriles: {lanes.Length}"
-            );
-
             lanesConfigured = false;
             return;
         }
@@ -74,13 +65,6 @@ public class ChangingLaneBehavior : MonoBehaviour, IObstacleBehavior
         availableLanes = lanes;
         currentLaneIndex = spawnLaneIndex;
         lanesConfigured = true;
-
-        Debug.Log(
-            $"[LaneChanger] {name} configurado. " +
-            $"Carril inicial: {currentLaneIndex}. " +
-            $"Padre: {transform.parent?.name}. " +
-            $"Carriles disponibles: {availableLanes.Length}"
-        );
     }
 
     public void Tick(float worldSpeed)

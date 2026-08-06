@@ -19,6 +19,786 @@ MonoBehaviour:
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
+    - rid: 122072312934826272
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826273
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826274
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826275
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826276
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826277
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826278
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826279
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826280
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826281
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826282
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826283
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826284
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826285
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826286
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826287
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826288
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826289
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826290
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826291
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826292
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826293
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826294
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826295
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826296
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826297
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826298
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826299
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826300
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826301
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826302
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826303
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826304
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826305
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826306
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826307
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826308
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826309
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826310
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826311
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826312
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826313
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826314
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826315
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826316
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826317
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826318
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826319
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826320
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826321
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826322
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826323
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826324
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826325
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826326
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826327
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826328
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826329
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826330
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826331
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826332
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826333
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826334
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826335
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826336
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826337
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826338
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826339
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826340
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826341
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826342
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826343
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826344
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826345
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826346
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826347
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826348
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826349
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826350
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826351
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826352
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826353
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826354
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826355
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826356
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826357
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826358
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826359
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826360
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826361
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826362
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826363
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826364
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826365
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826366
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826367
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826368
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826369
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826370
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826371
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826372
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826373
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826374
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826375
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826376
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826377
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826378
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826379
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826380
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826381
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826382
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826383
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826384
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826385
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826386
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826387
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826388
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826389
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826390
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826391
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826392
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826393
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826394
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826395
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826396
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826397
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826398
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826399
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826400
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826401
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826402
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826403
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826404
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826405
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826406
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826407
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826408
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826409
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826410
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826411
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826412
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826413
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826414
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826415
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826416
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826417
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826418
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826419
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826420
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826421
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826422
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826423
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826424
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826425
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826426
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826427
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826428
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826429
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826430
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826431
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826432
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826433
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826434
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826435
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826436
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826437
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826438
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826439
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826440
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826441
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826442
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826443
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826444
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826445
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826446
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826447
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826448
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826449
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826450
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826451
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826452
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826453
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826454
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826455
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826456
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826457
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826458
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826459
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826460
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826461
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826462
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826463
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072312934826464
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826465
+      type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 0}
+    - rid: 122072312934826466
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
     - rid: 2450192438280323330
       type: {class: UserNodeModelImp, ns: Unity.GraphToolkit.Editor.Implementation, asm: Unity.GraphToolkit.Editor}
       data:
@@ -116,6 +896,9 @@ MonoBehaviour:
           - Choice 1 Text
           - Choice 1 Flags
           - Choice 1 ClearFlags
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 2901927426414346316
           - rid: 2901927426414346317
@@ -127,6 +910,9 @@ MonoBehaviour:
           - rid: 2901927426414346324
           - rid: 2901927426414346325
           - rid: 2901927426414346326
+          - rid: 122072312934826350
+          - rid: 122072312934826351
+          - rid: 122072312934826352
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -239,11 +1025,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 2901927426414346329
           - rid: 2901927426414346330
           - rid: 2901927426414346331
           - rid: 2901927426414346332
+          - rid: 122072312934826353
+          - rid: 122072312934826354
+          - rid: 122072312934826355
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -332,11 +1124,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 2901927426414346617
           - rid: 2901927426414346618
           - rid: 2901927426414346619
           - rid: 2901927426414346620
+          - rid: 122072312934826356
+          - rid: 122072312934826357
+          - rid: 122072312934826358
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -374,11 +1172,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 2901927426414346622
           - rid: 2901927426414346623
           - rid: 2901927426414346624
           - rid: 2901927426414346625
+          - rid: 122072312934826359
+          - rid: 122072312934826360
+          - rid: 122072312934826361
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -416,11 +1220,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 2901927426414346627
           - rid: 2901927426414346628
           - rid: 2901927426414346629
           - rid: 2901927426414346630
+          - rid: 122072312934826362
+          - rid: 122072312934826363
+          - rid: 122072312934826364
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -458,11 +1268,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 2901927426414346632
           - rid: 2901927426414346633
           - rid: 2901927426414346634
           - rid: 2901927426414346635
+          - rid: 122072312934826365
+          - rid: 122072312934826366
+          - rid: 122072312934826367
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -500,11 +1316,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 2901927426414346637
           - rid: 2901927426414346638
           - rid: 2901927426414346639
           - rid: 2901927426414346640
+          - rid: 122072312934826368
+          - rid: 122072312934826369
+          - rid: 122072312934826370
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -542,11 +1364,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 2901927426414346642
           - rid: 2901927426414346643
           - rid: 2901927426414346644
           - rid: 2901927426414346645
+          - rid: 122072312934826371
+          - rid: 122072312934826372
+          - rid: 122072312934826373
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -584,11 +1412,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 2901927426414346647
           - rid: 2901927426414346648
           - rid: 2901927426414346649
           - rid: 2901927426414346650
+          - rid: 122072312934826374
+          - rid: 122072312934826375
+          - rid: 122072312934826376
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -626,11 +1460,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 2901927426414346652
           - rid: 2901927426414346653
           - rid: 2901927426414346654
           - rid: 2901927426414346655
+          - rid: 122072312934826377
+          - rid: 122072312934826378
+          - rid: 122072312934826379
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -668,11 +1508,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 2901927426414346657
           - rid: 2901927426414346658
           - rid: 2901927426414346659
           - rid: 2901927426414346660
+          - rid: 122072312934826380
+          - rid: 122072312934826381
+          - rid: 122072312934826382
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -710,11 +1556,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 2901927426414346662
           - rid: 2901927426414346663
           - rid: 2901927426414346664
           - rid: 2901927426414346665
+          - rid: 122072312934826383
+          - rid: 122072312934826384
+          - rid: 122072312934826385
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -752,11 +1604,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 2901927426414346667
           - rid: 2901927426414346668
           - rid: 2901927426414346669
           - rid: 2901927426414346670
+          - rid: 122072312934826386
+          - rid: 122072312934826387
+          - rid: 122072312934826388
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -794,11 +1652,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 2901927426414346672
           - rid: 2901927426414346673
           - rid: 2901927426414346674
           - rid: 2901927426414346675
+          - rid: 122072312934826389
+          - rid: 122072312934826390
+          - rid: 122072312934826391
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -836,11 +1700,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 2901927426414346677
           - rid: 2901927426414346678
           - rid: 2901927426414346679
           - rid: 2901927426414346680
+          - rid: 122072312934826392
+          - rid: 122072312934826393
+          - rid: 122072312934826394
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -878,11 +1748,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 2901927426414346682
           - rid: 2901927426414346683
           - rid: 2901927426414346684
           - rid: 2901927426414346685
+          - rid: 122072312934826395
+          - rid: 122072312934826396
+          - rid: 122072312934826397
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -920,11 +1796,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 2901927426414346687
           - rid: 2901927426414346688
           - rid: 2901927426414346689
           - rid: 2901927426414346690
+          - rid: 122072312934826398
+          - rid: 122072312934826399
+          - rid: 122072312934826400
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -962,11 +1844,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 2901927426414346692
           - rid: 2901927426414346693
           - rid: 2901927426414346694
           - rid: 2901927426414346695
+          - rid: 122072312934826401
+          - rid: 122072312934826402
+          - rid: 122072312934826403
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -1004,11 +1892,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 2901927426414346697
           - rid: 2901927426414346698
           - rid: 2901927426414346699
           - rid: 2901927426414346700
+          - rid: 122072312934826404
+          - rid: 122072312934826405
+          - rid: 122072312934826406
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -1046,11 +1940,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 2901927426414346702
           - rid: 2901927426414346703
           - rid: 2901927426414346704
           - rid: 2901927426414346705
+          - rid: 122072312934826407
+          - rid: 122072312934826408
+          - rid: 122072312934826409
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -1088,11 +1988,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 2901927426414346707
           - rid: 2901927426414346708
           - rid: 2901927426414346709
           - rid: 2901927426414346710
+          - rid: 122072312934826410
+          - rid: 122072312934826411
+          - rid: 122072312934826412
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -1130,11 +2036,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 2901927426414346712
           - rid: 2901927426414346713
           - rid: 2901927426414346714
           - rid: 2901927426414346715
+          - rid: 122072312934826413
+          - rid: 122072312934826414
+          - rid: 122072312934826415
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -1172,11 +2084,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 2901927426414346717
           - rid: 2901927426414346718
           - rid: 2901927426414346719
           - rid: 2901927426414346720
+          - rid: 122072312934826416
+          - rid: 122072312934826417
+          - rid: 122072312934826418
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -1214,11 +2132,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 2901927426414346722
           - rid: 2901927426414346723
           - rid: 2901927426414346724
           - rid: 2901927426414346725
+          - rid: 122072312934826419
+          - rid: 122072312934826420
+          - rid: 122072312934826421
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -2447,11 +3371,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 2901927426414347012
           - rid: 2901927426414347013
           - rid: 2901927426414347014
           - rid: 2901927426414347015
+          - rid: 122072312934826422
+          - rid: 122072312934826423
+          - rid: 122072312934826424
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -2489,11 +3419,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 2901927426414347017
           - rid: 2901927426414347018
           - rid: 2901927426414347019
           - rid: 2901927426414347020
+          - rid: 122072312934826425
+          - rid: 122072312934826426
+          - rid: 122072312934826427
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -2531,11 +3467,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 2901927426414347022
           - rid: 2901927426414347023
           - rid: 2901927426414347024
           - rid: 2901927426414347025
+          - rid: 122072312934826428
+          - rid: 122072312934826429
+          - rid: 122072312934826430
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -2573,11 +3515,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 2901927426414347027
           - rid: 2901927426414347028
           - rid: 2901927426414347029
           - rid: 2901927426414347030
+          - rid: 122072312934826431
+          - rid: 122072312934826432
+          - rid: 122072312934826433
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -2615,11 +3563,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 2901927426414347032
           - rid: 2901927426414347033
           - rid: 2901927426414347034
           - rid: 2901927426414347035
+          - rid: 122072312934826434
+          - rid: 122072312934826435
+          - rid: 122072312934826436
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -2657,11 +3611,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 2901927426414347037
           - rid: 2901927426414347038
           - rid: 2901927426414347039
           - rid: 2901927426414347040
+          - rid: 122072312934826437
+          - rid: 122072312934826438
+          - rid: 122072312934826439
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -2699,11 +3659,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 2901927426414347042
           - rid: 2901927426414347043
           - rid: 2901927426414347044
           - rid: 2901927426414347045
+          - rid: 122072312934826440
+          - rid: 122072312934826441
+          - rid: 122072312934826442
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -2741,11 +3707,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 2901927426414347047
           - rid: 2901927426414347048
           - rid: 2901927426414347049
           - rid: 2901927426414347050
+          - rid: 122072312934826443
+          - rid: 122072312934826444
+          - rid: 122072312934826445
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -2783,11 +3755,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 2901927426414347052
           - rid: 2901927426414347053
           - rid: 2901927426414347054
           - rid: 2901927426414347055
+          - rid: 122072312934826446
+          - rid: 122072312934826447
+          - rid: 122072312934826448
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -2825,11 +3803,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 2901927426414347057
           - rid: 2901927426414347058
           - rid: 2901927426414347059
           - rid: 2901927426414347060
+          - rid: 122072312934826449
+          - rid: 122072312934826450
+          - rid: 122072312934826451
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -2867,11 +3851,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 2901927426414347062
           - rid: 2901927426414347063
           - rid: 2901927426414347064
           - rid: 2901927426414347065
+          - rid: 122072312934826452
+          - rid: 122072312934826453
+          - rid: 122072312934826454
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -2909,11 +3899,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 2901927426414347067
           - rid: 2901927426414347068
           - rid: 2901927426414347069
           - rid: 2901927426414347070
+          - rid: 122072312934826455
+          - rid: 122072312934826456
+          - rid: 122072312934826457
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -2951,11 +3947,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 2901927426414347072
           - rid: 2901927426414347073
           - rid: 2901927426414347074
           - rid: 2901927426414347075
+          - rid: 122072312934826458
+          - rid: 122072312934826459
+          - rid: 122072312934826460
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -2993,11 +3995,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 2901927426414347077
           - rid: 2901927426414347078
           - rid: 2901927426414347079
           - rid: 2901927426414347080
+          - rid: 122072312934826461
+          - rid: 122072312934826462
+          - rid: 122072312934826463
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -3035,11 +4043,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 2901927426414347082
           - rid: 2901927426414347083
           - rid: 2901927426414347084
           - rid: 2901927426414347085
+          - rid: 122072312934826464
+          - rid: 122072312934826465
+          - rid: 122072312934826466
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -3911,11 +4925,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 4255477659171029067
           - rid: 4255477659171029068
           - rid: 4255477659171029069
           - rid: 4255477659171029070
+          - rid: 122072312934826326
+          - rid: 122072312934826327
+          - rid: 122072312934826328
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -3972,11 +4992,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 4255477659171029078
           - rid: 4255477659171029079
           - rid: 4255477659171029080
           - rid: 4255477659171029081
+          - rid: 122072312934826329
+          - rid: 122072312934826330
+          - rid: 122072312934826331
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -4033,11 +5059,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 4255477659171029089
           - rid: 4255477659171029090
           - rid: 4255477659171029091
           - rid: 4255477659171029092
+          - rid: 122072312934826332
+          - rid: 122072312934826333
+          - rid: 122072312934826334
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -4190,11 +5222,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 4255477820142125058
           - rid: 4255477820142125059
           - rid: 4255477820142125060
           - rid: 4255477820142125061
+          - rid: 122072312934826335
+          - rid: 122072312934826336
+          - rid: 122072312934826337
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -4283,11 +5321,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 4255477820142125069
           - rid: 4255477820142125070
           - rid: 4255477820142125071
           - rid: 4255477820142125072
+          - rid: 122072312934826338
+          - rid: 122072312934826339
+          - rid: 122072312934826340
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -4376,11 +5420,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 4255477820142125081
           - rid: 4255477820142125082
           - rid: 4255477820142125083
           - rid: 4255477820142125084
+          - rid: 122072312934826341
+          - rid: 122072312934826342
+          - rid: 122072312934826343
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -4469,11 +5519,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 4255477820142125093
           - rid: 4255477820142125094
           - rid: 4255477820142125095
           - rid: 4255477820142125096
+          - rid: 122072312934826344
+          - rid: 122072312934826345
+          - rid: 122072312934826346
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -4562,11 +5618,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 4255477820142125117
           - rid: 4255477820142125118
           - rid: 4255477820142125119
           - rid: 4255477820142125120
+          - rid: 122072312934826347
+          - rid: 122072312934826348
+          - rid: 122072312934826349
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -5915,11 +6977,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 8065501182869897489
           - rid: 8065501182869897490
           - rid: 8065501182869897491
           - rid: 8065501182869897492
+          - rid: 122072312934826272
+          - rid: 122072312934826273
+          - rid: 122072312934826274
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -5976,11 +7044,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 8065501182869897501
           - rid: 8065501182869897502
           - rid: 8065501182869897503
           - rid: 8065501182869897504
+          - rid: 122072312934826275
+          - rid: 122072312934826276
+          - rid: 122072312934826277
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -6069,11 +7143,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 8065501182869897513
           - rid: 8065501182869897514
           - rid: 8065501182869897515
           - rid: 8065501182869897516
+          - rid: 122072312934826278
+          - rid: 122072312934826279
+          - rid: 122072312934826280
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -6162,11 +7242,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 8065501182869897525
           - rid: 8065501182869897526
           - rid: 8065501182869897527
           - rid: 8065501182869897528
+          - rid: 122072312934826281
+          - rid: 122072312934826282
+          - rid: 122072312934826283
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -6255,11 +7341,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 8065501182869897537
           - rid: 8065501182869897538
           - rid: 8065501182869897539
           - rid: 8065501182869897540
+          - rid: 122072312934826284
+          - rid: 122072312934826285
+          - rid: 122072312934826286
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -6348,11 +7440,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 8065501182869897549
           - rid: 8065501182869897550
           - rid: 8065501182869897551
           - rid: 8065501182869897552
+          - rid: 122072312934826287
+          - rid: 122072312934826288
+          - rid: 122072312934826289
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -6441,11 +7539,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 8065501182869897561
           - rid: 8065501182869897562
           - rid: 8065501182869897563
           - rid: 8065501182869897564
+          - rid: 122072312934826290
+          - rid: 122072312934826291
+          - rid: 122072312934826292
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -6534,11 +7638,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 8065501182869897573
           - rid: 8065501182869897574
           - rid: 8065501182869897575
           - rid: 8065501182869897576
+          - rid: 122072312934826293
+          - rid: 122072312934826294
+          - rid: 122072312934826295
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -6627,11 +7737,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 8065501182869897585
           - rid: 8065501182869897586
           - rid: 8065501182869897587
           - rid: 8065501182869897588
+          - rid: 122072312934826296
+          - rid: 122072312934826297
+          - rid: 122072312934826298
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -6720,11 +7836,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 8065501182869897597
           - rid: 8065501182869897598
           - rid: 8065501182869897599
           - rid: 8065501182869897600
+          - rid: 122072312934826299
+          - rid: 122072312934826300
+          - rid: 122072312934826301
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -6813,11 +7935,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 8065501182869897609
           - rid: 8065501182869897610
           - rid: 8065501182869897611
           - rid: 8065501182869897612
+          - rid: 122072312934826302
+          - rid: 122072312934826303
+          - rid: 122072312934826304
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -6906,11 +8034,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 8065501182869897621
           - rid: 8065501182869897622
           - rid: 8065501182869897623
           - rid: 8065501182869897624
+          - rid: 122072312934826305
+          - rid: 122072312934826306
+          - rid: 122072312934826307
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -6999,11 +8133,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 8065501182869897633
           - rid: 8065501182869897634
           - rid: 8065501182869897635
           - rid: 8065501182869897636
+          - rid: 122072312934826308
+          - rid: 122072312934826309
+          - rid: 122072312934826310
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -7092,11 +8232,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 8065501182869897645
           - rid: 8065501182869897646
           - rid: 8065501182869897647
           - rid: 8065501182869897648
+          - rid: 122072312934826311
+          - rid: 122072312934826312
+          - rid: 122072312934826313
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -7185,11 +8331,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 8065501182869897657
           - rid: 8065501182869897658
           - rid: 8065501182869897659
           - rid: 8065501182869897660
+          - rid: 122072312934826314
+          - rid: 122072312934826315
+          - rid: 122072312934826316
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -7278,11 +8430,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 8065501182869897669
           - rid: 8065501182869897670
           - rid: 8065501182869897671
           - rid: 8065501182869897672
+          - rid: 122072312934826317
+          - rid: 122072312934826318
+          - rid: 122072312934826319
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -7371,11 +8529,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 8065501182869897681
           - rid: 8065501182869897682
           - rid: 8065501182869897683
           - rid: 8065501182869897684
+          - rid: 122072312934826320
+          - rid: 122072312934826321
+          - rid: 122072312934826322
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -7464,11 +8628,17 @@ MonoBehaviour:
           - Dialogue
           - Image
           - Delay
+          - Music
+          - Sound Effect
+          - Sound Effect Delay
           m_ValueList:
           - rid: 8065501182869897693
           - rid: 8065501182869897694
           - rid: 8065501182869897695
           - rid: 8065501182869897696
+          - rid: 122072312934826323
+          - rid: 122072312934826324
+          - rid: 122072312934826325
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []

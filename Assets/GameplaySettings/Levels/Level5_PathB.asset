@@ -45,5 +45,5 @@ MonoBehaviour:
     maxTime: 60
   introDialogueGraph: {fileID: 3965311268370046156, guid: 3bc48d129eff5864988bccba9c116fa2, type: 3}
   outroDialogueGraph: {fileID: 3965311268370046156, guid: 99c455c43e1703c40aff9b9fc88db053, type: 3}
-  introMusic: {fileID: 0}
-  outroMusic: {fileID: 8300000, guid: 98a53100b7a83884588fc18ef3f244a9, type: 3}
+  introMusic: {fileID: 8300000, guid: be739aa7ad5a0bc47b88ae5adc8a8ab9, type: 3}
+  outroMusic: {fileID: 8300000, guid: be739aa7ad5a0bc47b88ae5adc8a8ab9, type: 3}

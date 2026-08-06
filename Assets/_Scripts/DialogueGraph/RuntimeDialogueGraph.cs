@@ -16,8 +16,16 @@ public class RuntimeDialogueNode
     public string DialogueText;
     public float Delay;
     public Sprite Image;
+    public AudioClip Music;
+    public AudioClip SoundEffect;
+    public float SoundEffectDelay;
+    [Range(0f, 1f)]
+    public float SoundEffectVolume = 1f;
+
+    [Header("Choices")]
     public bool ChoicesAreExclusive = true;
     public List<ChoiceData> Choices = new List<ChoiceData>();
+
     public string NextNodeID;
 }
 

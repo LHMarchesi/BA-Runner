@@ -23,6 +23,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private RectTransform choiceButtonContainer;
     [SerializeField] private List<Button> choiceButtons = new List<Button>();
 
+
     [Header("Delay")]
     [SerializeField] private Slider delayProgressBar;
 
@@ -34,6 +35,7 @@ public class DialogueManager : MonoBehaviour
     private Coroutine autoAdvanceCoroutine;
     private Coroutine selectRoutine;
     private Coroutine continueTransitionCoroutine;
+    private Coroutine nodeSoundCoroutine;
 
     private bool isOutro;
     private bool dialogueEnded;
@@ -81,10 +83,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (GameManager.Instance == null)
         {
-            Debug.LogError(
-                "[Dialogue] GameManager.Instance es null."
-            );
-
+           
             return;
         }
 
@@ -99,11 +98,7 @@ public class DialogueManager : MonoBehaviour
             {
                 if (ProgressionManager.Instance == null)
                 {
-                    Debug.LogError(
-                        "[Dialogue] ProgressionManager.Instance es null."
-                    );
-
-                    return;
+                                      return;
                 }
 
                 ProgressionManager.Instance.AdvanceLevel();
@@ -174,13 +169,6 @@ public class DialogueManager : MonoBehaviour
 
             string nodeID = node.NodeID.Trim();
 
-            if (nodeLookup.ContainsKey(nodeID))
-            {
-                Debug.LogWarning(
-                    $"[Dialogue] NodeID duplicado: {nodeID}"
-                );
-            }
-
             nodeLookup[nodeID] = node;
         }
 
@@ -194,9 +182,6 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning(
-                "[Dialogue] El grafo no tiene EntryNodeID."
-            );
 
             EndDialogue();
         }
@@ -216,14 +201,6 @@ public class DialogueManager : MonoBehaviour
             {
                 string nextNodeID =
                     node.NextNodeID.Trim();
-
-                if (!nodeLookup.ContainsKey(nextNodeID))
-                {
-                    Debug.LogError(
-                        $"[Dialogue Validation] El nodo '{node.NodeID}' tiene " +
-                        $"NextNodeID roto: '{nextNodeID}'."
-                    );
-                }
             }
 
             if (node.Choices == null)
@@ -254,6 +231,8 @@ public class DialogueManager : MonoBehaviour
 
     private void ShowDialogue(string nodeID)
     {
+      
+
         if (string.IsNullOrWhiteSpace(nodeID))
         {
             Debug.LogWarning(
@@ -278,11 +257,12 @@ public class DialogueManager : MonoBehaviour
             EndDialogue();
             return;
         }
-
         StopAutoAdvance();
-
+        StopPendingNodeSound();
         currentNode = node;
         dialogueEnded = false;
+
+        
 
         if (dialoguePanel != null)
         {
@@ -331,6 +311,8 @@ public class DialogueManager : MonoBehaviour
                 AutoAdvanceCoroutine(currentNode.Delay)
             );
         }
+
+        PlayNodeAudio(currentNode);
     }
 
     private void SetupChoiceButtons(
@@ -535,6 +517,7 @@ public class DialogueManager : MonoBehaviour
     private void EndDialogue()
     {
         StopAutoAdvance();
+        StopPendingNodeSound();
         ClearChoiceButtons();
 
         currentNode = null;
@@ -795,43 +778,150 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    /*
-     * Este es el único camino que debe ejecutar el botón Continue.
-     * Update ya no inicia transiciones cuando dialogueEnded es true.
-     */
-    private void HandleContinueButton()
+    private void PlayNodeAudio(RuntimeDialogueNode node)
     {
+        if (node == null)
+            return;
+
+        /*
+         * Guardamos las referencias localmente.
+         * La comparación == null usa la comprobación especial de Unity
+         * y detecta referencias vacías, destruidas o Missing.
+         */
+        AudioClip musicClip = node.Music;
+        AudioClip soundEffectClip = node.SoundEffect;
+
         Debug.Log(
-            $"[Dialogue] Click real sobre Continue | " +
-            $"dialogueEnded: {dialogueEnded} | " +
-            $"isTransitioning: {isTransitioning} | " +
-            $"isOutro: {isOutro}"
+            $"[Dialogue Audio] Nodo: {node.NodeID} | " +
+            $"Tiene música: {musicClip != null} | " +
+            $"Tiene SFX: {soundEffectClip != null} | " +
+            $"Delay SFX: {node.SoundEffectDelay}"
         );
 
-        if (IsDialogueInputBlocked())
+        AudioManager audioManager =
+            AudioManager.Instance;
+
+        /*
+         * La cinemática debe funcionar aunque no exista AudioManager.
+         */
+        if (audioManager == null)
         {
-            Debug.Log(
-                "[Dialogue] Continue ignorado durante el frame bloqueado."
+            Debug.LogWarning(
+                "[Dialogue Audio] No existe AudioManager. " +
+                "El nodo continuará sin audio."
             );
 
             return;
         }
 
-        if (!dialogueEnded)
+        /*
+         * Music null:
+         * no cambia ni detiene la música actual.
+         */
+        if (musicClip != null)
         {
-            Debug.LogWarning(
-                "[Dialogue] Continue fue presionado antes de terminar el diálogo."
+            audioManager.PlayMusic(
+                musicClip
             );
+        }
+
+        /*
+         * SoundEffect null:
+         * no hay nada más que hacer.
+         */
+        if (soundEffectClip == null)
+            return;
+
+        float safeDelay =
+            Mathf.Max(
+                0f,
+                node.SoundEffectDelay
+            );
+
+        if (safeDelay <= 0f)
+        {
+            audioManager.PlaySFX(
+                soundEffectClip
+            );
+
+            return;
+        }
+
+        string sourceNodeID =
+            node.NodeID;
+
+        nodeSoundCoroutine = StartCoroutine(
+            PlayNodeSoundAfterDelay(
+                sourceNodeID,
+                soundEffectClip,
+                safeDelay
+            )
+        );
+    }
+    private IEnumerator PlayNodeSoundAfterDelay(
+     string sourceNodeID,
+     AudioClip clip,
+     float delay
+ )
+    {
+        yield return new WaitForSeconds(delay);
+
+        nodeSoundCoroutine = null;
+
+        /*
+         * El jugador pudo haber avanzado a otro nodo
+         * antes de que terminara el delay.
+         */
+        if (currentNode == null)
+            yield break;
+
+        if (currentNode.NodeID != sourceNodeID)
+            yield break;
+
+        /*
+         * El clip pudo quedar vacío o Missing.
+         */
+        if (clip == null)
+            yield break;
+
+        AudioManager audioManager =
+            AudioManager.Instance;
+
+        if (audioManager == null)
+            yield break;
+
+        audioManager.PlaySFX(
+            clip
+        );
+    }
+
+
+    private void StopPendingNodeSound()
+    {
+        if (nodeSoundCoroutine == null)
+            return;
+
+        StopCoroutine(nodeSoundCoroutine);
+        nodeSoundCoroutine = null;
+    }
+    private void HandleContinueButton()
+    {
+       
+
+        if (IsDialogueInputBlocked())
+        {
+           
+            return;
+        }
+
+        if (!dialogueEnded)
+        {  
 
             return;
         }
 
         if (isTransitioning)
         {
-            Debug.LogWarning(
-                "[Dialogue] Ya existe una transición en progreso."
-            );
-
             return;
         }
 
@@ -873,23 +963,13 @@ public class DialogueManager : MonoBehaviour
 
         continueTransitionCoroutine = null;
 
-        Debug.Log(
-            $"[Dialogue] Ejecutando transición real. " +
-            $"IsOutro: {isOutro} | " +
-            $"CurrentLevel: " +
-            $"{ProgressionManager.Instance?.CurrentLevel?.name ?? "NULL"}"
-        );
-
+    
         try
         {
             if (isOutro)
             {
                 if (ProgressionManager.Instance == null)
                 {
-                    Debug.LogError(
-                        "[Dialogue] ProgressionManager.Instance es null."
-                    );
-
                     RestoreContinueButton();
                     yield break;
                 }
@@ -903,10 +983,6 @@ public class DialogueManager : MonoBehaviour
         }
         catch (Exception exception)
         {
-            Debug.LogError(
-                "[Dialogue] Falló la transición después de pulsar Continue."
-            );
-
             Debug.LogException(exception);
             RestoreContinueButton();
         }
@@ -1033,6 +1109,7 @@ public class DialogueManager : MonoBehaviour
     private void OnDestroy()
     {
         StopAutoAdvance();
+        StopPendingNodeSound();
 
         if (selectRoutine != null)
         {
