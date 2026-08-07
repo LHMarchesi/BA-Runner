@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.Localization.Settings;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -27,6 +28,11 @@ public class DialogueManager : MonoBehaviour
     [Header("Delay")]
     [SerializeField] private Slider delayProgressBar;
 
+    [Header("Localization")]
+    [SerializeField] private string localizationTable = "LocalizationTableBARUNNER";
+
+   
+
     private readonly Dictionary<string, RuntimeDialogueNode> nodeLookup =
         new Dictionary<string, RuntimeDialogueNode>();
 
@@ -41,10 +47,6 @@ public class DialogueManager : MonoBehaviour
     private bool dialogueEnded;
     private bool isTransitioning;
 
-    /*
-     * Evita que el clic o Submit usado para elegir una opción
-     * también active Continue durante el mismo frame.
-     */
     private int inputBlockedUntilFrame = -1;
 
     private void Start()
@@ -52,19 +54,6 @@ public class DialogueManager : MonoBehaviour
         dialogueEnded = false;
         isTransitioning = false;
 
-        if (continueButton == null)
-        {
-            Debug.LogError(
-                "[Dialogue] Continue Button no está asignado en el Inspector."
-            );
-
-            return;
-        }
-
-        /*
-         * El listener se registra una única vez.
-         * EndDialogue solamente muestra y habilita el botón.
-         */
         continueButton.gameObject.SetActive(false);
         continueButton.interactable = false;
         continueButton.onClick.RemoveListener(HandleContinueButton);
@@ -79,6 +68,31 @@ public class DialogueManager : MonoBehaviour
         EnterCinematics();
     }
 
+    private string GetLocalizedText(string key)
+    {
+        if (string.IsNullOrWhiteSpace(key))
+            return string.Empty;
+
+        string cleanKey = key.Trim();
+
+        string localizedText =
+            LocalizationSettings.StringDatabase.GetLocalizedString(
+                localizationTable,
+                cleanKey
+            );
+
+        if (string.IsNullOrWhiteSpace(localizedText))
+        {
+            Debug.LogWarning(
+                $"[Localization] No se encontró traducción para " +
+                $"'{cleanKey}' en la tabla '{localizationTable}'."
+            );
+
+            return $"[{cleanKey}]";
+        }
+
+        return localizedText;
+    }
     private void EnterCinematics()
     {
         if (GameManager.Instance == null)
@@ -290,7 +304,7 @@ public class DialogueManager : MonoBehaviour
         if (DialogueText != null)
         {
             DialogueText.text =
-                currentNode.DialogueText;
+                GetLocalizedText(currentNode.DialogueText);
         }
 
         ClearChoiceButtons();
@@ -380,7 +394,7 @@ public class DialogueManager : MonoBehaviour
                 capturedChoice != null)
             {
                 buttonText.text =
-                    capturedChoice.ChoiceText;
+                    GetLocalizedText(capturedChoice.ChoiceText);
             }
 
             button.onClick.AddListener(() =>

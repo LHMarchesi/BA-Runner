@@ -1378,9 +1378,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01a8065b239fa3ed28c258e2b25d5bcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
-  audioSource: {fileID: 1590261803}
-  MusicSource: {fileID: 20258287}
-  ControlSFX: {fileID: 0}
+  sfxSource: {fileID: 0}
+  musicSource: {fileID: 0}
+  controlSFX: {fileID: 0}
+  controlMusic: {fileID: 0}
   menuMusicClip: {fileID: 0}
   cinematicsSong: {fileID: 0}
   survivalSong: {fileID: 0}
@@ -1786,8 +1787,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -66, y: -43}
-  m_SizeDelta: {x: 1253.5314, y: 229.9314}
+  m_AnchoredPosition: {x: 0.21252, y: 114}
+  m_SizeDelta: {x: 1500.4, y: 65.3507}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &1413977451
 CanvasRenderer:
@@ -1819,8 +1820,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b407fcc31c65a9347a3bfe8487158422, type: 2}
+  m_sharedMaterial: {fileID: 7351701377598574298, guid: b407fcc31c65a9347a3bfe8487158422, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1844,17 +1845,17 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 13.5
   m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -1946,7 +1947,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7525599650723383336, guid: d9a25fd7a16384148bc092982d4f0a09, type: 3}
+  m_Sprite: {fileID: -5922588406406301905, guid: 2d28546f0bfe95842ae504b2c9df7830, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2043,8 +2044,8 @@ MonoBehaviour:
   choiceButtons:
   - {fileID: 422084453}
   - {fileID: 275843444}
-  dialogueSoundSource: {fileID: 1590261803}
   delayProgressBar: {fileID: 1360531678}
+  localizationTable: LocalizationTableBARUNNER
 --- !u!114 &1536353635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2307,7 +2308,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 123, y: 250}
+  m_AnchoredPosition: {x: 210, y: 250}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &1893556828
@@ -2340,8 +2341,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b407fcc31c65a9347a3bfe8487158422, type: 2}
+  m_sharedMaterial: {fileID: 7351701377598574298, guid: b407fcc31c65a9347a3bfe8487158422, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

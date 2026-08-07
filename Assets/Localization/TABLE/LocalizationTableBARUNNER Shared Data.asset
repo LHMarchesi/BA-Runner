@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: LocalizationTableBARUNNER Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: LocalizationTableBARUNNER
+  m_TableCollectionNameGuidString: 48cb04d4449e7184fa0f759f675441c6
+  m_Entries:
+  - m_Id: 12477044682752
+    m_Key: L01_INTRO_015
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12477082431488
+    m_Key: L02_INTRO_016
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12477082431489
+    m_Key: L04_OUTRO_CHOICE_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12477082431490
+    m_Key: L04_OUTRO_CHOICE_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12477086625792
+    m_Key: L05_PATH_B_INTRO_001
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12477086625793
+    m_Key: L05_PATH_A_INTRO_001
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12477086625794
+    m_Key: L05_PATH_A_OUTRO_CHOICE_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12477086625795
+    m_Key: L05_PATH_A_OUTRO_CHOICE_1
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 6569493075375686053
+  references:
+    version: 2
+    RefIds:
+    - rid: 6569493075375686053
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1786068451207
