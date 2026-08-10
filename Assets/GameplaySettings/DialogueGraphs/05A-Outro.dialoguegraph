@@ -991,6 +991,14 @@ MonoBehaviour:
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
         m_Value: 0
+    - rid: 122072421933514839
+      type: {class: 'Constant`1[[System.Int32, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072421933514840
+      type: {class: 'Constant`1[[System.Int32, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
     - rid: 2450192437645934592
       type: {class: UserNodeModelImp, ns: Unity.GraphToolkit.Editor.Implementation, asm: Unity.GraphToolkit.Editor}
       data:
@@ -7100,6 +7108,8 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Choice 0 Min Stars
+          - Choice 1 Min Stars
           m_ValueList:
           - rid: 4255477660058648578
           - rid: 4255477660058648579
@@ -7114,6 +7124,8 @@ MonoBehaviour:
           - rid: 122072312406868902
           - rid: 122072312406868903
           - rid: 122072312406868904
+          - rid: 122072421933514839
+          - rid: 122072421933514840
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -7176,7 +7188,7 @@ MonoBehaviour:
     - rid: 4255477660058648581
       type: {class: 'Constant`1[[UnityEngine.Sprite, UnityEngine.CoreModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: {fileID: -3475559015286919479, guid: d6a999f7edaea6349823660725db4921, type: 3}
+        m_Value: {fileID: 7524699253558926661, guid: 19703bb360c3a0a42b5ca8e4a45cae17, type: 3}
     - rid: 4255477660058648582
       type: {class: ChoiceNode, ns: , asm: Assembly-CSharp-Editor}
       data: 
@@ -7721,10 +7733,10 @@ MonoBehaviour:
         m_LocalSubgraphs: []
         m_LastKnownBounds:
           serializedVersion: 2
-          x: -363.33334
-          y: 573.3333
-          width: 17078
-          height: 609.33344
+          x: -363
+          y: 573
+          width: 17076
+          height: 609
         m_GraphElementMetaData:
         - m_Guid:
             m_Value0: 3059622741841427994

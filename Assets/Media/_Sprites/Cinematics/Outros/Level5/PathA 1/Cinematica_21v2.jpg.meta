@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5981816b3fa9fd04aaf5ac099cf0b028
+guid: 19703bb360c3a0a42b5ca8e4a45cae17
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1936262812727277467
-    second: Cinematica_31_0
+      213: 7524699253558926661
+    second: Cinematica_21v2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,24 +96,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cinematica_31_0
+      name: Cinematica_21v2_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 56887970b330125e0800000000000000
-      internalID: -1936262812727277467
+      spriteID: 54dd6028a1a1d6860800000000000000
+      internalID: 7524699253558926661
       vertices: []
       indices: 
       edges: []
@@ -148,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Cinematica_31_0: -1936262812727277467
+      Cinematica_21v2_0: 7524699253558926661
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

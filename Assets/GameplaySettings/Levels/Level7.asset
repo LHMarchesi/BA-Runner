@@ -10,25 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa7792cd6221c7d4c8f51bb26b31ea3c, type: 3}
-  m_Name: Level6_PathB
+  m_Name: Level7
   m_EditorClassIdentifier: Assembly-CSharp::Level_Scriptable
-  levelID: Alcorta
-  Variants:
-  - RequiredFlags:
-    - SECRET_ENDING
-    NextLevel: {fileID: 11400000, guid: 3014024ca1e3621409a4a0d0e4a39558, type: 2}
+  levelID: Puente De La Mujer
+  Variants: []
   DefaultNextLevel: {fileID: 0}
   maxLevelProgession: 100
   levelMusic: {fileID: 8300000, guid: 97367b10cbec9744e8dd4b93f5ee5ded, type: 3}
-  winLevelImage: {fileID: 4275385624270263120, guid: 0e929357dab52d240ad574882d7d73ad, type: 3}
+  winLevelImage: {fileID: 2479281274430394464, guid: be9f65328e684b84da1db3ad02813633, type: 3}
   stages:
   - stageName: 
-    speedData: {fileID: 11400000, guid: ff98cf3aa638e934aab866d252848f99, type: 2}
+    speedData: {fileID: 11400000, guid: 99fcfe5ddf168764ebbb219e3b2a61d6, type: 2}
     waveConfig: {fileID: 11400000, guid: cc331a6e9f66b7340a745d2e088ef768, type: 2}
     progressionRequired: 0
     displayedSpeed: 80
     environment:
-      background: {fileID: 2100000, guid: 705c201d1915eeb4eb6778c7614451ae, type: 2}
+      background: {fileID: 2100000, guid: f437d6199eae21449ae771aa6a1e5c6a, type: 2}
   starRequirements:
   - stars: 5
     maxTime: 32
@@ -41,6 +38,6 @@ MonoBehaviour:
   - stars: 1
     maxTime: 60
   introDialogueGraph: {fileID: 0}
-  outroDialogueGraph: {fileID: 3965311268370046156, guid: e4f22f94e7bf8e24986479da4ca37dd2, type: 3}
+  outroDialogueGraph: {fileID: 0}
   introMusic: {fileID: 8300000, guid: f2946434619dcde41b0c99ffa4ffc2e4, type: 3}
   outroMusic: {fileID: 8300000, guid: f2946434619dcde41b0c99ffa4ffc2e4, type: 3}

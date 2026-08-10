@@ -843,6 +843,14 @@ MonoBehaviour:
           m_PortDirection: 1
           m_PortOrientation: 0
           m_Title: in
+    - rid: 122072421933514846
+      type: {class: 'Constant`1[[System.Int32, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072421933514847
+      type: {class: 'Constant`1[[System.Int32, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
     - rid: 2450192437645935540
       type: {class: UserNodeModelImp, ns: Unity.GraphToolkit.Editor.Implementation, asm: Unity.GraphToolkit.Editor}
       data:
@@ -874,6 +882,8 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Choice 0 Min Stars
+          - Choice 1 Min Stars
           m_ValueList:
           - rid: 2450192437645935542
           - rid: 2450192437645935543
@@ -888,6 +898,8 @@ MonoBehaviour:
           - rid: 122072312406868611
           - rid: 122072312406868612
           - rid: 122072312406868613
+          - rid: 122072421933514846
+          - rid: 122072421933514847
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -950,7 +962,7 @@ MonoBehaviour:
     - rid: 2450192437645935545
       type: {class: 'Constant`1[[UnityEngine.Sprite, UnityEngine.CoreModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: {fileID: -6928930204073599134, guid: c78982f4e63ece14185e3ea0d0f326c2, type: 3}
+        m_Value: {fileID: -5810542073744685827, guid: 054ec9bac3b49df4ba6d5efe7fb9ffe7, type: 3}
     - rid: 2450192437645935546
       type: {class: ChoiceNode, ns: , asm: Assembly-CSharp-Editor}
       data: 
@@ -7351,9 +7363,9 @@ MonoBehaviour:
         m_LastKnownBounds:
           serializedVersion: 2
           x: 4460
-          y: 592.6666
-          width: 14362.666
-          height: 754.66675
+          y: 592
+          width: 14361
+          height: 754
         m_GraphElementMetaData:
         - m_Guid:
             m_Value0: 3522283725170806051

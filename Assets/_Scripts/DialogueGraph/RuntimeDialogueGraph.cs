@@ -37,4 +37,6 @@ public class  ChoiceData
     [Header("Narrative Flags")]
     public List<string> FlagsToSet = new();   
     public List<string> FlagsToClear = new();
+
+    public int MinStarsRequired = 0;
 }

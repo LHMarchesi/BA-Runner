@@ -105,6 +105,21 @@ public class ProgressionManager : MonoBehaviour
     {
         return BestTimesKey + level.LevelID;
     }
+
+    public int GetCurrentLevelResultStars()
+    {
+        if (CurrentLevel == null)
+            return 0;
+
+        if (_pendingCompletionTime >= 0f)
+        {
+            return CurrentLevel.GetStarsForTime(
+                _pendingCompletionTime
+            );
+        }
+
+        return GetStarsForLevel(CurrentLevel);
+    }
     // ── Unity ────────────────────────────────────────────────────────────────
 
     private void Awake()

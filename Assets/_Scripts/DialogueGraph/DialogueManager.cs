@@ -18,6 +18,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private Button continueButton;
     [SerializeField] private Image backgroundImage;
     [SerializeField] private TextMeshProUGUI SpeakerNameText;
+    [SerializeField] private TextMeshProUGUI ChooseOptionText;
     [SerializeField] private TextMeshProUGUI DialogueText;
 
     [Header("Choice Buttons")]
@@ -67,7 +68,56 @@ public class DialogueManager : MonoBehaviour
         ClearChoiceButtons();
         EnterCinematics();
     }
+    private bool IsChoiceAvailable(
+       ChoiceData choice
+   )
+    {
+        if (choice == null)
+            return false;
 
+        if (choice.MinStarsRequired <= 0)
+            return true;
+
+        if (ProgressionManager.Instance == null)
+            return false;
+
+        int stars =
+            ProgressionManager.Instance
+                .GetCurrentLevelResultStars();
+
+        bool available =
+            stars >= choice.MinStarsRequired;
+
+        Debug.Log(
+            $"[Choice Requirement] " +
+            $"{choice.ChoiceText} | " +
+            $"Stars: {stars} | " +
+            $"Required: {choice.MinStarsRequired} | " +
+            $"Available: {available}"
+        );
+
+        return available;
+    }
+    private List<ChoiceData> GetAvailableChoices(
+    List<ChoiceData> choices
+)
+    {
+        List<ChoiceData> availableChoices =
+            new List<ChoiceData>();
+
+        if (choices == null)
+            return availableChoices;
+
+        foreach (ChoiceData choice in choices)
+        {
+            if (IsChoiceAvailable(choice))
+            {
+                availableChoices.Add(choice);
+            }
+        }
+
+        return availableChoices;
+    }
     private string GetLocalizedText(string key)
     {
         if (string.IsNullOrWhiteSpace(key))
@@ -309,13 +359,17 @@ public class DialogueManager : MonoBehaviour
 
         ClearChoiceButtons();
 
-        bool hasChoices =
-            currentNode.Choices != null &&
-            currentNode.Choices.Count > 0;
+         List<ChoiceData> availableChoices =
+     GetAvailableChoices(
+         currentNode.Choices
+     );
 
-        if (hasChoices)
+        if (availableChoices.Count > 0)
         {
-            SetupChoiceButtons(currentNode.Choices);
+            SetupChoiceButtons(
+                availableChoices
+            );
+
             return;
         }
 
@@ -333,6 +387,7 @@ public class DialogueManager : MonoBehaviour
         List<ChoiceData> choices
     )
     {
+        ChooseOptionText.gameObject.SetActive(true);
         ClearChoiceButtons();
 
         if (choices == null || choices.Count == 0)
@@ -351,37 +406,11 @@ public class DialogueManager : MonoBehaviour
                 choiceButtons.Count
             );
 
-        if (choices.Count > choiceButtons.Count)
-        {
-            Debug.LogWarning(
-                $"[Dialogue] Hay {choices.Count} elecciones, pero solamente " +
-                $"{choiceButtons.Count} botones disponibles."
-            );
-        }
-
         for (int i = 0; i < activeButtonCount; i++)
         {
             ChoiceData capturedChoice = choices[i];
             Button button = choiceButtons[i];
 
-            if (button == null)
-            {
-                Debug.LogWarning(
-                    $"[Dialogue] Choice Button {i} no está asignado."
-                );
-
-                continue;
-            }
-
-            if (button == continueButton)
-            {
-                Debug.LogError(
-                    "[Dialogue] Continue Button está incluido en choiceButtons. " +
-                    "Elimínalo de esa lista en el Inspector."
-                );
-
-                continue;
-            }
 
             button.gameObject.SetActive(true);
             button.interactable = true;
@@ -416,6 +445,7 @@ public class DialogueManager : MonoBehaviour
                 );
 
                 ClearChoiceButtons();
+                ChooseOptionText.gameObject.SetActive(false);
 
                 if (ProgressionManager.Instance == null)
                 {

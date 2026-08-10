@@ -68,6 +68,7 @@ public class ChoiceNode : Node
         context.AddInputPort<string>("Dialogue").Build();
         context.AddInputPort<Sprite>("Image").Build();
 
+
         // Audio
         context.AddInputPort<AudioClip>("Music").Build();
         context.AddInputPort<AudioClip>("Sound Effect").Build();
@@ -109,6 +110,8 @@ public class ChoiceNode : Node
                     $"Choice {i}"
                 )
                 .Build();
+
+            context.AddInputPort<int>($"Choice {i} Min Stars").Build();
         }
     }
 

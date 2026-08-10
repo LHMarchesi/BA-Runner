@@ -13,11 +13,14 @@ MonoBehaviour:
   m_Name: Level6_PathA
   m_EditorClassIdentifier: Assembly-CSharp::Level_Scriptable
   levelID: Plaza Italia
-  Variants: []
+  Variants:
+  - RequiredFlags:
+    - SECRET_ENDING
+    NextLevel: {fileID: 11400000, guid: 3014024ca1e3621409a4a0d0e4a39558, type: 2}
   DefaultNextLevel: {fileID: 0}
   maxLevelProgession: 100
   levelMusic: {fileID: 8300000, guid: 97367b10cbec9744e8dd4b93f5ee5ded, type: 3}
-  winLevelImage: {fileID: -6928930204073599134, guid: e25a238893bda2448b699d759114a17b, type: 3}
+  winLevelImage: {fileID: 3266968218349781397, guid: 48a1b07ea1e741045aa3cfc5da11de74, type: 3}
   stages:
   - stageName: 
     speedData: {fileID: 11400000, guid: 99fcfe5ddf168764ebbb219e3b2a61d6, type: 2}

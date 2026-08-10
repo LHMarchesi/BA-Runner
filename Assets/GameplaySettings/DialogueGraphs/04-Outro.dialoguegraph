@@ -211,6 +211,14 @@ MonoBehaviour:
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
         m_Value: 0
+    - rid: 122072421933514844
+      type: {class: 'Constant`1[[System.Int32, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072421933514845
+      type: {class: 'Constant`1[[System.Int32, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
     - rid: 4255477455600746564
       type: {class: UserNodeModelImp, ns: Unity.GraphToolkit.Editor.Implementation, asm: Unity.GraphToolkit.Editor}
       data:
@@ -366,10 +374,10 @@ MonoBehaviour:
         m_LocalSubgraphs: []
         m_LastKnownBounds:
           serializedVersion: 2
-          x: 4165.3335
+          x: 4166
           y: 268
-          width: 5693.9995
-          height: 382.66663
+          width: 5716
+          height: 501
         m_GraphElementMetaData:
         - m_Guid:
             m_Value0: 9185812747187342700
@@ -2138,6 +2146,8 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Choice 0 Min Stars
+          - Choice 1 Min Stars
           m_ValueList:
           - rid: 8065501226114482366
           - rid: 8065501226114482367
@@ -2152,6 +2162,8 @@ MonoBehaviour:
           - rid: 122072312406868848
           - rid: 122072312406868849
           - rid: 122072312406868850
+          - rid: 122072421933514844
+          - rid: 122072421933514845
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -2182,7 +2194,7 @@ MonoBehaviour:
     - rid: 8065501226114482369
       type: {class: 'Constant`1[[UnityEngine.Sprite, UnityEngine.CoreModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: {fileID: 21300000, guid: 99c29308fe76c834f817cf60d84f5388, type: 3}
+        m_Value: {fileID: -5486187312246001369, guid: ea86f05231404944d83bdc7e48799f3b, type: 3}
     - rid: 8065501226114482370
       type: {class: ChoiceNode, ns: , asm: Assembly-CSharp-Editor}
       data: 
