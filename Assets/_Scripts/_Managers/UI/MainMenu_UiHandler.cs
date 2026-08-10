@@ -4,31 +4,84 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using UnityEngine.Video;
 
 public class MainMenu_UiHandler : MonoBehaviour
 {
-    [SerializeField] Image pressAnyKeyimage;
+    [SerializeField] private Image pressAnyKeyRawImage;
+
+    [SerializeField] private VideoPlayer modeSelectVideo;
+    [SerializeField] private RawImage modeSelectRawImage;
+
+    [Header("Video URLs")]
+    [SerializeField] private string pressAnyKeyVideoURL;
+    [SerializeField] private string modeSelectVideoURL;
+
+    [Header("Menu")]
     [SerializeField] private Button[] buttons;
     [SerializeField] private MenuNavigation navigation;
     [SerializeField] private GameObject indicator;
-    [SerializeField] Image modeSelectImage;
-    [SerializeField] Image firstBackgroundImage;
-    [SerializeField] AudioClip menuAppearSFX;
-    [SerializeField] SceneTransition transition;
+
+    [Header("Background")]
+    [SerializeField] private RawImage firstBackgroundRawImage;
+    [SerializeField] private VideoPlayer firstBackgroundVideo;
+
+    [Header("Audio")]
+    [SerializeField] private AudioClip menuAppearSFX;
+
+    [Header("Transition")]
+    [SerializeField] private SceneTransition transition;
+
     [Header("Input")]
-    EventBinding<OnEnterMenuEvent> onEnterMenuBinding;
-    bool isMenuActive = false;
+    private EventBinding<OnEnterMenuEvent> onEnterMenuBinding;
+
+    private bool isMenuActive = false;
+
 
     private void Awake()
     {
+        // Estado inicial
         indicator.SetActive(false);
-        PrepareImage(pressAnyKeyimage);
-        PrepareButton(buttons[0].gameObject, SceneTransition.transitionTo.Cinematics);
-        PrepareButton(buttons[1].gameObject, SceneTransition.transitionTo.Survival);
-        PrepareButton(buttons[2].gameObject, SceneTransition.transitionTo.Exit);
-        PrepareButton(buttons[3].gameObject, SceneTransition.transitionTo.LevelSelector);
+        navigation.gameObject.SetActive(false);
+        pressAnyKeyRawImage.gameObject.SetActive(true);
+        // Preparar videos
+        PrepareVideo(firstBackgroundVideo, firstBackgroundRawImage);
+        PrepareVideo(modeSelectVideo, modeSelectRawImage);
 
+
+        // Preparar botones
+        PrepareButton(
+            buttons[0].gameObject,
+            SceneTransition.transitionTo.Cinematics
+        );
+
+        PrepareButton(
+            buttons[1].gameObject,
+            SceneTransition.transitionTo.Survival
+        );
+
+        PrepareButton(
+            buttons[2].gameObject,
+            SceneTransition.transitionTo.Exit
+        );
+
+        PrepareButton(
+            buttons[3].gameObject,
+            SceneTransition.transitionTo.LevelSelector
+        );
+
+        // Cargar URLs
+        if (firstBackgroundVideo != null)
+        {
+            firstBackgroundVideo.url = pressAnyKeyVideoURL;
+        }
+
+        if (modeSelectVideo != null)
+        {
+            modeSelectVideo.url = modeSelectVideoURL;
+        }
     }
+
 
     private void OnEnable()
     {
@@ -37,12 +90,19 @@ public class MainMenu_UiHandler : MonoBehaviour
 
         EventBus<OnEnterMenuEvent>.Register(onEnterMenuBinding);
     }
-  
+
 
     private void OnDisable()
     {
-            EventBus<OnEnterMenuEvent>.Deregister(onEnterMenuBinding);
+        EventBus<OnEnterMenuEvent>.Deregister(onEnterMenuBinding);
+
+        if (modeSelectVideo != null)
+            modeSelectVideo.Stop();
+
+        if (firstBackgroundVideo != null)
+            firstBackgroundVideo.Stop();
     }
+
 
     private void Update()
     {
@@ -50,103 +110,214 @@ public class MainMenu_UiHandler : MonoBehaviour
         {
             if (Keyboard.current.anyKey.wasPressedThisFrame)
             {
-                pressAnyKeyimage.gameObject.SetActive(false);
                 StartCoroutine(ModeSelectionSequence());
             }
         }
     }
 
 
-    void PrepareButton(GameObject obj, SceneTransition.transitionTo transitionTo)
+    // ============================================================
+    // BUTTONS
+    // ============================================================
+
+    private void PrepareButton(
+        GameObject obj,
+        SceneTransition.transitionTo transitionTo)
     {
         obj.SetActive(false);
+
         Button button = obj.GetComponent<Button>();
+
         button.interactable = false;
+
         button.onClick.AddListener(() =>
         {
             transition.StartTransition(transitionTo);
         });
     }
- 
-    void PrepareImage(Image image)
+
+
+    // ============================================================
+    // VIDEOS
+    // ============================================================
+
+    private void PrepareVideo(
+        VideoPlayer videoPlayer,
+        RawImage rawImage)
     {
-        image.gameObject.SetActive(false);
+        if (videoPlayer == null || rawImage == null)
+            return;
 
-        image.transform.localScale = Vector3.zero;
+        // Ocultar inicialmente
+        rawImage.gameObject.SetActive(false);
 
+        // Transparente
+        Color color = rawImage.color;
+        color.a = 0f;
+        rawImage.color = color;
 
-        Color color = image.color;
-        color.a = 0;
+        // Configuración del VideoPlayer
+        videoPlayer.playOnAwake = false;
+        videoPlayer.isLooping = true;
+        videoPlayer.renderMode = VideoRenderMode.RenderTexture;
 
-        image.color = color;
+        // Cuando termina de preparar el video
+        videoPlayer.prepareCompleted += OnVideoPrepared;
     }
 
-    void OnEnterMenu(OnEnterMenuEvent e)
+
+    private void OnVideoPrepared(VideoPlayer videoPlayer)
+    {
+        // No hacemos Play automáticamente acá.
+        // Cada secuencia decide cuándo reproducirlo.
+    }
+
+
+    // ============================================================
+    // ENTER MENU
+    // ============================================================
+
+    private void OnEnterMenu(OnEnterMenuEvent e)
     {
         StartCoroutine(MenuSequence());
     }
 
-    IEnumerator MenuSequence()
+
+    private IEnumerator MenuSequence()
     {
         yield return new WaitForSeconds(.75f);
-        yield return AnimateImage(pressAnyKeyimage);
+
+        yield return AnimateVideo(
+            firstBackgroundVideo,
+            firstBackgroundRawImage
+        );
     }
 
-    IEnumerator ModeSelectionSequence()
+
+    // ============================================================
+    // PRESS ANY KEY -> MODE SELECTION
+    // ============================================================
+
+    private IEnumerator ModeSelectionSequence()
     {
-        Sequence seq = DOTween.Sequence();
-        seq.Append(firstBackgroundImage.DOFade(0f, 1.35f));
+        // Ocultar Press Any Key
+        yield return FadeOutVideo(
+            firstBackgroundVideo,
+            firstBackgroundRawImage,
+            0.35f
+        );
 
-        yield return seq.WaitForCompletion();
 
-        Sequence seqq = DOTween.Sequence();
-        modeSelectImage.gameObject.SetActive(true);
-        navigation.gameObject.SetActive(true);
-        seqq.Append(modeSelectImage.DOFade(1f, 1.35f));
+        // ========================================================
+        // FADE DEL BACKGROUND
+        // ========================================================
+
+        if (firstBackgroundRawImage != null)
+        {
+            Sequence backgroundSequence = DOTween.Sequence();
+
+            backgroundSequence.Append(
+                firstBackgroundRawImage.DOFade(0f, 1.35f)
+            );
+
+            yield return backgroundSequence.WaitForCompletion();
+        }
+
+
+        // ========================================================
+        // MOSTRAR VIDEO DE SELECCIÓN
+        // ========================================================
+        pressAnyKeyRawImage.gameObject.SetActive(false);
+        modeSelectRawImage.gameObject.SetActive(true);
+
+        modeSelectVideo.Play();
+
+        Sequence videoSequence = DOTween.Sequence();
+
+        videoSequence.Append(
+            modeSelectRawImage.DOFade(1f, 1.35f)
+        );
+        yield return videoSequence.WaitForCompletion();
+
+        // ========================================================
+        // BOTONES
+        // ========================================================
+
         for (int i = 0; i < buttons.Length; i++)
         {
             buttons[i].gameObject.SetActive(true);
             buttons[i].interactable = true;
         }
+
+
+        // Mostrar navegación
+        navigation.gameObject.SetActive(true);
+
+        // Mostrar indicador
         indicator.SetActive(true);
+
+
+        // Seleccionar primer botón
         buttons[0].Select();
-        EventSystem.current.SetSelectedGameObject(buttons[0].gameObject);
-       
 
-        isMenuActive = true;
-
-        yield return seqq.WaitForCompletion();
-       
-    }
-
-
-    IEnumerator AnimateImage(Image image)  // animacion de aparacion podria ser con Animator
-    {
-        image.gameObject.SetActive(true);
-
-        Sequence seq = DOTween.Sequence();
-
-        seq.Append(
-            image.DOFade(1f, 0.35f)
+        EventSystem.current.SetSelectedGameObject(
+            buttons[0].gameObject
         );
 
-        yield return seq.WaitForCompletion();
-        StartPulse(image);
+
+        isMenuActive = true;
+       
     }
 
 
-    void StartPulse(Image image)
-    {
-        // Infinite Yoyo Pulse (Scale 1.0 <-> 1.2)
-        image.transform.DOScale(1f, 1.2f)
-            .SetEase(Ease.InOutSine)
-            .SetLoops(-1, LoopType.Yoyo)
-            .SetAutoKill(false);
+    // ============================================================
+    // VIDEO APPEAR
+    // ============================================================
 
-        // Optional: Color Pulse (Neon Arcade Style)
-        image.DOColor(Color.red, 1.1f)
-            .SetEase(Ease.InOutSine)
-            .SetLoops(-1, LoopType.Yoyo)
-            .SetAutoKill(false);
+    private IEnumerator AnimateVideo(
+        VideoPlayer videoPlayer,
+        RawImage rawImage)
+    {
+        rawImage.gameObject.SetActive(true);
+
+        // Reproducir video
+        videoPlayer.Play();
+
+        // Fade in
+        Sequence sequence = DOTween.Sequence();
+
+        sequence.Append(
+            rawImage.DOFade(1f, 0.35f)
+        );
+
+        yield return sequence.WaitForCompletion();
+
+    }
+
+
+    // ============================================================
+    // VIDEO FADE OUT
+    // ============================================================
+
+    private IEnumerator FadeOutVideo(
+        VideoPlayer videoPlayer,
+        RawImage rawImage,
+        float duration)
+    {
+        if (videoPlayer == null || rawImage == null)
+            yield break;
+
+        Sequence sequence = DOTween.Sequence();
+
+        sequence.Append(
+            rawImage.DOFade(0f, duration)
+        );
+
+        yield return sequence.WaitForCompletion();
+
+        rawImage.gameObject.SetActive(false);
+        videoPlayer.Stop();
+
     }
 }
+
