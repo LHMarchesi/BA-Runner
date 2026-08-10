@@ -25,7 +25,7 @@ MonoBehaviour:
     progressionRequired: 0
     displayedSpeed: 80
     environment:
-      background: {fileID: 0}
+      background: {fileID: 2100000, guid: 705c201d1915eeb4eb6778c7614451ae, type: 2}
   starRequirements:
   - stars: 5
     maxTime: 32

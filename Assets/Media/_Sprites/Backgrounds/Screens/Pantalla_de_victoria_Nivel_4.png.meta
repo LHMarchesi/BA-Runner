@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c3da201abadd6964b9430cebb9fc2631
+guid: 915464fcac39da14489a1a4c54fb56e3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2633767404810763971
-    second: plaemro_0
+      213: 1017844099854612797
+    second: Pantalla_de_victoria_Nivel_4_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: plaemro_0
+      name: Pantalla_de_victoria_Nivel_4_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d318047ef7af27bd0800000000000000
-      internalID: -2633767404810763971
+      spriteID: d39bf88e0db102e00800000000000000
+      internalID: 1017844099854612797
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      plaemro_0: -2633767404810763971
+      Pantalla_de_victoria_Nivel_4_0: 1017844099854612797
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

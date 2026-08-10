@@ -328,9 +328,9 @@ MonoBehaviour:
         m_LastKnownBounds:
           serializedVersion: 2
           x: 536
-          y: 705.6
-          width: 5817.6
-          height: 226.40002
+          y: 705.3333
+          width: 5817.3335
+          height: 300
         m_GraphElementMetaData:
         - m_Guid:
             m_Value0: 3059622741841427994
@@ -755,7 +755,7 @@ MonoBehaviour:
     - rid: 8065501182869897490
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 
+        m_Value: L04_INTRO_1
     - rid: 8065501182869897491
       type: {class: 'Constant`1[[UnityEngine.Sprite, UnityEngine.CoreModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -822,7 +822,7 @@ MonoBehaviour:
     - rid: 8065501182869897502
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 
+        m_Value: L04_INTRO_2
     - rid: 8065501182869897503
       type: {class: 'Constant`1[[UnityEngine.Sprite, UnityEngine.CoreModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -921,7 +921,7 @@ MonoBehaviour:
     - rid: 8065501182869897514
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 
+        m_Value: L04_INTRO_3
     - rid: 8065501182869897515
       type: {class: 'Constant`1[[UnityEngine.Sprite, UnityEngine.CoreModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -1119,7 +1119,7 @@ MonoBehaviour:
     - rid: 8065501182869897538
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 
+        m_Value: L04_INTRO_5
     - rid: 8065501182869897539
       type: {class: 'Constant`1[[UnityEngine.Sprite, UnityEngine.CoreModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -1218,7 +1218,7 @@ MonoBehaviour:
     - rid: 8065501182869897550
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 
+        m_Value: L04_INTRO_6
     - rid: 8065501182869897551
       type: {class: 'Constant`1[[UnityEngine.Sprite, UnityEngine.CoreModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -1272,7 +1272,7 @@ MonoBehaviour:
           serializedVersion: 2
           Hash: 576f5875d753e7f72df31b63da11d2bf
         m_Version: 2
-        m_Position: {x: 2551.04, y: 713.07996}
+        m_Position: {x: 2551.04, y: 711.07996}
         m_Title: DialogueNode
         m_Tooltip: 
         m_NodePreviewModel:
@@ -1317,7 +1317,7 @@ MonoBehaviour:
     - rid: 8065501182869897562
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 
+        m_Value: L04_INTRO_7
     - rid: 8065501182869897563
       type: {class: 'Constant`1[[UnityEngine.Sprite, UnityEngine.CoreModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -1416,7 +1416,7 @@ MonoBehaviour:
     - rid: 8065501182869897574
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 
+        m_Value: L04_INTRO_8
     - rid: 8065501182869897575
       type: {class: 'Constant`1[[UnityEngine.Sprite, UnityEngine.CoreModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -1515,7 +1515,7 @@ MonoBehaviour:
     - rid: 8065501182869897586
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 
+        m_Value: L04_INTRO_9
     - rid: 8065501182869897587
       type: {class: 'Constant`1[[UnityEngine.Sprite, UnityEngine.CoreModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -1614,7 +1614,7 @@ MonoBehaviour:
     - rid: 8065501182869897598
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 
+        m_Value: L04_INTRO_10
     - rid: 8065501182869897599
       type: {class: 'Constant`1[[UnityEngine.Sprite, UnityEngine.CoreModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -1713,7 +1713,7 @@ MonoBehaviour:
     - rid: 8065501182869897610
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 
+        m_Value: L04_INTRO_11
     - rid: 8065501182869897611
       type: {class: 'Constant`1[[UnityEngine.Sprite, UnityEngine.CoreModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -2307,7 +2307,7 @@ MonoBehaviour:
     - rid: 8065501182869897682
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 
+        m_Value: L04_INTRO_17
     - rid: 8065501182869897683
       type: {class: 'Constant`1[[UnityEngine.Sprite, UnityEngine.CoreModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -2406,7 +2406,7 @@ MonoBehaviour:
     - rid: 8065501182869897694
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 
+        m_Value: L04_INTRO_18
     - rid: 8065501182869897695
       type: {class: 'Constant`1[[UnityEngine.Sprite, UnityEngine.CoreModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:

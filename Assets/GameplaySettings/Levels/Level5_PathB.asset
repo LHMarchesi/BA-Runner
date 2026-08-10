@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa7792cd6221c7d4c8f51bb26b31ea3c, type: 3}
   m_Name: Level5_PathB
   m_EditorClassIdentifier: Assembly-CSharp::Level_Scriptable
-  levelID: Palermo
+  levelID: Las Heras
   Variants:
   - RequiredFlags:
     - NoHablar
@@ -23,7 +23,7 @@ MonoBehaviour:
   DefaultNextLevel: {fileID: 0}
   maxLevelProgession: 100
   levelMusic: {fileID: 8300000, guid: 7bcb251e2b8c9054188b2018b967b3c3, type: 3}
-  winLevelImage: {fileID: -931778331248522076, guid: 7ff73bb819a67f54cb4bde541f163d9a, type: 3}
+  winLevelImage: {fileID: 4546288228595404944, guid: 8bfd496de12e59c4e9777f19756bff05, type: 3}
   stages:
   - stageName: 
     speedData: {fileID: 11400000, guid: ff98cf3aa638e934aab866d252848f99, type: 2}
@@ -31,7 +31,7 @@ MonoBehaviour:
     progressionRequired: 0
     displayedSpeed: 60
     environment:
-      background: {fileID: 2100000, guid: 93669228c753ce0409ed9071fecab364, type: 2}
+      background: {fileID: 2100000, guid: a66ab6e049e172f4681912cedb9b88f2, type: 2}
   starRequirements:
   - stars: 5
     maxTime: 32

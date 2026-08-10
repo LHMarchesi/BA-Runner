@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5a449009c3046874e97cc929f48692d2
+guid: 0e929357dab52d240ad574882d7d73ad
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6260993959997514737
-    second: plazaitalia_0
+      213: 4275385624270263120
+    second: Pantalla_de_victoria_Nivel_6B_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: plazaitalia_0
+      name: Pantalla_de_victoria_Nivel_6B_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1f3a48e95d483e650800000000000000
-      internalID: 6260993959997514737
+      spriteID: 053d074c298355b30800000000000000
+      internalID: 4275385624270263120
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      plazaitalia_0: 6260993959997514737
+      Pantalla_de_victoria_Nivel_6B_0: 4275385624270263120
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

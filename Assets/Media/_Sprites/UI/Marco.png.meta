@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d9a25fd7a16384148bc092982d4f0a09
+guid: 7d37b1f5a5dbd8044af8b578f5e861f3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7525599650723383336
-    second: Rectangle 33_0
+      213: -5898572833816749705
+    second: Marco_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,24 +96,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Rectangle 33_0
+      name: Marco_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 828cb2f820d407860800000000000000
-      internalID: 7525599650723383336
+      spriteID: 7795596724f042ea0800000000000000
+      internalID: -5898572833816749705
       vertices: []
       indices: 
       edges: []
@@ -148,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Rectangle 33_0: 7525599650723383336
+      Marco_0: -5898572833816749705
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

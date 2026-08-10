@@ -365,10 +365,10 @@ MonoBehaviour:
         m_LocalSubgraphs: []
         m_LastKnownBounds:
           serializedVersion: 2
-          x: -1013.6
-          y: 705.6
-          width: 7367.2
-          height: 226.40002
+          x: -1013.3333
+          y: 705.3333
+          width: 7297.3335
+          height: 300
         m_GraphElementMetaData:
         - m_Guid:
             m_Value0: 3059622741841427994
@@ -905,7 +905,7 @@ MonoBehaviour:
     - rid: 8065501182869897431
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: L01_INTRO_015
+        m_Value: 
     - rid: 8065501182869897432
       type: {class: 'Constant`1[[UnityEngine.Sprite, UnityEngine.CoreModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -2214,7 +2214,7 @@ MonoBehaviour:
           serializedVersion: 2
           Hash: aa3a3220ea66af59dc2985beae426652
         m_Version: 2
-        m_Position: {x: 3475.3604, y: 735.19995}
+        m_Position: {x: 3475.3604, y: 735.8666}
         m_Title: DialogueNode
         m_Tooltip: 
         m_NodePreviewModel:
@@ -2259,7 +2259,7 @@ MonoBehaviour:
     - rid: 8065501182869897598
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 
+        m_Value: L01_INTRO_15
     - rid: 8065501182869897599
       type: {class: 'Constant`1[[UnityEngine.Sprite, UnityEngine.CoreModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -2358,7 +2358,7 @@ MonoBehaviour:
     - rid: 8065501182869897610
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 
+        m_Value: L01_INTRO_16
     - rid: 8065501182869897611
       type: {class: 'Constant`1[[UnityEngine.Sprite, UnityEngine.CoreModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -2556,7 +2556,7 @@ MonoBehaviour:
     - rid: 8065501182869897634
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 
+        m_Value: L01_INTRO_18
     - rid: 8065501182869897635
       type: {class: 'Constant`1[[UnityEngine.Sprite, UnityEngine.CoreModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -2655,7 +2655,7 @@ MonoBehaviour:
     - rid: 8065501182869897646
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 
+        m_Value: L01_INTRO_19
     - rid: 8065501182869897647
       type: {class: 'Constant`1[[UnityEngine.Sprite, UnityEngine.CoreModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -2709,7 +2709,7 @@ MonoBehaviour:
           serializedVersion: 2
           Hash: 4cc08f520e1d5f6f2efab5e8d44200d6
         m_Version: 2
-        m_Position: {x: 4972.24, y: 747.24}
+        m_Position: {x: 4972.24, y: 745.9067}
         m_Title: DialogueNode
         m_Tooltip: 
         m_NodePreviewModel:
@@ -2754,7 +2754,7 @@ MonoBehaviour:
     - rid: 8065501182869897658
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 
+        m_Value: L01_INTRO_20
     - rid: 8065501182869897659
       type: {class: 'Constant`1[[UnityEngine.Sprite, UnityEngine.CoreModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -2853,7 +2853,7 @@ MonoBehaviour:
     - rid: 8065501182869897670
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 
+        m_Value: L01_INTRO_21
     - rid: 8065501182869897671
       type: {class: 'Constant`1[[UnityEngine.Sprite, UnityEngine.CoreModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -2907,7 +2907,7 @@ MonoBehaviour:
           serializedVersion: 2
           Hash: f33f384b955994abae10c52342bd4a16
         m_Version: 2
-        m_Position: {x: 5584.04, y: 745.56}
+        m_Position: {x: 5584.04, y: 744.8933}
         m_Title: DialogueNode
         m_Tooltip: 
         m_NodePreviewModel:
@@ -2952,7 +2952,7 @@ MonoBehaviour:
     - rid: 8065501182869897682
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 
+        m_Value: L01_INTRO_22
     - rid: 8065501182869897683
       type: {class: 'Constant`1[[UnityEngine.Sprite, UnityEngine.CoreModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:

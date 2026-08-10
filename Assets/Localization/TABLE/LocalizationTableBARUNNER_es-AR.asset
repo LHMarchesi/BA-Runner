@@ -18,8 +18,916 @@ MonoBehaviour:
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 12477044682752
-    m_Localized: HOLA MUNDO
+  - m_Id: 1053257192718336
+    m_Localized: 'ENZO: RAQUEL, YA ESTOY LISTO'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257297575936
+    m_Localized: '*BIP*'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257297575937
+    m_Localized: '*RAQUEL: TE ESPERA EN EL OBELISCO*'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770240
+    m_Localized: 'ENZO: ES OTRA NOCHE... OTRA NOCHE.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770241
+    m_Localized: "VINCENT: \xBFENZO? \xBFEL REMISERO?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770242
+    m_Localized: "VINCENT: VAMOS A CONSTITUCI\xD3N."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770243
+    m_Localized: 'VINCENT: NECESITO ESTAR EN 15 MINUTOS.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770244
+    m_Localized: "VINCENT: \xBFPODES?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770245
+    m_Localized: 'VINCENT: ESTA CIUDAD... UNA PRECIOSURA.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770246
+    m_Localized: 'VINCENT: NUNCA DUERME.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770247
+    m_Localized: 'VINCENT: 7 MILLONES CAMINANDO A DIARIO.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770248
+    m_Localized: 'VINCENT: UNA VEZ, ESCUCHE UNA HISTORIA.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770249
+    m_Localized: 'VINCENT: UN ANCIANO TOMA EL SUBTE.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770250
+    m_Localized: "VINCENT: SU CORAZ\xD3N SE DETIENE."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770251
+    m_Localized: 'VINCENT: PARECE ESTAR DORMIDO.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770252
+    m_Localized: "VINCENT: HORAS AH\xCD Y NADIE SE DA CUENTA."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770253
+    m_Localized: "VINCENT: EL MUNDO SE OLVID\xD3 DE QUE EXIST\xCDA."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770254
+    m_Localized: "VINCENT: 15 MINUTOS DE L\xCDNEA C A TERMINAL. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770255
+    m_Localized: "VINCENT: \xBFVOS CREES QUE LO VER\xCDAN?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770256
+    m_Localized: 'VINCENT: JAJAJA, NOS VEMOS ENZO!!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770257
+    m_Localized: "ENZO: \xBFLO VER\xCDAN?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770258
+    m_Localized: '???: ES INSOSTENIBLE. LO SIENTO.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770259
+    m_Localized: 'RAQUEL: ENZO...'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770260
+    m_Localized: '*BIP*'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770261
+    m_Localized: "ENZO: \xBFOTRO VIAJE?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770262
+    m_Localized: 'RAQUEL: ENZO, ESO FUE TODO.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770263
+    m_Localized: 'RAQUEL: CERRAMOS.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770264
+    m_Localized: 'RAQUEL: CONSEGUITE OTRO AUTO.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770265
+    m_Localized: 'RAQUEL: Y VAS A PODER SEGUIR LABURANDO.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770266
+    m_Localized: 'ENZO: ENTIENDO.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770267
+    m_Localized: 'RAQUEL: ENZO...'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770268
+    m_Localized: 'RAQUEL: CUIDATE MUCHO.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770269
+    m_Localized: 'GERARDO: TENES QUE HACERTE VER ESE OJO.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770270
+    m_Localized: "GERARDO: \xBFC\xD3MO TE HICISTE ESO?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770271
+    m_Localized: 'RULO: NADA, UNA PELEA CON UN BOLUDO.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770272
+    m_Localized: 'GERARDO: YA ESTAS GRANDE VOS EH...'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770273
+    m_Localized: 'RULO: Y BUENO, ME HIZO CALENTAR.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770274
+    m_Localized: 'ENZO: HOLA.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770275
+    m_Localized: "GERARDO: \xBFPOR QU\xC9 SEGUIS VINIENDO? EL AUTO EST\xC1 BIEN."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770276
+    m_Localized: 'ENZO: ES RUTINA.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770277
+    m_Localized: "GERARDO: \xBFHOY SEGUIS? \xBFCOMO ANDA LA PIBA ESA?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770278
+    m_Localized: 'ENZO: CERRAMOS.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770279
+    m_Localized: 'ENZO: TENGO QUE BUSCAR OTRO EMPLEO.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770280
+    m_Localized: 'GERARDO: ESCUCHA... ES UN BUEN AUTO.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770281
+    m_Localized: "GERARDO: CONOZCO A UN TIPO, TE PAGAR\xCDA MUY BIEN POR EL."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770282
+    m_Localized: 'ENZO: NO ESTA A LA VENTA GERARDO.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770283
+    m_Localized: 'GERARDO: VOS PENSALO. SI SE COMPLICA, AHI ESTA.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770284
+    m_Localized: "ENZO: \xBFPOR QU\xC9 TENES MI N\xDAMERO?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770285
+    m_Localized: 'VINCENT: RAQUEL.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770286
+    m_Localized: "VINCENT: ENZO, \xBFAUN CONSERVAS EL AUTO?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770287
+    m_Localized: SI.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770288
+    m_Localized: NO POR MUCHO.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770289
+    m_Localized: 'ENZO: SI.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770290
+    m_Localized: 'VINCENT: MANEJASTE BIEN EL OTRO DIA.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770291
+    m_Localized: "VINCENT: \xBFCREES QUE PODES HACERLO DE NUEVO?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770292
+    m_Localized: "ENZO: \xBFD\xD3NDE Y POR CUANTO?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770293
+    m_Localized: 'VINCENT: 14:00 PM, CABOTO, 1400. CERCA DE ESE PUENTE.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770294
+    m_Localized: "VINCENT: \xBFLA PAGA? EL TRIPLE DE LO QUE GANABAS."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770295
+    m_Localized: 'VINCENT: TU CLIENTE SE LLAMA OMAR.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770296
+    m_Localized: "VINCENT: ES VIEJO, CALVO Y MA\xD1OSO."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770297
+    m_Localized: 'VINCENT: SE PUNTUAL. ME TIENE HARTO CON ESO.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770298
+    m_Localized: 'VINCENT: VA A NOMBRAR LA PATENTE.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770299
+    m_Localized: 'OMAR: EVA 026.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770300
+    m_Localized: 'OMAR: VAMOS PARA LA CARBONILLA, EN LA PATERNAL.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770301
+    m_Localized: 'OMAR: UN DIA DE ESTOS, ESTA MIERDA ME VA A MATAR.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770302
+    m_Localized: "OMAR: \xBFC\xD3MO TERMINASTE AC\xC1? "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770303
+    m_Localized: "ENZO: CONOZCO A VINCENT. DIJO QUE TEN\xCDA UN VIAJE."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770304
+    m_Localized: "OMAR: SEGURO ES POR TU AUTO, SOS CALLADO TAMBI\xC9N. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770305
+    m_Localized: 'OMAR: ESO ES BUENO PARA EL NEGOCIO.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770306
+    m_Localized: 'OMAR: SI TE JODEN A LA SALIDA, DECIS MI NOMBRE.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770307
+    m_Localized: "OMAR: QU\xC9 CANSANCIO..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770308
+    m_Localized: 'OMAR: Y BUENO... ES LO QUE NOS TOCA, AGUANTAR.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770309
+    m_Localized: "OMAR: ENZO, \xBFVOS POR QU\xC9 LO HACES?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12477082431489
+    m_Localized: 'ENZO: ES TODO LO QUE SE HACER.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12477082431490
+    m_Localized: 'ENZO: NUNCA ME DETUVE A PENSARLO.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12477086625793
+    m_Localized: 'ENZO: ES TODO LO QUE SE HACER.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770310
+    m_Localized: 'OMAR: TE ENTIENDO... NOS VEMOS PIBE.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770311
+    m_Localized: "ENZO: \xBFOTRO VIAJE?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770312
+    m_Localized: 'VINCENT: EL BARRIO CHINO, A LAS 18:00 PM.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770313
+    m_Localized: 'VINCENT: ESTE VIAJE ES ESPECIAL.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770314
+    m_Localized: 'VINCENT: SE LLAMA ELENA.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770315
+    m_Localized: 'VINCENT: VA A ESTAR EN LA ENTRADA.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770316
+    m_Localized: "VINCENT: ENZO, UNA COSA M\xC1S."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770317
+    m_Localized: "VINCENT: QUE SU ENCANTO NO TE ENGA\xD1E."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770318
+    m_Localized: "VINCENT: ES UNA ARP\xCDA. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770319
+    m_Localized: 'ELENA: AL FIN TRAEN A UNO LINDO. VOY PARA EL HOTEL.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770320
+    m_Localized: "ENZO: \xBFCUAL HOTEL?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770321
+    m_Localized: "ELENA: EL \xDANICO HOTEL QUE IMPORTA EN RETIRO."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770322
+    m_Localized: 'ELENA: CUANTAS LUCES.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770323
+    m_Localized: 'ELENA: ENZO, EN ESTE MUNDO SOLO IMPORTA EL DINERO.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770324
+    m_Localized: 'ELENA: VINCENT LO SABE MUY BIEN.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770325
+    m_Localized: "ELENA: NADA IMPORTA M\xC1S QUE EL DINERO."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770326
+    m_Localized: '???: LIU, LA JEFA QUIERE QUE EMPECEMOS SIN ELLA.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770327
+    m_Localized: 'ELENA: COMO DICEN USTEDES...'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770328
+    m_Localized: 'ELENA: "POR PLATA BAILA EL MONO."'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770329
+    m_Localized: "ELENA: D\xC9JAME EN EL ESTACIONAMIENTO."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770330
+    m_Localized: '???: NO AGUANTO NADA. BASURA.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770331
+    m_Localized: '???: ESE ES EL DEL OTRO DIA, VOLVIO A VENIR.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770332
+    m_Localized: "ELENA: \xBFY VOS ENZO?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770333
+    m_Localized: "ELENA: \xBFBAILAS POR PLATA?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12477086625794
+    m_Localized: '*EVITAR HABLAR*'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12477086625795
+    m_Localized: 'ENZO: NO CREO QUE EL DINERO SEA TODO.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770334
+    m_Localized: 'ELENA: SALUDOS A VINCENT.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770335
+    m_Localized: 'ENZO: HOLA.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770336
+    m_Localized: 'VINCENT: ESTE PEDIDO NO ME AGRADA, PERO PAGA MUY BIEN.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770337
+    m_Localized: "VINCENT: NO LE HABLES Y DESPACHALO R\xC1PIDO."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770338
+    m_Localized: 'VINCENT: PLAZA ITALIA, DE CARA A LA RURAL.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770339
+    m_Localized: "VINCENT: TE ESPERA PERO EST\xC1 APURADO, SE LLAMA TIAGO."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770340
+    m_Localized: 'TIAGO: QUE BUENO QUE LLEGASTE.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770341
+    m_Localized: "TIAGO: ARRANC\xC1, \xA1SALGAMOS DE AC\xC1 RAPIDO! "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770342
+    m_Localized: 'ENZO: NO CREO QUE EL DINERO SEA TODO.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770343
+    m_Localized: 'ELENA: ESO SIEMPRE LO DICEN USTEDES.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770344
+    m_Localized: 'ELENA: SALUDOS A VINCENT.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770345
+    m_Localized: 'ENZO: HOLA.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770346
+    m_Localized: 'VINCENT: OMAR PIDIO POR VOS. PAGA MUY BIEN.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770347
+    m_Localized: 'VINCENT: NO PREGUNTES Y DE SER POSIBLE, NO HABLES.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770348
+    m_Localized: 'VINCENT: AMANCIO ALCORTA Y CALLE LUNA. LA ESQUINA.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770349
+    m_Localized: 'VINCENT: TE ESTAN ESPERANDO.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770350
+    m_Localized: 'MIGUEL: AHI VINO.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770351
+    m_Localized: "MIGUEL: OMAR! YA LLEG\xD3."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770352
+    m_Localized: 'OMAR: VOY A IR ADELANTE.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770353
+    m_Localized: 'OMAR: ENCARGATE DE LLEVARLO.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770354
+    m_Localized: "MIGUEL: ENZO! HOLA, OMAR EST\xC1 VINIENDO."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770355
+    m_Localized: "MIGUEL: Y MI AMIGO SE PAS\xD3 DE COPAS. LO VAMOS A LLEVAR."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770356
+    m_Localized: "MIGUEL: NO HAY PROBLEMA \xBFCIERTO?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770357
+    m_Localized: 'ENZO: PASEN.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770358
+    m_Localized: 'OMAR: VAMOS. ES FUERA DE LA CIUDAD.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770359
+    m_Localized: 'OMAR: JOSE LEON SUAREZ. DE CARA AL BASURAL.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12477086625792
+    m_Localized: 'ENZO: NUNCA ME DETUVE A PENSARLO.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770360
+    m_Localized: 'OMAR: ESO ES PELIGROSO, NOS VEMOS PIBE.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770361
+    m_Localized: 'ENZO: GRACIAS.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770362
+    m_Localized: 'VINCENT: ENZO TENGO OTRO VIAJE, ES PARA AHORA.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770363
+    m_Localized: "ENZO: \xBFDONDE?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770364
+    m_Localized: "VINCENT: JUEZ TED\xCDN 2845, PALERMO CHICO."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770365
+    m_Localized: 'VINCENT: ENZO, ESTE VIAJE ES IMPORTANTE.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770366
+    m_Localized: 'ENZO: ENTENDIDO.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770367
+    m_Localized: 'MARCOS: MAMA, AHI ESTA! '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770368
+    m_Localized: 'CECILIA: AMOR, CUIDADO. PONETE EL CINTO.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770369
+    m_Localized: 'CECILIA: ENZO, VAMOS PARA LA RURAL.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770370
+    m_Localized: 'CECILIA: SE NOS HIZO ALGO TARDE, GRACIAS POR VENIR.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770371
+    m_Localized: "MARCOS: ENZO, \xBFTE GUSTA MI AUTO?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770372
+    m_Localized: '*EVITAR HABLAR*'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770373
+    m_Localized: "ENZO: ES UN BUEN AUTO, UN AMIGO TEN\xCDA UNO ASI."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770374
+    m_Localized: 'CECILIA: OTRO DIA HABLAMOS, VAMOS QUE ES TARDE.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770375
+    m_Localized: 'CECILIA Y MARCOS: CHAU ENZO!! GRACIAS!!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770376
+    m_Localized: 'ENZO: HOLA.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770377
+    m_Localized: 'VINCENT: ESTE PEDIDO NO ME AGRADA, PERO PAGA MUY BIEN.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770378
+    m_Localized: "VINCENT: NO LE HABLES Y DESPACHALO R\xC1PIDO."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770379
+    m_Localized: 'VINCENT: PLAZA ITALIA, DE CARA A LA RURAL.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770380
+    m_Localized: "VINCENT: TE ESPERA PERO EST\xC1 APURADO, SE LLAMA TIAGO."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770381
+    m_Localized: 'TIAGO: QUE BUENO QUE LLEGASTE.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770382
+    m_Localized: "TIAGO: ARRANC\xC1, \xA1SALGAMOS DE AC\xC1 RAPIDO! "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770383
+    m_Localized: "ENZO: ES UN BUEN AUTO, UN AMIGO TEN\xCDA UNO ASI."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770384
+    m_Localized: "MARCOS: \xA1\xBFEN SERIO?!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770385
+    m_Localized: 'ENZO: SI HACE TIEMPO QUE NO NOS VEMOS.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770386
+    m_Localized: "MARCOS: \xBFY POR QU\xC9 NO LO VISITAS?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770387
+    m_Localized: 'CECILIA: OTRO DIA HABLAMOS, VAMOS QUE ES TARDE.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770388
+    m_Localized: 'CECILIA Y MARCOS: CHAU ENZO!! GRACIAS!!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770389
+    m_Localized: 'ENZO: HOLA.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770390
+    m_Localized: 'VINCENT: OMAR PIDIO POR VOS. PAGA MUY BIEN.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770391
+    m_Localized: 'VINCENT: NO PREGUNTES Y DE SER POSIBLE, NO HABLES.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770392
+    m_Localized: 'VINCENT: AMANCIO ALCORTA Y CALLE LUNA. LA ESQUINA.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770393
+    m_Localized: 'VINCENT: TE ESTAN ESPERANDO.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770394
+    m_Localized: 'MIGUEL: AHI VINO.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770395
+    m_Localized: "MIGUEL: OMAR! YA LLEG\xD3."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770396
+    m_Localized: 'OMAR: VOY A IR ADELANTE.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770397
+    m_Localized: 'OMAR: ENCARGATE DE LLEVARLO.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770398
+    m_Localized: "MIGUEL: ENZO! HOLA, OMAR EST\xC1 VINIENDO."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770399
+    m_Localized: "MIGUEL: Y MI AMIGO SE PAS\xD3 DE COPAS. LO VAMOS A LLEVAR."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770400
+    m_Localized: "MIGUEL: NO HAY PROBLEMA \xBFCIERTO?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770401
+    m_Localized: 'ENZO: PASEN.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770402
+    m_Localized: 'OMAR: VAMOS. ES FUERA DE LA CIUDAD.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770403
+    m_Localized: 'OMAR: JOSE LEON SUAREZ. DE CARA AL BASURAL.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770404
+    m_Localized: "TIAGO: VOY PARA LA COSTANERA DE VICENTE L\xD3PEZ."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770405
+    m_Localized: 'TIAGO: ME BAJO CERCA DEL MONUMENTO A BELGRANO.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770406
+    m_Localized: 'TIAGO: HABIA UNA EXPO DE AUTOS, MUCHA GENTE DESPISTADA.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770407
+    m_Localized: 'TIAGO: ME TOPE CON CADA PERSONAJE.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770408
+    m_Localized: 'TIAGO: Y LOS PENDEJOS INSOPORTABLES ENCIMA.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770409
+    m_Localized: 'TIAGO: LLORONES, CALLATE UN POCO Y HACE CASO.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770410
+    m_Localized: 'TIAGO: PERO BUENO, VAMOS A LO QUE IMPORTA, EL DINERO.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770411
+    m_Localized: 'TIAGO: ME EQUIVOQUE Y GUARDE LA MIERDA ESTA TAMBIEN.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770412
+    m_Localized: 'TIAGO: ESTABA EN EL BOLSO, POR ESO LLORABA TANTO.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770413
+    m_Localized: 'TIAGO: EL PENDEJO ESE APENAS GRITO, SALI A LOS PEDOS.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770414
+    m_Localized: "TIAGO: A VECES EL LABURO ES AS\xCD. TOMA, ACA TE LOS DEJO."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770415
+    m_Localized: "TIAGO: SALUDOS A VINCENT. ME SALV\xD3 ESTA VEZ."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770416
+    m_Localized: "ENZO: \xA1\xA1\xA1MIERDAAAAAAAA!!!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770417
+    m_Localized: "ENZO: \xA1\xA1\xA1MIERDAAAA!!!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770418
+    m_Localized: '*...*'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770419
+    m_Localized: '*...*'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770420
+    m_Localized: "ENZO: \xBFQUE VOY A HACER?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770421
+    m_Localized: VENDER EL AUTO.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770422
+    m_Localized: IRSE DE LA CIUDAD.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770423
+    m_Localized: QUEDARSE.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770424
+    m_Localized: 'MIGUEL: CREO QUE LLEGAMOS TEMPRANO A LA FIESTA.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770425
+    m_Localized: 'OMAR: MIGUEL, ANDA YENDO.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770426
+    m_Localized: 'OMAR: VOY A QUEDARME UN MOMENTO.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770427
+    m_Localized: "TIAGO: DON... DONDE...? \xBFD\xD3NDE ESTOY?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770428
+    m_Localized: 'OMAR: SIEMPRE ELIJO A VINCENT.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770429
+    m_Localized: 'OMAR: PORQUE NO SE METE DONDE NO IMPORTA.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770430
+    m_Localized: "OMAR: \xBFTE DIJE ALGO?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770431
+    m_Localized: 'ENZO: NO.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770432
+    m_Localized: "OMAR: \xBFVISTE ALGO?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770433
+    m_Localized: 'ENZO: NO.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770434
+    m_Localized: "OMAR: \xBFHICISTE ALGO?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770435
+    m_Localized: 'ENZO: NO.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770436
+    m_Localized: 'OMAR: ES MUY TARDE PARA MI.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770437
+    m_Localized: "OMAR: PARA VOS... \xBFQU\xC9 HORA VA A SER?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770438
+    m_Localized: "ENZO: \xA1\xA1\xA1MIERDAAAAAAAA!!!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770439
+    m_Localized: "ENZO: \xA1\xA1\xA1MIERDAAAA!!!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770440
+    m_Localized: '*...*'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770441
+    m_Localized: '*...*'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770442
+    m_Localized: "ENZO: \xBFQUE VOY A HACER?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770443
+    m_Localized: VENDER EL AUTO.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770444
+    m_Localized: IRSE DE LA CIUDAD.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770445
+    m_Localized: QUEDARSE.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770446
+    m_Localized: 'VINCENT: HOLA GERAR, ESTOY APURADO.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770447
+    m_Localized: "VINCENT: \xBFQUE TENES PARA MI?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770448
+    m_Localized: 'GERARDO: UN 502. PERFECTO ESTADO. UN PIBE LO SOLTO.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770449
+    m_Localized: "VINCENT: \xBFCUAL ERA SU NOMBRE?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770450
+    m_Localized: 'GERARDO: MMH... ALGO CON E...'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770451
+    m_Localized: 'GERARDO: ERNESTO... EZEQUIEL? NO ME ACUERDO.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770452
+    m_Localized: 'VINCENT: NO IMPORTA.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770453
+    m_Localized: 'VINCENT: EL HOTEL DE SIEMPRE. A LAS 4 DE LA TARDE.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770454
+    m_Localized: 'RAQUEL: HOLA!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770455
+    m_Localized: 'RAQUEL: MIRA DONDE TE VENGO A ENCONTRAR.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770456
+    m_Localized: 'RAQUEL: JAJA, YO VI EL MISMO FOLLETO.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770457
+    m_Localized: "ENZO: \xBFOTRO VIAJE?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770458
+    m_Localized: 'VINCENT: AEROPARQUE, EN 15 MINUTOS.'
     m_Metadata:
       m_Items: []
   references:

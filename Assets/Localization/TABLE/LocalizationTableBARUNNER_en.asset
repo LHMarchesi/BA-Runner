@@ -18,8 +18,352 @@ MonoBehaviour:
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 12477044682752
-    m_Localized: HELLO WORD
+  - m_Id: 1053257192718336
+    m_Localized: 'ENZO: RAQUEL, I''M READY.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257297575936
+    m_Localized: '*BIP*'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257297575937
+    m_Localized: '*RAQUEL: MEET HIM AT THE OBELISCO*'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770240
+    m_Localized: 'ENZO: IT''S JUST ANOTHER NIGHT, ANOTHER NIGHT.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770241
+    m_Localized: 'VINCENT: ENZO? THE TAXI DRIVER?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770242
+    m_Localized: "VINCENT: LET'S GO TO CONSTITUCI\xD3N."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770243
+    m_Localized: 'VINCENT: I NEED TO BE THERE IN 15 MINUTES.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770244
+    m_Localized: 'VINCENT: CAN YOU?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770245
+    m_Localized: 'VINCENT: THIS CITY... IT''S GORGEOUS.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770246
+    m_Localized: 'VINCENT: IT NEVER SLEEPS.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770247
+    m_Localized: 'VINCENT: SEVEN MILLION PEOPLE WALK DAILY HERE.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770248
+    m_Localized: 'VINCENT: ONCE, I HEARD A STORY.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770249
+    m_Localized: 'VINCENT: AN OLD MAN TAKES THE SUBWAY.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770250
+    m_Localized: 'VINCENT: SUDDENLY, HIS HEART STOPS.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770251
+    m_Localized: 'VINCENT: HE SEEMS TO BE ASLEEP.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770252
+    m_Localized: 'VINCENT: NO ONE NOTICE HIM FOR HOURS.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770253
+    m_Localized: 'VINCENT: THE WORLD FORGOT HIS EXISTANCE.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770254
+    m_Localized: 'VINCENT: ONLY 15 MINUTES TO THE LAST ONE ON LINE C. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770255
+    m_Localized: 'VINCENT: DO YOU THINK THEY WILL SEE HIM?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770256
+    m_Localized: 'VINCENT: HAHAHA, BYE ENZO!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770257
+    m_Localized: 'ENZO: WOULD THEY SEE HIM?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770258
+    m_Localized: '???: SORRY, IT''S UNTENABLE.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770259
+    m_Localized: 'RAQUEL: ENZO...'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770260
+    m_Localized: '*BIP*'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770261
+    m_Localized: 'ENZO: ANOTHER RIDE?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770262
+    m_Localized: 'RAQUEL: ENZO, IT''S OVER.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770263
+    m_Localized: 'RAQUEL: WE''RE CLOSING.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770264
+    m_Localized: 'RAQUEL: YOU MUST GET ANOTHER CAR.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770265
+    m_Localized: 'RAQUEL: IF YOU WANT TO KEEP WORKING.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770266
+    m_Localized: 'ENZO: I UNDERSTAND.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770267
+    m_Localized: 'RAQUEL: ENZO...'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770268
+    m_Localized: 'RAQUEL: TAKE CARE.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770269
+    m_Localized: 'GERARDO: YOUR EYE, YOU MUST GO TO THE DOCTOR.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770270
+    m_Localized: 'GERARDO: HOW DID YOU GET INJURED?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770271
+    m_Localized: 'RULO: NOTHING, I HAD A FIGHT WITH A GOOBER.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770272
+    m_Localized: 'GERARDO: YOU GOTTA GROW UP, HUH...'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770273
+    m_Localized: 'RULO: ANYWAYS, HE MADE ME MAD.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770274
+    m_Localized: 'ENZO: HELLO.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770275
+    m_Localized: 'GERARDO: WHY ARE YOU HERE? THE CAR''S JUST FINE.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770276
+    m_Localized: 'ENZO: MY RUTINE.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770277
+    m_Localized: 'GERARDO: DO YOU CONTINUE TODAY? HOW''S THAT GIRL?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770278
+    m_Localized: 'ENZO: WE CLOSED.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770279
+    m_Localized: 'ENZO: I''VE TO FIND ANOTHER JOB.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770280
+    m_Localized: 'GERARDO: LISTEN... IT''S A NICE CAR.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770281
+    m_Localized: 'GERARDO: I KNOW A FELLA THAT''LL PAY TOP DOLLAR FOR IT.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770282
+    m_Localized: 'ENZO: IT''S NOT FOR SALE GERARDO.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770283
+    m_Localized: 'GERARDO: THINK OF IT. IF YOU NEED IT, IT''S THERE.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770284
+    m_Localized: 'ENZO: WHY YOU HAVE MY NUMBER?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770285
+    m_Localized: 'VINCENT: RAQUEL.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770286
+    m_Localized: 'VINCENT: ENZO, YOU STILL KEEP THE CAR?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770287
+    m_Localized: YES.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770288
+    m_Localized: NOT FOR MUCH LONGER.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770289
+    m_Localized: 'ENZO: YES.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770290
+    m_Localized: 'VINCENT: YOU DROVE SO WELL THE OTHER DAY.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770291
+    m_Localized: 'VINCENT: CAN YOU DO IT AGAIN?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770292
+    m_Localized: 'ENZO: WHERE? HOW MUCH?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770293
+    m_Localized: 'VINCENT: 14:00 PM, CABOTO, 1400. NEAR THAT BRIDGE.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770294
+    m_Localized: 'VINCENT: YOUR PAYMENT? I''LL TRIPLE IT.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770295
+    m_Localized: 'VINCENT: YOUR CLIENT IS OMAR.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770296
+    m_Localized: 'VINCENT: HE''S OLD, BALD AND CAPRICIOUS.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770297
+    m_Localized: 'VINCENT: BE THERE ON TIME. I''M SICK OF IT.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770298
+    m_Localized: 'VINCENT:: HE''LL MENTION THE TAP.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770299
+    m_Localized: 'OMAR: EVA 026.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770300
+    m_Localized: 'OMAR: WE GO TO CARBONILLA, IN PATERNAL.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770301
+    m_Localized: 'OMAR: ONE DAY, THIS SHIT IS GONNA KILL ME.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770302
+    m_Localized: 'OMAR: HOW DO YOU END UP HERE?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770303
+    m_Localized: 'ENZO: I KNOW VINCENT. HE TOLD ME TO TAKE THIS RIDE.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770304
+    m_Localized: 'OMAN: I BET IS FOR YOUR CAR. YOU ARE SHY TOO.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770305
+    m_Localized: 'OMAN: THAT''S GOOD FOR THE BUSINESS.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770306
+    m_Localized: 'OMAN: SAY MY NAME IF THEY CAUSE TROUBLE.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770307
+    m_Localized: 'OMAN: I''M SO TIRED...'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770308
+    m_Localized: 'OMAN: WE''VE TO HOLD UP, THAT''S WHAT WE GET.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770309
+    m_Localized: 'OMAN: ENZO, WHY YOU DO THIS?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12477082431489
+    m_Localized: 'ENZO: THIS IS EVERYTHING I KNOW.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12477082431490
+    m_Localized: 'ENZO: I''VE NEVER GIVEN IT MUCH THOUGHT.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12477086625793
+    m_Localized: 'ENZO: THIS IS EVERYTHING I KNOW.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770310
+    m_Localized: 'OMAN: I UNDERSTAND... SEE YOU, KID.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770311
+    m_Localized: 'ENZO: ANOTHER RIDE?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770312
+    m_Localized: 'VINCENT: TO BARRIO CHINO, AT 18:00 PM.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770313
+    m_Localized: 'VINCENT: THIS RIDE IS SPECIAL.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770314
+    m_Localized: 'VINCENT: SHE''S ELENA.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770315
+    m_Localized: 'VINCENT: SHE''LL WAIT FOR YOU AT THE ENTRANCE.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770316
+    m_Localized: 'VINCENT: ENZO... ONE MORE THING.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770317
+    m_Localized: 'VINCENT: DON''T BE FOOLED BY HER CHARMS.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770318
+    m_Localized: 'VINCENT: SHE''S A WITCH.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770319
+    m_Localized: 'ELENA: FINALLY, A PRETTY CAR. GO TO THE HOTEL.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770321
+    m_Localized: 'ELENA: THE ONLY MAJOR HOTEL OF RETIRO.'
     m_Metadata:
       m_Items: []
   references:

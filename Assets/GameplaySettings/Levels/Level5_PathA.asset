@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa7792cd6221c7d4c8f51bb26b31ea3c, type: 3}
   m_Name: Level5_PathA
   m_EditorClassIdentifier: Assembly-CSharp::Level_Scriptable
-  levelID: Barrio Chino
+  levelID: Retiro
   Variants:
   - RequiredFlags:
     - EvitarHablar
@@ -23,7 +23,7 @@ MonoBehaviour:
   DefaultNextLevel: {fileID: 0}
   maxLevelProgession: 100
   levelMusic: {fileID: 8300000, guid: 7bcb251e2b8c9054188b2018b967b3c3, type: 3}
-  winLevelImage: {fileID: 4870499436779709045, guid: 1576bc8bd3bbcfb428b42eda4a33b30a, type: 3}
+  winLevelImage: {fileID: 2749263484467375401, guid: 0a26b1129163dbd4985a4d767791b724, type: 3}
   stages:
   - stageName: 
     speedData: {fileID: 11400000, guid: 99fcfe5ddf168764ebbb219e3b2a61d6, type: 2}
