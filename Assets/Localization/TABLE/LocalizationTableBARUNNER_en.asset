@@ -31,7 +31,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1053257301770240
-    m_Localized: 'ENZO: IT''S JUST ANOTHER NIGHT, ANOTHER NIGHT.'
+    m_Localized: 'ENZO: IT''S JUST ONE MORE NIGHT...  ONE MORE NIGHT.'
     m_Metadata:
       m_Items: []
   - m_Id: 1053257301770241
@@ -87,7 +87,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1053257301770254
-    m_Localized: 'VINCENT: ONLY 15 MINUTES TO THE LAST ONE ON LINE C. '
+    m_Localized: 'VINCENT: ONLY TAKES THEM 15 MINUTES TO LINE C TERMINAL.'
     m_Metadata:
       m_Items: []
   - m_Id: 1053257301770255
@@ -259,7 +259,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1053257301770297
-    m_Localized: 'VINCENT: BE THERE ON TIME. I''M SICK OF IT.'
+    m_Localized: 'VINCENT: BE THERE ON TIME. I''M SICK OF HIM.'
     m_Metadata:
       m_Items: []
   - m_Id: 1053257301770298
@@ -287,7 +287,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1053257301770304
-    m_Localized: 'OMAN: I BET IS FOR YOUR CAR. YOU ARE SHY TOO.'
+    m_Localized: 'OMAN: I BET IS FOR YOUR CAR. ALSO, YOU ARE SO RESERVED.'
     m_Metadata:
       m_Items: []
   - m_Id: 1053257301770305
@@ -364,6 +364,630 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 1053257301770321
     m_Localized: 'ELENA: THE ONLY MAJOR HOTEL OF RETIRO.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1426986460528640
+    m_Localized: '???: THANK YOU.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770320
+    m_Localized: 'ENZO: WHICH HOTEL?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770322
+    m_Localized: 'ELENA: SO MANY LIGHTS!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770323
+    m_Localized: 'ELENA: ENZO, IN THIS WORLD, ONLY MONEY COUNTS.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770324
+    m_Localized: 'ELENA: VINCENT KNOWS THAT.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770325
+    m_Localized: 'ELENA: NOTHING MATTERS MORE THAN MONEY.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770326
+    m_Localized: '???: LIU, THE BOSS WANTS US TO START WITHOUT HER.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770327
+    m_Localized: 'ELENA: AS YOU SAY...'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770328
+    m_Localized: 'ELENA: "IT''S ALL ABOUT THE BENJAMINS".'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770329
+    m_Localized: 'ELENA: LEAVE ME IN THE PARKING LOT.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770330
+    m_Localized: '???: I''M FED UP. ASSHOLE.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770331
+    m_Localized: '???: THE GUY FROM THE OTHER DAY. HE CAME AGAIN.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770332
+    m_Localized: 'ELENA: AND YOU, ENZO?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770333
+    m_Localized: 'ELENA: DO YOU DANCE FOR MONEY?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12477086625794
+    m_Localized: '*AVOID SPEAKING*'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12477086625795
+    m_Localized: 'ENZO: MONEY ISN''T EVERYTHING FOR ME.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770334
+    m_Localized: 'ELENA: GREETINGS TO VINCENT.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770335
+    m_Localized: 'ENZO: HELLO.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770336
+    m_Localized: 'VINCENT: I''M NOT HAPPY WITH THIS RIDE, BUT THE PAYMENT IS GOOD.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770337
+    m_Localized: 'VINCENT: DON''T TALK TO HIM AND TAKE HIM QUICKLY.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770338
+    m_Localized: 'VINCENT: PLAZA ITALIA, IN FRONT OF LA RURAL.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770339
+    m_Localized: 'VINCENT: HE''S TIAGO AND IS WAITING YOU, BUT HE''S IN A HURRY.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770340
+    m_Localized: 'TIAGO: I''M GLAD YOU''RE HERE.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770341
+    m_Localized: 'TIAGO: COME ON, LET''S GET OUT OF HERE!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770342
+    m_Localized: 'ENZO: MONEY ISN''T EVERYTHING FOR ME.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770343
+    m_Localized: 'ELENA: YOU ALWAYS SAY THAT.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770344
+    m_Localized: 'ELENA: GREETINGS TO VINCENT.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770345
+    m_Localized: 'ENZO: HOLA.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770346
+    m_Localized: 'VINCENT: OMAN WANTS YOU. HE PAYS VERY WELL.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770347
+    m_Localized: 'VINCENT: DON''T ASK QUESTIONS AND, IF POSSIBLE, DON''T TALK.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770348
+    m_Localized: 'VINCENT: AMANCIO ALCORTA AND LUNA STREET. AT THE CORNER.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770349
+    m_Localized: 'VINCENT: THEY ARE WAITING FOR YOU.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770350
+    m_Localized: 'MIGUEL: THERE HE IS.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770351
+    m_Localized: 'MIGUEL: OMAR! HE IS HERE!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770352
+    m_Localized: 'OMAR: I''LL SITTING UP FRONT.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770353
+    m_Localized: 'OMAR: YOU TAKE HIM AWAY.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770354
+    m_Localized: 'MIGUEL: HELLO, ENZO! OMAR IS COMING.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770355
+    m_Localized: 'MIGUEL: AND MY FRIEND IS DRUNK. WE''LL TAKE HIM.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770356
+    m_Localized: 'MIGUEL: IS THERE ANY PROBLEM?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770357
+    m_Localized: 'ENZO: COME IN.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770358
+    m_Localized: 'OMAR: GO. IT''S OUTSIDE THE CITY.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770359
+    m_Localized: 'OMAR: JOSE LEON SUARES. IN FRONT OF THE LANDFILL.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12477086625792
+    m_Localized: 'ENZO: I''VE NEVER GIVEN IT MUCH THOUGHT.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770360
+    m_Localized: 'OMAR: THAT''S DANGEROUS. SEE YOU, KID.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770361
+    m_Localized: 'ENZO: THANK YOU.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770362
+    m_Localized: 'VINCENT: I HAVE ANOTHER RIDE, ENZO. FOR NOW.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770363
+    m_Localized: 'ENZO: WHERE?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770364
+    m_Localized: "VINCENT: JUEZ TED\xCDN 2845, PALERMO CHICO."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770365
+    m_Localized: 'VINCENT: THIS RIDE IS IMPORTANT, ENZO.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770366
+    m_Localized: 'ENZO: UNDERSTOOD.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770367
+    m_Localized: 'MARCOS: MUMMY, HE''S HERE!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770368
+    m_Localized: 'CECILIA: BE CAREFUL HONEY. WEAR YOUR SEATBELT.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770369
+    m_Localized: 'CECILIA: WE GO TO LA RURAL, ENZO.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770370
+    m_Localized: 'CECILIA: WE''RE LATE. THANKS FOR COMING.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770371
+    m_Localized: 'MARCOS: DO YOU LIKE MY CAR, ENZO?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770372
+    m_Localized: '*AVOID SPEAKING*'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770373
+    m_Localized: 'ENZO: IT''S A GREAT CAR. MY FRIEND HAD ONE LIKE THAT.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770374
+    m_Localized: 'CECILIA: WE''LL TALK NEXT TIME. COME ON, IT''S LATE.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770375
+    m_Localized: 'CECILIA AND ENZO: BYE ENZO! THANK YOU!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770376
+    m_Localized: 'ENZO: HOLA.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770377
+    m_Localized: 'VINCENT: I''M NOT HAPPY WITH THIS RIDE, BUT THE PAYMENT IS GOOD.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770378
+    m_Localized: 'VINCENT: DON''T TALK TO HIM AND TAKE HIM QUICKLY.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770379
+    m_Localized: 'VINCENT: PLAZA ITALIA, IN FRONT OF LA RURAL.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770380
+    m_Localized: 'VINCENT: HE''S TIAGO AND IS WAITING YOU, BUT HE''S IN A HURRY.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770381
+    m_Localized: 'THIAGO: I''M GLAD YOU''RE HERE.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770382
+    m_Localized: 'TIAGO: COME ON, LET''S GET OUT OF HERE!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770383
+    m_Localized: 'ENZO: IT''S A GREAT CAR. MY FRIEND HAD ONE LIKE THAT.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770384
+    m_Localized: 'MARCOS: REALLY?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770385
+    m_Localized: 'ENZO: YES, I HAVEN''T SEE HIM IN A WHILE.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770386
+    m_Localized: 'MARCOS: AND WHY DON''T YOU VISIT HIM?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770387
+    m_Localized: 'CECILIA: WE''LL TALK NEXT TIME. COME ON, IT''S LATE.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770388
+    m_Localized: 'CECILIA AND ENZO: BYE ENZO! THANK YOU!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770389
+    m_Localized: 'ENZO: HOLA.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770390
+    m_Localized: 'VINCENT: OMAR WANTS YOU. HE PAYS VERY WELL.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770391
+    m_Localized: 'VINCENT: DON''T ASK QUESTIONS AND, IF POSSIBLE, DON''T TALK.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770392
+    m_Localized: 'VINCENT: AMANCIO ALCORTA AND LUNA STREET. AT THE CORNER.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770393
+    m_Localized: 'VINCENT: THEY ARE WAITING FOR YOU.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770394
+    m_Localized: 'MIGUEL: THERE HE IS.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770395
+    m_Localized: 'MIGUEL: OMAR! HE''S HERE!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770396
+    m_Localized: 'OMAR: I''LL SITTING UP FRONT.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770397
+    m_Localized: 'OMAR: YOU TAKE HIM AWAY.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770398
+    m_Localized: 'MIGUEL: HELLO, ENZO! OMAR IS COMING.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770399
+    m_Localized: 'MIGUEL: AND MY FRIEND IS DRUNK. WE''LL TAKE HIM.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770400
+    m_Localized: 'MIGUEL: IS THERE ANY PROBLEM?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770401
+    m_Localized: 'ENZO: COME IN.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770402
+    m_Localized: 'OMAR: GO. IT''S OUTSIDE THE CITY.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770403
+    m_Localized: 'OMAR: JOSE LEON SUARES. IN FRONT OF THE LANDFILL.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770404
+    m_Localized: "TIAGO: I NEED TO GO TO COSTANERA IN VICENTE L\xD3PEZ."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770405
+    m_Localized: 'TIAGO: I GET OUT NEAR THE BELGRANO''S MONUMENT.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770406
+    m_Localized: 'TIAGO: THERE WAS A CAR EXHIBITION, A LOT OF DISTRACTED PEOPLE.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770407
+    m_Localized: 'TIAGO: I MEET MANY CRAZY PEOPLE.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770408
+    m_Localized: 'TIAGO: AND THIS KIDS WERE ANNOYING.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770409
+    m_Localized: 'TIAGO: AND WEEPING. JUST SHUT UP AND OBEY.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770410
+    m_Localized: 'TIAGO: ANYWAYS, LET''S GO TO THE GOOD PART, MONEY.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770411
+    m_Localized: 'TIAGO: I MADE A MISTAKE AND I KEPT THIS SHIT TOO.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770412
+    m_Localized: 'TIAGO: IT WAS IN THE BAG, THAT''S WHY HE WAS CRYING.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770413
+    m_Localized: 'TIAGO: I RUNNED AS SOON AS THE GUY START SHOUTING.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770414
+    m_Localized: 'TIAGO: THAT''S HOW THE JOB IS SOMETIMES. HERE, THIS IS FOR YOU.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770415
+    m_Localized: 'TIAGO: GREETINGS TO VINCENT. HE SAVED ME THIS TIME.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770416
+    m_Localized: "ENZO: \xA1\xA1\xA1FUCKKKKKKK!!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770417
+    m_Localized: "ENZO: \xA1\xA1\xA1FUCKKKK!!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770418
+    m_Localized: '*...*'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770419
+    m_Localized: '*...*'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770420
+    m_Localized: 'ENZO: WHAT AM I GOING TO DO?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770421
+    m_Localized: SELL THE CAR.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770422
+    m_Localized: LEAVE THE TOWN.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770423
+    m_Localized: STAY.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770424
+    m_Localized: 'MIGUEL: I THINK WE ARRIVE EARLY TO THE PARTY.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770425
+    m_Localized: 'OMAR: MIGUEL, GO.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770426
+    m_Localized: 'OMAR: I''LL STAY HERE FOR A MOMENT.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770427
+    m_Localized: 'TIAGO: WHE... WHERE...? WHERE AM I?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770428
+    m_Localized: 'OMAR: I ALWAYS CHOOSE VINCENT.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770429
+    m_Localized: 'OMAR: '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770430
+    m_Localized: 'OMAR: DID I SAY SOMETHING?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770431
+    m_Localized: 'ENZO: NO.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770432
+    m_Localized: 'OMAR: DID YOU SEE SOMETHING?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770433
+    m_Localized: 'ENZO: NO.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770434
+    m_Localized: 'OMAR: DID YOU DO SOMETHING?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770435
+    m_Localized: 'ENZO: NO.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770436
+    m_Localized: 'OMAR: IT''S TOO LATE FOR ME.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770437
+    m_Localized: 'OMAR: WHAT ABOUT YOU? '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770438
+    m_Localized: "ENZO: \xA1\xA1\xA1FUCKKKKKKK!!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770439
+    m_Localized: "ENZO: \xA1\xA1\xA1FUCKKKK!!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770440
+    m_Localized: '*...*'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770441
+    m_Localized: "\xA8*...*"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770442
+    m_Localized: 'ENZO: WHAT AM I GOING TO DO?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770443
+    m_Localized: SELL THE CAR.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770444
+    m_Localized: LEAVE THE CITY.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770445
+    m_Localized: STAY.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770446
+    m_Localized: 'VINCENT: HELLO, GERAR. I''M RUNNING LATE.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770447
+    m_Localized: 'VINCENT: WHAT DO YOU HAVE FOR ME?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770448
+    m_Localized: 'GERARDO: A 502 IN GREAT CONDITION. A GUY LET HIM GO.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770449
+    m_Localized: 'VINCENT: WHAT WAS HIS NAME?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770450
+    m_Localized: 'GERARDO: MMM... SOMETHING WITH AN E...'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770451
+    m_Localized: 'GERARDO: ERNESTO... EZEQUIEL? I DON''T REMEMBER.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770452
+    m_Localized: 'VINCENT: DOESN''T MATTER.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770453
+    m_Localized: 'VINCENT: SAME HOTEL. AT 4 PM.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770454
+    m_Localized: 'RAQUEL: HELLO!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770455
+    m_Localized: 'RAQUEL: SO THIS IS WHERE I FIND YOU.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770456
+    m_Localized: 'RAQUEL: HAHA, I SAW THE SAME BOOKLET.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770457
+    m_Localized: 'ENZO: ANOTHER RIDE? '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1053257301770458
+    m_Localized: 'VINCENT: AEROPARQUE, IN 15 MINUTES.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1426986540220416
+    m_Localized: FULL SCREEN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1426986540220417
+    m_Localized: MUSIC
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1426986540220418
+    m_Localized: EFFECTS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1426986540220419
+    m_Localized: BACK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1426986540220420
+    m_Localized: RESET
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1426986540220421
+    m_Localized: MENU
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1426986540220422
+    m_Localized: HISTOTY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1426986540220423
+    m_Localized: SELECT LEVEL
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1426986540220424
+    m_Localized: SURVIVAL
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1426986540220425
+    m_Localized: QUIT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1426986540220426
+    m_Localized: SETTINGS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1426986540220427
+    m_Localized: CONTINUE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1426986540220428
+    m_Localized: ENZO IS FIRED.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1426986540220429
+    m_Localized: PRESS ANY KEY TO START
     m_Metadata:
       m_Items: []
   references:

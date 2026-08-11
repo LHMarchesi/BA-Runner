@@ -323,6 +323,10 @@ MonoBehaviour:
     m_Key: L05_PATH_A_INTRO_002
     m_Metadata:
       m_Items: []
+  - m_Id: 1426986460528640
+    m_Key: L05_PATH_A_INTRO_004
+    m_Metadata:
+      m_Items: []
   - m_Id: 1053257301770311
     m_Key: L05_PATH_A_INTRO_010
     m_Metadata:
@@ -925,6 +929,70 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 1053257301770458
     m_Key: FINAL_C_INTRO_11
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1426986540220416
+    m_Key: UI_FULLSCREEN_TEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1426986540220417
+    m_Key: UI_MUSIC_TEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1426986540220418
+    m_Key: UI_SFX_TEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1426986540220419
+    m_Key: UI_BACK_TEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1426986540220420
+    m_Key: UI_RESET_TEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1426986540220421
+    m_Key: UI_MENU_TEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1426986540220422
+    m_Key: UI_HISTORY_TEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1426986540220423
+    m_Key: UI_LEVELSELECTOR_TEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1426986540220424
+    m_Key: UI_SURVIVAL_TEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1426986540220425
+    m_Key: UI_QUIT_TEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1426986540220426
+    m_Key: UI_SETTINGS_TEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1426986540220427
+    m_Key: UI_CONTINUE_TEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1426986540220428
+    m_Key: UI_ENZOFIRED_TEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1426986540220429
+    m_Key: UI_PRESS_ANY_KEY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1426986540220430
+    m_Key: UI_SPANISH_ARG_LANGUAGE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1426986540220431
+    m_Key: UI_ENGLISH_EEUU_LANGUAGE
     m_Metadata:
       m_Items: []
   m_Metadata:

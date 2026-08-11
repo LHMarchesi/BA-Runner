@@ -108,7 +108,7 @@ public class MainMenu_UiHandler : MonoBehaviour
     {
         if (Keyboard.current != null && !isMenuActive)
         {
-            if (Keyboard.current.anyKey.wasPressedThisFrame)
+            if (Keyboard.current.spaceKey.wasPressedThisFrame)
             {
                 StartCoroutine(ModeSelectionSequence());
             }

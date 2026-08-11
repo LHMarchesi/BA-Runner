@@ -833,7 +833,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -137}
+  m_AnchoredPosition: {x: 0, y: -87}
   m_SizeDelta: {x: 162.4229, y: -77.7556}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &128908008
@@ -856,7 +856,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: 'Hipodromo de
+
+    Palermo
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b3718621e97e06d4eb86882b7ec26f6c, type: 2}
   m_sharedMaterial: {fileID: 3215362223813190319, guid: b3718621e97e06d4eb86882b7ec26f6c, type: 2}
@@ -1400,7 +1404,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 186}
+  m_AnchoredPosition: {x: 18, y: 186}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &249074656
@@ -1437,7 +1441,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 4, y: 28}
   m_SizeDelta: {x: 375.5771, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &249074658
@@ -1874,7 +1878,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -793, y: 3}
+  m_AnchoredPosition: {x: 6, y: 17}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &301543310
@@ -2568,7 +2572,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 12, y: 32}
   m_SizeDelta: {x: 160, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &412240110
@@ -2635,7 +2639,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1962038444002400591, guid: cc5b403d8aac20942a00c63d9f6ba63a, type: 3}
+  m_Sprite: {fileID: 741336139120904717, guid: 8d306ea414904d044b4a8f40c4de3dda, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2881,7 +2885,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelNodeUI
   level: {fileID: 11400000, guid: 9cb8c63a89b07a141a5b0352d8d767fd, type: 2}
-  backgroundSprite: {fileID: -2633767404810763971, guid: c3da201abadd6964b9430cebb9fc2631, type: 3}
+  backgroundSprite: {fileID: 741336139120904717, guid: 8d306ea414904d044b4a8f40c4de3dda, type: 3}
   button: {fileID: 412240110}
   levelNameText: {fileID: 1705655068}
   currentVisual: {fileID: 412240111}
@@ -3743,7 +3747,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 186}
+  m_AnchoredPosition: {x: 0, y: 198}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &586851343
@@ -4315,8 +4319,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2, y: -2}
-  m_SizeDelta: {x: 186.4116, y: 186.4116}
+  m_AnchoredPosition: {x: -6.75, y: 28.25}
+  m_SizeDelta: {x: 218.9116, y: 218.9116}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &724024468
 MonoBehaviour:
@@ -4382,7 +4386,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -675441507447606015, guid: 41a07c8f7c202b847b7ceca3a4073d33, type: 3}
+  m_Sprite: {fileID: -6920133517281373962, guid: ecf5bec88ab081147ae2f0296bbd6e8c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6009,8 +6013,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 160}
+  m_AnchoredPosition: {x: 1.5, y: 52}
+  m_SizeDelta: {x: 221, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &947017604
 MonoBehaviour:
@@ -6076,7 +6080,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1962038444002400591, guid: cc5b403d8aac20942a00c63d9f6ba63a, type: 3}
+  m_Sprite: {fileID: -4298602325944382912, guid: f34a45ec2414e134a8799eda0458b65e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6554,8 +6558,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -107.09509}
-  m_SizeDelta: {x: 155.5107, y: 0}
+  m_AnchoredPosition: {x: -0.5, y: -79.59509}
+  m_SizeDelta: {x: 256.5107, y: -43}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1011658967
 MonoBehaviour:
@@ -6577,7 +6581,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: 'Au. Perito Moreno
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b3718621e97e06d4eb86882b7ec26f6c, type: 2}
   m_sharedMaterial: {fileID: 3215362223813190319, guid: b3718621e97e06d4eb86882b7ec26f6c, type: 2}
@@ -7031,8 +7037,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -137}
-  m_SizeDelta: {x: 162.4229, y: -77.7556}
+  m_AnchoredPosition: {x: 11.999512, y: -142.5}
+  m_SizeDelta: {x: 430.423, y: -64.3935}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1102690158
 MonoBehaviour:
@@ -7054,7 +7060,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Puente De La Mujer
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b3718621e97e06d4eb86882b7ec26f6c, type: 2}
   m_sharedMaterial: {fileID: 3215362223813190319, guid: b3718621e97e06d4eb86882b7ec26f6c, type: 2}
@@ -7566,7 +7572,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 88, y: -11}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1223490379
@@ -7642,7 +7648,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 13, y: 43}
   m_SizeDelta: {x: 160, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1237077280
@@ -7709,7 +7715,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1962038444002400591, guid: cc5b403d8aac20942a00c63d9f6ba63a, type: 3}
+  m_Sprite: {fileID: -2816011492337671961, guid: da47b574e0e0ba34087730fb47b7c1dc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7836,7 +7842,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 32}
   m_SizeDelta: {x: 493.9619, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1252490292
@@ -8389,7 +8395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelNodeUI
   level: {fileID: 11400000, guid: 23aa1e71a52bed14eb230499cf6b95c0, type: 2}
-  backgroundSprite: {fileID: 6260993959997514737, guid: 5a449009c3046874e97cc929f48692d2, type: 3}
+  backgroundSprite: {fileID: -4298602325944382912, guid: f34a45ec2414e134a8799eda0458b65e, type: 3}
   button: {fileID: 947017604}
   levelNameText: {fileID: 128908008}
   currentVisual: {fileID: 947017605}
@@ -8680,8 +8686,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 160}
+  m_AnchoredPosition: {x: -1, y: 35}
+  m_SizeDelta: {x: 244, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1357625209
 MonoBehaviour:
@@ -8747,7 +8753,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1962038444002400591, guid: cc5b403d8aac20942a00c63d9f6ba63a, type: 3}
+  m_Sprite: {fileID: -4189609112216903772, guid: e2a984b5a25610549ad44125b481259b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9758,8 +9764,8 @@ RectTransform:
   - {fileID: 1237077279}
   - {fileID: 1011658966}
   - {fileID: 1399000432}
-  - {fileID: 301543309}
   - {fileID: 104205830}
+  - {fileID: 301543309}
   - {fileID: 840497244}
   m_Father: {fileID: 1594544037}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9781,7 +9787,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelNodeUI
   level: {fileID: 11400000, guid: f92bf9f71554fe84382ee444e8aec151, type: 2}
-  backgroundSprite: {fileID: 1939496182575211884, guid: ce80eebd85fa5974ebf2c9b197aa0ee1, type: 3}
+  backgroundSprite: {fileID: -2816011492337671961, guid: da47b574e0e0ba34087730fb47b7c1dc, type: 3}
   button: {fileID: 1237077280}
   levelNameText: {fileID: 1011658967}
   currentVisual: {fileID: 1237077281}
@@ -10194,7 +10200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelNodeUI
   level: {fileID: 11400000, guid: 3014024ca1e3621409a4a0d0e4a39558, type: 2}
-  backgroundSprite: {fileID: 6260993959997514737, guid: 5a449009c3046874e97cc929f48692d2, type: 3}
+  backgroundSprite: {fileID: -4189609112216903772, guid: e2a984b5a25610549ad44125b481259b, type: 3}
   button: {fileID: 1357625209}
   levelNameText: {fileID: 1102690158}
   currentVisual: {fileID: 1357625210}
@@ -10450,7 +10456,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Las Heras
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b3718621e97e06d4eb86882b7ec26f6c, type: 2}
   m_sharedMaterial: {fileID: 3215362223813190319, guid: b3718621e97e06d4eb86882b7ec26f6c, type: 2}
@@ -11278,7 +11284,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1253, y: 167}
+  m_AnchoredPosition: {x: 1253, y: 233}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1875516628
@@ -11594,7 +11600,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Barrio Chino
+  m_text: Retiro
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b3718621e97e06d4eb86882b7ec26f6c, type: 2}
   m_sharedMaterial: {fileID: 3215362223813190319, guid: b3718621e97e06d4eb86882b7ec26f6c, type: 2}
