@@ -8,6 +8,7 @@ public class AudioManager : MonoBehaviour
     [Header("Audio Sources")]
     [SerializeField] private AudioSource sfxSource;
     [SerializeField] private AudioSource musicSource;
+    [SerializeField] private AudioSource dialogueSFXSource;
 
     [Header("Mixer")]
     [SerializeField] private AudioMixerGroup controlSFX;
@@ -15,7 +16,6 @@ public class AudioManager : MonoBehaviour
 
     [Header("Default Music")]
     [SerializeField] public AudioClip menuMusicClip;
-    [SerializeField] public AudioClip cinematicsSong;
     [SerializeField] public AudioClip survivalSong;
 
     private void Awake()
@@ -73,6 +73,46 @@ public class AudioManager : MonoBehaviour
                     controlSFX;
             }
         }
+    }
+
+    public void PlayDialogueSFX(
+    AudioClip clip,
+    float volume = 1f
+)
+    {
+        if (clip == null)
+            return;
+
+        if (dialogueSFXSource == null)
+        {
+            Debug.LogWarning(
+                "[AudioManager] Dialogue SFX Source no está asignado."
+            );
+
+            return;
+        }
+
+        /*
+         * Cada nodo solo tiene un SFX activo.
+         * Si por alguna razón había otro, lo reemplazamos.
+         */
+        dialogueSFXSource.Stop();
+
+        dialogueSFXSource.pitch =
+            Random.Range(0.95f, 1.05f);
+
+        dialogueSFXSource.PlayOneShot(
+            clip,
+            Mathf.Clamp01(volume)
+        );
+    }
+
+    public void StopDialogueSFX()
+    {
+        if (dialogueSFXSource == null)
+            return;
+
+        dialogueSFXSource.Stop();
     }
     public void PlaySFX(AudioClip clip)
     {

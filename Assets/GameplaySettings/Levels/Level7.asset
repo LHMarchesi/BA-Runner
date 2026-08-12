@@ -16,7 +16,7 @@ MonoBehaviour:
   Variants: []
   DefaultNextLevel: {fileID: 0}
   maxLevelProgession: 100
-  levelMusic: {fileID: 8300000, guid: 97367b10cbec9744e8dd4b93f5ee5ded, type: 3}
+  levelMusic: {fileID: 8300000, guid: 4cd78c784ea9eb84b9ff6d7ac8164586, type: 3}
   winLevelImage: {fileID: 2479281274430394464, guid: be9f65328e684b84da1db3ad02813633, type: 3}
   stages:
   - stageName: 

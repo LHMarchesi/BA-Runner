@@ -26,7 +26,7 @@ MonoBehaviour:
     - rid: 122072312406868852
       type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: {fileID: 0}
+        m_Value: {fileID: 8300000, guid: 510aa19933c33fe4fac978461d4cf8c7, type: 3}
     - rid: 122072312406868853
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -50,7 +50,7 @@ MonoBehaviour:
     - rid: 122072312406868858
       type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: {fileID: 0}
+        m_Value: {fileID: 8300000, guid: bd035d93b216d8c4e8adb6ab0e5d9148, type: 3}
     - rid: 122072312406868859
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -74,7 +74,7 @@ MonoBehaviour:
     - rid: 122072312406868864
       type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: {fileID: 0}
+        m_Value: {fileID: 8300000, guid: ffb9020b0cd3a274cb7918fa3162243c, type: 3}
     - rid: 122072312406868865
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -86,7 +86,7 @@ MonoBehaviour:
     - rid: 122072312406868867
       type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: {fileID: 0}
+        m_Value: {fileID: 8300000, guid: ffb9020b0cd3a274cb7918fa3162243c, type: 3}
     - rid: 122072312406868868
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -98,7 +98,7 @@ MonoBehaviour:
     - rid: 122072312406868870
       type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: {fileID: 0}
+        m_Value: {fileID: 8300000, guid: 9f964e5ac5b150e45994137f72ea4a65, type: 3}
     - rid: 122072312406868871
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -134,7 +134,7 @@ MonoBehaviour:
     - rid: 122072312406868879
       type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: {fileID: 0}
+        m_Value: {fileID: 8300000, guid: 880784806307d8f4185d380be8e80afa, type: 3}
     - rid: 122072312406868880
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -182,7 +182,7 @@ MonoBehaviour:
     - rid: 122072312406868891
       type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: {fileID: 0}
+        m_Value: {fileID: 8300000, guid: 6f4b7924d26565746b842e68a1e56531, type: 3}
     - rid: 122072312406868892
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -254,7 +254,7 @@ MonoBehaviour:
     - rid: 122072312406868909
       type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: {fileID: 0}
+        m_Value: {fileID: 8300000, guid: 4d72b819ba52cfb40a1b89519cfaaeb5, type: 3}
     - rid: 122072312406868910
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -1024,6 +1024,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645934594
           - rid: 2450192437645934595
@@ -1032,6 +1033,7 @@ MonoBehaviour:
           - rid: 122072312406868914
           - rid: 122072312406868915
           - rid: 122072312406868916
+          - rid: 2450192685221019759
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -1123,6 +1125,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645934605
           - rid: 2450192437645934606
@@ -1131,6 +1134,7 @@ MonoBehaviour:
           - rid: 122072312406868917
           - rid: 122072312406868918
           - rid: 122072312406868919
+          - rid: 2450192685221019760
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -1222,6 +1226,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645934624
           - rid: 2450192437645934625
@@ -1230,6 +1235,7 @@ MonoBehaviour:
           - rid: 122072312406868920
           - rid: 122072312406868921
           - rid: 122072312406868922
+          - rid: 2450192685221019761
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -1270,6 +1276,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645934629
           - rid: 2450192437645934630
@@ -1278,6 +1285,7 @@ MonoBehaviour:
           - rid: 122072312406868923
           - rid: 122072312406868924
           - rid: 122072312406868925
+          - rid: 2450192685221019762
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -1420,6 +1428,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645934654
           - rid: 2450192437645934655
@@ -1428,6 +1437,7 @@ MonoBehaviour:
           - rid: 122072312406868926
           - rid: 122072312406868927
           - rid: 122072312406868928
+          - rid: 2450192685221019763
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -1468,6 +1478,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645934659
           - rid: 2450192437645934660
@@ -1476,6 +1487,7 @@ MonoBehaviour:
           - rid: 122072312406868929
           - rid: 122072312406868930
           - rid: 122072312406868931
+          - rid: 2450192685221019764
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -1516,6 +1528,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645934664
           - rid: 2450192437645934665
@@ -1524,6 +1537,7 @@ MonoBehaviour:
           - rid: 122072312406868932
           - rid: 122072312406868933
           - rid: 122072312406868934
+          - rid: 2450192685221019765
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -1717,6 +1731,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645934802
           - rid: 2450192437645934803
@@ -1725,6 +1740,7 @@ MonoBehaviour:
           - rid: 122072312406868935
           - rid: 122072312406868936
           - rid: 122072312406868937
+          - rid: 2450192685221019766
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -1765,6 +1781,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645934807
           - rid: 2450192437645934808
@@ -1773,6 +1790,7 @@ MonoBehaviour:
           - rid: 122072312406868938
           - rid: 122072312406868939
           - rid: 122072312406868940
+          - rid: 2450192685221019767
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -1813,6 +1831,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645934812
           - rid: 2450192437645934813
@@ -1821,6 +1840,7 @@ MonoBehaviour:
           - rid: 122072312406868941
           - rid: 122072312406868942
           - rid: 122072312406868943
+          - rid: 2450192685221019768
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -1861,6 +1881,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645934817
           - rid: 2450192437645934818
@@ -1869,6 +1890,7 @@ MonoBehaviour:
           - rid: 122072312406868944
           - rid: 122072312406868945
           - rid: 122072312406868946
+          - rid: 2450192685221019769
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -1909,6 +1931,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645934822
           - rid: 2450192437645934823
@@ -1917,6 +1940,7 @@ MonoBehaviour:
           - rid: 122072312406868947
           - rid: 122072312406868948
           - rid: 122072312406868949
+          - rid: 2450192685221019770
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -1957,6 +1981,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645934827
           - rid: 2450192437645934828
@@ -1965,6 +1990,7 @@ MonoBehaviour:
           - rid: 122072312406868950
           - rid: 122072312406868951
           - rid: 122072312406868952
+          - rid: 2450192685221019771
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -2005,6 +2031,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645934832
           - rid: 2450192437645934833
@@ -2013,6 +2040,7 @@ MonoBehaviour:
           - rid: 122072312406868953
           - rid: 122072312406868954
           - rid: 122072312406868955
+          - rid: 2450192685221019772
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -2410,6 +2438,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645934886
           - rid: 2450192437645934887
@@ -2418,6 +2447,7 @@ MonoBehaviour:
           - rid: 122072312406868956
           - rid: 122072312406868957
           - rid: 122072312406868958
+          - rid: 2450192685221019773
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -2458,6 +2488,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645934891
           - rid: 2450192437645934892
@@ -2466,6 +2497,7 @@ MonoBehaviour:
           - rid: 122072312406868959
           - rid: 122072312406868960
           - rid: 122072312406868961
+          - rid: 2450192685221019774
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -2506,6 +2538,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645934896
           - rid: 2450192437645934897
@@ -2514,6 +2547,7 @@ MonoBehaviour:
           - rid: 122072312406868962
           - rid: 122072312406868963
           - rid: 122072312406868964
+          - rid: 2450192685221019775
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -2554,6 +2588,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645934901
           - rid: 2450192437645934902
@@ -2562,6 +2597,7 @@ MonoBehaviour:
           - rid: 122072312406868965
           - rid: 122072312406868966
           - rid: 122072312406868967
+          - rid: 2450192685221019776
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -2602,6 +2638,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645934906
           - rid: 2450192437645934907
@@ -2610,6 +2647,7 @@ MonoBehaviour:
           - rid: 122072312406868968
           - rid: 122072312406868969
           - rid: 122072312406868970
+          - rid: 2450192685221019777
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -2650,6 +2688,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645934911
           - rid: 2450192437645934912
@@ -2658,6 +2697,7 @@ MonoBehaviour:
           - rid: 122072312406868971
           - rid: 122072312406868972
           - rid: 122072312406868973
+          - rid: 2450192685221019778
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -2698,6 +2738,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645934916
           - rid: 2450192437645934917
@@ -2706,6 +2747,7 @@ MonoBehaviour:
           - rid: 122072312406868974
           - rid: 122072312406868975
           - rid: 122072312406868976
+          - rid: 2450192685221019779
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -3103,6 +3145,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645934970
           - rid: 2450192437645934971
@@ -3111,6 +3154,7 @@ MonoBehaviour:
           - rid: 122072312406868977
           - rid: 122072312406868978
           - rid: 122072312406868979
+          - rid: 2450192685221019780
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -3151,6 +3195,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645934975
           - rid: 2450192437645934976
@@ -3159,6 +3204,7 @@ MonoBehaviour:
           - rid: 122072312406868980
           - rid: 122072312406868981
           - rid: 122072312406868982
+          - rid: 2450192685221019781
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -3199,6 +3245,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645934980
           - rid: 2450192437645934981
@@ -3207,6 +3254,7 @@ MonoBehaviour:
           - rid: 122072312406868983
           - rid: 122072312406868984
           - rid: 122072312406868985
+          - rid: 2450192685221019782
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -3247,6 +3295,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645934985
           - rid: 2450192437645934986
@@ -3255,6 +3304,7 @@ MonoBehaviour:
           - rid: 122072312406868986
           - rid: 122072312406868987
           - rid: 122072312406868988
+          - rid: 2450192685221019783
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -3295,6 +3345,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645934990
           - rid: 2450192437645934991
@@ -3303,6 +3354,7 @@ MonoBehaviour:
           - rid: 122072312406868989
           - rid: 122072312406868990
           - rid: 122072312406868991
+          - rid: 2450192685221019784
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -3343,6 +3395,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645934995
           - rid: 2450192437645934996
@@ -3351,6 +3404,7 @@ MonoBehaviour:
           - rid: 122072312934825984
           - rid: 122072312934825985
           - rid: 122072312934825986
+          - rid: 2450192685221019785
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -3766,6 +3820,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645935132
           - rid: 2450192437645935133
@@ -3774,6 +3829,7 @@ MonoBehaviour:
           - rid: 122072312934825987
           - rid: 122072312934825988
           - rid: 122072312934825989
+          - rid: 2450192685221019786
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -3814,6 +3870,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645935137
           - rid: 2450192437645935138
@@ -3822,6 +3879,7 @@ MonoBehaviour:
           - rid: 122072312934825990
           - rid: 122072312934825991
           - rid: 122072312934825992
+          - rid: 2450192685221019787
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -3847,7 +3905,7 @@ MonoBehaviour:
           serializedVersion: 2
           Hash: 3af03bf41c0c77695de0b66424f8ea43
         m_Version: 2
-        m_Position: {x: 7057.966, y: 828.6112}
+        m_Position: {x: 6998.8945, y: 830.3745}
         m_Title: DialogueNode
         m_Tooltip: 
         m_NodePreviewModel:
@@ -3862,6 +3920,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645935142
           - rid: 2450192437645935143
@@ -3870,6 +3929,7 @@ MonoBehaviour:
           - rid: 122072312934825993
           - rid: 122072312934825994
           - rid: 122072312934825995
+          - rid: 2450192685221019788
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -3910,6 +3970,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645935147
           - rid: 2450192437645935148
@@ -3918,6 +3979,7 @@ MonoBehaviour:
           - rid: 122072312934825996
           - rid: 122072312934825997
           - rid: 122072312934825998
+          - rid: 2450192685221019789
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -3958,6 +4020,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645935152
           - rid: 2450192437645935153
@@ -3966,6 +4029,7 @@ MonoBehaviour:
           - rid: 122072312934825999
           - rid: 122072312934826000
           - rid: 122072312934826001
+          - rid: 2450192685221019790
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -4006,6 +4070,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645935157
           - rid: 2450192437645935158
@@ -4014,6 +4079,7 @@ MonoBehaviour:
           - rid: 122072312934826002
           - rid: 122072312934826003
           - rid: 122072312934826004
+          - rid: 2450192685221019791
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -4054,6 +4120,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645935162
           - rid: 2450192437645935163
@@ -4062,6 +4129,7 @@ MonoBehaviour:
           - rid: 122072312934826005
           - rid: 122072312934826006
           - rid: 122072312934826007
+          - rid: 2450192685221019792
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -4102,6 +4170,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645935167
           - rid: 2450192437645935168
@@ -4110,6 +4179,7 @@ MonoBehaviour:
           - rid: 122072312934826008
           - rid: 122072312934826009
           - rid: 122072312934826010
+          - rid: 2450192685221019793
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -4150,6 +4220,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645935172
           - rid: 2450192437645935173
@@ -4158,6 +4229,7 @@ MonoBehaviour:
           - rid: 122072312934826011
           - rid: 122072312934826012
           - rid: 122072312934826013
+          - rid: 2450192685221019794
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -4198,6 +4270,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645935177
           - rid: 2450192437645935178
@@ -4206,6 +4279,7 @@ MonoBehaviour:
           - rid: 122072312934826014
           - rid: 122072312934826015
           - rid: 122072312934826016
+          - rid: 2450192685221019795
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -4246,6 +4320,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645935182
           - rid: 2450192437645935183
@@ -4254,6 +4329,7 @@ MonoBehaviour:
           - rid: 122072312934826017
           - rid: 122072312934826018
           - rid: 122072312934826019
+          - rid: 2450192685221019796
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -4294,6 +4370,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645935187
           - rid: 2450192437645935188
@@ -4302,6 +4379,7 @@ MonoBehaviour:
           - rid: 122072312934826020
           - rid: 122072312934826021
           - rid: 122072312934826022
+          - rid: 2450192685221019797
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -4342,6 +4420,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645935192
           - rid: 2450192437645935193
@@ -4350,6 +4429,7 @@ MonoBehaviour:
           - rid: 122072312934826023
           - rid: 122072312934826024
           - rid: 122072312934826025
+          - rid: 2450192685221019798
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -4390,6 +4470,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645935197
           - rid: 2450192437645935198
@@ -4398,6 +4479,7 @@ MonoBehaviour:
           - rid: 122072312934826026
           - rid: 122072312934826027
           - rid: 122072312934826028
+          - rid: 2450192685221019799
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -4438,6 +4520,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645935202
           - rid: 2450192437645935203
@@ -4446,6 +4529,7 @@ MonoBehaviour:
           - rid: 122072312934826029
           - rid: 122072312934826030
           - rid: 122072312934826031
+          - rid: 2450192685221019800
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -4486,6 +4570,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645935207
           - rid: 2450192437645935208
@@ -4494,6 +4579,7 @@ MonoBehaviour:
           - rid: 122072312934826032
           - rid: 122072312934826033
           - rid: 122072312934826034
+          - rid: 2450192685221019801
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -4534,6 +4620,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645935212
           - rid: 2450192437645935213
@@ -4542,6 +4629,7 @@ MonoBehaviour:
           - rid: 122072312934826035
           - rid: 122072312934826036
           - rid: 122072312934826037
+          - rid: 2450192685221019802
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -4582,6 +4670,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645935217
           - rid: 2450192437645935218
@@ -4590,6 +4679,7 @@ MonoBehaviour:
           - rid: 122072312934826038
           - rid: 122072312934826039
           - rid: 122072312934826040
+          - rid: 2450192685221019803
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -4630,6 +4720,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645935222
           - rid: 2450192437645935223
@@ -4638,6 +4729,7 @@ MonoBehaviour:
           - rid: 122072312934826041
           - rid: 122072312934826042
           - rid: 122072312934826043
+          - rid: 2450192685221019804
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -4678,6 +4770,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645935227
           - rid: 2450192437645935228
@@ -4686,6 +4779,7 @@ MonoBehaviour:
           - rid: 122072312934826044
           - rid: 122072312934826045
           - rid: 122072312934826046
+          - rid: 2450192685221019805
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -5021,7 +5115,7 @@ MonoBehaviour:
     - rid: 2450192437645935190
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 4
+        m_Value: 12.22
     - rid: 2450192437645935191
       type: {class: DialogueNode, ns: , asm: Assembly-CSharp-Editor}
       data: 
@@ -5746,6 +5840,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645935322
           - rid: 2450192437645935323
@@ -5754,6 +5849,7 @@ MonoBehaviour:
           - rid: 122072312934826047
           - rid: 122072312934826048
           - rid: 122072312934826049
+          - rid: 2450192685221019806
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -5794,6 +5890,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645935352
           - rid: 2450192437645935353
@@ -5802,6 +5899,7 @@ MonoBehaviour:
           - rid: 122072312934826050
           - rid: 122072312934826051
           - rid: 122072312934826052
+          - rid: 2450192685221019807
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -5842,6 +5940,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645935357
           - rid: 2450192437645935358
@@ -5850,6 +5949,7 @@ MonoBehaviour:
           - rid: 122072312934826053
           - rid: 122072312934826054
           - rid: 122072312934826055
+          - rid: 2450192685221019808
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -5890,6 +5990,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645935362
           - rid: 2450192437645935363
@@ -5898,6 +5999,7 @@ MonoBehaviour:
           - rid: 122072312934826056
           - rid: 122072312934826057
           - rid: 122072312934826058
+          - rid: 2450192685221019809
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -5938,6 +6040,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645935367
           - rid: 2450192437645935368
@@ -5946,6 +6049,7 @@ MonoBehaviour:
           - rid: 122072312934826059
           - rid: 122072312934826060
           - rid: 122072312934826061
+          - rid: 2450192685221019810
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -5986,6 +6090,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645935372
           - rid: 2450192437645935373
@@ -5994,6 +6099,7 @@ MonoBehaviour:
           - rid: 122072312934826062
           - rid: 122072312934826063
           - rid: 122072312934826064
+          - rid: 2450192685221019811
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -6212,6 +6318,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645935384
           - rid: 2450192437645935385
@@ -6220,6 +6327,7 @@ MonoBehaviour:
           - rid: 122072312934826065
           - rid: 122072312934826066
           - rid: 122072312934826067
+          - rid: 2450192685221019812
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -6311,6 +6419,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645935402
           - rid: 2450192437645935403
@@ -6319,6 +6428,7 @@ MonoBehaviour:
           - rid: 122072312934826068
           - rid: 122072312934826069
           - rid: 122072312934826070
+          - rid: 2450192685221019813
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -6359,6 +6469,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645935407
           - rid: 2450192437645935408
@@ -6367,6 +6478,7 @@ MonoBehaviour:
           - rid: 122072312934826071
           - rid: 122072312934826072
           - rid: 122072312934826073
+          - rid: 2450192685221019814
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -6509,6 +6621,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645935421
           - rid: 2450192437645935422
@@ -6517,6 +6630,7 @@ MonoBehaviour:
           - rid: 122072312934826074
           - rid: 122072312934826075
           - rid: 122072312934826076
+          - rid: 2450192685221019815
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -6608,6 +6722,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645935433
           - rid: 2450192437645935434
@@ -6616,6 +6731,7 @@ MonoBehaviour:
           - rid: 122072312934826077
           - rid: 122072312934826078
           - rid: 122072312934826079
+          - rid: 2450192685221019816
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -6835,6 +6951,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645935449
           - rid: 2450192437645935450
@@ -6843,6 +6960,7 @@ MonoBehaviour:
           - rid: 122072312934826080
           - rid: 122072312934826081
           - rid: 122072312934826082
+          - rid: 2450192685221019817
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -6934,6 +7052,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 2450192437645935461
           - rid: 2450192437645935462
@@ -6942,6 +7061,7 @@ MonoBehaviour:
           - rid: 122072312934826083
           - rid: 122072312934826084
           - rid: 122072312934826085
+          - rid: 2450192685221019818
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -7077,6 +7197,326 @@ MonoBehaviour:
     - rid: 2450192437645935469
       type: {class: EndNode, ns: , asm: Assembly-CSharp-Editor}
       data: 
+    - rid: 2450192685221019739
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019740
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019741
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019742
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019743
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019744
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019745
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019746
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019747
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019748
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019749
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019750
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019751
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019752
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019753
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019754
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019755
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019756
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019757
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019758
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019759
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019760
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019761
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019762
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019763
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019764
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019765
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019766
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019767
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019768
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019769
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019770
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019771
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019772
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019773
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019774
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019775
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019776
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019777
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019778
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019779
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019780
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019781
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019782
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019783
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019784
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019785
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019786
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019787
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019788
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019789
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019790
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019791
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019792
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019793
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019794
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019795
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019796
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019797
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019798
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019799
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019800
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019801
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019802
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019803
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019804
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019805
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019806
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019807
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019808
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019809
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019810
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019811
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019812
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019813
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019814
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019815
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019816
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019817
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 2450192685221019818
+      type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
     - rid: 4255477660058648576
       type: {class: UserNodeModelImp, ns: Unity.GraphToolkit.Editor.Implementation, asm: Unity.GraphToolkit.Editor}
       data:
@@ -7241,6 +7681,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 4255477660058648595
           - rid: 4255477660058648596
@@ -7249,6 +7690,7 @@ MonoBehaviour:
           - rid: 122072312406868905
           - rid: 122072312406868906
           - rid: 122072312406868907
+          - rid: 2450192685221019756
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -7308,6 +7750,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 4255477660058648620
           - rid: 4255477660058648621
@@ -7316,6 +7759,7 @@ MonoBehaviour:
           - rid: 122072312406868908
           - rid: 122072312406868909
           - rid: 122072312406868910
+          - rid: 2450192685221019757
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -7375,6 +7819,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 4255477660058648631
           - rid: 4255477660058648632
@@ -7383,6 +7828,7 @@ MonoBehaviour:
           - rid: 122072312406868911
           - rid: 122072312406868912
           - rid: 122072312406868913
+          - rid: 2450192685221019758
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -7733,10 +8179,10 @@ MonoBehaviour:
         m_LocalSubgraphs: []
         m_LastKnownBounds:
           serializedVersion: 2
-          x: -363
-          y: 573
-          width: 17076
-          height: 609
+          x: -363.33334
+          y: 573.3333
+          width: 17078
+          height: 609.33344
         m_GraphElementMetaData:
         - m_Guid:
             m_Value0: 3059622741841427994
@@ -9155,6 +9601,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 8065501182869897489
           - rid: 8065501182869897490
@@ -9163,6 +9610,7 @@ MonoBehaviour:
           - rid: 122072312406868851
           - rid: 122072312406868852
           - rid: 122072312406868853
+          - rid: 2450192685221019739
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -9222,6 +9670,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 8065501182869897501
           - rid: 8065501182869897502
@@ -9230,6 +9679,7 @@ MonoBehaviour:
           - rid: 122072312406868854
           - rid: 122072312406868855
           - rid: 122072312406868856
+          - rid: 2450192685221019740
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -9321,6 +9771,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 8065501182869897513
           - rid: 8065501182869897514
@@ -9329,6 +9780,7 @@ MonoBehaviour:
           - rid: 122072312406868857
           - rid: 122072312406868858
           - rid: 122072312406868859
+          - rid: 2450192685221019741
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -9420,6 +9872,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 8065501182869897525
           - rid: 8065501182869897526
@@ -9428,6 +9881,7 @@ MonoBehaviour:
           - rid: 122072312406868860
           - rid: 122072312406868861
           - rid: 122072312406868862
+          - rid: 2450192685221019742
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -9519,6 +9973,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 8065501182869897537
           - rid: 8065501182869897538
@@ -9527,6 +9982,7 @@ MonoBehaviour:
           - rid: 122072312406868863
           - rid: 122072312406868864
           - rid: 122072312406868865
+          - rid: 2450192685221019743
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -9618,6 +10074,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 8065501182869897549
           - rid: 8065501182869897550
@@ -9626,6 +10083,7 @@ MonoBehaviour:
           - rid: 122072312406868866
           - rid: 122072312406868867
           - rid: 122072312406868868
+          - rid: 2450192685221019744
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -9717,6 +10175,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 8065501182869897561
           - rid: 8065501182869897562
@@ -9725,6 +10184,7 @@ MonoBehaviour:
           - rid: 122072312406868869
           - rid: 122072312406868870
           - rid: 122072312406868871
+          - rid: 2450192685221019745
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -9816,6 +10276,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 8065501182869897573
           - rid: 8065501182869897574
@@ -9824,6 +10285,7 @@ MonoBehaviour:
           - rid: 122072312406868872
           - rid: 122072312406868873
           - rid: 122072312406868874
+          - rid: 2450192685221019746
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -9915,6 +10377,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 8065501182869897585
           - rid: 8065501182869897586
@@ -9923,6 +10386,7 @@ MonoBehaviour:
           - rid: 122072312406868875
           - rid: 122072312406868876
           - rid: 122072312406868877
+          - rid: 2450192685221019747
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -10014,6 +10478,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 8065501182869897597
           - rid: 8065501182869897598
@@ -10022,6 +10487,7 @@ MonoBehaviour:
           - rid: 122072312406868878
           - rid: 122072312406868879
           - rid: 122072312406868880
+          - rid: 2450192685221019748
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -10113,6 +10579,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 8065501182869897609
           - rid: 8065501182869897610
@@ -10121,6 +10588,7 @@ MonoBehaviour:
           - rid: 122072312406868881
           - rid: 122072312406868882
           - rid: 122072312406868883
+          - rid: 2450192685221019749
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -10212,6 +10680,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 8065501182869897621
           - rid: 8065501182869897622
@@ -10220,6 +10689,7 @@ MonoBehaviour:
           - rid: 122072312406868884
           - rid: 122072312406868885
           - rid: 122072312406868886
+          - rid: 2450192685221019750
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -10311,6 +10781,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 8065501182869897633
           - rid: 8065501182869897634
@@ -10319,6 +10790,7 @@ MonoBehaviour:
           - rid: 122072312406868887
           - rid: 122072312406868888
           - rid: 122072312406868889
+          - rid: 2450192685221019751
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -10410,6 +10882,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 8065501182869897645
           - rid: 8065501182869897646
@@ -10418,6 +10891,7 @@ MonoBehaviour:
           - rid: 122072312406868890
           - rid: 122072312406868891
           - rid: 122072312406868892
+          - rid: 2450192685221019752
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -10509,6 +10983,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 8065501182869897657
           - rid: 8065501182869897658
@@ -10517,6 +10992,7 @@ MonoBehaviour:
           - rid: 122072312406868893
           - rid: 122072312406868894
           - rid: 122072312406868895
+          - rid: 2450192685221019753
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -10608,6 +11084,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 8065501182869897669
           - rid: 8065501182869897670
@@ -10616,6 +11093,7 @@ MonoBehaviour:
           - rid: 122072312406868896
           - rid: 122072312406868897
           - rid: 122072312406868898
+          - rid: 2450192685221019754
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -10707,6 +11185,7 @@ MonoBehaviour:
           - Music
           - Sound Effect
           - Sound Effect Delay
+          - Sound Effect Volume
           m_ValueList:
           - rid: 8065501182869897681
           - rid: 8065501182869897682
@@ -10715,6 +11194,7 @@ MonoBehaviour:
           - rid: 122072312406868899
           - rid: 122072312406868900
           - rid: 122072312406868901
+          - rid: 2450192685221019755
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []

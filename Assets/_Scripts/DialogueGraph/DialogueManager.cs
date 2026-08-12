@@ -323,6 +323,7 @@ public class DialogueManager : MonoBehaviour
         }
         StopAutoAdvance();
         StopPendingNodeSound();
+        StopCurrentNodeSFX();
         currentNode = node;
         dialogueEnded = false;
 
@@ -562,6 +563,7 @@ public class DialogueManager : MonoBehaviour
     {
         StopAutoAdvance();
         StopPendingNodeSound();
+        StopCurrentNodeSFX();
         ClearChoiceButtons();
 
         currentNode = null;
@@ -855,8 +857,8 @@ public class DialogueManager : MonoBehaviour
 
         if (safeDelay <= 0f)
         {
-            audioManager.PlaySFX(
-                soundEffectClip
+            audioManager.PlayDialogueSFX(
+                soundEffectClip,node.SoundEffectVolume
             );
 
             return;
@@ -869,44 +871,47 @@ public class DialogueManager : MonoBehaviour
             PlayNodeSoundAfterDelay(
                 sourceNodeID,
                 soundEffectClip,
-                safeDelay
+                safeDelay,
+                node.SoundEffectVolume
             )
         );
     }
+    private void StopCurrentNodeSFX()
+    {
+        if (AudioManager.Instance == null)
+            return;
+
+        AudioManager.Instance.StopDialogueSFX();
+    }
     private IEnumerator PlayNodeSoundAfterDelay(
-     string sourceNodeID,
-     AudioClip clip,
-     float delay
- )
+    string sourceNodeID,
+    AudioClip clip,
+    float delay,
+    float volume
+)
     {
         yield return new WaitForSeconds(delay);
 
         nodeSoundCoroutine = null;
 
-        /*
-         * El jugador pudo haber avanzado a otro nodo
-         * antes de que terminara el delay.
-         */
         if (currentNode == null)
             yield break;
 
+        /*
+         * Si avanzamos de nodo antes de terminar el delay,
+         * este sonido ya no pertenece al nodo actual.
+         */
         if (currentNode.NodeID != sourceNodeID)
             yield break;
 
-        /*
-         * El clip pudo quedar vacío o Missing.
-         */
         if (clip == null)
             yield break;
 
-        AudioManager audioManager =
-            AudioManager.Instance;
-
-        if (audioManager == null)
+        if (AudioManager.Instance == null)
             yield break;
 
-        audioManager.PlaySFX(
-            clip
+        AudioManager.Instance.PlayDialogueSFX(
+            clip,volume
         );
     }
 
