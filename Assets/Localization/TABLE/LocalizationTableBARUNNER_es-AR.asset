@@ -403,7 +403,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1053257301770330
-    m_Localized: '???: NO AGUANTO NADA. BASURA.'
+    m_Localized: "???: NO AGUANT\xD3 NADA. BASURA."
     m_Metadata:
       m_Items: []
   - m_Id: 1053257301770331
@@ -967,7 +967,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1426986540220424
-    m_Localized: SURVIVAL
+    m_Localized: SUPERVIVENCIA
     m_Metadata:
       m_Items: []
   - m_Id: 1426986540220425
@@ -988,6 +988,18 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 1426986540220429
     m_Localized: PULSA CUALQUIER BOTON PARA INICIAR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1426986540220430
+    m_Localized: "ESPA\xD1OL (ARGENTINA)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1426986540220431
+    m_Localized: INGLES (EEUU)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1745778021855232
+    m_Localized: 'COMPLETADO EN: '
     m_Metadata:
       m_Items: []
   references:

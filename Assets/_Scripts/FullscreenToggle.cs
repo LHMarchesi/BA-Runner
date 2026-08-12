@@ -1,12 +1,54 @@
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class FullscreenToggle : MonoBehaviour
 {
-    public void Change ()
+    [Header("UI")]
+    [SerializeField] private Image iconImage;
+
+    [Header("Icons")]
+    [SerializeField] private Sprite fullscreenIcon;
+    [SerializeField] private Sprite windowedIcon;
+    private bool isFullscreen;
+
+    private void Start()
     {
-        Screen.fullScreen = !Screen.fullScreen;
-        print("changed screen mode");
+        isFullscreen =
+            Screen.fullScreenMode != FullScreenMode.Windowed;
+
+        UpdateIcon();
+    }
+
+    public void ToggleFullscreen()
+    {
+        isFullscreen = !isFullscreen;
+
+        if (isFullscreen)
+        {
+            Screen.fullScreenMode =
+                FullScreenMode.FullScreenWindow;
+
+            Screen.fullScreen = true;
+        }
+        else
+        {
+            Screen.fullScreenMode =
+                FullScreenMode.Windowed;
+
+            Screen.fullScreen = false;
+        }
+
+        UpdateIcon();
+    }
+
+    private void UpdateIcon()
+    {
+        if (iconImage == null)
+            return;
+
+        iconImage.sprite =
+            isFullscreen
+                ? windowedIcon
+                : fullscreenIcon;
     }
 }

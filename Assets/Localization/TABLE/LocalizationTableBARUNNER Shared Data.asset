@@ -987,6 +987,10 @@ MonoBehaviour:
     m_Key: UI_PRESS_ANY_KEY
     m_Metadata:
       m_Items: []
+  - m_Id: 1745778021855232
+    m_Key: UI_COMPLETEDIN_TEXT
+    m_Metadata:
+      m_Items: []
   - m_Id: 1426986540220430
     m_Key: UI_SPANISH_ARG_LANGUAGE
     m_Metadata:

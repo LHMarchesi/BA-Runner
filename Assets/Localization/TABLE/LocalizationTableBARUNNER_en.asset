@@ -171,7 +171,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1053257301770275
-    m_Localized: 'GERARDO: WHY ARE YOU HERE? THE CAR''S JUST FINE.'
+    m_Localized: 'GERARDO: WHY ARE YOU HERE? THE CAR IS JUST FINE.'
     m_Metadata:
       m_Items: []
   - m_Id: 1053257301770276
@@ -271,7 +271,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1053257301770300
-    m_Localized: 'OMAR: WE GO TO CARBONILLA, IN PATERNAL.'
+    m_Localized: 'OMAR: GO TO CARBONILLA, IN PATERNAL.'
     m_Metadata:
       m_Items: []
   - m_Id: 1053257301770301
@@ -407,7 +407,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1053257301770330
-    m_Localized: '???: I''M FED UP. ASSHOLE.'
+    m_Localized: '???: THIS ASSHOLE COULDN''T HANDLE IT.'
     m_Metadata:
       m_Items: []
   - m_Id: 1053257301770331
@@ -447,11 +447,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1053257301770338
-    m_Localized: 'VINCENT: PLAZA ITALIA, IN FRONT OF LA RURAL.'
+    m_Localized: 'VINCENT: IN PLAZA ITALIA, IN FRONT OF LA RURAL.'
     m_Metadata:
       m_Items: []
   - m_Id: 1053257301770339
-    m_Localized: 'VINCENT: HE''S TIAGO AND IS WAITING YOU, BUT HE''S IN A HURRY.'
+    m_Localized: 'VINCENT: HE''S TIAGO AND IS WAITING fFOR YOU, BUT HE''S IN A HURRY.'
     m_Metadata:
       m_Items: []
   - m_Id: 1053257301770340
@@ -487,7 +487,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1053257301770348
-    m_Localized: 'VINCENT: AMANCIO ALCORTA AND LUNA STREET. AT THE CORNER.'
+    m_Localized: 'VINCENT: IN AMANCIO ALCORTA AND LUNA STREET. AT THE CORNER.'
     m_Metadata:
       m_Items: []
   - m_Id: 1053257301770349
@@ -531,7 +531,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1053257301770359
-    m_Localized: 'OMAR: JOSE LEON SUARES. IN FRONT OF THE LANDFILL.'
+    m_Localized: 'OMAR: TO JOSE LEON SUAREZ, IN FRONT OF THE LANDFILL.'
     m_Metadata:
       m_Items: []
   - m_Id: 12477086625792
@@ -555,7 +555,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1053257301770364
-    m_Localized: "VINCENT: JUEZ TED\xCDN 2845, PALERMO CHICO."
+    m_Localized: "VINCENT: IN JUEZ TED\xCDN 2845, PALERMO CHICO."
     m_Metadata:
       m_Items: []
   - m_Id: 1053257301770365
@@ -575,7 +575,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1053257301770369
-    m_Localized: 'CECILIA: WE GO TO LA RURAL, ENZO.'
+    m_Localized: 'CECILIA: GO TO LA RURAL, ENZO.'
     m_Metadata:
       m_Items: []
   - m_Id: 1053257301770370
@@ -591,7 +591,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1053257301770373
-    m_Localized: 'ENZO: IT''S A GREAT CAR. MY FRIEND HAD ONE LIKE THAT.'
+    m_Localized: 'ENZO: IT''S A GREAT CAR. MY FRIEND HAD THE SAME ONE.'
     m_Metadata:
       m_Items: []
   - m_Id: 1053257301770374
@@ -615,7 +615,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1053257301770379
-    m_Localized: 'VINCENT: PLAZA ITALIA, IN FRONT OF LA RURAL.'
+    m_Localized: 'VINCENT: IN PLAZA ITALIA, IN FRONT OF LA RURAL.'
     m_Metadata:
       m_Items: []
   - m_Id: 1053257301770380
@@ -631,7 +631,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1053257301770383
-    m_Localized: 'ENZO: IT''S A GREAT CAR. MY FRIEND HAD ONE LIKE THAT.'
+    m_Localized: 'ENZO: IT''S A GREAT CAR. MY FRIEND HAD THE SAME ONE.'
     m_Metadata:
       m_Items: []
   - m_Id: 1053257301770384
@@ -667,7 +667,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1053257301770392
-    m_Localized: 'VINCENT: AMANCIO ALCORTA AND LUNA STREET. AT THE CORNER.'
+    m_Localized: 'VINCENT: IN AMANCIO ALCORTA AND LUNA STREET. AT THE CORNER.'
     m_Metadata:
       m_Items: []
   - m_Id: 1053257301770393
@@ -711,7 +711,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1053257301770403
-    m_Localized: 'OMAR: JOSE LEON SUARES. IN FRONT OF THE LANDFILL.'
+    m_Localized: 'OMAR: TO JOSE LEON SUARES. IN FRONT OF THE LANDFILL.'
     m_Metadata:
       m_Items: []
   - m_Id: 1053257301770404
@@ -731,11 +731,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1053257301770408
-    m_Localized: 'TIAGO: AND THIS KIDS WERE ANNOYING.'
+    m_Localized: 'TIAGO: AND THIS KIDS WERE SO ANNOYING.'
     m_Metadata:
       m_Items: []
   - m_Id: 1053257301770409
-    m_Localized: 'TIAGO: AND WEEPING. JUST SHUT UP AND OBEY.'
+    m_Localized: 'TIAGO: WEEPING CHILDREN. JUST SHUT UP AND OBEY.'
     m_Metadata:
       m_Items: []
   - m_Id: 1053257301770410
@@ -751,7 +751,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1053257301770413
-    m_Localized: 'TIAGO: I RUNNED AS SOON AS THE GUY START SHOUTING.'
+    m_Localized: 'TIAGO: I RAN AS SOON AS THE GUY START SHOUTING.'
     m_Metadata:
       m_Items: []
   - m_Id: 1053257301770414
@@ -815,7 +815,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1053257301770429
-    m_Localized: 'OMAR: '
+    m_Localized: 'OMAR: BECAUSE HE DOESN''T SNOOPS AROUND ANYWHERE.'
     m_Metadata:
       m_Items: []
   - m_Id: 1053257301770430
@@ -891,7 +891,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1053257301770448
-    m_Localized: 'GERARDO: A 502 IN GREAT CONDITION. A GUY LET HIM GO.'
+    m_Localized: 'GERARDO: A 502 IN GREAT CONDITION. A GUY LET IT GO.'
     m_Metadata:
       m_Items: []
   - m_Id: 1053257301770449
@@ -923,7 +923,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1053257301770456
-    m_Localized: 'RAQUEL: HAHA, I SAW THE SAME BOOKLET.'
+    m_Localized: 'RAQUEL: HAHA, I SAW THE SAME BROCHURE.'
     m_Metadata:
       m_Items: []
   - m_Id: 1053257301770457
@@ -959,11 +959,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1426986540220422
-    m_Localized: HISTOTY
+    m_Localized: HISTORY
     m_Metadata:
       m_Items: []
   - m_Id: 1426986540220423
-    m_Localized: SELECT LEVEL
+    m_Localized: LEVEL SELECTOR
     m_Metadata:
       m_Items: []
   - m_Id: 1426986540220424
@@ -988,6 +988,18 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 1426986540220429
     m_Localized: PRESS ANY KEY TO START
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1426986540220430
+    m_Localized: SPANISH (ARGENTINA)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1426986540220431
+    m_Localized: ENGLISH (EEUU)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1745778021855232
+    m_Localized: 'COMPLETED IN: '
     m_Metadata:
       m_Items: []
   references:

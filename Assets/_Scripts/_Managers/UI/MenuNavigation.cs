@@ -1,10 +1,13 @@
-using System.Collections;
+ï»¿using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class MenuNavigation : MonoBehaviour
 {
+    [Header("Navigation Scope")]
+    [SerializeField] private RectTransform navigationRoot;
+
     [SerializeField] private RectTransform indicator;
     [SerializeField] private GameObject initialSelected;
     
@@ -29,28 +32,37 @@ public class MenuNavigation : MonoBehaviour
         if (indicator == null || EventSystem.current == null)
             return;
 
+       
+        if (
+            navigationRoot != null &&
+            !navigationRoot.gameObject.activeInHierarchy
+        )
+        {
+            indicator.gameObject.SetActive(false);
+
+            lastButton = null;
+
+            return;
+        }
+
         GameObject selected =
             EventSystem.current.currentSelectedGameObject;
 
         // =====================================================
-        // NO HAY NADA SELECCIONADO
+        // NO HAY SELECCIÃ“N
         // =====================================================
+
         if (selected == null)
         {
-            /*
-             * Si estamos esperando para asignar un botón,
-             * no dejamos que RestoreSelection interfiera.
-             */
             if (assignSelectionRoutine != null)
                 return;
 
-            /*
-             * Si el último seleccionado fue destruido
-             * o pertenece a un panel que acaba de cerrarse.
-             */
             if (
                 lastSelected != null &&
-                !lastSelected.activeInHierarchy
+                (
+                    !lastSelected.activeInHierarchy ||
+                    !BelongsToThisNavigation(lastSelected)
+                )
             )
             {
                 lastSelected = null;
@@ -61,10 +73,6 @@ public class MenuNavigation : MonoBehaviour
                 return;
             }
 
-            /*
-             * Unity a veces pierde temporalmente la selección.
-             * Intentamos restaurarla.
-             */
             if (
                 restoreSelectionRoutine == null &&
                 lastSelected != null
@@ -79,9 +87,16 @@ public class MenuNavigation : MonoBehaviour
             return;
         }
 
-        // =====================================================
-        // OBJETO SELECCIONADO
-        // =====================================================
+      
+        if (!BelongsToThisNavigation(selected))
+        {
+            indicator.gameObject.SetActive(false);
+
+            lastButton = null;
+
+            return;
+        }
+
         if (!selected.activeInHierarchy)
             return;
 
@@ -89,7 +104,7 @@ public class MenuNavigation : MonoBehaviour
 
         MenuButton currentButton =
             selected.GetComponentInParent<MenuButton>();
-        
+
         if (
             currentButton == null ||
             !currentButton.UseGlobalIndicator ||
@@ -98,18 +113,11 @@ public class MenuNavigation : MonoBehaviour
         {
             indicator.gameObject.SetActive(false);
             lastButton = null;
+
             return;
         }
 
         indicator.gameObject.SetActive(true);
-
-        if (currentButton == lastButton)
-        {
-            indicator.position =
-                currentButton.IndicatorPoint.position;
-
-            return;
-        }
 
         lastButton = currentButton;
 
@@ -117,25 +125,69 @@ public class MenuNavigation : MonoBehaviour
             currentButton.IndicatorPoint.position;
     }
 
+
+    private IEnumerator AssignButtonAfterUIEvent(
+    GameObject target
+)
+    {
+       
+        yield return new WaitForEndOfFrame();
+
+        yield return null;
+
+        Canvas.ForceUpdateCanvases();
+
+        if (
+            target == null ||
+            !target.activeInHierarchy
+        )
+        {
+
+            assignSelectionRoutine = null;
+            yield break;
+        }
+
+        ForceSelection(target);
+
+        /*
+         * VerificaciÃ³n.
+         */
+        yield return null;
+
+        if (
+            EventSystem.current != null &&
+            EventSystem.current.currentSelectedGameObject
+                != target
+        )
+        {
+            ForceSelection(target);
+        }
+
+        assignSelectionRoutine = null;
+    }
+    private bool BelongsToThisNavigation(GameObject target)
+    {
+        if (target == null)
+            return false;
+
+        /*
+         * Si no asignamos root, conserva el comportamiento anterior.
+         */
+        if (navigationRoot == null)
+            return true;
+
+        Transform targetTransform = target.transform;
+
+        return
+            targetTransform == navigationRoot ||
+            targetTransform.IsChildOf(navigationRoot);
+    }
     // =========================================================
     // ASSIGN BUTTON
     // =========================================================
 
     public void AssignButton(GameObject target)
     {
-        if (target == null)
-        {
-            Debug.LogWarning(
-                "[MenuNavigation] AssignButton recibió un target null."
-            );
-
-            return;
-        }
-
-        /*
-         * Cancelamos cualquier intento anterior de restaurar
-         * o asignar selección.
-         */
         if (restoreSelectionRoutine != null)
         {
             StopCoroutine(restoreSelectionRoutine);
@@ -148,36 +200,24 @@ public class MenuNavigation : MonoBehaviour
             assignSelectionRoutine = null;
         }
 
+        ForceSelection(target);
+
         assignSelectionRoutine =
             StartCoroutine(
-                AssignButtonRoutine(target)
+                AssignButtonAfterUIEvent(target)
             );
     }
 
-    private IEnumerator AssignButtonRoutine(
-        GameObject target
-    )
+
+    private void ForceSelection(GameObject target)
     {
-        /*
-         * Esperamos un frame para que Unity termine de
-         * abrir/cerrar paneles y actualizar el Canvas.
-         */
-        yield return null;
-
-        Canvas.ForceUpdateCanvases();
-
         if (
             target == null ||
-            !target.activeInHierarchy
+            !target.activeInHierarchy ||
+            EventSystem.current == null
         )
         {
-            Debug.LogWarning(
-                "[MenuNavigation] No se pudo seleccionar el botón " +
-                "porque no está activo."
-            );
-
-            assignSelectionRoutine = null;
-            yield break;
+            return;
         }
 
         Selectable selectable =
@@ -185,50 +225,33 @@ public class MenuNavigation : MonoBehaviour
 
         if (selectable == null)
         {
-            Debug.LogWarning(
-                $"[MenuNavigation] '{target.name}' no tiene " +
-                "un componente Selectable."
-            );
-
-            assignSelectionRoutine = null;
-            yield break;
+            selectable =
+                target.GetComponentInParent<Selectable>();
         }
 
         if (
+            selectable == null ||
             !selectable.IsActive() ||
             !selectable.IsInteractable()
         )
         {
-            Debug.LogWarning(
-                $"[MenuNavigation] '{target.name}' no está disponible."
-            );
-
-            assignSelectionRoutine = null;
-            yield break;
+            return;
         }
 
-        if (EventSystem.current == null)
-        {
-            assignSelectionRoutine = null;
-            yield break;
-        }
+        GameObject selectableObject =
+            selectable.gameObject;
 
-        /*
-         * Limpiamos primero la selección anterior.
-         * Esto hace que Unity reconozca correctamente
-         * incluso si seleccionamos el mismo botón.
-         */
         EventSystem.current.SetSelectedGameObject(null);
 
         EventSystem.current.SetSelectedGameObject(
-            target
+            selectableObject
         );
 
         selectable.Select();
 
-        lastSelected = target;
-
-        assignSelectionRoutine = null;
+        lastSelected = selectableObject;
+        lastButton =
+            selectable.GetComponentInParent<MenuButton>();
     }
 
     // =========================================================
