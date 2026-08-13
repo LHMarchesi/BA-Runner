@@ -3,49 +3,110 @@ using UnityEngine.SceneManagement;
 
 public class GameplayState : IState
 {
-    GameManager gm;
-    bool sceneLoaded = false;
+    private GameManager gm;
+
+    private bool gameplayInitialized;
+
 
     public GameplayState(GameManager gm)
     {
         this.gm = gm;
     }
 
+
     public void Awake()
     {
-        if (sceneLoaded) return; 
+        LevelManager levelManager =
+            Object.FindFirstObjectByType<LevelManager>();
 
-        SceneManager.sceneLoaded += OnSceneLoaded;
+        if (levelManager != null)
+        {
+            gameplayInitialized = true;
+
+            return;
+        }
+
+
+        gameplayInitialized = false;
+
+        SceneManager.sceneLoaded -=
+            OnSceneLoaded;
+
+        SceneManager.sceneLoaded +=
+            OnSceneLoaded;
+
+
     }
 
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    private void OnSceneLoaded(
+        Scene scene,
+        LoadSceneMode mode
+    )
     {
-        sceneLoaded = true;
+        SceneManager.sceneLoaded -=
+            OnSceneLoaded;
 
-        var level = ProgressionManager.Instance.CurrentLevel;
-        AudioManager.Instance.PlayMusic(level.levelMusic);
 
-        EventBus<OnLevelStartEvent>.Raise(new OnLevelStartEvent { });
+        gameplayInitialized = true;
 
-        SceneManager.sceneLoaded -= OnSceneLoaded;
+
+        Level_Scriptable level = null;
+
+
+        if (ProgressionManager.Instance != null)
+        {
+            level =
+                ProgressionManager.Instance.CurrentLevel;
+        }
+
+        if (
+            AudioManager.Instance != null &&
+            level != null &&
+            level.levelMusic != null
+        )
+        {
+            AudioManager.Instance.PlayMusic(
+                level.levelMusic
+            );
+        }
+
+
+        EventBus<OnLevelStartEvent>.Raise(
+            new OnLevelStartEvent()
+        );
     }
+
 
     public void Execute()
     {
-        if (!sceneLoaded) return;
-        EventBus<OnLevelUpdateEvent>.Raise(new OnLevelUpdateEvent());
+        if (!gameplayInitialized)
+            return;
+
+
+        EventBus<OnLevelUpdateEvent>.Raise(
+            new OnLevelUpdateEvent()
+        );
     }
+
+
 
     public void Sleep()
     {
+        SceneManager.sceneLoaded -=
+            OnSceneLoaded;
+
         if (gm.IsPausing)
         {
-            gm.IsPausing = false; 
-            return; 
+            gm.IsPausing = false;
+
+            return;
         }
 
-        sceneLoaded = false; 
-        
-        AudioManager.Instance.StopMusic();
+        gameplayInitialized = false;
+
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.StopMusic();
+        }
     }
 }

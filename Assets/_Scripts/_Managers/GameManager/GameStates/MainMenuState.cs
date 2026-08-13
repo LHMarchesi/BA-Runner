@@ -12,9 +12,12 @@ public class MainMenuState : IState
 
     public void Awake()
     {
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
+        SceneManager.sceneLoaded -=
+            OnSceneLoaded;
 
+        SceneManager.sceneLoaded +=
+            OnSceneLoaded;
+    }
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         sceneLoaded = true;
@@ -31,7 +34,11 @@ public class MainMenuState : IState
         // gameplay corre solo
     }
 
+   
+
     public void Sleep()
     {
+        SceneManager.sceneLoaded -=
+            OnSceneLoaded;
     }
 }

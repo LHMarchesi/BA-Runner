@@ -1,30 +1,49 @@
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class CinematicState : IState
 {
-    GameManager gm;
-    bool sceneLoaded = false;   
+    private GameManager gm;
+
+
     public CinematicState(GameManager gm)
     {
         this.gm = gm;
     }
 
+
     public void Awake()
     {
-        SceneManager.sceneLoaded += OnSceneLoaded;
+        SceneManager.sceneLoaded -=
+            OnSceneLoaded;
+
+        SceneManager.sceneLoaded +=
+            OnSceneLoaded;
     }
 
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+
+    private void OnSceneLoaded(
+        Scene scene,
+        LoadSceneMode mode
+    )
     {
-        sceneLoaded = true;
+        SceneManager.sceneLoaded -=
+            OnSceneLoaded;
 
-        SceneManager.sceneLoaded -= OnSceneLoaded;
+        Debug.Log(
+            $"[CinematicState] Loaded: {scene.name}"
+        );
     }
 
 
-    public void Execute() { }
+    public void Execute()
+    {
+    }
 
-    public void Sleep() { }
+
+    public void Sleep()
+    {
+        SceneManager.sceneLoaded -=
+            OnSceneLoaded;
+    }
 }
-
-

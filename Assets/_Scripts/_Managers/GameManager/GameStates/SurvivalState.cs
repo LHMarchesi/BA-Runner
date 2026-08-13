@@ -1,36 +1,98 @@
-using System.Diagnostics;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SurvivalState : IState
 {
-    GameManager gm;
-    bool sceneLoaded = false;
+    private GameManager gm;
+
 
     public SurvivalState(GameManager gm)
     {
         this.gm = gm;
     }
 
+
+    // =========================================================
+    // ENTER
+    // =========================================================
+
     public void Awake()
     {
-        SceneManager.sceneLoaded += OnSceneLoaded;
-        EventBus<OnLevelStartEvent>.Raise(new OnLevelStartEvent { });
+        /*
+         * Evitamos listeners duplicados.
+         */
+        SceneManager.sceneLoaded -=
+            OnSceneLoaded;
 
+        SceneManager.sceneLoaded +=
+            OnSceneLoaded;
+
+
+        Debug.Log(
+            "[SurvivalState] Esperando Survival Scene..."
+        );
     }
 
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+
+    // =========================================================
+    // SCENE LOADED
+    // =========================================================
+
+    private void OnSceneLoaded(
+        Scene scene,
+        LoadSceneMode mode
+    )
     {
-        sceneLoaded = true;
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-        AudioManager.Instance.PlayMusic(AudioManager.Instance.survivalSong);
+        SceneManager.sceneLoaded -=
+            OnSceneLoaded;
+
+
+        Debug.Log(
+            $"[SurvivalState] Scene Loaded: {scene.name}"
+        );
+
+
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlayMusic(
+                AudioManager.Instance.survivalSong
+            );
+        }
+
+
+        /*
+         * NO OnLevelStartEvent.
+         *
+         * SurvivalManager inicializa su propio gameplay.
+         */
     }
+
+
+    // =========================================================
+    // UPDATE
+    // =========================================================
 
     public void Execute()
     {
-      
     }
+
+
+    // =========================================================
+    // EXIT
+    // =========================================================
 
     public void Sleep()
     {
+        /*
+         * Por seguridad, nunca dejamos un sceneLoaded
+         * pendiente al abandonar Survival.
+         */
+        SceneManager.sceneLoaded -=
+            OnSceneLoaded;
+
+
+        Debug.Log(
+            "[SurvivalState] Exit Survival."
+        );
     }
 }

@@ -112,6 +112,7 @@ public class PlayerController : MonoBehaviour
     {
         EventBus<OnLevelCompletedEvent>.Deregister(levelResultBinding);
         EventBus<OnPauseEvent>.Deregister(pauseEventBinding);
+        EventBus<OnLevelStartEvent>.Deregister(levelStartBinding);
     }
 
     private void OnLevelStart(OnLevelStartEvent e)
