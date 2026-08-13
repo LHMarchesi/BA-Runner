@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class ScoreSystem : MonoBehaviour
@@ -14,40 +13,79 @@ public class ScoreSystem : MonoBehaviour
 
     EventBinding<OnPlayerDeathEvent> playerDeathBinding;
 
+    [SerializeField]
+    private bool useGlobalEvents = true;
+
+    [SerializeField]
+    private bool broadcastLevelUpdate = true;
+
     private void OnEnable()
     {
-        sectionBinding = new EventBinding<OnRoadSectionChanged>(OnRoadSectionChanged);
-        EventBus<OnRoadSectionChanged>.Register(sectionBinding);
-
-        playerDeathBinding = new EventBinding<OnPlayerDeathEvent>(HandlePLayerDeath);
-        EventBus<OnPlayerDeathEvent>.Register(playerDeathBinding);
-
         isRunning = true;
+
+        if (!useGlobalEvents)
+            return;
+
+        sectionBinding =
+            new EventBinding<OnRoadSectionChanged>(
+                OnRoadSectionChanged
+            );
+
+        EventBus<OnRoadSectionChanged>
+            .Register(sectionBinding);
+
+        playerDeathBinding =
+            new EventBinding<OnPlayerDeathEvent>(
+                HandlePLayerDeath
+            );
+
+        EventBus<OnPlayerDeathEvent>
+            .Register(playerDeathBinding);
     }
 
     private void HandlePLayerDeath(OnPlayerDeathEvent e)
     {
         isRunning = false;
     }
-
     private void OnDisable()
     {
-        EventBus<OnRoadSectionChanged>.Deregister(sectionBinding);
-        EventBus<OnPlayerDeathEvent>.Deregister(playerDeathBinding);
-    }
+        if (!useGlobalEvents)
+            return;
 
+        EventBus<OnRoadSectionChanged>
+            .Deregister(sectionBinding);
+
+        EventBus<OnPlayerDeathEvent>
+            .Deregister(playerDeathBinding);
+    }
 
 
     private void Update()
     {
+        if (!broadcastLevelUpdate)
+            return;
+
         EventBus<OnLevelUpdateEvent>.Raise(
-      new OnLevelUpdateEvent
-      {
-          score = Score,
-          distance = Distance,
-          loops = Stage
-      }
-  );
+            new OnLevelUpdateEvent
+            {
+                score = Score,
+                distance = Distance,
+                loops = Stage
+            }
+        );
+    }
+
+    public void AddStage()
+    {
+        Stage++;
+    }
+
+    public void ResetScore()
+    {
+        Score = 0;
+        Distance = 0f;
+        Stage = 0f;
+        isRunning = true;
     }
 
     public void SetRunnig(bool value)

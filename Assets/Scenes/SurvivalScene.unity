@@ -2856,9 +2856,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac6683ef1e0a2ac4eb081793e1992ba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MenuNavigation
-  navigationRoot: {fileID: 0}
+  navigationRoot: {fileID: 761721667}
   indicator: {fileID: 588036429}
-  initialSelected: {fileID: 0}
+  initialSelected: {fileID: 1053464039}
 --- !u!1 &793168992
 GameObject:
   m_ObjectHideFlags: 0
@@ -3240,7 +3240,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &809592512
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3842,6 +3842,7 @@ MonoBehaviour:
   - {fileID: 1795971938}
   - {fileID: 104686332}
   worldSpeed: {fileID: 73024254}
+  listenToGlobalEvents: 1
 --- !u!1 &1023796351
 GameObject:
   m_ObjectHideFlags: 0
@@ -6501,6 +6502,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ff3e6345f80543448b06d82e725e8f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScoreSystem
+  useGlobalEvents: 1
+  broadcastLevelUpdate: 1
 --- !u!4 &1643797945
 Transform:
   m_ObjectHideFlags: 0
@@ -7624,10 +7627,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf571f53ff8518ca8bacda0a4c4bc77a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneTransition
-  imageToFade: {fileID: 162933125}
+  defaultTarget: 5
+  cinematicsSceneName: CinematicsScene
+  gameplaySceneName: SampleScene
+  survivalSceneName: SurvivalScene
+  survivalCoopVersusSceneName: SurvivalSceneCoop
+  levelSelectorSceneName: LevelSelector
+  mainMenuSceneName: Menu
+  fadeCanvasGroup: {fileID: 0}
   fadeDuration: 0.5
-  clearNarrativeFlags: 0
-  transitionTarget: 4
 --- !u!4 &2043365271
 Transform:
   m_ObjectHideFlags: 0
@@ -7957,10 +7965,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf571f53ff8518ca8bacda0a4c4bc77a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneTransition
-  imageToFade: {fileID: 162933125}
+  defaultTarget: 6
+  cinematicsSceneName: CinematicsScene
+  gameplaySceneName: SampleScene
+  survivalSceneName: SurvivalScene
+  survivalCoopVersusSceneName: SurvivalSceneCoop
+  levelSelectorSceneName: LevelSelector
+  mainMenuSceneName: Menu
+  fadeCanvasGroup: {fileID: 0}
   fadeDuration: 0.5
-  clearNarrativeFlags: 0
-  transitionTarget: 0
 --- !u!4 &2136325878
 Transform:
   m_ObjectHideFlags: 0

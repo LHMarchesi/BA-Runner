@@ -3336,10 +3336,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf571f53ff8518ca8bacda0a4c4bc77a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneTransition
-  imageToFade: {fileID: 162933125}
+  defaultTarget: 6
+  cinematicsSceneName: CinematicsScene
+  gameplaySceneName: SampleScene
+  survivalSceneName: SurvivalScene
+  survivalCoopVersusSceneName: SurvivalSceneCoop
+  levelSelectorSceneName: LevelSelector
+  mainMenuSceneName: Menu
+  fadeCanvasGroup: {fileID: 0}
   fadeDuration: 0.5
-  clearNarrativeFlags: 0
-  transitionTarget: 0
 --- !u!4 &503825748
 Transform:
   m_ObjectHideFlags: 0
@@ -3964,10 +3969,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf571f53ff8518ca8bacda0a4c4bc77a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneTransition
-  imageToFade: {fileID: 162933125}
+  defaultTarget: 0
+  cinematicsSceneName: CinematicsScene
+  gameplaySceneName: SampleScene
+  survivalSceneName: SurvivalScene
+  survivalCoopVersusSceneName: SurvivalSceneCoop
+  levelSelectorSceneName: LevelSelector
+  mainMenuSceneName: Menu
+  fadeCanvasGroup: {fileID: 0}
   fadeDuration: 0.5
-  clearNarrativeFlags: 0
-  transitionTarget: 0
 --- !u!4 &659810232
 Transform:
   m_ObjectHideFlags: 0
@@ -6708,10 +6718,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf571f53ff8518ca8bacda0a4c4bc77a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneTransition
-  imageToFade: {fileID: 162933125}
+  defaultTarget: 0
+  cinematicsSceneName: CinematicsScene
+  gameplaySceneName: SampleScene
+  survivalSceneName: SurvivalScene
+  survivalCoopVersusSceneName: SurvivalSceneCoop
+  levelSelectorSceneName: LevelSelector
+  mainMenuSceneName: Menu
+  fadeCanvasGroup: {fileID: 0}
   fadeDuration: 0.5
-  clearNarrativeFlags: 0
-  transitionTarget: 2
 --- !u!4 &1377862746
 Transform:
   m_ObjectHideFlags: 0
@@ -8351,6 +8366,7 @@ MonoBehaviour:
   - {fileID: 1199130220}
   - {fileID: 1121086004}
   worldSpeed: {fileID: 1307682262}
+  listenToGlobalEvents: 1
 --- !u!4 &1805791355
 Transform:
   m_ObjectHideFlags: 0
@@ -9522,10 +9538,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf571f53ff8518ca8bacda0a4c4bc77a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneTransition
-  imageToFade: {fileID: 162933125}
+  defaultTarget: 1
+  cinematicsSceneName: CinematicsScene
+  gameplaySceneName: SampleScene
+  survivalSceneName: SurvivalScene
+  survivalCoopVersusSceneName: SurvivalSceneCoop
+  levelSelectorSceneName: LevelSelector
+  mainMenuSceneName: Menu
+  fadeCanvasGroup: {fileID: 0}
   fadeDuration: 0.5
-  clearNarrativeFlags: 0
-  transitionTarget: 1
 --- !u!4 &2043365271
 Transform:
   m_ObjectHideFlags: 0

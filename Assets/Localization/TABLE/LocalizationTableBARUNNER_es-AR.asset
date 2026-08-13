@@ -983,11 +983,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1426986540220428
-    m_Localized: ENZO ESTAS DESPEDIDO.
+    m_Localized: ENZO, ESTAS DESPEDIDO.
     m_Metadata:
       m_Items: []
   - m_Id: 1426986540220429
-    m_Localized: PULSA CUALQUIER BOTON PARA INICIAR
+    m_Localized: PULSA ESPACIO PARA INICIAR
     m_Metadata:
       m_Items: []
   - m_Id: 1426986540220430

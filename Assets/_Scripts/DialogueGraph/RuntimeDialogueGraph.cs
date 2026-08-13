@@ -19,7 +19,6 @@ public class RuntimeDialogueNode
     public AudioClip Music;
     public AudioClip SoundEffect;
     public float SoundEffectDelay;
-    [Range(0f, 1f)]
     public float SoundEffectVolume = 1f;
 
     [Header("Choices")]

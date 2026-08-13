@@ -208,6 +208,21 @@ public class MenuNavigation : MonoBehaviour
             );
     }
 
+    public void AssignButton()
+    {
+        if (initialSelected == null)
+        {
+            Debug.LogWarning(
+                $"[MenuNavigation] '{gameObject.name}' " +
+                $"no tiene Default Button asignado."
+            );
+
+            return;
+        }
+
+        AssignButton(initialSelected);
+    }
+
 
     private void ForceSelection(GameObject target)
     {

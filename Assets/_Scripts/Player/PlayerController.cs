@@ -1,5 +1,6 @@
 using System;
 using System.Buffers.Text;
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -34,13 +35,67 @@ public class PlayerController : MonoBehaviour
     private bool wasBoosting;
     [SerializeField] WorldSpeed WorldSpeed;
 
+
+
     EventBinding<OnLevelCompletedEvent> levelResultBinding;
     EventBinding<OnLevelStartEvent> levelStartBinding;
     EventBinding<OnPauseEvent> pauseEventBinding;
 
     private float currentPlayerBoostMultiplier;
     private bool gameIsPaused = false;
+    public event Action<PlayerController> Died;
 
+    [SerializeField] private UnityEngine.UI.Image playerImage;
+    [SerializeField]
+    private bool survivalMode;
+
+    [SerializeField]
+    private Sprite normalCar;
+
+    [SerializeField]
+    private Sprite damagedCar;
+    public bool IsAlive => isAlive;
+
+    public void SetHorizontalInput(float value)
+    {
+        if (!isAlive || gameIsPaused)
+            return;
+
+        inputX = Mathf.Clamp(
+            value,
+            -1f,
+            1f
+        );
+    }
+
+    public void TryChangeLane(int direction)
+    {
+        if (
+            !isAlive ||
+            gameIsPaused ||
+            !canChangeLane
+        )
+        {
+            return;
+        }
+
+        if (
+            direction > 0 &&
+            currentCarPosition < maxPosition
+        )
+        {
+            currentCarPosition++;
+            Move();
+        }
+        else if (
+            direction < 0 &&
+            currentCarPosition > 0
+        )
+        {
+            currentCarPosition--;
+            Move();
+        }
+    }
     private void OnEnable()
     {
         levelResultBinding = new EventBinding<OnLevelCompletedEvent>(OnLevelCompleted);
@@ -91,6 +146,12 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        if (playerImage != null &&
+        normalCar != null)
+        {
+            playerImage.sprite =
+                normalCar;
+        }
         targetPosition = startPosition.position;
         transform.position = targetPosition;
         baseX = transform.position.x;
@@ -101,28 +162,27 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void OnMove(InputAction.CallbackContext context)
+    public void OnMove(
+    InputAction.CallbackContext context
+)
     {
-        Vector2 input = context.ReadValue<Vector2>();
-        inputX = input.x;
+        Vector2 input =
+            context.ReadValue<Vector2>();
 
-        if (gameIsPaused)
+        SetHorizontalInput(
+            input.x
+        );
+
+        if (!context.started)
             return;
 
-        if (!context.started || !canChangeLane)
-            return;
-
-        float vertical = input.y;
-
-        if (vertical > 0 && currentCarPosition < maxPosition)
+        if (input.y > 0f)
         {
-            currentCarPosition++;
-            Move();
+            TryChangeLane(1);
         }
-        else if (vertical < 0 && currentCarPosition > 0)
+        else if (input.y < 0f)
         {
-            currentCarPosition--;
-            Move();
+            TryChangeLane(-1);
         }
     }
 
@@ -227,17 +287,100 @@ public class PlayerController : MonoBehaviour
         );
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(
+    Collider2D collision
+)
     {
-        if (!canCollide || !isAlive) return;
+        if (!canCollide || !isAlive)
+            return;
+
         canCollide = false;
         canChangeLane = false;
         isAlive = false;
 
-        transform.SetParent(collision.transform);
+        inputX = 0f;
+        currentVelocityX = 0f;
 
-        EventBus<OnPlayerDeathEvent>.Raise(new OnPlayerDeathEvent());
+        if (
+     playerImage != null &&
+     damagedCar != null
+ )
+        {
+            playerImage.sprite =
+                damagedCar;
+        }
+        if (survivalMode)
+        {
+            WorldSpeed.SetFrozen(true);
 
-        AudioManager.Instance.PlaySFX(crashSound);
+            Died?.Invoke(this);
+        }
+        else
+        {
+            transform.SetParent(
+                collision.transform
+            );
+
+            EventBus<OnPlayerDeathEvent>.Raise(
+                new OnPlayerDeathEvent()
+            );
+        }
+
+        AudioManager.Instance.PlaySFX(
+            crashSound
+        );
+    }
+
+    public void Revive()
+    {
+        CancelInvoke();
+
+        currentCarPosition = 0;
+
+        transform.SetParent(
+            lanes[0],
+            true
+        );
+
+        transform.position =
+            startPosition.position;
+
+        targetPosition =
+            startPosition.position;
+
+        baseX =
+            startPosition.position.x;
+
+        currentVelocityX = 0f;
+        inputX = 0f;
+
+        isAlive = true;
+        canChangeLane = true;
+
+        if (
+     playerImage != null &&
+     normalCar != null
+ )
+        {
+            playerImage.sprite =
+                normalCar;
+        }
+
+        WorldSpeed.SetFrozen(false);
+
+        StartCoroutine(
+            ReviveInvulnerability()
+        );
+    }
+
+    private IEnumerator ReviveInvulnerability()
+    {
+        canCollide = false;
+
+        yield return new WaitForSeconds(
+            1.5f
+        );
+
+        canCollide = true;
     }
 }

@@ -20,8 +20,13 @@ public class SpawnManager : MonoBehaviour
     private EventBinding<OnRoadStageChanged> onStageChanged;
     private EventBinding<OnRoadSectionChanged> onSectionChanged;
 
+    [SerializeField]
+    private bool listenToGlobalEvents = true;
     private void OnEnable()
     {
+        if (!listenToGlobalEvents)
+            return;
+
         onLevelStart = new EventBinding<OnLevelStartEvent>(HandleLevelStart);
         onLevelCompleted = new EventBinding<OnLevelCompletedEvent>(HandleLevelCompleted);
         onStageChanged = new EventBinding<OnRoadStageChanged>(HandleStageChanged);
@@ -265,12 +270,42 @@ public class SpawnManager : MonoBehaviour
             );
         }
     }
+
+    public void SetWaveConfig(
+    WaveConfig waveConfig
+)
+    {
+        if (waveConfig == null)
+            return;
+
+        sequentialPatternIndex = 0;
+        currentWaveConfig = waveConfig;
+
+        Prewarm(
+            currentWaveConfig
+        );
+
+        if (spawnCoroutine == null)
+        {
+            StartSpawning();
+        }
+    }
     private void OnDisable()
     {
-        EventBus<OnLevelStartEvent>.Deregister(onLevelStart);
-        EventBus<OnLevelCompletedEvent>.Deregister(onLevelCompleted);
-        EventBus<OnRoadSectionChanged>.Deregister(onSectionChanged);
-        EventBus<OnRoadStageChanged>.Deregister(onStageChanged);
+        if (listenToGlobalEvents)
+        {
+            EventBus<OnLevelStartEvent>
+                .Deregister(onLevelStart);
+
+            EventBus<OnLevelCompletedEvent>
+                .Deregister(onLevelCompleted);
+
+            EventBus<OnRoadSectionChanged>
+                .Deregister(onSectionChanged);
+
+            EventBus<OnRoadStageChanged>
+                .Deregister(onStageChanged);
+        }
         StopSpawning();
     }
 }
