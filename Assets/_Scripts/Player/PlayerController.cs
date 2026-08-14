@@ -123,6 +123,12 @@ public class PlayerController : MonoBehaviour
     private void OnLevelCompleted(OnLevelCompletedEvent e)
     {
         canCollide = false;
+
+        inputX = 0f;
+        currentVelocityX = 0f;
+        wasBoosting = false;
+
+        isAlive = false;
     }
 
     private void OnPauseEventTriggered(OnPauseEvent e)

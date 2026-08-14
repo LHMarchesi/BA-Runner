@@ -10,12 +10,15 @@ public class MenuNavigation : MonoBehaviour
 
     [SerializeField] private RectTransform indicator;
     [SerializeField] private GameObject initialSelected;
-    
+
+    [Header("Audio")]
+    [SerializeField] private AudioClip navigateSound;
+
 
     private GameObject lastSelected;
     private MenuButton lastButton;
     [Header("Initial Selection")]
-    
+
     private Coroutine restoreSelectionRoutine;
     private Coroutine assignSelectionRoutine;
     private void Start()
@@ -32,7 +35,7 @@ public class MenuNavigation : MonoBehaviour
         if (indicator == null || EventSystem.current == null)
             return;
 
-       
+
         if (
             navigationRoot != null &&
             !navigationRoot.gameObject.activeInHierarchy
@@ -87,7 +90,7 @@ public class MenuNavigation : MonoBehaviour
             return;
         }
 
-      
+
         if (!BelongsToThisNavigation(selected))
         {
             indicator.gameObject.SetActive(false);
@@ -119,6 +122,19 @@ public class MenuNavigation : MonoBehaviour
 
         indicator.gameObject.SetActive(true);
 
+        /*
+         * Solo sonamos cuando el indicador realmente
+         * se mueve a un botón distinto, no en la
+         * selección inicial al abrir el menú.
+         */
+        if (
+            lastButton != null &&
+            currentButton != lastButton
+        )
+        {
+            PlayNavigateSound();
+        }
+
         lastButton = currentButton;
 
         indicator.position =
@@ -126,11 +142,23 @@ public class MenuNavigation : MonoBehaviour
     }
 
 
+    private void PlayNavigateSound()
+    {
+        if (navigateSound == null)
+            return;
+
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlaySFX(navigateSound);
+        }
+    }
+
+
     private IEnumerator AssignButtonAfterUIEvent(
     GameObject target
 )
     {
-       
+
         yield return new WaitForEndOfFrame();
 
         yield return null;
