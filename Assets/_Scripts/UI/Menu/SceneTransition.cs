@@ -277,10 +277,6 @@ public class SceneTransition : MonoBehaviour
                 break;
 
             case transitionTo.Cinematics:
-
-                GameManager.Instance.IsOutro =
-                    false;
-
                 GameManager.Instance.ChangeState(
                     GameState.Cinematic
                 );

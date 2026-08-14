@@ -20,6 +20,11 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9bad3188dcb614442b96f90592f16b6e
+    m_Address: Assets/Localization/TABLE/Audio/DialogueAudio Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 572313ba632a41b4ea4d2c4fe068bdda, type: 2}
   m_SchemaSet:

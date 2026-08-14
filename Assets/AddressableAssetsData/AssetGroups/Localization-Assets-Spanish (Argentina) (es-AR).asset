@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Localization-Assets-Spanish (Argentina) (es-AR)
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: Localization-Assets-Spanish (Argentina) (es-AR)
+  m_GUID: bd3d21a57acbfbe42a2c6faa7dbd8384
+  m_SerializeEntries:
+  - m_GUID: 18f76934b69b3d949a540a2c740cc27f
+    m_Address: Si
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-es-AR
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 526c718c8d3765f42ad2a315c65c2af1
+    m_Address: No por mucho
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-es-AR
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6dfcc787679fb484d9258ba89fd86e6d
+    m_Address: Es un buen auto un amigo tenia uno asi
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-es-AR
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 72a5b29c2e64dd34c92543ed9c4d437a
+    m_Address: No creo que el dinero sea todo
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-es-AR
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7cd934a0f6bf78d41a33f93712ebc247
+    m_Address: Es todo lo que se hacer
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-es-AR
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fe4e01d1d5ee0384cacbed0cbfb7853c
+    m_Address: Nunca me detuve a pensarlo
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-es-AR
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 1
+  m_Settings: {fileID: 11400000, guid: 572313ba632a41b4ea4d2c4fe068bdda, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: e9155c2e3756fe84b828eb65a739ac51, type: 2}
+    - {fileID: 11400000, guid: 949210c081e5c3745b62d76322441e3d, type: 2}

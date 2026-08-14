@@ -32,6 +32,8 @@ public class Gameplay_UIHandler : MonoBehaviour
     EventBinding<OnPlayerDeathEvent> playerDeathBinding;
     private EventBinding<OnRoadEnvironmentChanged> envBinding;
     private EventBinding<OnPauseEvent> pauseEventBinding;
+
+    private bool isContinuing;
     private void OnEnable()
     {
         InitializeEvents();
@@ -58,12 +60,82 @@ public class Gameplay_UIHandler : MonoBehaviour
         loseScreen.gameObject.SetActive(false);
         indicator.SetActive(false);
         completionTime.gameObject.SetActive(false);
-        var currentLevel = ProgressionManager.Instance.CurrentLevel;
+
+        isContinuing = false;
+
+        if (winBtnContinue != null)
+        {
+            winBtnContinue.onClick.RemoveListener(
+                ContinueAfterWin
+            );
+
+            winBtnContinue.onClick.AddListener(
+                ContinueAfterWin
+            );
+        }
     }
 
     public void ResumeGame()
     {
         GameManager.Instance.ChangeState(GameState.Playing);
+    }
+
+    public void ContinueAfterWin()
+    {
+        if (isContinuing)
+            return;
+
+        isContinuing = true;
+
+        if (winBtnContinue != null)
+        {
+            winBtnContinue.interactable = false;
+        }
+
+        if (GameManager.Instance == null)
+        {
+            Debug.LogError(
+                "[Gameplay UI] GameManager.Instance es null."
+            );
+
+            isContinuing = false;
+            return;
+        }
+
+        if (transitionToCinematics == null)
+        {
+            Debug.LogError(
+                "[Gameplay UI] transitionToCinematics no está asignado."
+            );
+
+            isContinuing = false;
+            return;
+        }
+
+
+        /*
+         * IMPORTANTE:
+         *
+         * Seguimos estando en el nivel que acabamos
+         * de terminar.
+         *
+         * Primero tenemos que comprobar/reproducir
+         * su OUTRO.
+         */
+        GameManager.Instance.IsOutro = true;
+
+
+        Debug.Log(
+            $"[Gameplay UI] Continue Win | " +
+            $"Level: " +
+            $"{ProgressionManager.Instance?.CurrentLevel?.name ?? "NULL"} | " +
+            $"IsOutro: {GameManager.Instance.IsOutro}"
+        );
+
+
+        transitionToCinematics.StartTransition(
+            SceneTransition.transitionTo.Cinematics
+        );
     }
     IEnumerator LoseSequence()
     {
@@ -202,9 +274,28 @@ public class Gameplay_UIHandler : MonoBehaviour
 
     private void OnDisable()
     {
-        EventBus<OnLevelCompletedEvent>.Deregister(levelResultBinding);
-        EventBus<OnRoadEnvironmentChanged>.Deregister(envBinding);
-        EventBus<OnPlayerDeathEvent>.Deregister(playerDeathBinding);
-        EventBus<OnPauseEvent>.Deregister(pauseEventBinding);
+        EventBus<OnLevelCompletedEvent>.Deregister(
+            levelResultBinding
+        );
+
+        EventBus<OnRoadEnvironmentChanged>.Deregister(
+            envBinding
+        );
+
+        EventBus<OnPlayerDeathEvent>.Deregister(
+            playerDeathBinding
+        );
+
+        EventBus<OnPauseEvent>.Deregister(
+            pauseEventBinding
+        );
+
+
+        if (winBtnContinue != null)
+        {
+            winBtnContinue.onClick.RemoveListener(
+                ContinueAfterWin
+            );
+        }
     }
 }

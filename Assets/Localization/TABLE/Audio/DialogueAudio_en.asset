@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97269afb30aa84742ae3f3342603618a, type: 3}
+  m_Name: DialogueAudio_en
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.AssetTable
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 9bad3188dcb614442b96f90592f16b6e, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 10709168128
+    m_Localized: e9ada8d7be0d6314cb8b76335c2590a2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62231998464
+    m_Localized: 0bc45262914b3ea4cb9c83a41c8fad5e
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80225562624
+    m_Localized: a075a3e6f0b597e4bbe4cc2f69816e73
+    m_Metadata:
+      m_Items: []
+  - m_Id: 94695911424
+    m_Localized: 1e1f341e249487e4391b6f98bf54eace
+    m_Metadata:
+      m_Items: []
+  - m_Id: 137112907776
+    m_Localized: 784e6da37a5b5ae49a18bf93523238f7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 196529418240
+    m_Localized: 3b3c97ad12d1af144873a1317015f612
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

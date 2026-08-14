@@ -25,14 +25,13 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private RectTransform choiceButtonContainer;
     [SerializeField] private List<Button> choiceButtons = new List<Button>();
 
-
     [Header("Delay")]
     [SerializeField] private Slider delayProgressBar;
 
     [Header("Localization")]
     [SerializeField] private string localizationTable = "LocalizationTableBARUNNER";
+    [SerializeField] private string dialogueAudioTable = "DialogueAudio";
 
-   
 
     private readonly Dictionary<string, RuntimeDialogueNode> nodeLookup =
         new Dictionary<string, RuntimeDialogueNode>();
@@ -43,6 +42,7 @@ public class DialogueManager : MonoBehaviour
     private Coroutine selectRoutine;
     private Coroutine continueTransitionCoroutine;
     private Coroutine nodeSoundCoroutine;
+    private int nodeSoundRequestVersion;
 
     private bool isOutro;
     private bool dialogueEnded;
@@ -358,12 +358,15 @@ public class DialogueManager : MonoBehaviour
                 GetLocalizedText(currentNode.DialogueText);
         }
 
+        PlayNodeAudio(currentNode);
+
+
         ClearChoiceButtons();
 
-         List<ChoiceData> availableChoices =
-     GetAvailableChoices(
-         currentNode.Choices
-     );
+        List<ChoiceData> availableChoices =
+            GetAvailableChoices(
+                currentNode.Choices
+            );
 
         if (availableChoices.Count > 0)
         {
@@ -374,14 +377,16 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
+
         if (currentNode.Delay > 0f)
         {
-            autoAdvanceCoroutine = StartCoroutine(
-                AutoAdvanceCoroutine(currentNode.Delay)
-            );
+            autoAdvanceCoroutine =
+                StartCoroutine(
+                    AutoAdvanceCoroutine(
+                        currentNode.Delay
+                    )
+                );
         }
-
-        PlayNodeAudio(currentNode);
     }
 
     private void SetupChoiceButtons(
@@ -824,30 +829,46 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    private void PlayNodeAudio(RuntimeDialogueNode node)
+    private void PlayNodeAudio(
+    RuntimeDialogueNode node
+)
     {
         if (node == null)
             return;
 
-        AudioClip musicClip = node.Music;
-        AudioClip soundEffectClip = node.SoundEffect;
 
         AudioManager audioManager =
             AudioManager.Instance;
 
-        if (musicClip != null)
+        if (audioManager == null)
+            return;
+
+
+        // =====================================================
+        // MUSIC
+        // =====================================================
+
+        /*
+         * Igual que antes:
+         *
+         * Music != null
+         * → cambia la música.
+         *
+         * Music == null
+         * → conserva la música actual.
+         */
+
+        if (node.Music != null)
         {
             audioManager.PlayMusic(
-                musicClip
+                node.Music
             );
         }
 
-        /*
-         * SoundEffect null:
-         * no hay nada más que hacer.
-         */
-        if (soundEffectClip == null)
-            return;
+
+        // =====================================================
+        // PREPARE SFX / VOICE
+        // =====================================================
 
         float safeDelay =
             Mathf.Max(
@@ -855,75 +876,363 @@ public class DialogueManager : MonoBehaviour
                 node.SoundEffectDelay
             );
 
+        float safeVolume =
+            Mathf.Clamp01(
+                node.SoundEffectVolume
+            );
+
+
+        /*
+         * Cada nueva petición recibe una versión.
+         *
+         * Si avanzamos de nodo mientras el audio
+         * localizado está cargando, esa petición
+         * deja de ser válida.
+         */
+        int requestVersion =
+            nodeSoundRequestVersion;
+
+        string sourceNodeID =
+            node.NodeID;
+
+
+        // =====================================================
+        // LOCALIZED AUDIO
+        // =====================================================
+
+        /*
+         * La KEY tiene prioridad sobre el AudioClip
+         * directo.
+         *
+         * Esto permite:
+         *
+         * SoundEffectKey = "voice_driver_01"
+         * SoundEffect = null
+         *
+         * y funcionará perfectamente.
+         */
+
+        if (
+            !string.IsNullOrWhiteSpace(
+                node.SoundEffectKey
+            )
+        )
+        {
+            nodeSoundCoroutine =
+                StartCoroutine(
+                    PlayLocalizedNodeSound(
+                        sourceNodeID,
+                        node.SoundEffectKey.Trim(),
+                        safeDelay,
+                        safeVolume,
+                        requestVersion
+                    )
+                );
+
+            return;
+        }
+
+
+        // =====================================================
+        // DIRECT AUDIO FALLBACK
+        // =====================================================
+
+        /*
+         * Si no hay key localizada usamos el
+         * sistema antiguo.
+         */
+
+        if (node.SoundEffect == null)
+            return;
+
+
         if (safeDelay <= 0f)
         {
             audioManager.PlayDialogueSFX(
-                soundEffectClip,node.SoundEffectVolume
+                node.SoundEffect,
+                safeVolume
             );
 
             return;
         }
 
-        string sourceNodeID =
-            node.NodeID;
 
-        nodeSoundCoroutine = StartCoroutine(
-            PlayNodeSoundAfterDelay(
-                sourceNodeID,
-                soundEffectClip,
-                safeDelay,
-                node.SoundEffectVolume
-            )
-        );
+        nodeSoundCoroutine =
+            StartCoroutine(
+                PlayDirectNodeSoundAfterDelay(
+                    sourceNodeID,
+                    node.SoundEffect,
+                    safeDelay,
+                    safeVolume,
+                    requestVersion
+                )
+            );
     }
+
+
+    // =========================================================
+    // LOCALIZED NODE AUDIO
+    // =========================================================
+
+    private IEnumerator PlayLocalizedNodeSound(
+        string sourceNodeID,
+        string key,
+        float delay,
+        float volume,
+        int requestVersion
+    )
+    {
+        // =====================================================
+        // DELAY
+        // =====================================================
+
+        if (delay > 0f)
+        {
+            yield return new WaitForSeconds(
+                delay
+            );
+        }
+
+
+        // =====================================================
+        // VALIDATE NODE
+        // =====================================================
+
+        if (
+            !IsNodeSoundRequestValid(
+                sourceNodeID,
+                requestVersion
+            )
+        )
+        {
+            yield break;
+        }
+
+
+        // =====================================================
+        // LOAD LOCALIZED AUDIO
+        // =====================================================
+
+        var operation =
+            LocalizationSettings
+                .AssetDatabase
+                .GetLocalizedAssetAsync<AudioClip>(
+                    dialogueAudioTable,
+                    key
+                );
+
+
+        yield return operation;
+
+
+        // =====================================================
+        // VALIDATE AGAIN AFTER ASYNC LOAD
+        // =====================================================
+
+        /*
+         * Es posible que el jugador haya avanzado
+         * de nodo mientras Unity cargaba el AudioClip.
+         */
+
+        if (
+            !IsNodeSoundRequestValid(
+                sourceNodeID,
+                requestVersion
+            )
+        )
+        {
+            yield break;
+        }
+
+
+        AudioClip localizedClip =
+            operation.Result;
+
+
+        // =====================================================
+        // FAILED
+        // =====================================================
+
+        if (localizedClip == null)
+        {
+            Debug.LogWarning(
+                $"[Dialogue Audio Localization] " +
+                $"No se encontró AudioClip para " +
+                $"Key '{key}' en tabla " +
+                $"'{dialogueAudioTable}'."
+            );
+
+            nodeSoundCoroutine = null;
+
+            yield break;
+        }
+
+
+        // =====================================================
+        // PLAY
+        // =====================================================
+
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance
+                .PlayDialogueSFX(
+                    localizedClip,
+                    volume
+                );
+        }
+
+
+        Debug.Log(
+            $"[Dialogue Audio] " +
+            $"Node: {sourceNodeID} | " +
+            $"Key: {key} | " +
+            $"Locale: " +
+            $"{LocalizationSettings.SelectedLocale?.Identifier.Code} | " +
+            $"Clip: {localizedClip.name}"
+        );
+
+
+        nodeSoundCoroutine = null;
+    }
+
+
+    // =========================================================
+    // DIRECT NODE AUDIO
+    // =========================================================
+
+    private IEnumerator PlayDirectNodeSoundAfterDelay(
+        string sourceNodeID,
+        AudioClip clip,
+        float delay,
+        float volume,
+        int requestVersion
+    )
+    {
+        yield return new WaitForSeconds(
+            delay
+        );
+
+
+        if (
+            !IsNodeSoundRequestValid(
+                sourceNodeID,
+                requestVersion
+            )
+        )
+        {
+            yield break;
+        }
+
+
+        if (clip == null)
+        {
+            nodeSoundCoroutine = null;
+            yield break;
+        }
+
+
+        if (AudioManager.Instance == null)
+        {
+            nodeSoundCoroutine = null;
+            yield break;
+        }
+
+
+        AudioManager.Instance
+            .PlayDialogueSFX(
+                clip,
+                volume
+            );
+
+
+        nodeSoundCoroutine = null;
+    }
+
+
+    // =========================================================
+    // VALIDATE SOUND REQUEST
+    // =========================================================
+
+    private bool IsNodeSoundRequestValid(
+        string sourceNodeID,
+        int requestVersion
+    )
+    {
+        /*
+         * Se canceló/reemplazó esta petición.
+         */
+        if (
+            requestVersion !=
+            nodeSoundRequestVersion
+        )
+        {
+            return false;
+        }
+
+
+        /*
+         * Ya no hay nodo actual.
+         */
+        if (currentNode == null)
+            return false;
+
+
+        /*
+         * Cambiamos de nodo.
+         */
+        if (
+            currentNode.NodeID !=
+            sourceNodeID
+        )
+        {
+            return false;
+        }
+
+
+        return true;
+    }
+
+
+    // =========================================================
+    // STOP CURRENT SFX
+    // =========================================================
+
     private void StopCurrentNodeSFX()
     {
         if (AudioManager.Instance == null)
             return;
 
-        AudioManager.Instance.StopDialogueSFX();
-    }
-    private IEnumerator PlayNodeSoundAfterDelay(
-    string sourceNodeID,
-    AudioClip clip,
-    float delay,
-    float volume
-)
-    {
-        yield return new WaitForSeconds(delay);
 
-        nodeSoundCoroutine = null;
-
-        if (currentNode == null)
-            yield break;
-
-        /*
-         * Si avanzamos de nodo antes de terminar el delay,
-         * este sonido ya no pertenece al nodo actual.
-         */
-        if (currentNode.NodeID != sourceNodeID)
-            yield break;
-
-        if (clip == null)
-            yield break;
-
-        if (AudioManager.Instance == null)
-            yield break;
-
-        AudioManager.Instance.PlayDialogueSFX(
-            clip,volume
-        );
+        AudioManager.Instance
+            .StopDialogueSFX();
     }
 
+
+    // =========================================================
+    // STOP PENDING NODE SOUND
+    // =========================================================
 
     private void StopPendingNodeSound()
     {
-        if (nodeSoundCoroutine == null)
-            return;
+        /*
+         * Invalida cualquier petición de audio
+         * que estuviera esperando delay o cargándose
+         * desde Localization.
+         */
+        nodeSoundRequestVersion++;
 
-        StopCoroutine(nodeSoundCoroutine);
-        nodeSoundCoroutine = null;
+
+        if (nodeSoundCoroutine != null)
+        {
+            StopCoroutine(
+                nodeSoundCoroutine
+            );
+
+            nodeSoundCoroutine = null;
+        }
     }
+
+
     private void HandleContinueButton()
     {
        
@@ -1130,6 +1439,7 @@ public class DialogueManager : MonoBehaviour
     {
         StopAutoAdvance();
         StopPendingNodeSound();
+        StopCurrentNodeSFX();
 
         if (selectRoutine != null)
         {

@@ -45,7 +45,8 @@ public class DialogueNode : Node
         // Audio
         context.AddInputPort<AudioClip>("Music").Build();
         context.AddInputPort<AudioClip>("Sound Effect").Build();
-    
+        context.AddInputPort<string>("Sound Effect Key").Build();
+
         context.AddInputPort<float>("Sound Effect Delay").Build();
         context.AddInputPort<float>("Sound Effect Volume").Build();
     }

@@ -63,6 +63,7 @@ public class DialogueGraphImporter : ScriptedImporter
         runtimeNode.Image = GetPortValue<Sprite>(node.GetInputPortByName("Image"));
         runtimeNode.Delay = GetPortValue<float>(node.GetInputPortByName("Delay"));
         runtimeNode.Music = GetPortValue<AudioClip>(node.GetInputPortByName("Music"));
+        runtimeNode.SoundEffectKey = GetPortValue<string>(node.GetInputPortByName("Sound Effect Key"));
         runtimeNode.SoundEffect = GetPortValue<AudioClip>(node.GetInputPortByName("Sound Effect"));
         runtimeNode.SoundEffectDelay = GetPortValue<float>(node.GetInputPortByName("Sound Effect Delay"));
         float importedVolume = GetPortValue<float>(node.GetInputPortByName("Sound Effect Volume"));

@@ -17,6 +17,7 @@ public class RuntimeDialogueNode
     public float Delay;
     public Sprite Image;
     public AudioClip Music;
+    public string SoundEffectKey;
     public AudioClip SoundEffect;
     public float SoundEffectDelay;
     public float SoundEffectVolume = 1f;
