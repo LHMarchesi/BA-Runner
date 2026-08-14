@@ -117,4 +117,7 @@ public class RoadSection
 public class EnvironmentPreset
 {
     public Material background;
+    public Material parallaxLayer1;
+    public Material parallaxLayer2;
+    public Material parallaxLayer3;
 }

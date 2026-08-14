@@ -26,6 +26,9 @@ MonoBehaviour:
     displayedSpeed: 60
     environment:
       background: {fileID: 2100000, guid: f591256448681fb4d992612779c6426c, type: 2}
+      parallaxLayer1: {fileID: 2100000, guid: 5c13daed3326c524eb04dcce4418c82e, type: 2}
+      parallaxLayer2: {fileID: 2100000, guid: 394b28aa9cc9d4542a5a87dcdf79fb9d, type: 2}
+      parallaxLayer3: {fileID: 2100000, guid: 5384aaee1fcf2564aa33b05ce9c5734b, type: 2}
   - stageName: 
     speedData: {fileID: 11400000, guid: 99fcfe5ddf168764ebbb219e3b2a61d6, type: 2}
     waveConfig: {fileID: 11400000, guid: d448a52da31d523459305a952378c618, type: 2}
@@ -33,6 +36,9 @@ MonoBehaviour:
     displayedSpeed: 90
     environment:
       background: {fileID: 0}
+      parallaxLayer1: {fileID: 0}
+      parallaxLayer2: {fileID: 0}
+      parallaxLayer3: {fileID: 0}
   starRequirements:
   - stars: 5
     maxTime: 47

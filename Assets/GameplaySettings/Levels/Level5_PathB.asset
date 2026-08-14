@@ -32,6 +32,9 @@ MonoBehaviour:
     displayedSpeed: 60
     environment:
       background: {fileID: 2100000, guid: a66ab6e049e172f4681912cedb9b88f2, type: 2}
+      parallaxLayer1: {fileID: 2100000, guid: 278877fe0b02b4f4d85bb237a148d55a, type: 2}
+      parallaxLayer2: {fileID: 2100000, guid: 6acab6c6b957c0042b648c5ac39fb1bf, type: 2}
+      parallaxLayer3: {fileID: 2100000, guid: eaa37c99ddd330842ab46a8f0fae819c, type: 2}
   starRequirements:
   - stars: 5
     maxTime: 32

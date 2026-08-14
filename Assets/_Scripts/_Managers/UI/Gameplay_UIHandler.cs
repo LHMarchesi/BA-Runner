@@ -217,7 +217,7 @@ public class Gameplay_UIHandler : MonoBehaviour
         }
 
         AudioManager.Instance.PlaySFX(lvlCompleted);
-        completionTime.gameObject.SetActive(true); 
+        completionTime.gameObject.SetActive(true);
         TimeSpan time = TimeSpan.FromSeconds(completionTimeValue);
         completionTime.text += $"{time.Minutes:00}:{time.Seconds:00}.{time.Milliseconds / 10:00}";
         yield return new WaitForSeconds(.2f);
@@ -235,14 +235,26 @@ public class Gameplay_UIHandler : MonoBehaviour
     {
         StartCoroutine(TransitionBackground(e.environmentPreset));
     }
-
+    [SerializeField] private MeshRenderer parallaxLayer1;
+    [SerializeField] private MeshRenderer parallaxLayer2;
+    [SerializeField] private MeshRenderer parallaxLayer3;
     private IEnumerator TransitionBackground(EnvironmentPreset env)
     {
         if (env == null || env.background == null)
             yield break;
-
-
         BackgroundImage.material = env.background;
+
+        if (env == null || env.parallaxLayer1 == null)
+            yield break;
+        parallaxLayer1.material = env.parallaxLayer1;
+
+        if (env == null || env.parallaxLayer2 == null)
+            yield break;
+        parallaxLayer2.material = env.parallaxLayer2;
+
+        if (env == null || env.parallaxLayer3 == null)
+            yield break;
+        parallaxLayer3.material = env.parallaxLayer3;
 
     }
 

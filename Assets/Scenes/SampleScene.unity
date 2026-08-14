@@ -4221,6 +4221,9 @@ MonoBehaviour:
   countdownBeep: {fileID: 8300000, guid: 0da3f43629b6aa1afa83a20fdbe8e870, type: 3}
   starCollectSFX: {fileID: 8300000, guid: 2d899b12b969c01449330f9c9fe9a55e, type: 3}
   lvlCompleted: {fileID: 8300000, guid: 5d24f403d1fed1940b70602f28da73b7, type: 3}
+  parallaxLayer1: {fileID: 1923042094}
+  parallaxLayer2: {fileID: 1198380208}
+  parallaxLayer3: {fileID: 943826867}
 --- !u!1 &761721666
 GameObject:
   m_ObjectHideFlags: 0
@@ -5079,7 +5082,7 @@ MeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 57c4e0b4d7e32e144ad99cd01fca7a21, type: 2}
+  - {fileID: 2100000, guid: 5384aaee1fcf2564aa33b05ce9c5734b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5940,7 +5943,7 @@ MeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7e5f88ae24183564b9bc65189f94561e, type: 2}
+  - {fileID: 2100000, guid: 394b28aa9cc9d4542a5a87dcdf79fb9d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6638,6 +6641,9 @@ MonoBehaviour:
     displayedSpeed: 0
     environment:
       background: {fileID: 0}
+      parallaxLayer1: {fileID: 0}
+      parallaxLayer2: {fileID: 0}
+      parallaxLayer3: {fileID: 0}
   WorldSpeed: {fileID: 1307682262}
 --- !u!4 &1332032281
 Transform:
@@ -9283,7 +9289,7 @@ MeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bd4fbad6a030c364497e0f570807c4e8, type: 2}
+  - {fileID: 2100000, guid: 5c13daed3326c524eb04dcce4418c82e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
