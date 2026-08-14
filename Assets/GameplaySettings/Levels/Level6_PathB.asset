@@ -19,7 +19,7 @@ MonoBehaviour:
     NextLevel: {fileID: 11400000, guid: 3014024ca1e3621409a4a0d0e4a39558, type: 2}
   DefaultNextLevel: {fileID: 0}
   maxLevelProgession: 100
-  levelMusic: {fileID: 8300000, guid: 97367b10cbec9744e8dd4b93f5ee5ded, type: 3}
+  levelMusic: {fileID: 8300000, guid: e9d5d2e0b762083469234acfc31b06ea, type: 3}
   winLevelImage: {fileID: 4275385624270263120, guid: 0e929357dab52d240ad574882d7d73ad, type: 3}
   stages:
   - stageName: 
@@ -29,6 +29,9 @@ MonoBehaviour:
     displayedSpeed: 80
     environment:
       background: {fileID: 2100000, guid: 705c201d1915eeb4eb6778c7614451ae, type: 2}
+      parallaxLayer1: {fileID: 0}
+      parallaxLayer2: {fileID: 0}
+      parallaxLayer3: {fileID: 0}
   starRequirements:
   - stars: 5
     maxTime: 32

@@ -7,36 +7,33 @@ public class GameplayState : IState
 
     private bool gameplayInitialized;
 
-
     public GameplayState(GameManager gm)
     {
         this.gm = gm;
     }
 
 
+  
     public void Awake()
     {
-        LevelManager levelManager =
-            Object.FindFirstObjectByType<LevelManager>();
+        SceneManager.sceneLoaded -=
+            OnSceneLoaded;
 
-        if (levelManager != null)
+        if (gameplayInitialized)
         {
-            gameplayInitialized = true;
+            Debug.Log(
+                "[GameplayState] Resume Gameplay."
+            );
 
             return;
         }
 
 
-        gameplayInitialized = false;
-
-        SceneManager.sceneLoaded -=
-            OnSceneLoaded;
-
         SceneManager.sceneLoaded +=
             OnSceneLoaded;
 
-
     }
+
 
     private void OnSceneLoaded(
         Scene scene,
@@ -50,18 +47,28 @@ public class GameplayState : IState
         gameplayInitialized = true;
 
 
-        Level_Scriptable level = null;
-
-
-        if (ProgressionManager.Instance != null)
+        if (ProgressionManager.Instance == null)
         {
-            level =
-                ProgressionManager.Instance.CurrentLevel;
+            Debug.LogError(
+                "[GameplayState] ProgressionManager es NULL."
+            );
+
+            return;
+        }
+
+
+        Level_Scriptable level =
+            ProgressionManager.Instance.CurrentLevel;
+
+
+        if (level == null)
+        {
+
+            return;
         }
 
         if (
             AudioManager.Instance != null &&
-            level != null &&
             level.levelMusic != null
         )
         {
@@ -88,8 +95,6 @@ public class GameplayState : IState
         );
     }
 
-
-
     public void Sleep()
     {
         SceneManager.sceneLoaded -=
@@ -97,8 +102,6 @@ public class GameplayState : IState
 
         if (gm.IsPausing)
         {
-            gm.IsPausing = false;
-
             return;
         }
 
