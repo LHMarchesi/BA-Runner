@@ -50,6 +50,7 @@ public class SurvivalManager : MonoBehaviour
     [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private MenuNavigation gameOverNav;
     [SerializeField] private GameObject initialButton;
+    [SerializeField] private GameObject tutorialImage;
     [SerializeField] private TextMeshProUGUI teamScoreText;
     [SerializeField]
     private float scoreCountDuration = 0.8f;
@@ -70,7 +71,7 @@ public class SurvivalManager : MonoBehaviour
     {
         mode =
         SurvivalRunConfig.SelectedMode;
-
+        PlayTutorialFade();
         if (gameOverPanel != null)
         {
             gameOverPanel.SetActive(false);
@@ -710,6 +711,69 @@ public class SurvivalManager : MonoBehaviour
 
     }
 
+    [Header("Tutorial")]
+    [SerializeField] private float tutorialFadeInDuration = 0.35f;
+    [SerializeField] private float tutorialVisibleDuration = 1.2f;
+    [SerializeField] private float tutorialFadeOutDuration = 0.5f;
+
+    private CanvasGroup tutorialCanvasGroup;
+    private Sequence tutorialSequence;
+    private void PlayTutorialFade()
+    {
+        if (tutorialImage == null)
+            return;
+
+
+        tutorialCanvasGroup =
+            tutorialImage.GetComponent<CanvasGroup>();
+
+        tutorialSequence?.Kill();
+
+        tutorialImage.SetActive(true);
+
+        tutorialCanvasGroup.alpha = 0f;
+
+        tutorialCanvasGroup.interactable = false;
+
+        tutorialCanvasGroup.blocksRaycasts = false;
+
+        tutorialSequence =
+            DOTween.Sequence();
+
+
+        tutorialSequence.Append(
+            tutorialCanvasGroup.DOFade(
+                1f,
+                tutorialFadeInDuration
+            )
+        );
+
+
+        tutorialSequence.AppendInterval(
+            tutorialVisibleDuration
+        );
+
+
+        tutorialSequence.Append(
+            tutorialCanvasGroup.DOFade(
+                0f,
+                tutorialFadeOutDuration
+            )
+        );
+
+
+        tutorialSequence.OnComplete(
+            () =>
+            {
+                if (tutorialImage != null)
+                {
+                    tutorialImage.SetActive(false);
+                }
+
+                tutorialSequence = null;
+            }
+        );
+    }
 
     private void EndSolo()
     {
@@ -728,5 +792,11 @@ public class SurvivalManager : MonoBehaviour
         {
             rig.track.SetRunning(false);
         }
+    }
+
+    private void OnDestroy()
+    {
+        tutorialSequence?.Kill();
+        scoreCountTween?.Kill();
     }
 }

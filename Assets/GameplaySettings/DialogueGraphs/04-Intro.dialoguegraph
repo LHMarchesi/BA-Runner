@@ -238,7 +238,7 @@ MonoBehaviour:
     - rid: 2450192685221019905
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 0
+        m_Value: 1
     - rid: 2450192685221019906
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -342,7 +342,7 @@ MonoBehaviour:
     - rid: 6569493235562971757
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 
+        m_Value: L03_OUTRO_CHOICE_0
     - rid: 6569493235562971758
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -472,9 +472,9 @@ MonoBehaviour:
         m_LastKnownBounds:
           serializedVersion: 2
           x: 536
-          y: 705.3333
-          width: 5817.3335
-          height: 300
+          y: 705.6
+          width: 5747.2
+          height: 346.40002
         m_GraphElementMetaData:
         - m_Guid:
             m_Value0: 3059622741841427994
