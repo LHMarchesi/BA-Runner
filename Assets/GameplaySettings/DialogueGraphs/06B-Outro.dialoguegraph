@@ -102,7 +102,7 @@ MonoBehaviour:
     - rid: 122072312406868057
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 0.1
+        m_Value: 0
     - rid: 122072312406868058
       type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -146,7 +146,7 @@ MonoBehaviour:
     - rid: 122072312406868068
       type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: {fileID: 0}
+        m_Value: {fileID: 8300000, guid: b1cbc89e4985a6f48a5191aa23c27c31, type: 3}
     - rid: 122072312406868069
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -158,7 +158,7 @@ MonoBehaviour:
     - rid: 122072312406868071
       type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: {fileID: 0}
+        m_Value: {fileID: 8300000, guid: cc96eed7a83702049b8cea324ec04632, type: 3}
     - rid: 122072312406868072
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -170,7 +170,7 @@ MonoBehaviour:
     - rid: 122072312406868074
       type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: {fileID: 0}
+        m_Value: {fileID: 8300000, guid: c5091f64fa0f37c41906c26704b103f8, type: 3}
     - rid: 122072312406868075
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -182,7 +182,7 @@ MonoBehaviour:
     - rid: 122072312406868077
       type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: {fileID: 0}
+        m_Value: {fileID: 8300000, guid: 510aa19933c33fe4fac978461d4cf8c7, type: 3}
     - rid: 122072312406868078
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -350,7 +350,7 @@ MonoBehaviour:
     - rid: 122072312406868119
       type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: {fileID: 0}
+        m_Value: {fileID: 8300000, guid: 6f4b7924d26565746b842e68a1e56531, type: 3}
     - rid: 122072312406868120
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -362,7 +362,7 @@ MonoBehaviour:
     - rid: 122072312406868122
       type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: {fileID: 0}
+        m_Value: {fileID: 8300000, guid: ea7de7463fb02164398505b381332e4f, type: 3}
     - rid: 122072312406868123
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -374,7 +374,7 @@ MonoBehaviour:
     - rid: 122072312406868125
       type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: {fileID: 0}
+        m_Value: {fileID: 8300000, guid: ef7b5559feee317498d0606e461e72a1, type: 3}
     - rid: 122072312406868126
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -386,7 +386,7 @@ MonoBehaviour:
     - rid: 122072312406868128
       type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: {fileID: 0}
+        m_Value: {fileID: 8300000, guid: a0676099bdcf45d46abfcc873f1c8a75, type: 3}
     - rid: 122072312406868129
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -398,7 +398,7 @@ MonoBehaviour:
     - rid: 122072312406868131
       type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: {fileID: 0}
+        m_Value: {fileID: 8300000, guid: fd91f3f541f50fb4eba38919c2d0bf51, type: 3}
     - rid: 122072312406868132
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -434,7 +434,7 @@ MonoBehaviour:
     - rid: 122072312406868143
       type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: {fileID: 0}
+        m_Value: {fileID: 8300000, guid: 03353fbede6d2974d9dbac3f351b0922, type: 3}
     - rid: 122072312406868144
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -494,7 +494,7 @@ MonoBehaviour:
     - rid: 122072312406868158
       type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: {fileID: 0}
+        m_Value: {fileID: 8300000, guid: f3bef48dd61be5745b161a66984ae950, type: 3}
     - rid: 122072312406868159
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -518,7 +518,7 @@ MonoBehaviour:
     - rid: 122072312406868164
       type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: {fileID: 0}
+        m_Value: {fileID: 8300000, guid: 00776bbb7eb0baf4bb0e6b93f94d142f, type: 3}
     - rid: 122072312406868165
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -530,7 +530,7 @@ MonoBehaviour:
     - rid: 122072312406868167
       type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: {fileID: 0}
+        m_Value: {fileID: 8300000, guid: ccf29de7752bba04ba8159fd0690871d, type: 3}
     - rid: 122072312406868168
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -542,7 +542,7 @@ MonoBehaviour:
     - rid: 122072312406868170
       type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: {fileID: 0}
+        m_Value: {fileID: 8300000, guid: 4d72b819ba52cfb40a1b89519cfaaeb5, type: 3}
     - rid: 122072312406868171
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -566,7 +566,7 @@ MonoBehaviour:
     - rid: 122072312406868176
       type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: {fileID: 0}
+        m_Value: {fileID: 8300000, guid: 122f2cc9c9a2f4a46964a7526b516d50, type: 3}
     - rid: 122072312406868177
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -590,7 +590,7 @@ MonoBehaviour:
     - rid: 122072312406868182
       type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: {fileID: 0}
+        m_Value: {fileID: 8300000, guid: 4d72b819ba52cfb40a1b89519cfaaeb5, type: 3}
     - rid: 122072312406868183
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -638,7 +638,7 @@ MonoBehaviour:
     - rid: 122072312406868194
       type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: {fileID: 0}
+        m_Value: {fileID: 8300000, guid: 9bbb028ac9c174b4a976fb8899ec0cb8, type: 3}
     - rid: 122072312406868195
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -650,7 +650,7 @@ MonoBehaviour:
     - rid: 122072312406868197
       type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: {fileID: 0}
+        m_Value: {fileID: 8300000, guid: 5d5711dccb949374b9f2a3ea6e6f738e, type: 3}
     - rid: 122072312406868198
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -686,7 +686,7 @@ MonoBehaviour:
     - rid: 122072312406868206
       type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: {fileID: 0}
+        m_Value: {fileID: 8300000, guid: 510aa19933c33fe4fac978461d4cf8c7, type: 3}
     - rid: 122072312406868207
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -722,7 +722,7 @@ MonoBehaviour:
     - rid: 122072312406868215
       type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: {fileID: 0}
+        m_Value: {fileID: 8300000, guid: 510aa19933c33fe4fac978461d4cf8c7, type: 3}
     - rid: 122072312406868216
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -758,7 +758,7 @@ MonoBehaviour:
     - rid: 122072312406868224
       type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: {fileID: 0}
+        m_Value: {fileID: 8300000, guid: 510aa19933c33fe4fac978461d4cf8c7, type: 3}
     - rid: 122072312406868225
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -890,7 +890,7 @@ MonoBehaviour:
     - rid: 122072312406868257
       type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: {fileID: 0}
+        m_Value: {fileID: 8300000, guid: b39c3028e143abf41a978ce1a4092701, type: 3}
     - rid: 122072312406868258
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -902,7 +902,7 @@ MonoBehaviour:
     - rid: 122072312406868260
       type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: {fileID: 0}
+        m_Value: {fileID: 8300000, guid: 33d2bd958cc0aa741979e2c28414c3b9, type: 3}
     - rid: 122072312406868261
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -914,7 +914,7 @@ MonoBehaviour:
     - rid: 122072312406868263
       type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: {fileID: 0}
+        m_Value: {fileID: 8300000, guid: 4d72b819ba52cfb40a1b89519cfaaeb5, type: 3}
     - rid: 122072312406868264
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -926,7 +926,7 @@ MonoBehaviour:
     - rid: 122072312406868266
       type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: {fileID: 0}
+        m_Value: {fileID: 8300000, guid: 510aa19933c33fe4fac978461d4cf8c7, type: 3}
     - rid: 122072312406868267
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -938,7 +938,7 @@ MonoBehaviour:
     - rid: 122072312406868269
       type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: {fileID: 0}
+        m_Value: {fileID: 8300000, guid: 3c86f12ebec59a44d8f99aea38b3078c, type: 3}
     - rid: 122072312406868270
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -986,7 +986,7 @@ MonoBehaviour:
     - rid: 122072312406868281
       type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: {fileID: 0}
+        m_Value: {fileID: 8300000, guid: a0676099bdcf45d46abfcc873f1c8a75, type: 3}
     - rid: 122072312406868282
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -1106,7 +1106,7 @@ MonoBehaviour:
     - rid: 122072421933514871
       type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: {fileID: 8300000, guid: 666a2f419ec754246ba5af9cac67be97, type: 3}
+        m_Value: {fileID: 8300000, guid: 0c895da78a6d8fd40941e7bca5727249, type: 3}
     - rid: 122072421933514872
       type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -1275,7 +1275,7 @@ MonoBehaviour:
           serializedVersion: 2
           Hash: b5c9c1a4b7a0100d19a396f9d80217e4
         m_Version: 2
-        m_Position: {x: 8729.831, y: 1038.7637}
+        m_Position: {x: 8756.267, y: 1047.1115}
         m_Title: DialogueNode
         m_Tooltip: 
         m_NodePreviewModel:
@@ -1379,7 +1379,7 @@ MonoBehaviour:
           serializedVersion: 2
           Hash: b8d8c1d03c71ecbdac3782204843afef
         m_Version: 2
-        m_Position: {x: 8236.335, y: 1085.5974}
+        m_Position: {x: 8161.8145, y: 1077.3174}
         m_Title: DialogueNode
         m_Tooltip: 
         m_NodePreviewModel:
@@ -1483,7 +1483,7 @@ MonoBehaviour:
           serializedVersion: 2
           Hash: d75c6b82a1bdf669ead3b226c1b473c3
         m_Version: 2
-        m_Position: {x: 7470.8594, y: 1105.4524}
+        m_Position: {x: 7443.1025, y: 1114.7046}
         m_Title: DialogueNode
         m_Tooltip: 
         m_NodePreviewModel:
@@ -1683,7 +1683,7 @@ MonoBehaviour:
     - rid: 122072421933515090
       type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: {fileID: 0}
+        m_Value: {fileID: 8300000, guid: 446d8f01ccda7d84c82bcec1ad85a9c8, type: 3}
     - rid: 122072421933515091
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -1745,7 +1745,7 @@ MonoBehaviour:
     - rid: 122072421933515106
       type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: {fileID: 0}
+        m_Value: {fileID: 8300000, guid: 2d878ac11b100224a99cf6d4380795cc, type: 3}
     - rid: 122072421933515107
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -1776,7 +1776,7 @@ MonoBehaviour:
     - rid: 122072421933515114
       type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: {fileID: 0}
+        m_Value: {fileID: 8300000, guid: f40354b588975454a8c2bbd5bc4eaf98, type: 3}
     - rid: 122072421933515115
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -1807,7 +1807,7 @@ MonoBehaviour:
     - rid: 122072421933515122
       type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: {fileID: 0}
+        m_Value: {fileID: 8300000, guid: 4b17cb22146e3174581d72ac65e66cdb, type: 3}
     - rid: 122072421933515123
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -1838,7 +1838,7 @@ MonoBehaviour:
     - rid: 122072421933515130
       type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: {fileID: 0}
+        m_Value: {fileID: 8300000, guid: 33d2bd958cc0aa741979e2c28414c3b9, type: 3}
     - rid: 122072421933515131
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -2375,7 +2375,7 @@ MonoBehaviour:
     - rid: 122072421933515190
       type: {class: 'Constant`1[[UnityEngine.AudioClip, UnityEngine.AudioModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: {fileID: 0}
+        m_Value: {fileID: 8300000, guid: ae5d1441d5ee1ce46b73651b31acf713, type: 3}
     - rid: 122072421933515191
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -2987,7 +2987,7 @@ MonoBehaviour:
           serializedVersion: 2
           Hash: 343936a7b18de914e73a87d66af3394e
         m_Version: 2
-        m_Position: {x: -5076, y: 815.3333}
+        m_Position: {x: -5076, y: 814.53326}
         m_Title: DialogueNode
         m_Tooltip: 
         m_NodePreviewModel:
@@ -3810,7 +3810,7 @@ MonoBehaviour:
           serializedVersion: 2
           Hash: 098b7a97b451071c2bd383319a7ffa65
         m_Version: 2
-        m_Position: {x: -7404, y: 894.6666}
+        m_Position: {x: -7500.8, y: 892.26666}
         m_Title: DialogueNode
         m_Tooltip: 
         m_NodePreviewModel:
@@ -4346,7 +4346,7 @@ MonoBehaviour:
           serializedVersion: 2
           Hash: ec2cde12a23a69b17eaf608063c4199a
         m_Version: 2
-        m_Position: {x: 10676.891, y: 163.11633}
+        m_Position: {x: 10656.789, y: 165.2323}
         m_Title: DialogueNode
         m_Tooltip: 
         m_NodePreviewModel:
@@ -4398,7 +4398,7 @@ MonoBehaviour:
           serializedVersion: 2
           Hash: 8ad8b3202451f4ab656df7398c57df4b
         m_Version: 2
-        m_Position: {x: 11023.29, y: 139.11621}
+        m_Position: {x: 10928.07, y: 142.29019}
         m_Title: DialogueNode
         m_Tooltip: 
         m_NodePreviewModel:
@@ -4450,7 +4450,7 @@ MonoBehaviour:
           serializedVersion: 2
           Hash: 7045468031f02bf8f24d0fccfaa3f99e
         m_Version: 2
-        m_Position: {x: 10347.29, y: 173.51624}
+        m_Position: {x: 10319.782, y: 173.51624}
         m_Title: DialogueNode
         m_Tooltip: 
         m_NodePreviewModel:
@@ -4866,7 +4866,7 @@ MonoBehaviour:
           serializedVersion: 2
           Hash: a91c66a3911715afc944b492f1881590
         m_Version: 2
-        m_Position: {x: 8018.3604, y: 257.20325}
+        m_Position: {x: 8021.535, y: 250.85529}
         m_Title: DialogueNode
         m_Tooltip: 
         m_NodePreviewModel:
@@ -6753,7 +6753,7 @@ MonoBehaviour:
           serializedVersion: 2
           Hash: ca6cde80334def63123b8d31912ba14f
         m_Version: 2
-        m_Position: {x: 11037.889, y: 553.0489}
+        m_Position: {x: 11114.541, y: 561.5658}
         m_Title: DialogueNode
         m_Tooltip: 
         m_NodePreviewModel:
@@ -6857,7 +6857,7 @@ MonoBehaviour:
           serializedVersion: 2
           Hash: acdeeb4ee8b9c834cd275dbd369ccac6
         m_Version: 2
-        m_Position: {x: 11344.043, y: 547.4489}
+        m_Position: {x: 11493.697, y: 551.099}
         m_Title: DialogueNode
         m_Tooltip: 
         m_NodePreviewModel:
@@ -6909,7 +6909,7 @@ MonoBehaviour:
           serializedVersion: 2
           Hash: b582b31a204c04fa6bad784136aac363
         m_Version: 2
-        m_Position: {x: 9706, y: 647.3333}
+        m_Position: {x: 9706, y: 644.15936}
         m_Title: DialogueNode
         m_Tooltip: 
         m_NodePreviewModel:
@@ -7013,7 +7013,7 @@ MonoBehaviour:
           serializedVersion: 2
           Hash: 9f1b0a0b22bb2c3c322cf927007063d8
         m_Version: 2
-        m_Position: {x: 10054.215, y: 643.7849}
+        m_Position: {x: 10055.135, y: 643.7849}
         m_Title: DialogueNode
         m_Tooltip: 
         m_NodePreviewModel:
@@ -7830,7 +7830,7 @@ MonoBehaviour:
           serializedVersion: 2
           Hash: 7192c102e062091dcab38348be7088b4
         m_Version: 2
-        m_Position: {x: 11655.333, y: 540.6665}
+        m_Position: {x: 11804.987, y: 544.3166}
         m_Title: 
         m_Tooltip: 
         m_NodePreviewModel:
@@ -9477,19 +9477,19 @@ MonoBehaviour:
     - rid: 6569493235562971146
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 0
+        m_Value: 0.6
     - rid: 6569493235562971147
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 0
+        m_Value: 0.6
     - rid: 6569493235562971148
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 0
+        m_Value: 0.6
     - rid: 6569493235562971149
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 0
+        m_Value: 0.8
     - rid: 6569493235562971150
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -9545,23 +9545,23 @@ MonoBehaviour:
     - rid: 6569493235562971163
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 0
+        m_Value: 0.6
     - rid: 6569493235562971164
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 0
+        m_Value: 0.8
     - rid: 6569493235562971165
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 0
+        m_Value: 0.6
     - rid: 6569493235562971166
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 0
+        m_Value: 0.6
     - rid: 6569493235562971167
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 0
+        m_Value: 0.6
     - rid: 6569493235562971168
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -9569,7 +9569,7 @@ MonoBehaviour:
     - rid: 6569493235562971169
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 0
+        m_Value: 0.8
     - rid: 6569493235562971170
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -9589,7 +9589,7 @@ MonoBehaviour:
     - rid: 6569493235562971174
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 0
+        m_Value: 0.8
     - rid: 6569493235562971175
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -9597,15 +9597,15 @@ MonoBehaviour:
     - rid: 6569493235562971176
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 0
+        m_Value: 0.8
     - rid: 6569493235562971177
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 0
+        m_Value: 0.6
     - rid: 6569493235562971178
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 0
+        m_Value: 0.7
     - rid: 6569493235562971179
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -9613,7 +9613,7 @@ MonoBehaviour:
     - rid: 6569493235562971180
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 0
+        m_Value: 1
     - rid: 6569493235562971181
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -9621,7 +9621,7 @@ MonoBehaviour:
     - rid: 6569493235562971182
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 0
+        m_Value: 0.8
     - rid: 6569493235562971183
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -9637,11 +9637,11 @@ MonoBehaviour:
     - rid: 6569493235562971186
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 0
+        m_Value: 0.8
     - rid: 6569493235562971187
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 0
+        m_Value: 0.8
     - rid: 6569493235562971188
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -9653,7 +9653,7 @@ MonoBehaviour:
     - rid: 6569493235562971190
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 0
+        m_Value: 0.6
     - rid: 6569493235562971191
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -9665,7 +9665,7 @@ MonoBehaviour:
     - rid: 6569493235562971193
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 0
+        m_Value: 0.8
     - rid: 6569493235562971194
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -9677,7 +9677,7 @@ MonoBehaviour:
     - rid: 6569493235562971196
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 0
+        m_Value: 0.8
     - rid: 6569493235562971197
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -9721,23 +9721,23 @@ MonoBehaviour:
     - rid: 6569493235562971207
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 0
+        m_Value: 0.8
     - rid: 6569493235562971208
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 0
+        m_Value: 1
     - rid: 6569493235562971209
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 0
+        m_Value: 0.8
     - rid: 6569493235562971210
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 0
+        m_Value: 1
     - rid: 6569493235562971211
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 0
+        m_Value: 1
     - rid: 6569493235562971212
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -9753,7 +9753,7 @@ MonoBehaviour:
     - rid: 6569493235562971215
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 0
+        m_Value: 0.8
     - rid: 6569493235562971216
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -9769,7 +9769,7 @@ MonoBehaviour:
     - rid: 6569493235562971219
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 0
+        m_Value: 0.4
     - rid: 6569493235562971220
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -9777,19 +9777,19 @@ MonoBehaviour:
     - rid: 6569493235562971221
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 0
+        m_Value: 1
     - rid: 6569493235562971222
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 0
+        m_Value: 1
     - rid: 6569493235562971223
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 0
+        m_Value: 1
     - rid: 6569493235562971224
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 0
+        m_Value: 1
     - rid: 6569493235562971225
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -9801,7 +9801,7 @@ MonoBehaviour:
     - rid: 6569493235562971227
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 0
+        m_Value: 1
     - rid: 6569493235562971228
       type: {class: 'Constant`1[[System.Single, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -10404,10 +10404,10 @@ MonoBehaviour:
         m_LocalSubgraphs: []
         m_LastKnownBounds:
           serializedVersion: 2
-          x: -7610
-          y: 85
-          width: 21920
-          height: 1275
+          x: -7609.6
+          y: 84.799995
+          width: 21921.6
+          height: 1331.9999
         m_GraphElementMetaData:
         - m_Guid:
             m_Value0: 6559827748066362906
@@ -12497,7 +12497,7 @@ MonoBehaviour:
           serializedVersion: 2
           Hash: 4bd8a4a9ed383ba3326c16c97105a8b6
         m_Version: 2
-        m_Position: {x: 2077.4229, y: 701.72656}
+        m_Position: {x: 2241.6772, y: 704.16}
         m_Title: DialogueNode
         m_Tooltip: 
         m_NodePreviewModel:
@@ -13321,7 +13321,7 @@ MonoBehaviour:
           serializedVersion: 2
           Hash: 230df2dc62aae130b31266b1d8321f3e
         m_Version: 2
-        m_Position: {x: 4672.6665, y: 708.6666}
+        m_Position: {x: 4659.2827, y: 707.4499}
         m_Title: DialogueNode
         m_Tooltip: 
         m_NodePreviewModel:
@@ -13424,7 +13424,7 @@ MonoBehaviour:
           serializedVersion: 2
           Hash: 4cc08f520e1d5f6f2efab5e8d44200d6
         m_Version: 2
-        m_Position: {x: 4972, y: 720.6666}
+        m_Position: {x: 4956.183, y: 720.6666}
         m_Title: DialogueNode
         m_Tooltip: 
         m_NodePreviewModel:
