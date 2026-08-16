@@ -7893,8 +7893,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FullscreenToggle
   iconImage: {fileID: 169812546}
-  fullscreenIcon: {fileID: 21300000, guid: 8d87096bda14c3f4b9c1ba1cfe31f80f, type: 3}
-  windowedIcon: {fileID: 21300000, guid: f9185607a9bc15449baa27f4459da9a1, type: 3}
+  fullscreenIcon: {fileID: 21300000, guid: f9185607a9bc15449baa27f4459da9a1, type: 3}
+  windowedIcon: {fileID: 21300000, guid: 8d87096bda14c3f4b9c1ba1cfe31f80f, type: 3}
 --- !u!222 &1312282893
 CanvasRenderer:
   m_ObjectHideFlags: 0
