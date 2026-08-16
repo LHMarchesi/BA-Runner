@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: 627f56ded38fef942961184f115c3e31
+guid: e0c118580d33b2348bf2341b2b0277b8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6424889891442532904
-    second: Layer_2_0
-  - first:
-      213: 6283109615319886965
-    second: Layer_2_1
-  - first:
-      213: -222009130528700703
-    second: Layer_2_2
+      213: 3982783276288007001
+    second: Creditos_es_24_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,9 +40,9 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
-    wrapW: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -102,29 +96,16 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Layer_2_0
+      name: Creditos_es_24_0
       rect:
         serializedVersion: 2
-        x: 59
+        x: 0
         y: 0
-        width: 395
+        width: 1920
         height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -134,52 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8222e64d05bc92950800000000000000
-      internalID: 6424889891442532904
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Layer_2_1
-      rect:
-        serializedVersion: 2
-        x: 2116
-        y: 369
-        width: 486
-        height: 678
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 57cabf1e7e6123750800000000000000
-      internalID: 6283109615319886965
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Layer_2_2
-      rect:
-        serializedVersion: 2
-        x: 3113
-        y: 75
-        width: 540
-        height: 1005
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1e681fd3fd34becf0800000000000000
-      internalID: -222009130528700703
+      spriteID: 95b5380c940b54730800000000000000
+      internalID: 3982783276288007001
       vertices: []
       indices: 
       edges: []
@@ -198,9 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Layer_2_0: 6424889891442532904
-      Layer_2_1: 6283109615319886965
-      Layer_2_2: -222009130528700703
+      Creditos_es_24_0: 3982783276288007001
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
