@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
@@ -17,6 +17,7 @@ public class AudioManager : MonoBehaviour
     [Header("Default Music")]
     [SerializeField] public AudioClip menuMusicClip;
     [SerializeField] public AudioClip survivalSong;
+    [SerializeField] public AudioClip creditsMusicClip;
 
     private void Awake()
     {
@@ -37,7 +38,7 @@ public class AudioManager : MonoBehaviour
         if (musicSource == null)
         {
             Debug.LogError(
-                "[AudioManager] Music Source no está asignado."
+                "[AudioManager] Music Source no estï¿½ asignado."
             );
         }
         else
@@ -57,7 +58,7 @@ public class AudioManager : MonoBehaviour
         if (sfxSource == null)
         {
             Debug.LogError(
-                "[AudioManager] SFX Source no está asignado."
+                "[AudioManager] SFX Source no estï¿½ asignado."
             );
         }
         else
@@ -86,16 +87,13 @@ public class AudioManager : MonoBehaviour
         if (dialogueSFXSource == null)
         {
             Debug.LogWarning(
-                "[AudioManager] Dialogue SFX Source no está asignado."
+                "[AudioManager] Dialogue SFX Source no estï¿½ asignado."
             );
 
             return;
         }
 
-        /*
-         * Cada nodo solo tiene un SFX activo.
-         * Si por alguna razón había otro, lo reemplazamos.
-         */
+
         dialogueSFXSource.Stop();
 
         dialogueSFXSource.pitch =

@@ -5218,6 +5218,7 @@ MonoBehaviour:
   controlMusic: {fileID: 8514146554345873774, guid: 7090130030bced44da79a139daced72e, type: 2}
   menuMusicClip: {fileID: 8300000, guid: cf69d1b0038e01248b5d344c2b8d756c, type: 3}
   survivalSong: {fileID: 8300000, guid: 5f58d3cfcbbddb44f96c31fa7c0250ff, type: 3}
+  creditsMusicClip: {fileID: 8300000, guid: e2fba792d1b2c64459d6ca690c5ec69a, type: 3}
 --- !u!4 &907675715
 Transform:
   m_ObjectHideFlags: 0
