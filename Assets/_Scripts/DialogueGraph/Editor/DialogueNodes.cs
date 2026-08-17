@@ -68,10 +68,11 @@ public class ChoiceNode : Node
         context.AddInputPort<string>("Dialogue").Build();
         context.AddInputPort<Sprite>("Image").Build();
 
-
+        
         // Audio
         context.AddInputPort<AudioClip>("Music").Build();
         context.AddInputPort<AudioClip>("Sound Effect").Build();
+
 
         context
             .AddInputPort<float>("Sound Effect Delay")
@@ -87,6 +88,7 @@ public class ChoiceNode : Node
 
         for (int i = 0; i < portCount; i++)
         {
+
             context
                 .AddInputPort<string>(
                     $"Choice {i} Text"
@@ -104,6 +106,9 @@ public class ChoiceNode : Node
                     $"Choice {i} ClearFlags"
                 )
                 .Build();
+
+            context.AddInputPort<bool>($"Choice {i} Ends Cinematic").Build();
+
 
             context
                 .AddOutputPort(

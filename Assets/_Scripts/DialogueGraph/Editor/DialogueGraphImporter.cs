@@ -75,34 +75,105 @@ public class DialogueGraphImporter : ScriptedImporter
     }
 
 
-    private void ProcessChoiceNode(ChoiceNode node, RuntimeDialogueNode runtimeNode, Dictionary<INode, string> nodeIDMap)
+    private void ProcessChoiceNode(
+    ChoiceNode node,
+    RuntimeDialogueNode runtimeNode,
+    Dictionary<INode, string> nodeIDMap
+)
     {
-        runtimeNode.SpeakerName = GetPortValue<string>(node.GetInputPortByName("Speaker"));
-        runtimeNode.DialogueText = GetPortValue<string>(node.GetInputPortByName("Dialogue"));
-        runtimeNode.Image = GetPortValue<Sprite>(node.GetInputPortByName("Image"));
+        runtimeNode.SpeakerName =
+            GetPortValue<string>(
+                node.GetInputPortByName("Speaker")
+            );
 
-        var choiceOutputPorts = node.GetOutputPorts().Where(p => p.name.StartsWith("Choice "));
+        runtimeNode.DialogueText =
+            GetPortValue<string>(
+                node.GetInputPortByName("Dialogue")
+            );
+
+        runtimeNode.Image =
+            GetPortValue<Sprite>(
+                node.GetInputPortByName("Image")
+            );
+
+
+        var choiceOutputPorts =
+            node.GetOutputPorts()
+                .Where(
+                    p => p.name.StartsWith("Choice ")
+                );
+
 
         foreach (var outputPort in choiceOutputPorts)
         {
-            var index = outputPort.name.Substring("Choice ".Length);
+            var index =
+                outputPort.name.Substring(
+                    "Choice ".Length
+                );
 
-            var textPort = node.GetInputPortByName($"Choice {index} Text");
-            var flagsPort = node.GetInputPortByName($"Choice {index} Flags");       // nuevo
-            var clearFlagsPort = node.GetInputPortByName($"Choice {index} ClearFlags"); // nuevo
 
-            var choiceData = new ChoiceData
-            {
-                ChoiceText = GetPortValue<string>(textPort),
-                DestinationNodeID = outputPort.firstConnectedPort != null
-                                        ? nodeIDMap[outputPort.firstConnectedPort.GetNode()]
-                                        : null,
+            var textPort =
+                node.GetInputPortByName(
+                    $"Choice {index} Text"
+                );
 
-                FlagsToSet = ParseFlags(GetPortValue<string>(flagsPort)),
-                FlagsToClear = ParseFlags(GetPortValue<string>(clearFlagsPort)),
-            };
+            var flagsPort =
+                node.GetInputPortByName(
+                    $"Choice {index} Flags"
+                );
 
-            runtimeNode.Choices.Add(choiceData);
+            var clearFlagsPort =
+                node.GetInputPortByName(
+                    $"Choice {index} ClearFlags"
+                );
+
+            var endsCinematicPort =
+                node.GetInputPortByName(
+                    $"Choice {index} Ends Cinematic"
+                );
+
+
+            var choiceData =
+                new ChoiceData
+                {
+                    ChoiceText =
+                        GetPortValue<string>(
+                            textPort
+                        ),
+
+                    DestinationNodeID =
+                        outputPort.firstConnectedPort != null
+                            ? nodeIDMap[
+                                outputPort
+                                    .firstConnectedPort
+                                    .GetNode()
+                            ]
+                            : null,
+
+                    FlagsToSet =
+                        ParseFlags(
+                            GetPortValue<string>(
+                                flagsPort
+                            )
+                        ),
+
+                    FlagsToClear =
+                        ParseFlags(
+                            GetPortValue<string>(
+                                clearFlagsPort
+                            )
+                        ),
+
+                    EndsCinematic =
+                        GetPortValue<bool>(
+                            endsCinematicPort
+                        )
+                };
+
+
+            runtimeNode.Choices.Add(
+                choiceData
+            );
         }
     }
 

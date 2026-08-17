@@ -481,6 +481,15 @@ public class DialogueManager : MonoBehaviour
                     );
                 }
 
+                if (capturedChoice.EndsCinematic)
+                {
+                    FinishAfterChoice(
+                        capturedChoice
+                    );
+
+                    return;
+                }
+
                 AdvanceNodeByChoice(capturedChoice);
             });
         }
@@ -1433,6 +1442,69 @@ public class DialogueManager : MonoBehaviour
         {
             EventSystem.current.SetSelectedGameObject(null);
         }
+    }
+
+    private void FinishAfterChoice(
+    ChoiceData choice
+)
+    {
+        Debug.Log(
+            $"[Choice] '{choice.ChoiceText}' " +
+            "termina la cinemática y avanza al siguiente nivel."
+        );
+
+        StopAutoAdvance();
+        StopPendingNodeSound();
+        StopCurrentNodeSFX();
+
+        ClearChoiceButtons();
+
+        ChooseOptionText.gameObject.SetActive(false);
+
+        currentNode = null;
+        dialogueEnded = true;
+         
+        /*
+         * No mostramos Continue.
+         */
+        continueButton.gameObject.SetActive(false);
+        continueButton.interactable = false;
+
+        /*
+         * Permitimos que la transición ocurra.
+         */
+        isTransitioning = true;
+
+        /*
+         * Esta cinemática es un OUTRO.
+         *
+         * AdvanceLevel():
+         * 1. evalúa flags
+         * 2. cambia CurrentLevel
+         * 3. carga Cinematics del siguiente nivel
+         * 4. IsOutro = false
+         */
+        if (isOutro)
+        {
+            if (ProgressionManager.Instance == null)
+            {
+                Debug.LogError(
+                    "[Dialogue] ProgressionManager.Instance es null."
+                );
+
+                isTransitioning = false;
+                return;
+            }
+
+            ProgressionManager.Instance.AdvanceLevel();
+            return;
+        }
+
+        /*
+         * Si alguna vez usamos una Choice que termina
+         * una intro, simplemente vamos a Gameplay.
+         */
+        LoadGameplay();
     }
 
     private void OnDestroy()

@@ -987,6 +987,14 @@ MonoBehaviour:
       type: {class: 'Constant`1[[System.Int32, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
         m_Value: 0
+    - rid: 122072580010803278
+      type: {class: 'Constant`1[[System.Boolean, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072580010803279
+      type: {class: 'Constant`1[[System.Boolean, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
     - rid: 2450192437645934592
       type: {class: UserNodeModelImp, ns: Unity.GraphToolkit.Editor.Implementation, asm: Unity.GraphToolkit.Editor}
       data:
@@ -7519,6 +7527,8 @@ MonoBehaviour:
           - Sound Effect Delay
           - Choice 0 Min Stars
           - Choice 1 Min Stars
+          - Choice 0 Ends Cinematic
+          - Choice 1 Ends Cinematic
           m_ValueList:
           - rid: 4255477660058648578
           - rid: 4255477660058648579
@@ -7535,6 +7545,8 @@ MonoBehaviour:
           - rid: 122072312406868904
           - rid: 122072421933514839
           - rid: 122072421933514840
+          - rid: 122072580010803278
+          - rid: 122072580010803279
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []

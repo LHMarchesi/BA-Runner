@@ -307,6 +307,18 @@ MonoBehaviour:
       type: {class: 'Constant`1[[System.Int32, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
         m_Value: 5
+    - rid: 122072580010803284
+      type: {class: 'Constant`1[[System.Boolean, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072580010803285
+      type: {class: 'Constant`1[[System.Boolean, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
+    - rid: 122072580010803286
+      type: {class: 'Constant`1[[System.Boolean, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 0
     - rid: 2450192438280323330
       type: {class: UserNodeModelImp, ns: Unity.GraphToolkit.Editor.Implementation, asm: Unity.GraphToolkit.Editor}
       data:
@@ -425,6 +437,9 @@ MonoBehaviour:
           - Choice 0 Min Stars
           - Choice 1 Min Stars
           - Choice 2 Min Stars
+          - Choice 0 Ends Cinematic
+          - Choice 1 Ends Cinematic
+          - Choice 2 Ends Cinematic
           m_ValueList:
           - rid: 2901927426414346316
           - rid: 2901927426414346317
@@ -445,6 +460,9 @@ MonoBehaviour:
           - rid: 122072421933514834
           - rid: 122072421933514835
           - rid: 122072421933514836
+          - rid: 122072580010803284
+          - rid: 122072580010803285
+          - rid: 122072580010803286
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
