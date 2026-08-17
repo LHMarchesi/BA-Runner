@@ -67,47 +67,81 @@ public class SurvivalManager : MonoBehaviour
     // START
     // =========================================================
 
-    private void Start()
+  private void Start()
+{
+    mode = SurvivalRunConfig.SelectedMode;
+
+    PlayTutorialFade();
+
+    if (gameOverPanel != null)
     {
-        mode =
-        SurvivalRunConfig.SelectedMode;
-        PlayTutorialFade();
-        if (gameOverPanel != null)
-        {
-            gameOverPanel.SetActive(false);
-        }
-        reviveProgress =
-            new int[players.Length];
-
-        isReviving =
-            new bool[players.Length];
-
-        for (int i = 0; i < players.Length; i++)
-        {
-            int index = i;
-
-            players[i].player.Died +=
-                player =>
-                    HandlePlayerDeath(index);
-
-            players[i].track.StageCompleted +=
-                track =>
-                    HandleStageCompleted(index);
-
-            HideDeathOverlay(index);
-
-            players[i].track.StartRun();
-        }
-
-        UpdateAllHUD();
-
-        if (GameManager.Instance != null)
-        {
-            GameManager.Instance.ChangeState(
-                GameState.Survival
-            );
-        }
+        gameOverPanel.SetActive(false);
     }
+
+    if (players == null)
+    {
+        Debug.LogError("[SurvivalManager] Players array no está asignado.");
+        return;
+    }
+
+    reviveProgress = new int[players.Length];
+    isReviving = new bool[players.Length];
+
+    for (int i = 0; i < players.Length; i++)
+    {
+        int index = i;
+
+        SurvivalPlayerRig rig = players[i];
+
+        if (rig == null)
+        {
+            Debug.LogWarning(
+                $"[SurvivalManager] Player Rig {i} está vacío."
+            );
+
+            continue;
+        }
+
+        if (rig.player == null)
+        {
+            Debug.LogError(
+                $"[SurvivalManager] Player {i + 1} no tiene PlayerController asignado."
+            );
+
+            continue;
+        }
+
+        if (rig.track == null)
+        {
+            Debug.LogError(
+                $"[SurvivalManager] Player {i + 1} no tiene SurvivalTrackController asignado."
+            );
+
+            continue;
+        }
+
+        rig.player.Died +=
+            player =>
+                HandlePlayerDeath(index);
+
+        rig.track.StageCompleted +=
+            track =>
+                HandleStageCompleted(index);
+
+        HideDeathOverlay(index);
+
+        rig.track.StartRun();
+    }
+
+    UpdateAllHUD();
+
+    if (GameManager.Instance != null)
+    {
+        GameManager.Instance.ChangeState(
+            GameState.Survival
+        );
+    }
+}
 
 
     // =========================================================
@@ -122,50 +156,78 @@ public class SurvivalManager : MonoBehaviour
         UpdateAllHUD();
     }
 
-    private void UpdateAllHUD()
+ private void UpdateAllHUD()
+{
+    int teamScore = 0;
+
+    if (players == null)
+        return;
+
+    for (int i = 0; i < players.Length; i++)
     {
-        int teamScore = 0;
+        SurvivalPlayerRig rig = players[i];
 
-        for (int i = 0; i < players.Length; i++)
+        // Seguridad: slot vacío en el array
+        if (rig == null)
+            continue;
+
+        // -------------------------
+        // SCORE
+        // -------------------------
+
+        if (rig.score != null)
         {
-            SurvivalPlayerRig rig =
-                players[i];
-
-            if (rig.score == null)
-                continue;
-
             if (rig.scoreText != null)
             {
                 rig.scoreText.text =
                     $"SCORE {rig.score.Score}";
             }
 
-            if (rig.stageText != null)
-            {
-                rig.stageText.text =
-                    $"STAGE {rig.track.TotalStagesCompleted + 1}";
-            }
-
-            if (rig.distanceToStageText != null && rig.track != null)
-            {
-                int distance =
-                    Mathf.CeilToInt(
-                        rig.track.DistanceToNextStage
-                    );
-
-                rig.distanceToStageText.text =
-                    $"NEXT STAGE {distance}";
-            }
-
             teamScore += rig.score.Score;
         }
 
-        if (teamScoreText != null)
+        // -------------------------
+        // STAGE
+        // -------------------------
+
+        if (
+            rig.stageText != null &&
+            rig.track != null
+        )
         {
-            teamScoreText.text =
-                $"TEAM SCORE {teamScore}";
+            rig.stageText.text =
+                $"STAGE {rig.track.TotalStagesCompleted + 1}";
+        }
+
+        // -------------------------
+        // DISTANCE
+        // -------------------------
+
+        if (
+            rig.distanceToStageText != null &&
+            rig.track != null
+        )
+        {
+            int distance =
+                Mathf.CeilToInt(
+                    rig.track.DistanceToNextStage
+                );
+
+            rig.distanceToStageText.text =
+                $"NEXT STAGE {distance}";
         }
     }
+
+    // -------------------------
+    // TEAM SCORE
+    // -------------------------
+
+    if (teamScoreText != null)
+    {
+        teamScoreText.text =
+            $"TEAM SCORE {teamScore}";
+    }
+}
 
 
     // =========================================================
