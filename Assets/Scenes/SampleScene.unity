@@ -3071,6 +3071,7 @@ GameObject:
   - component: {fileID: 399122808}
   - component: {fileID: 399122807}
   - component: {fileID: 399122806}
+  - component: {fileID: 399122809}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -3163,6 +3164,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 399122804}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &399122809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399122804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a077b55f7a95732459dd32d1d1f38dd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BackgroundFitToCamera
+  targetCamera: {fileID: 519420031}
+  widthPadding: 1.05
+  heightPadding: 1.05
 --- !u!1 &468057995
 GameObject:
   m_ObjectHideFlags: 0
@@ -5546,6 +5562,8 @@ GameObject:
   - component: {fileID: 943826868}
   - component: {fileID: 943826867}
   - component: {fileID: 943826866}
+  - component: {fileID: 943826869}
+  - component: {fileID: 943826870}
   m_Layer: 5
   m_Name: Layer 3 Parallax
   m_TagString: Untagged
@@ -5638,6 +5656,36 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 943826864}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &943826869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943826864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a077b55f7a95732459dd32d1d1f38dd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BackgroundFitToCamera
+  targetCamera: {fileID: 519420031}
+  widthPadding: 1.05
+  heightPadding: 1.05
+--- !u!114 &943826870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943826864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a077b55f7a95732459dd32d1d1f38dd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BackgroundFitToCamera
+  targetCamera: {fileID: 0}
+  widthPadding: 1.05
+  heightPadding: 1.05
 --- !u!1 &994111834
 GameObject:
   m_ObjectHideFlags: 0
@@ -6319,6 +6367,8 @@ GameObject:
   - component: {fileID: 1198380209}
   - component: {fileID: 1198380208}
   - component: {fileID: 1198380207}
+  - component: {fileID: 1198380210}
+  - component: {fileID: 1198380211}
   m_Layer: 5
   m_Name: Layer 2 Parallax
   m_TagString: Untagged
@@ -6411,6 +6461,36 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1198380205}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1198380210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198380205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a077b55f7a95732459dd32d1d1f38dd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BackgroundFitToCamera
+  targetCamera: {fileID: 519420031}
+  widthPadding: 1.05
+  heightPadding: 1.05
+--- !u!114 &1198380211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198380205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a077b55f7a95732459dd32d1d1f38dd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BackgroundFitToCamera
+  targetCamera: {fileID: 0}
+  widthPadding: 1.05
+  heightPadding: 1.05
 --- !u!1 &1199130219
 GameObject:
   m_ObjectHideFlags: 0
@@ -10051,6 +10131,8 @@ GameObject:
   - component: {fileID: 1923042095}
   - component: {fileID: 1923042094}
   - component: {fileID: 1923042093}
+  - component: {fileID: 1923042096}
+  - component: {fileID: 1923042097}
   m_Layer: 5
   m_Name: Layer 1 Parallax
   m_TagString: Untagged
@@ -10143,6 +10225,36 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1923042091}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1923042096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1923042091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a077b55f7a95732459dd32d1d1f38dd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  targetCamera: {fileID: 519420031}
+  widthPadding: 1.05
+  heightPadding: 1.05
+--- !u!114 &1923042097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1923042091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a077b55f7a95732459dd32d1d1f38dd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BackgroundFitToCamera
+  targetCamera: {fileID: 0}
+  widthPadding: 1.05
+  heightPadding: 1.05
 --- !u!1 &1929279377
 GameObject:
   m_ObjectHideFlags: 0
