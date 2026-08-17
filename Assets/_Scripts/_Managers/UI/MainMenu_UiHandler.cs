@@ -1,5 +1,6 @@
 ﻿using DG.Tweening;
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -26,6 +27,19 @@ public class MainMenu_UiHandler : MonoBehaviour
 
     [SerializeField]
     private RawImage modeSelectRawImage;
+
+
+    // =========================================================
+    // VIDEO LOADING IMAGES
+    // =========================================================
+
+    [Header("Video Loading Images")]
+    [SerializeField]
+    private Image firstVideoLoadingImage;
+    [SerializeField] private TextMeshProUGUI firstVideoLoadingText;
+    [SerializeField] private float loadingDotsInterval = 0.4f;
+    [SerializeField]
+    private Image modeVideoLoadingImage;
 
 
     // =========================================================
@@ -211,25 +225,117 @@ public class MainMenu_UiHandler : MonoBehaviour
 
             survivalMenuGroup.blocksRaycasts = false;
         }
+
+
+        // -----------------------------------------------------
+        // LOADING IMAGES
+        // -----------------------------------------------------
+
+        /*
+         * El primer placeholder es visible
+         * desde el inicio.
+         */
+        if (firstVideoLoadingImage != null)
+        {
+            firstVideoLoadingImage
+                .gameObject
+                .SetActive(true);
+
+            SetImageAlpha(
+                firstVideoLoadingImage,
+                1f
+            );
+        }
+
+
+        /*
+         * El segundo solamente aparece cuando
+         * vamos a utilizar el segundo video.
+         */
+        if (modeVideoLoadingImage != null)
+        {
+            modeVideoLoadingImage
+                .gameObject
+                .SetActive(false);
+
+            SetImageAlpha(
+                modeVideoLoadingImage,
+                1f
+            );
+        }
     }
 
 
     // =========================================================
     // VIDEOS
     // =========================================================
+    private IEnumerator LoadingDotsRoutine(
+    TextMeshProUGUI text
+)
+    {
+        int dots = 0;
+
+        while (text != null)
+        {
+            dots++;
+
+            if (dots > 3)
+                dots = 1;
+
+            text.text =
+                "CARGANDO" +
+                new string('.', dots);
+
+            yield return new WaitForSeconds(
+                loadingDotsInterval
+            );
+        }
+    }
+    private void StartLoadingAnimation(
+    TextMeshProUGUI text,
+    ref Coroutine coroutine
+)
+    {
+        if (text == null)
+            return;
+
+        if (coroutine != null)
+        {
+            StopCoroutine(coroutine);
+        }
+
+        text.gameObject.SetActive(true);
+
+        coroutine =
+            StartCoroutine(
+                LoadingDotsRoutine(text)
+            );
+    }
+    private void StopLoadingAnimation(
+    TextMeshProUGUI text,
+    ref Coroutine coroutine
+)
+    {
+        if (coroutine != null)
+        {
+            StopCoroutine(coroutine);
+            coroutine = null;
+        }
+
+        if (text != null)
+        {
+            text.gameObject.SetActive(false);
+        }
+    }
 
     private void PrepareVideos()
     {
-        PrepareVideo(
-            firstBackgroundVideo,
-            firstBackgroundRawImage
-        );
-
-        PrepareVideo(
-            modeSelectVideo,
-            modeSelectRawImage
-        );
-
+        /*
+         * IMPORTANTE:
+         *
+         * Primero asignamos las URLs.
+         * Después llamamos Prepare().
+         */
 
         if (firstBackgroundVideo != null)
         {
@@ -242,6 +348,34 @@ public class MainMenu_UiHandler : MonoBehaviour
         {
             modeSelectVideo.url =
                 modeSelectVideoURL;
+        }
+
+
+        PrepareVideo(
+            firstBackgroundVideo,
+            firstBackgroundRawImage
+        );
+
+
+        PrepareVideo(
+            modeSelectVideo,
+            modeSelectRawImage
+        );
+
+
+        /*
+         * Empezamos a preparar ambos videos
+         * inmediatamente.
+         */
+        if (firstBackgroundVideo != null)
+        {
+            firstBackgroundVideo.Prepare();
+        }
+
+
+        if (modeSelectVideo != null)
+        {
+            modeSelectVideo.Prepare();
         }
     }
 
@@ -259,7 +393,9 @@ public class MainMenu_UiHandler : MonoBehaviour
             return;
         }
 
+
         rawImage.gameObject.SetActive(false);
+
 
         Color color =
             rawImage.color;
@@ -276,6 +412,56 @@ public class MainMenu_UiHandler : MonoBehaviour
 
         videoPlayer.renderMode =
             VideoRenderMode.RenderTexture;
+    }
+
+
+    // =========================================================
+    // VIDEO READY
+    // =========================================================
+
+  
+
+
+    private IEnumerator WaitForVideoPrepared(
+        VideoPlayer videoPlayer
+    )
+    {
+        if (videoPlayer == null)
+            yield break;
+
+
+        /*
+         * Si por alguna razón todavía no se llamó
+         * Prepare(), lo hacemos acá también.
+         */
+        if (!videoPlayer.isPrepared)
+        {
+            videoPlayer.Prepare();
+        }
+
+
+        while (!videoPlayer.isPrepared)
+        {
+            yield return null;
+        }
+    }
+
+
+    private void SetImageAlpha(
+        Image image,
+        float alpha
+    )
+    {
+        if (image == null)
+            return;
+
+        Color color =
+            image.color;
+
+        color.a = alpha;
+
+        image.color =
+            color;
     }
 
 
@@ -299,9 +485,7 @@ public class MainMenu_UiHandler : MonoBehaviour
         }
 
 
-        // -----------------------------------------------------
         // HISTORIA
-        // -----------------------------------------------------
 
         PrepareSceneButton(
             buttons[0],
@@ -309,18 +493,14 @@ public class MainMenu_UiHandler : MonoBehaviour
         );
 
 
-        // -----------------------------------------------------
         // SURVIVAL
-        // -----------------------------------------------------
 
         PrepareSurvivalButton(
             buttons[1]
         );
 
 
-        // -----------------------------------------------------
         // EXIT
-        // -----------------------------------------------------
 
         PrepareSceneButton(
             buttons[2],
@@ -328,9 +508,7 @@ public class MainMenu_UiHandler : MonoBehaviour
         );
 
 
-        // -----------------------------------------------------
         // LEVEL SELECTOR
-        // -----------------------------------------------------
 
         PrepareSceneButton(
             buttons[3],
@@ -347,9 +525,11 @@ public class MainMenu_UiHandler : MonoBehaviour
         if (button == null)
             return;
 
+
         button.gameObject.SetActive(false);
 
         button.interactable = false;
+
 
         button.onClick.AddListener(
             () =>
@@ -374,9 +554,11 @@ public class MainMenu_UiHandler : MonoBehaviour
         if (button == null)
             return;
 
+
         button.gameObject.SetActive(false);
 
         button.interactable = false;
+
 
         button.onClick.AddListener(
             OpenSurvivalMenu
@@ -405,6 +587,7 @@ public class MainMenu_UiHandler : MonoBehaviour
 
 
         // SOLO
+
         survivalButtons[0]
             .onClick
             .AddListener(
@@ -416,6 +599,7 @@ public class MainMenu_UiHandler : MonoBehaviour
 
 
         // COOP
+
         survivalButtons[1]
             .onClick
             .AddListener(
@@ -427,6 +611,7 @@ public class MainMenu_UiHandler : MonoBehaviour
 
 
         // VERSUS
+
         survivalButtons[2]
             .onClick
             .AddListener(
@@ -438,6 +623,7 @@ public class MainMenu_UiHandler : MonoBehaviour
 
 
         // BACK
+
         survivalButtons[3]
             .onClick
             .AddListener(
@@ -457,6 +643,7 @@ public class MainMenu_UiHandler : MonoBehaviour
     {
         if (survivalButtons == null)
             return;
+
 
         foreach (
             Button button
@@ -482,6 +669,7 @@ public class MainMenu_UiHandler : MonoBehaviour
             new EventBinding<OnEnterMenuEvent>(
                 OnEnterMenu
             );
+
 
         EventBus<OnEnterMenuEvent>
             .Register(
@@ -516,7 +704,8 @@ public class MainMenu_UiHandler : MonoBehaviour
                 menuTransitionRoutine
             );
 
-            menuTransitionRoutine = null;
+            menuTransitionRoutine =
+                null;
         }
 
 
@@ -541,7 +730,8 @@ public class MainMenu_UiHandler : MonoBehaviour
 
 
         /*
-         * PRESS ANY KEY real.
+         * Actualmente usás Space como
+         * Press Any Key.
          */
         if (
             Keyboard.current
@@ -579,9 +769,15 @@ public class MainMenu_UiHandler : MonoBehaviour
         );
 
 
+        /*
+         * AnimateVideo ahora espera automáticamente
+         * hasta que el video esté preparado.
+         */
         yield return AnimateVideo(
             firstBackgroundVideo,
-            firstBackgroundRawImage
+            firstBackgroundRawImage,
+            firstVideoLoadingImage,
+            firstVideoLoadingText
         );
     }
 
@@ -611,6 +807,31 @@ public class MainMenu_UiHandler : MonoBehaviour
         }
 
 
+        if (firstVideoLoadingImage != null)
+        {
+            firstVideoLoadingImage
+                .gameObject
+                .SetActive(false);
+        }
+
+
+        // -----------------------------------------------------
+        // PREPARE SECOND VIDEO
+        // -----------------------------------------------------
+
+        if (modeVideoLoadingImage != null)
+        {
+            modeVideoLoadingImage
+                .gameObject
+                .SetActive(true);
+
+            SetImageAlpha(
+                modeVideoLoadingImage,
+                1f
+            );
+        }
+
+
         // -----------------------------------------------------
         // MAIN MENU VIDEO
         // -----------------------------------------------------
@@ -620,9 +841,33 @@ public class MainMenu_UiHandler : MonoBehaviour
             modeSelectVideo != null
         )
         {
+            /*
+             * Esperar al video sin mostrarlo todavía.
+             *
+             * Mientras esperamos:
+             * ModeVideoLoadingImage permanece visible.
+             */
+            yield return WaitForVideoPrepared(
+                modeSelectVideo
+            );
+
+
+            /*
+             * Ahora sí ocultamos la imagen
+             * estática y mostramos el video.
+             */
+            if (modeVideoLoadingImage != null)
+            {
+                modeVideoLoadingImage
+                    .gameObject
+                    .SetActive(false);
+            }
+
+
             modeSelectRawImage
                 .gameObject
                 .SetActive(true);
+
 
             modeSelectRawImage.color =
                 new Color(
@@ -631,6 +876,7 @@ public class MainMenu_UiHandler : MonoBehaviour
                     modeSelectRawImage.color.b,
                     0f
                 );
+
 
             modeSelectVideo.Play();
 
@@ -652,6 +898,7 @@ public class MainMenu_UiHandler : MonoBehaviour
         SetMainButtonsVisible(
             true
         );
+
 
         SetMainButtonsInteractable(
             true
@@ -753,9 +1000,11 @@ public class MainMenu_UiHandler : MonoBehaviour
         {
             survivalMenuGroup.alpha = 0f;
 
-            survivalMenuGroup.interactable = false;
+            survivalMenuGroup.interactable =
+                false;
 
-            survivalMenuGroup.blocksRaycasts = false;
+            survivalMenuGroup.blocksRaycasts =
+                false;
         }
 
 
@@ -823,30 +1072,37 @@ public class MainMenu_UiHandler : MonoBehaviour
         }
 
 
-        SetSurvivalButtonsInteractable(true);
+        SetSurvivalButtonsInteractable(
+            true
+        );
 
-        /*
-         * Dejamos que Unity actualice:
-         * - CanvasGroup
-         * - Selectables
-         * - navegación
-         * - layout
-         */
+
         yield return null;
 
         Canvas.ForceUpdateCanvases();
 
+
+        if (
+            survivalNavigation != null &&
+            survivalButtons != null &&
+            survivalButtons.Length > 0 &&
+            survivalButtons[0] != null
+        )
+        {
             survivalNavigation.AssignButton(
                 survivalButtons[0].gameObject
             );
+
 
             Debug.Log(
                 $"[MainMenu] Survival selected → " +
                 $"{survivalButtons[0].gameObject.name}"
             );
-        
+        }
+
 
         menuTransitionRoutine = null;
+
         isTransitioning = false;
     }
 
@@ -904,7 +1160,7 @@ public class MainMenu_UiHandler : MonoBehaviour
 
 
         // -----------------------------------------------------
-        // PREPARE MAIN VIDEO
+        // MAIN VIDEO
         // -----------------------------------------------------
 
         if (modeSelectRawImage != null)
@@ -917,6 +1173,16 @@ public class MainMenu_UiHandler : MonoBehaviour
 
         if (modeSelectVideo != null)
         {
+            /*
+             * Ya fue preparado al iniciar el menú.
+             */
+            if (!modeSelectVideo.isPrepared)
+            {
+                yield return WaitForVideoPrepared(
+                    modeSelectVideo
+                );
+            }
+
             modeSelectVideo.Play();
         }
 
@@ -966,14 +1232,12 @@ public class MainMenu_UiHandler : MonoBehaviour
             true
         );
 
+
         SetMainButtonsInteractable(
             true
         );
 
 
-        /*
-         * Volvemos específicamente al botón Survival.
-         */
         if (
             navigation != null &&
             buttons.Length > 1
@@ -1016,22 +1280,35 @@ public class MainMenu_UiHandler : MonoBehaviour
             $"{selectedMode}"
         );
 
+
         switch (selectedMode)
         {
             case SurvivalMode.Solo:
+
                 transition.StartTransition(
-          SceneTransition.transitionTo.Survival
-      );
+                    SceneTransition.transitionTo.Survival
+                );
+
                 break;
+
+
             case SurvivalMode.Coop:
+
                 transition.StartTransition(
-          SceneTransition.transitionTo.SurvivalCoop
-      );
+                    SceneTransition.transitionTo.SurvivalCoop
+                );
+
                 break;
-                case SurvivalMode.Versus: transition.StartTransition(SceneTransition.transitionTo.SurvivalCoop);
+
+
+            case SurvivalMode.Versus:
+
+                transition.StartTransition(
+                    SceneTransition.transitionTo.SurvivalCoop
+                );
+
                 break;
         }
-      
     }
 
 
@@ -1087,43 +1364,57 @@ public class MainMenu_UiHandler : MonoBehaviour
     // =========================================================
     // VIDEO APPEAR
     // =========================================================
-
+    private Coroutine firstLoadingTextCoroutine;
     private IEnumerator AnimateVideo(
         VideoPlayer videoPlayer,
-        RawImage rawImage
+        RawImage rawImage,
+        Image loadingImage, 
+        TextMeshProUGUI loadingText = null
     )
     {
         if (
-            videoPlayer == null ||
-            rawImage == null
-        )
+         videoPlayer == null ||
+         rawImage == null
+     )
         {
             yield break;
         }
 
+        if (loadingImage != null)
+        {
+            loadingImage.gameObject.SetActive(true);
+            SetImageAlpha(loadingImage, 1f);
+        }
 
-        rawImage.gameObject.SetActive(
-            true
+        StartLoadingAnimation(
+            loadingText,
+            ref firstLoadingTextCoroutine
         );
 
+        yield return WaitForVideoPrepared(
+            videoPlayer
+        );
 
-        Color color =
-            rawImage.color;
+        StopLoadingAnimation(
+            loadingText,
+            ref firstLoadingTextCoroutine
+        );
 
+        if (loadingImage != null)
+        {
+            loadingImage.gameObject.SetActive(false);
+        }
+
+        rawImage.gameObject.SetActive(true);
+
+        Color color = rawImage.color;
         color.a = 0f;
-
-        rawImage.color =
-            color;
-
+        rawImage.color = color;
 
         videoPlayer.Play();
 
-
         yield return rawImage
-            .DOFade(
-                1f,
-                0.35f
-            )
+            .DOFade(1f, 0.35f)
             .SetEase(Ease.OutQuad)
             .WaitForCompletion();
     }
@@ -1157,9 +1448,9 @@ public class MainMenu_UiHandler : MonoBehaviour
             .WaitForCompletion();
 
 
-        rawImage.gameObject.SetActive(
-            false
-        );
+        rawImage
+            .gameObject
+            .SetActive(false);
 
 
         videoPlayer.Stop();
