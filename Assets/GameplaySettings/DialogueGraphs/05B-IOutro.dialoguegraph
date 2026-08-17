@@ -1691,7 +1691,7 @@ MonoBehaviour:
           serializedVersion: 2
           Hash: bfe56800e4fd1404a12d3e021f3d847e
         m_Version: 2
-        m_Position: {x: 11973.997, y: 702.239}
+        m_Position: {x: 11975.146, y: 702.239}
         m_Title: DialogueNode
         m_Tooltip: 
         m_NodePreviewModel:
@@ -3442,7 +3442,7 @@ MonoBehaviour:
     - rid: 2450192438280323244
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: 
+        m_Value: (5A) L06_PATH_B_INTRO_019
     - rid: 2450192438280323245
       type: {class: 'Constant`1[[UnityEngine.Sprite, UnityEngine.CoreModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -4352,7 +4352,7 @@ MonoBehaviour:
           serializedVersion: 2
           Hash: b6f6d2257844bcaa2e02a662575959e9
         m_Version: 2
-        m_Position: {x: 8403.495, y: 943.1415}
+        m_Position: {x: 8362.432, y: 938.57886}
         m_Title: DialogueNode
         m_Tooltip: 
         m_NodePreviewModel:
@@ -5028,7 +5028,7 @@ MonoBehaviour:
           serializedVersion: 2
           Hash: 7a7ae1aefc58bdc141abb30e8cdd5623
         m_Version: 2
-        m_Position: {x: 12962.264, y: 990.3254}
+        m_Position: {x: 12933.169, y: 998.26044}
         m_Title: DialogueNode
         m_Tooltip: 
         m_NodePreviewModel:
@@ -5184,7 +5184,7 @@ MonoBehaviour:
           serializedVersion: 2
           Hash: bcfd09631393ccecf1b7e4402f801835
         m_Version: 2
-        m_Position: {x: 13556.337, y: 1001.0531}
+        m_Position: {x: 13523.995, y: 1023.2654}
         m_Title: DialogueNode
         m_Tooltip: 
         m_NodePreviewModel:
@@ -6674,7 +6674,7 @@ MonoBehaviour:
     - rid: 2450192438280323727
       type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: (5B) (5B) L06_PATH_B_INTRO_020
+        m_Value: (5B) L06_PATH_B_INTRO_020
     - rid: 2450192438280323728
       type: {class: 'Constant`1[[UnityEngine.Sprite, UnityEngine.CoreModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -8127,9 +8127,9 @@ MonoBehaviour:
         m_LastKnownBounds:
           serializedVersion: 2
           x: 4460
-          y: 527.19995
-          width: 14363.199
-          height: 866.4
+          y: 527
+          width: 14361
+          height: 867
         m_GraphElementMetaData:
         - m_Guid:
             m_Value0: 3522283725170806051
