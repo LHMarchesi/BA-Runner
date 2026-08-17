@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ba49d07f31577bc46af89a313a07c31d
+guid: b5402ef6d11941e4aa7a8f8b07ebc156
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -106,10 +106,10 @@ TextureImporter:
       name: Layer_2 1_0
       rect:
         serializedVersion: 2
-        x: 580
+        x: 452
         y: 0
-        width: 468
-        height: 1059
+        width: 409
+        height: 1056
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,10 +128,10 @@ TextureImporter:
       name: Layer_2 1_1
       rect:
         serializedVersion: 2
-        x: 2541
+        x: 2629
         y: 0
-        width: 573
-        height: 1059
+        width: 743
+        height: 1065
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
