@@ -862,10 +862,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf571f53ff8518ca8bacda0a4c4bc77a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneTransition
-  imageToFade: {fileID: 0}
+  defaultTarget: 0
+  cinematicsSceneName: CinematicsScene
+  gameplaySceneName: SampleScene
+  survivalSceneName: SurvivalScene
+  survivalCoopVersusSceneName: SurvivalSceneCoop
+  levelSelectorSceneName: LevelSelector
+  mainMenuSceneName: Menu
+  fadeCanvasGroup: {fileID: 0}
   fadeDuration: 0.5
-  clearNarrativeFlags: 0
-  transitionTarget: 0
 --- !u!114 &467649793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1824,10 +1829,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf571f53ff8518ca8bacda0a4c4bc77a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneTransition
-  imageToFade: {fileID: 0}
+  defaultTarget: 0
+  cinematicsSceneName: CinematicsScene
+  gameplaySceneName: SampleScene
+  survivalSceneName: SurvivalScene
+  survivalCoopVersusSceneName: SurvivalSceneCoop
+  levelSelectorSceneName: LevelSelector
+  mainMenuSceneName: Menu
+  fadeCanvasGroup: {fileID: 0}
   fadeDuration: 0.5
-  clearNarrativeFlags: 0
-  transitionTarget: 0
 --- !u!4 &886500380
 Transform:
   m_ObjectHideFlags: 0
@@ -1874,11 +1884,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
   sfxSource: {fileID: 0}
   musicSource: {fileID: 0}
+  dialogueSFXSource: {fileID: 0}
   controlSFX: {fileID: 0}
   controlMusic: {fileID: 0}
   menuMusicClip: {fileID: 0}
-  cinematicsSong: {fileID: 0}
   survivalSong: {fileID: 0}
+  creditsMusicClip: {fileID: 0}
 --- !u!4 &907675715
 Transform:
   m_ObjectHideFlags: 0
@@ -1925,10 +1936,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf571f53ff8518ca8bacda0a4c4bc77a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneTransition
-  imageToFade: {fileID: 0}
+  defaultTarget: 0
+  cinematicsSceneName: CinematicsScene
+  gameplaySceneName: SampleScene
+  survivalSceneName: SurvivalScene
+  survivalCoopVersusSceneName: SurvivalSceneCoop
+  levelSelectorSceneName: LevelSelector
+  mainMenuSceneName: Menu
+  fadeCanvasGroup: {fileID: 0}
   fadeDuration: 0.5
-  clearNarrativeFlags: 0
-  transitionTarget: 1
 --- !u!4 &1029069841
 Transform:
   m_ObjectHideFlags: 0
@@ -2419,8 +2435,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0.21252, y: 114}
-  m_SizeDelta: {x: 1500.4, y: 65.3507}
+  m_AnchoredPosition: {x: 0.0049973, y: 114}
+  m_SizeDelta: {x: 1920, y: 65.3507}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &1413977451
 CanvasRenderer:
@@ -2477,8 +2493,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 60
+  m_fontSize: 58
+  m_fontSizeBase: 58
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2680,6 +2696,7 @@ MonoBehaviour:
   - {fileID: 771830053}
   delayProgressBar: {fileID: 1360531678}
   localizationTable: LocalizationTableBARUNNER
+  dialogueAudioTable: DialogueAudio
 --- !u!114 &1536353635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2783,6 +2800,7 @@ MonoBehaviour:
   navigationRoot: {fileID: 0}
   indicator: {fileID: 858194543}
   initialSelected: {fileID: 0}
+  navigateSound: {fileID: 0}
 --- !u!1 &1590261802
 GameObject:
   m_ObjectHideFlags: 0
