@@ -2317,6 +2317,55 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &609872969
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 609872971}
+  - component: {fileID: 609872970}
+  m_Layer: 0
+  m_Name: PlayerTrack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &609872970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 609872969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dee7135783a3df3439a3e94c59a47a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SurvivalTrackController
+  roadConfig: {fileID: 11400000, guid: 91b5202bd05f1fe4eade2e2496c6da80, type: 2}
+  worldSpeed: {fileID: 73024254}
+  spawnManager: {fileID: 1020577409}
+  scoreSystem: {fileID: 1643797944}
+  fallbackStageDistance: 100
+--- !u!4 &609872971
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 609872969}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 306.6517, y: 1004.37, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &617791100
 GameObject:
   m_ObjectHideFlags: 0
@@ -6974,6 +7023,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1707368402}
   - component: {fileID: 1707368403}
+  - component: {fileID: 1707368404}
   m_Layer: 0
   m_Name: SurvivalMAnage
   m_TagString: Untagged
@@ -7003,7 +7053,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1707368400}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8d4ca0230b83c9a48901d88887c3f766, type: 3}
   m_Name: 
@@ -7011,6 +7061,43 @@ MonoBehaviour:
   roadConfig: {fileID: 11400000, guid: 91b5202bd05f1fe4eade2e2496c6da80, type: 2}
   worldSpeed: {fileID: 73024254}
   scoreSystem: {fileID: 1643797944}
+--- !u!114 &1707368404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707368400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04e6ae5289fbcb14cb6c7bf335c0df75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SurvivalManager
+  mode: 0
+  players:
+  - player: {fileID: 1835372526690838251}
+    track: {fileID: 609872970}
+    worldSpeed: {fileID: 73024254}
+    score: {fileID: 1643797944}
+    scoreText: {fileID: 26897279}
+    stageText: {fileID: 1293683955}
+    distanceToStageText: {fileID: 1505056330}
+    deathOverlay: {fileID: 0}
+    reviveText: {fileID: 0}
+  stagesToRevive: 4
+  reviveDelay: 0.75
+  opponentSpeedIncrease: 0.08
+  versusWinnerText: {fileID: 0}
+  gameOverPanel: {fileID: 0}
+  gameOverNav: {fileID: 0}
+  initialButton: {fileID: 0}
+  tutorialImage: {fileID: 0}
+  teamScoreText: {fileID: 0}
+  scoreCountDuration: 0.8
+  mainMenuSceneName: MainMenu
+  tutorialFadeInDuration: 0.35
+  tutorialVisibleDuration: 1.2
+  tutorialFadeOutDuration: 0.5
 --- !u!1 &1748734548
 GameObject:
   m_ObjectHideFlags: 0
@@ -8899,6 +8986,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07b24961ec04ae94aa86875b9cf7a7f8, type: 3}
+--- !u!114 &1835372526690838251 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8672301451433408647, guid: 07b24961ec04ae94aa86875b9cf7a7f8, type: 3}
+  m_PrefabInstance: {fileID: 1835372526690838250}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 077bde7e4a1946b4585cc278dfd2b37b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Movement
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -8915,3 +9013,4 @@ SceneRoots:
   - {fileID: 1643797945}
   - {fileID: 695483960}
   - {fileID: 1001958187}
+  - {fileID: 609872971}
