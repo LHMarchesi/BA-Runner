@@ -3453,7 +3453,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MenuNavigation
   navigationRoot: {fileID: 761721667}
   indicator: {fileID: 588036429}
-  initialSelected: {fileID: 1053464039}
+  initialSelected: {fileID: 1187554930}
   navigateSound: {fileID: 0}
 --- !u!1 &770467615
 GameObject:
