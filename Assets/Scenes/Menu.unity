@@ -11875,8 +11875,8 @@ MonoBehaviour:
   firstVideoLoadingText: {fileID: 210347660}
   loadingDotsInterval: 0.2
   modeVideoLoadingImage: {fileID: 2087674634}
-  pressAnyKeyVideoURL: https://pub-2f5fbfbd569a4e4fad15811da373cb10.r2.dev/ENZO%20INICIO%20PANTALLA.mp4
-  modeSelectVideoURL: https://pub-2f5fbfbd569a4e4fad15811da373cb10.r2.dev/Enzo%20mirando%20obelisco.mp4
+  pressAnyKeyVideoURL: {fileID: 32900000, guid: d308086cecc47194da3a265f3121614f, type: 3}
+  modeSelectVideoURL: {fileID: 32900000, guid: b5b1ced632fe4b24ba9b1be664d032c6, type: 3}
   buttons:
   - {fileID: 1317444650}
   - {fileID: 1896130269}

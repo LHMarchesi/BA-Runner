@@ -48,10 +48,10 @@ public class MainMenu_UiHandler : MonoBehaviour
 
     [Header("Video URLs")]
     [SerializeField]
-    private string pressAnyKeyVideoURL;
+    private VideoClip pressAnyKeyVideoURL;
 
     [SerializeField]
-    private string modeSelectVideoURL;
+    private VideoClip modeSelectVideoURL;
 
 
     // =========================================================
@@ -339,14 +339,14 @@ public class MainMenu_UiHandler : MonoBehaviour
 
         if (firstBackgroundVideo != null)
         {
-            firstBackgroundVideo.url =
+            firstBackgroundVideo.clip =
                 pressAnyKeyVideoURL;
         }
 
 
         if (modeSelectVideo != null)
         {
-            modeSelectVideo.url =
+            modeSelectVideo.clip =
                 modeSelectVideoURL;
         }
 
@@ -468,7 +468,10 @@ public class MainMenu_UiHandler : MonoBehaviour
     // =========================================================
     // PREPARE MAIN MENU
     // =========================================================
-
+    public void ResetProgession()
+    {
+        ProgressionManager.Instance.ResetProgress();
+    }
     private void PrepareMainMenu()
     {
         if (
@@ -492,6 +495,7 @@ public class MainMenu_UiHandler : MonoBehaviour
             SceneTransition.transitionTo.Cinematics
         );
 
+        buttons[0].onClick.AddListener(ResetProgession);
 
         // SURVIVAL
 
