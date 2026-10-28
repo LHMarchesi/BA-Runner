@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.bunker26.party": "file:C:/Users/Ornella/Downloads/Bunker26-Party-Package-0.4.1 (1)/com.bunker26.party",
     "com.unity.2d.animation": "13.0.4",
     "com.unity.2d.aseprite": "3.0.1",
     "com.unity.2d.psdimporter": "12.0.1",

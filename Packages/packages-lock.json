@@ -1,5 +1,14 @@
 {
   "dependencies": {
+    "com.bunker26.party": {
+      "version": "file:C:/Users/Ornella/Downloads/Bunker26-Party-Package-0.4.1 (1)/com.bunker26.party",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {
+        "com.unity.inputsystem": "1.7.0",
+        "com.unity.ugui": "1.0.0"
+      }
+    },
     "com.unity.2d.animation": {
       "version": "13.0.4",
       "depth": 0,

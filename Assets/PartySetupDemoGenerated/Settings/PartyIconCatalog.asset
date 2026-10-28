@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd5f932e43c22884c9197853f313d555, type: 3}
+  m_Name: PartyIconCatalog
+  m_EditorClassIdentifier: Bunker26.Party.Samples::Bunker26.Party.Samples.PartyIconCatalog
+  unknownProfile: {fileID: 3298544824340963501, guid: c9bceee4ddcdc8d4f917d1276200d31e, type: 3}
+  keyboard: {fileID: 871993797954074159, guid: 4aba5261cd13ffe4e9f1c201b6d57d80, type: 3}
+  gamepad: {fileID: 6093372841269754507, guid: 6d84334615648ce4cab3da975db7d415, type: 3}
+  leader: {fileID: -987621284028065551, guid: 64791ece904c78442bf80a2180353ad7, type: 3}
+  connected: {fileID: -2001137136829456398, guid: 954d2b493b01d2a438a4e03a5062742d, type: 3}
+  disconnected: {fileID: -8474793502582347156, guid: ed22c378971fbc54ab0cd9e810156edd, type: 3}
+  add: {fileID: -7142314098698664836, guid: 8bdf6bdf86eae1d498f07477b0385f22, type: 3}
+  edit: {fileID: 2463020622516063040, guid: 59244d944b16b6b4584c679fc66c4b9c, type: 3}
+  remove: {fileID: -2855606321547621424, guid: 73d218ae56e508149a0c48365b5a0e02, type: 3}
+  close: {fileID: 1840651432732105636, guid: a36efec95fa778746966343850533a19, type: 3}
+  profiles: {fileID: 8818892045895961777, guid: c82f56aa2c527b8409daeee323d620db, type: 3}
+  statistics: {fileID: 6709119594201090976, guid: b46690ecc6dc56641bd05d147ce72704, type: 3}
+  arrowLeft: {fileID: 1008923615742162585, guid: 42b3463889584994599cb25583a3cccd, type: 3}
+  arrowRight: {fileID: 1224616860338766939, guid: 90facdcd823c031438b908bcaab0c5c9, type: 3}
+  fallbackPanel: {fileID: 879748068114788065, guid: 2b1a6293f13763d4db76ce2b6f5b1526, type: 3}
+  profileIcons:
+  - id: default
+    sprite: {fileID: 2704736663927705549, guid: f4c7d655e784eec4aba9061868931a99, type: 3}
+  - id: star
+    sprite: {fileID: 7424428842060072936, guid: 860bf86f742112445890e45b13473bd6, type: 3}
+  - id: robot
+    sprite: {fileID: -4457051651235485311, guid: b3cf0d32a9d0d7541bf6b474e39c1aff, type: 3}
+  - id: bolt
+    sprite: {fileID: -2480354787438450959, guid: b55ffc9e4bf24c74aae8d2492f23d572, type: 3}
+  - id: crown
+    sprite: {fileID: 6313102461537765777, guid: a17828676f1ed4648851869ea3f646b8, type: 3}
+  - id: fox
+    sprite: {fileID: -4547550831291018113, guid: 771d9723048ed0841a9a1c98ef691224, type: 3}
+  - id: skull
+    sprite: {fileID: -8428728014088559142, guid: b2a707e5ac078b74e9361e7b807cb9ba, type: 3}
