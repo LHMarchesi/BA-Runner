@@ -9,12 +9,84 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e35308697f05cf144837f9cb7cc3f251, type: 3}
+  m_Script: {fileID: 11500000, guid: 10fcbe3f34b786d4ba7deac521e1f1ed, type: 3}
   m_Name: PartyDemoGameInputDefinition
   m_EditorClassIdentifier: Bunker26.Party.Runtime::Bunker26.Party.GameInputDefinition
-  gameId: my-game
-  displayName: My Game
-  actionsAsset: {fileID: 0}
-  bindingSettings: {fileID: 0}
+  gameId: bunker26.party-demo
+  displayName: Party Demo
+  actionsAsset: {fileID: -944628639613478452, guid: abd8b60d1f5da8549827c1a004361cd4, type: 3}
+  bindingSettings: {fileID: 11400000, guid: eb93dcf6016b26c44b0a7cdcd1e52878, type: 2}
   allowDuplicateBindings: 0
-  editableBindings: []
+  editableBindings:
+  - bindingId: 05167f8e-7536-4db4-9c89-77cad4ae6487
+    displayName: "Move \xB7 Arriba"
+    actionMapName: Gameplay
+    actionName: Move
+  - bindingId: f2c5475d-3456-4ef3-8c31-5a06d496674a
+    displayName: "Move \xB7 Abajo"
+    actionMapName: Gameplay
+    actionName: Move
+  - bindingId: 85206a5a-b836-48e2-951a-59f9910085dd
+    displayName: "Move \xB7 Izquierda"
+    actionMapName: Gameplay
+    actionName: Move
+  - bindingId: f09423bb-869a-43ad-ab0a-6d621a227a84
+    displayName: "Move \xB7 Derecha"
+    actionMapName: Gameplay
+    actionName: Move
+  - bindingId: b82ae77b-372f-488e-bd58-944cd1d8f038
+    displayName: "Move \xB7 Arriba"
+    actionMapName: Gameplay
+    actionName: Move
+  - bindingId: 5b572275-d10f-43d6-be87-d37084745bcb
+    displayName: "Move \xB7 Abajo"
+    actionMapName: Gameplay
+    actionName: Move
+  - bindingId: 7ebeba13-4d28-464b-ae81-effd5672afa3
+    displayName: "Move \xB7 Izquierda"
+    actionMapName: Gameplay
+    actionName: Move
+  - bindingId: 6455c388-c87c-4cee-b29b-739f2d610e3c
+    displayName: "Move \xB7 Derecha"
+    actionMapName: Gameplay
+    actionName: Move
+  - bindingId: 245cbbbf-6180-42a0-ae11-f465b692d630
+    displayName: Move
+    actionMapName: Gameplay
+    actionName: Move
+  - bindingId: d2e06177-2f11-43ac-a921-064d231caa12
+    displayName: Jump
+    actionMapName: Gameplay
+    actionName: Jump
+  - bindingId: f4269360-30da-4d24-9999-3c7910c868bf
+    displayName: Jump
+    actionMapName: Gameplay
+    actionName: Jump
+  - bindingId: facaec8e-4f1a-4e29-b1e3-6df8382b6c7f
+    displayName: Jump
+    actionMapName: Gameplay
+    actionName: Jump
+  - bindingId: 46fede51-d455-49af-889d-33f9ff5a5eae
+    displayName: Attack
+    actionMapName: Gameplay
+    actionName: Attack
+  - bindingId: 1e3701ba-8a5e-4a07-817c-d2198b69a006
+    displayName: Attack
+    actionMapName: Gameplay
+    actionName: Attack
+  - bindingId: d537877f-4f36-416a-920f-400c9210b1a2
+    displayName: Attack
+    actionMapName: Gameplay
+    actionName: Attack
+  - bindingId: e4493fad-3d73-44f5-8d14-2086f33a2341
+    displayName: Pause
+    actionMapName: Gameplay
+    actionName: Pause
+  - bindingId: aed59241-9299-4ec6-9f54-0d1b28f3cd82
+    displayName: Pause
+    actionMapName: Gameplay
+    actionName: Pause
+  - bindingId: 99b3cb19-2614-447d-a29f-97b4044110e4
+    displayName: Pause
+    actionMapName: Gameplay
+    actionName: Pause

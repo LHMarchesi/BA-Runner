@@ -9,59 +9,71 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e35308697f05cf144837f9cb7cc3f251, type: 3}
-  m_Name: GameInputDefinitionBARUNNER
+  m_Script: {fileID: 11500000, guid: 10fcbe3f34b786d4ba7deac521e1f1ed, type: 3}
+  m_Name: GameInputDefinition
   m_EditorClassIdentifier: Bunker26.Party.Runtime::Bunker26.Party.GameInputDefinition
   gameId: ba-runner
-  displayName: BA Runner
+  displayName: BA RUNNER
   actionsAsset: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
-  bindingSettings: {fileID: 11400000, guid: 079a92ec0fa8e174782c84bca3022960, type: 2}
+  bindingSettings: {fileID: 11400000, guid: 6aa2398442658df4e8827c041baf1f80, type: 2}
   allowDuplicateBindings: 0
   editableBindings:
   - bindingId: 978bfe49-cc26-4a3d-ab7b-7d7a29327403
-    displayName: Move
+    displayName: Move_Player1
     actionMapName: Player
-    actionName: Move
+    actionName: Move_Player1
   - bindingId: e2062cb9-1b15-46a2-838c-2f8d72a0bdd9
-    displayName: "Move \xB7 Arriba"
+    displayName: "Move_Player1 \xB7 Arriba"
     actionMapName: Player
-    actionName: Move
-  - bindingId: 8180e8bd-4097-4f4e-ab88-4523101a6ce9
-    displayName: "Move \xB7 Arriba"
-    actionMapName: Player
-    actionName: Move
+    actionName: Move_Player1
   - bindingId: 320bffee-a40b-4347-ac70-c210eb8bc73a
-    displayName: "Move \xB7 Abajo"
+    displayName: "Move_Player1 \xB7 Abajo"
     actionMapName: Player
-    actionName: Move
-  - bindingId: 1c5327b5-f71c-4f60-99c7-4e737386f1d1
-    displayName: "Move \xB7 Abajo"
-    actionMapName: Player
-    actionName: Move
+    actionName: Move_Player1
   - bindingId: d2581a9b-1d11-4566-b27d-b92aff5fabbc
-    displayName: "Move \xB7 Izquierda"
+    displayName: "Move_Player1 \xB7 Izquierda"
     actionMapName: Player
-    actionName: Move
-  - bindingId: 2e46982e-44cc-431b-9f0b-c11910bf467a
-    displayName: "Move \xB7 Izquierda"
-    actionMapName: Player
-    actionName: Move
+    actionName: Move_Player1
   - bindingId: fcfe95b8-67b9-4526-84b5-5d0bc98d6400
-    displayName: "Move \xB7 Derecha"
+    displayName: "Move_Player1 \xB7 Derecha"
     actionMapName: Player
-    actionName: Move
-  - bindingId: 77bff152-3580-4b21-b6de-dcd0c7e41164
-    displayName: "Move \xB7 Derecha"
-    actionMapName: Player
-    actionName: Move
+    actionName: Move_Player1
   - bindingId: 1635d3fe-58b6-4ba9-a4e2-f4b964f6b5c8
-    displayName: Move
+    displayName: Move_Player1
     actionMapName: Player
-    actionName: Move
+    actionName: Move_Player1
   - bindingId: 3ea4d645-4504-4529-b061-ab81934c3752
-    displayName: Move
+    displayName: Move_Player1
     actionMapName: Player
-    actionName: Move
+    actionName: Move_Player1
+  - bindingId: 3a007b7d-ed72-4026-b8df-b50d69173459
+    displayName: Move_Player2
+    actionMapName: Player
+    actionName: Move_Player2
+  - bindingId: 599388c3-64da-4e2c-b5f4-e0d65139bd65
+    displayName: "Move_Player2 \xB7 Arriba"
+    actionMapName: Player
+    actionName: Move_Player2
+  - bindingId: 5d511eb5-8add-4804-8fba-f2d1d3820ff2
+    displayName: "Move_Player2 \xB7 Abajo"
+    actionMapName: Player
+    actionName: Move_Player2
+  - bindingId: 42af8184-da27-48c4-8271-3754be37da07
+    displayName: "Move_Player2 \xB7 Izquierda"
+    actionMapName: Player
+    actionName: Move_Player2
+  - bindingId: 04823680-8be7-4779-a582-01e9a672212d
+    displayName: "Move_Player2 \xB7 Derecha"
+    actionMapName: Player
+    actionName: Move_Player2
+  - bindingId: 42073858-af63-4cad-a4a9-2134622a6468
+    displayName: Move_Player2
+    actionMapName: Player
+    actionName: Move_Player2
+  - bindingId: 32c0ae13-3873-475f-9dec-a8632f725c45
+    displayName: Move_Player2
+    actionMapName: Player
+    actionName: Move_Player2
   - bindingId: c1f7a91b-d0fd-4a62-997e-7fb9b69bf235
     displayName: Look
     actionMapName: Player

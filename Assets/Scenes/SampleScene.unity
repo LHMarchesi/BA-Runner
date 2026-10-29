@@ -10770,7 +10770,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1138189556}
   - component: {fileID: 1138189555}
-  - component: {fileID: 1138189554}
+  - component: {fileID: 1138189557}
   m_Layer: 0
   m_Name: Party Setup Controller
   m_TagString: Untagged
@@ -10778,18 +10778,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1138189554
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1138189553}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbf474b3abf36d44ab8773cd6ae6b98f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Bunker26.Party.Runtime::Bunker26.Party.InputSystemDeviceMonitor
 --- !u!114 &1138189555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10804,8 +10792,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Bunker26.Party.Samples::Bunker26.Party.Samples.PartySetupController
   screenView: {fileID: 1890583427}
   iconCatalog: {fileID: 11400000, guid: 860fbf99a3eb6ce49998725d57416d12, type: 2}
-  inputDeviceMonitor: {fileID: 1138189554}
-  gameInputDefinition: {fileID: 11400000, guid: 290a70aa85e7bc44fb49fd6ea74ae601, type: 2}
+  inputDeviceMonitor: {fileID: 1138189557}
+  gameInputDefinition: {fileID: 11400000, guid: 72796256f2aae8448839b2569cb052f6, type: 2}
   maxLocalPlayers: 8
   createLocalPlayerOneOnAwake: 1
   autoJoinUnassignedGamepads: 1
@@ -10825,6 +10813,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1138189557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1138189553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91488695507ea16478f2546e411faffe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Bunker26.Party.Runtime::Bunker26.Party.InputSystemDeviceMonitor
 --- !u!1 &1150641004
 GameObject:
   m_ObjectHideFlags: 0
