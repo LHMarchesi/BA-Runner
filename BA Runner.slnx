@@ -26,6 +26,7 @@
   <Project Path="Unity.VisualScripting.Core.Editor.csproj" />
   <Project Path="Unity.Localization.Editor.csproj" />
   <Project Path="UnityEngine.TestRunner.csproj" />
+  <Project Path="Bunker26.Party.Runtime.csproj" />
   <Project Path="Unity.2D.Tilemap.Editor.csproj" />
   <Project Path="Unity.Burst.csproj" />
   <Project Path="Unity.VisualScripting.Flow.Editor.csproj" />
@@ -78,6 +79,7 @@
   <Project Path="Unity.2D.Tilemap.Extras.csproj" />
   <Project Path="Unity.Addressables.csproj" />
   <Project Path="Unity.2D.Animation.Runtime.csproj" />
+  <Project Path="Bunker26.Party.Samples.csproj" />
   <Project Path="Unity.Mathematics.Editor.csproj" />
   <Project Path="Unity.VisualScripting.SettingsProvider.Editor.csproj" />
   <Project Path="UnityEditor.UI.Analytics.csproj" />
@@ -92,6 +94,8 @@
   <Project Path="Unity.CollabProxy.Editor.csproj" />
   <Project Path="Unity.GraphToolkit.Common.Editor.csproj" />
   <Project Path="Unity.RenderPipeline.Universal.ShaderLibrary.csproj" />
+  <Project Path="Bunker26.Party.Editor.csproj" />
+  <Project Path="Bunker26.Party.Samples.Editor.csproj" />
   <Project Path="Unity.InputSystem.DocCodeSamples.csproj" />
   <Project Path="Unity.RenderPipelines.Universal.Shaders.csproj" />
   <Project Path="Unity.RenderPipelines.Core.Runtime.Shared.csproj" />

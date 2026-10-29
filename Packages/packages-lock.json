@@ -1,13 +1,14 @@
 {
   "dependencies": {
     "com.bunker26.party": {
-      "version": "file:C:/Users/Ornella/Downloads/Bunker26-Party-Package-0.4.1 (1)/com.bunker26.party",
+      "version": "https://github.com/LHMarchesi/Party-TournamentSystem-BUNKER26.git?path=/com.bunker26.party",
       "depth": 0,
-      "source": "local",
+      "source": "git",
       "dependencies": {
         "com.unity.inputsystem": "1.7.0",
         "com.unity.ugui": "1.0.0"
-      }
+      },
+      "hash": "882f5bcc4324b81740bb553f9c2b801643f26735"
     },
     "com.unity.2d.animation": {
       "version": "13.0.4",
