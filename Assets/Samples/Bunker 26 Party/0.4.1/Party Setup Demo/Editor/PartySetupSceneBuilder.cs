@@ -323,7 +323,6 @@ namespace Bunker26.Party.Samples.Editor
             controller.inputDeviceMonitor = controllerObject.GetComponent<InputSystemDeviceMonitor>();
             controller.maxLocalPlayers = 8;
             controller.createLocalPlayerOneOnAwake = true;
-            controller.autoJoinUnassignedGamepads = true;
 
             GameObject canvasObject = new GameObject("Party Setup Canvas", typeof(RectTransform), typeof(Canvas), typeof(CanvasScaler), typeof(GraphicRaycaster), typeof(PartySetupScreenView));
             Canvas canvas = canvasObject.GetComponent<Canvas>();

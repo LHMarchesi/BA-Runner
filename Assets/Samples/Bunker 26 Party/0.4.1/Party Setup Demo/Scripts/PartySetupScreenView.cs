@@ -68,6 +68,8 @@ namespace Bunker26.Party.Samples
         public Text inputDeviceSummaryText;
         public Button keyboardSlot1Button;
         public Button keyboardSlot2Button;
+        [Tooltip("Optional root for dynamically generated buttons representing connected controllers. Created automatically if left empty.")]
+        public Transform controllerOptionsRoot;
         public Button releaseInputButton;
         public Button closeInputSelectorButton;
 
@@ -86,7 +88,13 @@ namespace Bunker26.Party.Samples
         private readonly List<PartyPlayerCardView> _playerCards = new List<PartyPlayerCardView>();
         private readonly List<PartyProfileCardView> _profileCards = new List<PartyProfileCardView>();
         private readonly List<PartyInputBindingRowView> _inputBindingRows = new List<PartyInputBindingRowView>();
+        private readonly List<Button> _controllerOptionButtons = new List<Button>();
         private InputRebindingSession _activeBindingSession;
+        private Text _controllerOptionsHeading;
+        private float _baseInputPanelHeight = -1f;
+        private bool _inputLayoutCaptured;
+        private Vector2 _baseInputSummaryPosition;
+        private Vector2 _baseCustomizeButtonPosition;
         private string _bindingTargetParticipantId = string.Empty;
         private string _targetParticipantId = string.Empty;
         private string _pendingInputTargetId = string.Empty;
@@ -144,6 +152,7 @@ namespace Bunker26.Party.Samples
             HidePanelImmediately(profileDetailsPanel);
             HidePanelImmediately(inputSelectorPanel);
             HidePanelImmediately(inputBindingsPanel);
+            EnsureControllerOptionsUI();
             if (profileLibraryHeaderIcon != null && _icons != null) profileLibraryHeaderIcon.sprite = _icons.profiles;
             RefreshAll();
         }
@@ -187,6 +196,8 @@ namespace Bunker26.Party.Samples
             }
             if (inputDeviceSummaryText != null) inputDeviceSummaryText.text = summary;
             RefreshKeyboardButtons();
+            RefreshControllerButtons();
+            RefreshCustomizeBindingsButton();
         }
 
         public void SetStatus(string message, bool isError)
@@ -215,13 +226,23 @@ namespace Bunker26.Party.Samples
 
         public void CompleteInputAssignment(string participantId)
         {
-            bool openProfileSelection = _openProfileSelectionAfterInput;
+            bool shouldCheckProfileSelection = _openProfileSelectionAfterInput;
             _openProfileSelectionAfterInput = false;
             _removeParticipantIfInputCancelled = false;
             _pendingInputTargetId = string.Empty;
             SetPanelActive(inputSelectorPanel, false);
             RefreshAll();
-            if (openProfileSelection) OpenProfileSelection(participantId);
+
+            // Only open profile selection for a participant who still has no profile.
+            // Returning participants keep the profile restored by PartyService.
+            if (shouldCheckProfileSelection)
+            {
+                PartyParticipant participant = _controller != null && _controller.Party != null
+                    ? _controller.Party.GetParticipant(participantId)
+                    : null;
+                if (participant != null && string.IsNullOrWhiteSpace(participant.profileId))
+                    OpenProfileSelection(participantId);
+            }
         }
 
         private void RefreshPlayerCards()
@@ -727,7 +748,9 @@ namespace Bunker26.Party.Samples
                 _openProfileSelectionAfterInput = false;
                 _removeParticipantIfInputCancelled = false;
                 RefreshAll();
-                if (openProfileSelection) ShowProfileLibrary(participantId);
+                PartyParticipant assignedParticipant = _controller.Party.GetParticipant(participantId);
+                if (openProfileSelection && assignedParticipant != null && string.IsNullOrWhiteSpace(assignedParticipant.profileId))
+                    ShowProfileLibrary(participantId);
             }
             else RefreshKeyboardButtons();
         }
@@ -763,6 +786,203 @@ namespace Bunker26.Party.Samples
 
             RefreshKeyboardButton(keyboardSlot1Button, 0, "Teclado 1", current);
             RefreshKeyboardButton(keyboardSlot2Button, 1, "Teclado 2", current);
+        }
+
+        private void EnsureControllerOptionsUI()
+        {
+            if (inputSelectorPanel == null || keyboardSlot1Button == null) return;
+
+            RectTransform panelRect = inputSelectorPanel.GetComponent<RectTransform>();
+            if (!_inputLayoutCaptured)
+            {
+                if (panelRect != null) _baseInputPanelHeight = panelRect.sizeDelta.y;
+                if (inputDeviceSummaryText != null)
+                    _baseInputSummaryPosition = inputDeviceSummaryText.rectTransform.anchoredPosition;
+                if (customizeInputBindingsButton != null)
+                    _baseCustomizeButtonPosition = customizeInputBindingsButton.GetComponent<RectTransform>().anchoredPosition;
+                _inputLayoutCaptured = true;
+            }
+
+            if (controllerOptionsRoot == null)
+            {
+                GameObject rootObject = new GameObject("Connected Controller Options", typeof(RectTransform));
+                RectTransform rootRect = rootObject.GetComponent<RectTransform>();
+                rootRect.SetParent(inputSelectorPanel.transform, false);
+                rootRect.anchorMin = new Vector2(0f, 1f);
+                rootRect.anchorMax = new Vector2(1f, 1f);
+                rootRect.pivot = new Vector2(0.5f, 1f);
+                rootRect.anchoredPosition = new Vector2(0f, -310f);
+                rootRect.sizeDelta = new Vector2(-52f, 0f);
+                controllerOptionsRoot = rootRect;
+            }
+
+            RectTransform optionsRect = controllerOptionsRoot as RectTransform;
+            if (optionsRect != null)
+            {
+                optionsRect.anchorMin = new Vector2(0f, 1f);
+                optionsRect.anchorMax = new Vector2(1f, 1f);
+                optionsRect.pivot = new Vector2(0.5f, 1f);
+                optionsRect.anchoredPosition = new Vector2(0f, -310f);
+                optionsRect.sizeDelta = new Vector2(-52f, optionsRect.sizeDelta.y);
+                VerticalLayoutGroup layout = controllerOptionsRoot.GetComponent<VerticalLayoutGroup>();
+                if (layout == null) layout = controllerOptionsRoot.gameObject.AddComponent<VerticalLayoutGroup>();
+                layout.padding = new RectOffset(0, 0, 0, 0);
+                layout.spacing = 5f;
+                layout.childAlignment = TextAnchor.UpperCenter;
+                layout.childControlWidth = true;
+                layout.childControlHeight = false;
+                layout.childForceExpandWidth = true;
+                layout.childForceExpandHeight = false;
+            }
+
+            if (_controllerOptionsHeading == null)
+            {
+                GameObject headingObject = new GameObject("Connected Controllers Heading", typeof(RectTransform), typeof(Text));
+                RectTransform headingRect = headingObject.GetComponent<RectTransform>();
+                headingRect.SetParent(inputSelectorPanel.transform, false);
+                headingRect.anchorMin = new Vector2(0f, 1f);
+                headingRect.anchorMax = new Vector2(1f, 1f);
+                headingRect.pivot = new Vector2(0.5f, 0.5f);
+                headingRect.anchoredPosition = new Vector2(0f, -290f);
+                headingRect.sizeDelta = new Vector2(-52f, 22f);
+                _controllerOptionsHeading = headingObject.GetComponent<Text>();
+                _controllerOptionsHeading.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+                _controllerOptionsHeading.text = "MANDOS CONECTADOS";
+                _controllerOptionsHeading.fontSize = 11;
+                _controllerOptionsHeading.fontStyle = FontStyle.Bold;
+                _controllerOptionsHeading.color = new Color32(105, 168, 255, 255);
+                _controllerOptionsHeading.alignment = TextAnchor.MiddleLeft;
+                _controllerOptionsHeading.raycastTarget = false;
+            }
+
+            // This old static icon was only a prompt. The dynamic rows below now represent each
+            // connected controller and show its real ownership state.
+            Transform oldPromptIcon = inputSelectorPanel.transform.Find("Input Gamepad Prompt Icon");
+            if (oldPromptIcon != null) oldPromptIcon.gameObject.SetActive(false);
+        }
+
+        private void RefreshControllerButtons()
+        {
+            if (_controller == null || inputSelectorPanel == null) return;
+            EnsureControllerOptionsUI();
+            if (controllerOptionsRoot == null) return;
+
+            for (int i = _controllerOptionButtons.Count - 1; i >= 0; i--)
+            {
+                Button oldButton = _controllerOptionButtons[i];
+                if (oldButton != null)
+                {
+                    if (Application.isPlaying) Destroy(oldButton.gameObject);
+                    else DestroyImmediate(oldButton.gameObject);
+                }
+            }
+            _controllerOptionButtons.Clear();
+
+            var devices = _controller.DeviceMonitor != null ? _controller.DeviceMonitor.ConnectedControllers : null;
+            PartyParticipant target = !string.IsNullOrEmpty(_pendingInputTargetId)
+                ? _controller.Party.GetParticipant(_pendingInputTargetId)
+                : null;
+            int count = 0;
+            if (devices != null)
+            {
+                for (int i = 0; i < devices.Count; i++)
+                {
+                    UnityEngine.InputSystem.InputDevice device = devices[i];
+                    if (device == null || !device.added || !Bunker26.Party.InputSystemDeviceMonitor.IsSupportedController(device)) continue;
+                    count++;
+                    string deviceId = device.deviceId.ToString(System.Globalization.CultureInfo.InvariantCulture);
+                    string displayName = string.IsNullOrWhiteSpace(device.displayName) ? "Mando" : device.displayName;
+                    bool isCurrent = target != null && target.inputAssignment != null &&
+                                     target.inputAssignment.deviceKind == InputDeviceKind.Gamepad &&
+                                     target.inputAssignment.deviceId == deviceId;
+                    bool isAssigned = _controller.Party.IsGamepadAssigned(deviceId);
+
+                    Button option = Instantiate(keyboardSlot1Button, controllerOptionsRoot, false);
+                    option.name = "Assign Controller - " + displayName;
+                    option.onClick.RemoveAllListeners();
+                    RectTransform optionRect = option.GetComponent<RectTransform>();
+                    optionRect.localScale = Vector3.one;
+                    optionRect.anchoredPosition = Vector2.zero;
+                    optionRect.sizeDelta = new Vector2(0f, 42f);
+                    LayoutElement layoutElement = option.GetComponent<LayoutElement>();
+                    if (layoutElement == null) layoutElement = option.gameObject.AddComponent<LayoutElement>();
+                    layoutElement.minHeight = 42f;
+                    layoutElement.preferredHeight = 42f;
+                    layoutElement.flexibleHeight = 0f;
+
+                    Transform iconTransform = option.transform.Find("Icon");
+                    Image iconImage = iconTransform != null ? iconTransform.GetComponent<Image>() : null;
+                    if (iconImage != null && _icons != null && _icons.gamepad != null)
+                        iconImage.sprite = _icons.gamepad;
+
+                    Text label = option.GetComponentInChildren<Text>(true);
+                    if (label != null)
+                    {
+                        string state = isCurrent ? " · Actual" : isAssigned ? " · En uso" : " · Libre";
+                        label.text = displayName + state;
+                        label.color = isCurrent ? new Color(0.62f, 0.88f, 0.69f, 1f) :
+                                      isAssigned ? new Color(0.62f, 0.66f, 0.73f, 1f) :
+                                      new Color(0.91f, 0.93f, 0.97f, 1f);
+                    }
+
+                    option.interactable = !isCurrent && !isAssigned && !string.IsNullOrEmpty(_pendingInputTargetId);
+                    if (option.interactable)
+                    {
+                        string capturedId = deviceId;
+                        string capturedName = displayName;
+                        option.onClick.AddListener(() => AssignControllerFromSelector(capturedId, capturedName));
+                    }
+                    _controllerOptionButtons.Add(option);
+                }
+            }
+
+            RectTransform rootRect = controllerOptionsRoot as RectTransform;
+            float optionHeight = count > 0 ? count * 42f + (count - 1) * 5f : 0f;
+            if (rootRect != null) rootRect.sizeDelta = new Vector2(-52f, optionHeight);
+            controllerOptionsRoot.gameObject.SetActive(count > 0);
+            if (_controllerOptionsHeading != null) _controllerOptionsHeading.gameObject.SetActive(true);
+
+            RectTransform panelRect = inputSelectorPanel.GetComponent<RectTransform>();
+            if (count == 0)
+            {
+                if (inputDeviceSummaryText != null) inputDeviceSummaryText.rectTransform.anchoredPosition = _baseInputSummaryPosition;
+                if (customizeInputBindingsButton != null) customizeInputBindingsButton.GetComponent<RectTransform>().anchoredPosition = _baseCustomizeButtonPosition;
+                if (panelRect != null && _baseInputPanelHeight >= 0f)
+                {
+                    Vector2 size = panelRect.sizeDelta;
+                    size.y = _baseInputPanelHeight;
+                    panelRect.sizeDelta = size;
+                }
+                return;
+            }
+
+            float summaryHalfHeight = inputDeviceSummaryText != null ? inputDeviceSummaryText.rectTransform.sizeDelta.y * 0.5f : 38f;
+            float summaryY = -310f - optionHeight - 12f - summaryHalfHeight;
+            if (inputDeviceSummaryText != null)
+                inputDeviceSummaryText.rectTransform.anchoredPosition = new Vector2(_baseInputSummaryPosition.x, summaryY);
+            float customizeY = summaryY - summaryHalfHeight - 14f - 22f;
+            if (customizeInputBindingsButton != null)
+                customizeInputBindingsButton.GetComponent<RectTransform>().anchoredPosition = new Vector2(_baseCustomizeButtonPosition.x, customizeY);
+            if (panelRect != null)
+            {
+                Vector2 size = panelRect.sizeDelta;
+                size.y = Mathf.Max(_baseInputPanelHeight, -customizeY + 100f);
+                panelRect.sizeDelta = size;
+            }
+        }
+
+        private void AssignControllerFromSelector(string deviceId, string displayName)
+        {
+            if (_controller == null || string.IsNullOrEmpty(_pendingInputTargetId)) return;
+            string participantId = _pendingInputTargetId;
+            string error;
+            if (!_controller.AssignControllerInput(participantId, deviceId, displayName, out error))
+            {
+                SetStatus(error, true);
+                RefreshDeviceStatus();
+                return;
+            }
+            CompleteInputAssignment(participantId);
         }
 
         private void RefreshKeyboardButton(Button button, int slot, string defaultLabel, InputAssignment currentAssignment)

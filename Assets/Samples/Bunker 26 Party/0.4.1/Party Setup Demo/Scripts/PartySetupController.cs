@@ -22,8 +22,6 @@ namespace Bunker26.Party.Samples
         [Header("Party Settings")]
         [Min(1)] public int maxLocalPlayers = 8;
         public bool createLocalPlayerOneOnAwake = true;
-        public bool autoJoinUnassignedGamepads = true;
-        public bool autoAssignPlayerOneInputOnStart = true;
 
         private PlayerProfileService _profiles;
         private PartyService _party;
@@ -52,7 +50,8 @@ namespace Bunker26.Party.Samples
             _party.PartyChanged += HandlePartyChanged;
             if (inputDeviceMonitor != null)
             {
-                inputDeviceMonitor.GamepadButtonPressed += HandleGamepadButtonPressed;
+                inputDeviceMonitor.KeyboardButtonPressed += HandleKeyboardButtonPressed;
+                inputDeviceMonitor.ControllerButtonPressed += HandleControllerButtonPressed;
                 inputDeviceMonitor.DeviceChanged += HandleInputDeviceChanged;
             }
             if (screenView != null)
@@ -61,37 +60,11 @@ namespace Bunker26.Party.Samples
                 screenView.RefreshAll();
             }
 
-            AutoAssignPlayerOneInput();
             PartyParticipant playerOne = _party.GetParticipantByLocalSlot(1);
-            string inputSummary = playerOne != null && playerOne.inputAssignment != null && playerOne.inputAssignment.deviceKind == InputDeviceKind.Gamepad
-                ? "Player 1 asignado a " + playerOne.inputAssignment.deviceDisplayName + "."
-                : "Player 1 asignado a Teclado 1.";
-            SetStatus(inputSummary + " Usá + para sumar otro jugador o presioná un botón de un mando libre para entrar.", false);
-        }
-
-        private void AutoAssignPlayerOneInput()
-        {
-            if (!autoAssignPlayerOneInputOnStart || _party == null) return;
-
-            PartyParticipant playerOne = _party.GetParticipantByLocalSlot(1);
-            if (playerOne == null || (playerOne.inputAssignment != null && playerOne.inputAssignment.IsAssigned)) return;
-
-            // Read Input System directly for startup assignment so Player 1 still gets the right
-            // device even if the optional sample monitor reference was not assigned in the Inspector.
-            for (int i = 0; i < Gamepad.all.Count; i++)
-            {
-                Gamepad gamepad = Gamepad.all[i];
-                if (gamepad == null || !gamepad.added) continue;
-
-                string deviceId = gamepad.deviceId.ToString(CultureInfo.InvariantCulture);
-                string displayName = string.IsNullOrWhiteSpace(gamepad.displayName) ? "Gamepad" : gamepad.displayName;
-                string error;
-                if (_party.AssignInput(playerOne.id, InputAssignment.Gamepad(deviceId, displayName, true), out error))
-                    return;
-            }
-
-            string keyboardError;
-            _party.AssignInput(playerOne.id, InputAssignment.Keyboard(0), out keyboardError);
+            bool hasRememberedProfile = playerOne != null && !string.IsNullOrWhiteSpace(playerOne.profileId);
+            string playerName = hasRememberedProfile ? playerOne.DisplayName : "Unknown";
+            SetStatus(playerName + (hasRememberedProfile ? " recuperado." : "") +
+                " Presioná una tecla o un botón de un mando para asignar el input inicial. Usá + para sumar otros jugadores.", false);
         }
 
         private void OnDestroy()
@@ -99,7 +72,8 @@ namespace Bunker26.Party.Samples
             if (_party != null) _party.PartyChanged -= HandlePartyChanged;
             if (inputDeviceMonitor != null)
             {
-                inputDeviceMonitor.GamepadButtonPressed -= HandleGamepadButtonPressed;
+                inputDeviceMonitor.KeyboardButtonPressed -= HandleKeyboardButtonPressed;
+                inputDeviceMonitor.ControllerButtonPressed -= HandleControllerButtonPressed;
                 inputDeviceMonitor.DeviceChanged -= HandleInputDeviceChanged;
             }
         }
@@ -195,6 +169,46 @@ namespace Bunker26.Party.Samples
             return result;
         }
 
+        public bool AssignControllerInput(string participantId, string deviceId, string displayName, out string error)
+        {
+            error = null;
+            if (string.IsNullOrWhiteSpace(deviceId))
+            {
+                error = "No se identificó el mando seleccionado.";
+                SetStatus(error, true);
+                return false;
+            }
+
+            PartyParticipant assignedParticipant = null;
+            var participants = _party != null ? _party.Participants : null;
+            if (participants != null)
+            {
+                for (int i = 0; i < participants.Count; i++)
+                {
+                    PartyParticipant candidate = participants[i];
+                    if (candidate != null && candidate.inputAssignment != null &&
+                        candidate.inputAssignment.deviceKind == InputDeviceKind.Gamepad &&
+                        candidate.inputAssignment.deviceId == deviceId)
+                    {
+                        assignedParticipant = candidate;
+                        break;
+                    }
+                }
+            }
+
+            if (assignedParticipant != null && assignedParticipant.id != participantId)
+            {
+                error = "Ese mando ya está asignado a otro jugador.";
+                SetStatus(error, true);
+                return false;
+            }
+
+            string name = string.IsNullOrWhiteSpace(displayName) ? "Mando" : displayName;
+            bool result = _party.AssignInput(participantId, InputAssignment.Gamepad(deviceId, name, true), out error);
+            SetStatus(result ? name + " asignado al jugador seleccionado." : error, !result);
+            return result;
+        }
+
         public bool ReleaseInput(string participantId)
         {
             bool result = _party.ReleaseInput(participantId);
@@ -229,7 +243,7 @@ namespace Bunker26.Party.Samples
         public string GetConnectedGamepadSummary()
         {
             if (inputDeviceMonitor == null) return "Input System monitor no asignado en el Inspector.";
-            var gamepads = inputDeviceMonitor.ConnectedGamepads;
+            var gamepads = inputDeviceMonitor.ConnectedControllers;
             if (gamepads.Count == 0) return "No hay mandos conectados. Conectá uno y presioná cualquier botón para entrar.";
             string summary = "Mandos conectados: ";
             bool hasFree = false;
@@ -256,38 +270,86 @@ namespace Bunker26.Party.Samples
             if (screenView != null) screenView.RefreshAll();
         }
 
-        private void HandleGamepadButtonPressed(Gamepad gamepad)
+        private void HandleKeyboardButtonPressed(Keyboard keyboard, InputControl control)
         {
-            if (!autoJoinUnassignedGamepads || gamepad == null || !gamepad.added) return;
-            string deviceId = gamepad.deviceId.ToString(CultureInfo.InvariantCulture);
-            string displayName = string.IsNullOrWhiteSpace(gamepad.displayName) ? "Gamepad" : gamepad.displayName;
+            if (keyboard == null || _party == null) return;
 
-            string targetId = screenView != null ? screenView.PendingInputTargetId : string.Empty;
-            if (_party.IsGamepadAssigned(deviceId))
+            // A keyboard press in a modal is part of the current UI workflow (profile editing,
+            // rebinding, or explicit input selection), not an implicit assignment.
+            if (screenView != null && (screenView.IsModalPanelOpen || !string.IsNullOrEmpty(screenView.PendingInputTargetId)))
+                return;
+
+            PartyParticipant playerOne = _party.GetParticipantByLocalSlot(1);
+            if (playerOne == null || (playerOne.inputAssignment != null && playerOne.inputAssignment.IsAssigned))
+                return;
+
+            string error;
+            if (!_party.AssignInput(playerOne.id, InputAssignment.Keyboard(0), out error))
             {
-                _party.MarkGamepadConnected(deviceId, displayName);
-                if (!string.IsNullOrEmpty(targetId))
-                {
-                    PartyParticipant requestedParticipant = _party.GetParticipant(targetId);
-                    bool alreadyAssignedToTarget = requestedParticipant != null && requestedParticipant.inputAssignment != null &&
-                        requestedParticipant.inputAssignment.deviceKind == InputDeviceKind.Gamepad &&
-                        requestedParticipant.inputAssignment.deviceId == deviceId;
-                    if (!alreadyAssignedToTarget)
-                        SetStatus("Ese mando ya está asignado a otro jugador.", true);
-                }
+                SetStatus(error, true);
                 return;
             }
 
-            if (string.IsNullOrEmpty(targetId) && screenView != null && screenView.IsModalPanelOpen) return;
+            bool needsProfile = string.IsNullOrWhiteSpace(playerOne.profileId);
+            SetStatus(needsProfile
+                ? "Teclado 1 asignado. Elegí o creá un perfil para Player 1."
+                : "Teclado 1 asignado a " + playerOne.DisplayName + ".", false);
+
+            if (needsProfile && screenView != null)
+                screenView.OpenProfileSelection(playerOne.id);
+        }
+
+        private void HandleControllerButtonPressed(InputDevice controllerDevice)
+        {
+            if (!InputSystemDeviceMonitor.IsSupportedController(controllerDevice) || controllerDevice == null || !controllerDevice.added)
+                return;
+
+            string deviceId = controllerDevice.deviceId.ToString(CultureInfo.InvariantCulture);
+            string displayName = string.IsNullOrWhiteSpace(controllerDevice.displayName) ? "Mando" : controllerDevice.displayName;
+            string targetId = screenView != null ? screenView.PendingInputTargetId : string.Empty;
+
+            // If the user has explicitly opened the selector, controller activity assigns this
+            // device to the selected participant and must not trigger an implicit join.
             if (!string.IsNullOrEmpty(targetId))
             {
-                string error;
-                if (_party.AssignInput(targetId, InputAssignment.Gamepad(deviceId, displayName), out error))
+                PartyParticipant target = _party.GetParticipant(targetId);
+                bool alreadyAssignedToTarget = target != null && target.inputAssignment != null &&
+                    target.inputAssignment.deviceKind == InputDeviceKind.Gamepad && target.inputAssignment.deviceId == deviceId;
+
+                if (_party.IsGamepadAssigned(deviceId) && !alreadyAssignedToTarget)
+                {
+                    _party.MarkGamepadConnected(deviceId, displayName);
+                    SetStatus("Ese mando ya está asignado a otro jugador.", true);
+                    if (screenView != null) screenView.RefreshDeviceStatus();
+                    return;
+                }
+
+                if (alreadyAssignedToTarget)
+                {
+                    _party.MarkGamepadConnected(deviceId, displayName);
+                    if (screenView != null) screenView.CompleteInputAssignment(targetId);
+                    SetStatus(displayName + " ya estaba asignado a ese jugador.", false);
+                    return;
+                }
+
+                string assignmentError;
+                if (_party.AssignInput(targetId, InputAssignment.Gamepad(deviceId, displayName, true), out assignmentError))
                 {
                     if (screenView != null) screenView.CompleteInputAssignment(targetId);
                     SetStatus(displayName + " asignado al jugador seleccionado.", false);
                 }
-                else SetStatus(error, true);
+                else SetStatus(assignmentError, true);
+                return;
+            }
+
+            // Never claim a controller while another modal is being operated.
+            if (screenView != null && screenView.IsModalPanelOpen) return;
+
+            // Already-assigned devices only refresh their connection status; they don't create a
+            // duplicate participant. A free device may join the next available local slot.
+            if (_party.IsGamepadAssigned(deviceId))
+            {
+                _party.MarkGamepadConnected(deviceId, displayName);
                 return;
             }
 
@@ -296,11 +358,21 @@ namespace Bunker26.Party.Samples
             string joinError;
             if (_party.TryJoinWithGamepad(deviceId, displayName, out participant, out shouldOpenProfileSelection, out joinError))
             {
-                SetStatus(displayName + " se unió como Jugador " + participant.localSlotIndex + ".", false);
-                if (screenView != null && participant != null && shouldOpenProfileSelection)
-                    screenView.OpenProfileSelection(participant.id);
+                bool hasProfile = participant != null && !string.IsNullOrWhiteSpace(participant.profileId);
+                SetStatus(displayName + " asignado a " + (hasProfile ? participant.DisplayName : "Jugador " + participant.localSlotIndex) +
+                    (hasProfile ? "." : ". Elegí o creá un perfil."), false);
+
+                if (screenView != null)
+                {
+                    screenView.RefreshAll();
+                    if (shouldOpenProfileSelection && participant != null)
+                        screenView.OpenProfileSelection(participant.id);
+                }
             }
-            else SetStatus(joinError, true);
+            else
+            {
+                SetStatus(joinError, true);
+            }
         }
 
         private void HandleInputDeviceChanged(InputDevice device, InputDeviceChange change)
@@ -311,16 +383,15 @@ namespace Bunker26.Party.Samples
                 return;
             }
 
-            Gamepad gamepad = device as Gamepad;
-            if (gamepad == null) return;
-            string deviceId = gamepad.deviceId.ToString(CultureInfo.InvariantCulture);
+            if (!InputSystemDeviceMonitor.IsSupportedController(device)) return;
+            string deviceId = device.deviceId.ToString(CultureInfo.InvariantCulture);
             switch (change)
             {
                 case InputDeviceChange.Added:
                 case InputDeviceChange.Reconnected:
                 case InputDeviceChange.Enabled:
                 case InputDeviceChange.ConfigurationChanged:
-                    _party.MarkGamepadConnected(deviceId, gamepad.displayName);
+                    _party.MarkGamepadConnected(deviceId, device.displayName);
                     break;
                 case InputDeviceChange.Disconnected:
                 case InputDeviceChange.Removed:

@@ -28,6 +28,7 @@ public sealed class PartyGameplayInputAdapter : MonoBehaviour
     [SerializeField] private string keyboard1Scheme = "Keyboard1";
     [SerializeField] private string keyboard2Scheme = "Keyboard2";
     [SerializeField] private string gamepadScheme = "Gamepad";
+    [SerializeField] private string joystickScheme = "Joystick";
 
     [Header("Optional Profile Rebinding")]
     [Tooltip("Assign the same GameInputDefinition used by Party Setup to apply the leader's saved profile overrides.")]
@@ -147,15 +148,8 @@ public sealed class PartyGameplayInputAdapter : MonoBehaviour
             return;
         }
 
-        string schemeName;
-        string bindingGroup;
-        string error;
-        if (!TryResolveScheme(assignment, out schemeName, out bindingGroup, out error))
-        {
-            DisableGameplayInput(error);
-            return;
-        }
-
+        // Resolve the physical device first. Unity may expose a controller as either Gamepad
+        // or generic Joystick, even when Party stores both in its current Gamepad assignment type.
         InputDevice device;
         if (assignment.deviceKind == InputDeviceKind.Keyboard)
         {
@@ -166,10 +160,11 @@ public sealed class PartyGameplayInputAdapter : MonoBehaviour
         {
             if (!assignment.isConnected)
             {
-                DisableGameplayInput("The Party leader's assigned gamepad is disconnected.");
+                DisableGameplayInput("The Party leader's assigned controller is disconnected.");
                 return;
             }
-            device = FindGamepad(assignment.deviceId);
+
+            device = FindSupportedController(assignment.deviceId);
         }
         else
         {
@@ -181,6 +176,30 @@ public sealed class PartyGameplayInputAdapter : MonoBehaviour
         {
             DisableGameplayInput("The physical device assigned to the Party leader could not be found.");
             return;
+        }
+
+        string schemeName;
+        string bindingGroup;
+        string error;
+        if (!TryResolveScheme(assignment, out schemeName, out bindingGroup, out error))
+        {
+            DisableGameplayInput(error);
+            return;
+        }
+
+        // A generic HID Joystick does not match a control scheme that requires <Gamepad>.
+        // Give it its own control scheme and binding group in the Input Actions asset.
+        if (assignment.deviceKind == InputDeviceKind.Gamepad && device is Joystick && !(device is Gamepad))
+        {
+            schemeName = joystickScheme;
+            bindingGroup = joystickScheme;
+
+            if (!HasControlScheme(schemeName))
+            {
+                DisableGameplayInput("The Input Actions asset has no control scheme named '" +
+                    schemeName + "'. Add a Joystick control scheme and assign the Stick binding to its Joystick group.");
+                return;
+            }
         }
 
         string signature = leader.id + "|" + leader.profileId + "|" + schemeName + "|" +
@@ -213,6 +232,7 @@ public sealed class PartyGameplayInputAdapter : MonoBehaviour
             }
 
             Debug.Log("[PartyGameplayInputAdapter] Active leader: " + leader.DisplayName +
+                      " | Device: " + device.displayName + " (" + device.GetType().Name + ")" +
                       " | Scheme: " + schemeName + " | Group: " + bindingGroup, this);
         }
         catch (Exception exception)
@@ -221,6 +241,20 @@ public sealed class PartyGameplayInputAdapter : MonoBehaviour
             _activeSignature = null;
             DisableGameplayInput("Could not activate leader input scheme '" + schemeName + "'. " + exception.Message);
         }
+    }
+
+    private bool HasControlScheme(string schemeName)
+    {
+        if (playerInput == null || playerInput.actions == null || string.IsNullOrWhiteSpace(schemeName))
+            return false;
+
+        for (int i = 0; i < playerInput.actions.controlSchemes.Count; i++)
+        {
+            if (string.Equals(playerInput.actions.controlSchemes[i].name, schemeName,
+                    StringComparison.OrdinalIgnoreCase))
+                return true;
+        }
+        return false;
     }
 
     private bool TryResolveScheme(InputAssignment assignment, out string schemeName,
@@ -294,16 +328,19 @@ public sealed class PartyGameplayInputAdapter : MonoBehaviour
             playerInput.actions.LoadBindingOverridesFromJson(json);
     }
 
-    private static Gamepad FindGamepad(string deviceId)
+    private static InputDevice FindSupportedController(string deviceId)
     {
         if (!int.TryParse(deviceId, NumberStyles.Integer, CultureInfo.InvariantCulture, out int id))
             return null;
 
-        for (int i = 0; i < Gamepad.all.Count; i++)
+        for (int i = 0; i < InputSystem.devices.Count; i++)
         {
-            Gamepad gamepad = Gamepad.all[i];
-            if (gamepad != null && gamepad.added && gamepad.deviceId == id)
-                return gamepad;
+            InputDevice device = InputSystem.devices[i];
+            if (device == null || !device.added || device.deviceId != id)
+                continue;
+
+            if (device is Gamepad || device is Joystick)
+                return device;
         }
         return null;
     }
@@ -325,13 +362,65 @@ public sealed class PartyGameplayInputAdapter : MonoBehaviour
         Debug.LogWarning("[PartyGameplayInputAdapter] " + reason, this);
     }
 
+    private const float AnalogDeadzone = 0f;
+
     private void HandleMove(InputAction.CallbackContext context)
     {
         PartyParticipant leader = _party != null ? _party.Leader : null;
         if (leader == null || leader.id != _activeLeaderId || !ContextMatchesLeader(context, leader))
             return;
 
+        // Keyboard bindings already produce clean digital values, so keep the existing
+        // PlayerController path for them. Analog controllers need to be converted into
+        // the same cardinal directions used by the keyboard:
+        // Up/Down = lane change, Right = accelerate.
+        if (context.control != null &&
+            (context.control.device is Gamepad || context.control.device is Joystick))
+        {
+            HandleAnalogMove(context);
+            return;
+        }
+
         playerController.OnMove(context);
+    }
+
+    private void HandleAnalogMove(InputAction.CallbackContext context)
+    {
+        if (context.control == null || playerController == null)
+            return;
+
+        Vector2 rawInput = context.ReadValue<Vector2>();
+
+        if (context.canceled || rawInput.magnitude < AnalogDeadzone)
+        {
+            playerController.SetHorizontalInput(0f);
+            return;
+        }
+
+        // Treat the stick as a 4-direction control instead of a free analog vector.
+        // The strongest axis wins, which prevents a small X component while pushing
+        // Up/Down from accidentally triggering acceleration.
+        Vector2 filteredInput;
+        if (Mathf.Abs(rawInput.y) >= Mathf.Abs(rawInput.x))
+        {
+            filteredInput = new Vector2(0f, Mathf.Sign(rawInput.y));
+        }
+        else
+        {
+            filteredInput = new Vector2(Mathf.Sign(rawInput.x), 0f);
+        }
+
+        playerController.SetHorizontalInput(filteredInput.x);
+
+        // Match PlayerController's keyboard behavior: lane changes happen once when
+        // the directional action starts, rather than continuously while the stick is held.
+        if (!context.started)
+            return;
+
+        if (filteredInput.y > 0f)
+            playerController.TryChangeLane(1);
+        else if (filteredInput.y < 0f)
+            playerController.TryChangeLane(-1);
     }
 
     private void HandlePause(InputAction.CallbackContext context)
@@ -358,8 +447,9 @@ public sealed class PartyGameplayInputAdapter : MonoBehaviour
 
         if (assignment.deviceKind == InputDeviceKind.Gamepad)
         {
-            return context.control.device is Gamepad &&
-                   context.control.device.deviceId.ToString(CultureInfo.InvariantCulture) == assignment.deviceId &&
+            InputDevice device = context.control.device;
+            return (device is Gamepad || device is Joystick) &&
+                   device.deviceId.ToString(CultureInfo.InvariantCulture) == assignment.deviceId &&
                    BindingHasGroup(context, _activeBindingGroup);
         }
 
