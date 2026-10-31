@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
+using BARunner.Survival;
 public enum SurvivalMode
 {
     Solo,
@@ -31,6 +32,11 @@ public class SurvivalPlayerRig
 
 public class SurvivalManager : MonoBehaviour
 {
+    /// <summary>
+    /// Raised after a Solo run has been finalized and its BA Runner statistics have
+    /// been saved (or a save failure has been reported). The scene UI owns presentation.
+    /// </summary>
+    public event Action<SurvivalRunResult, BARunnerStatistics, bool> SoloRunEnded;
     [Header("Mode")]
     [SerializeField] private SurvivalMode mode;
 
@@ -56,92 +62,136 @@ public class SurvivalManager : MonoBehaviour
     private float scoreCountDuration = 0.8f;
     [SerializeField] private string mainMenuSceneName = "MainMenu";
 
+    [Header("Solo Result Integration")]
+    [SerializeField] private SurvivalResultAdapter soloResultAdapter;
+    [SerializeField] private TextMeshProUGUI soloFinalScoreText;
+    [SerializeField] private TextMeshProUGUI soloFinalStatsText;
+    [SerializeField] private TextMeshProUGUI soloBestScoreText;
+    [SerializeField] private TextMeshProUGUI soloNewRecordText;
+    [SerializeField, Range(1.02f, 1.5f)] private float newRecordPulseScale = 1.14f;
+    [SerializeField, Min(0.05f)] private float newRecordPulseDuration = 0.42f;
+
+    private float survivalElapsedTime;
     private int[] reviveProgress;
     private bool[] isReviving;
 
     private bool gameEnded;
     private int versusLastStanding = -1;
     private Tween scoreCountTween;
+    private Tween newRecordPulseTween;
+    private Transform newRecordPulseTarget;
+    private Vector3 newRecordPulseBaseScale;
 
     // =========================================================
     // START
     // =========================================================
 
-  private void Start()
-{
-    mode = SurvivalRunConfig.SelectedMode;
-
-    PlayTutorialFade();
-
-    if (gameOverPanel != null)
+    private void Start()
     {
-        gameOverPanel.SetActive(false);
-    }
+        mode = SurvivalRunConfig.SelectedMode;
+        survivalElapsedTime = 0f;
+        gameEnded = false;
 
-    if (players == null)
-    {
-        Debug.LogError("[SurvivalManager] Players array no está asignado.");
-        return;
-    }
+        PlayTutorialFade();
 
-    reviveProgress = new int[players.Length];
-    isReviving = new bool[players.Length];
-
-    for (int i = 0; i < players.Length; i++)
-    {
-        int index = i;
-
-        SurvivalPlayerRig rig = players[i];
-
-        if (rig == null)
+        if (gameOverPanel != null)
         {
-            Debug.LogWarning(
-                $"[SurvivalManager] Player Rig {i} está vacío."
-            );
-
-            continue;
+            gameOverPanel.SetActive(false);
         }
 
-        if (rig.player == null)
-        {
-            Debug.LogError(
-                $"[SurvivalManager] Player {i + 1} no tiene PlayerController asignado."
-            );
+        StopNewRecordPulse();
 
-            continue;
+        if (players == null)
+        {
+            Debug.LogError("[SurvivalManager] Players array no está asignado.");
+            return;
         }
 
-        if (rig.track == null)
-        {
-            Debug.LogError(
-                $"[SurvivalManager] Player {i + 1} no tiene SurvivalTrackController asignado."
-            );
+        reviveProgress = new int[players.Length];
+        isReviving = new bool[players.Length];
 
-            continue;
+        if (mode == SurvivalMode.Solo)
+        {
+            EnsureSoloResultTexts();
+            if (soloNewRecordText != null)
+                soloNewRecordText.gameObject.SetActive(false);
+
+            if (soloResultAdapter == null)
+                soloResultAdapter = GetComponent<SurvivalResultAdapter>();
+
+            if (soloResultAdapter == null)
+                soloResultAdapter = FindObjectOfType<SurvivalResultAdapter>();
+
+            // Automatically add the adapter if it was not placed in the scene or assigned
+            // in the Inspector. It lives on the manager and only handles this run's result.
+            if (soloResultAdapter == null)
+                soloResultAdapter = gameObject.AddComponent<SurvivalResultAdapter>();
+
+            if (!soloResultAdapter.BeginRun())
+            {
+                Debug.LogWarning(
+                    "[SurvivalManager] Could not capture a Party profile for this Solo run. Check the preceding SurvivalResultAdapter warning. Gameplay will continue without profile statistics.",
+                    this);
+            }
         }
 
-        rig.player.Died +=
-            player =>
-                HandlePlayerDeath(index);
+        for (int i = 0; i < players.Length; i++)
+        {
+            int index = i;
 
-        rig.track.StageCompleted +=
-            track =>
-                HandleStageCompleted(index);
+            SurvivalPlayerRig rig = players[i];
 
-        HideDeathOverlay(index);
+            if (rig == null)
+            {
+                Debug.LogWarning(
+                    $"[SurvivalManager] Player Rig {i} está vacío."
+                );
 
-        rig.track.StartRun();
+                continue;
+            }
+
+            if (rig.player == null)
+            {
+                Debug.LogError(
+                    $"[SurvivalManager] Player {i + 1} no tiene PlayerController asignado."
+                );
+
+                continue;
+            }
+
+            if (rig.track == null)
+            {
+                Debug.LogError(
+                    $"[SurvivalManager] Player {i + 1} no tiene SurvivalTrackController asignado."
+                );
+
+                continue;
+            }
+
+            rig.player.SetSurvivalMode(true);
+
+            rig.player.Died +=
+                player =>
+                    HandlePlayerDeath(index);
+
+            rig.track.StageCompleted +=
+                track =>
+                    HandleStageCompleted(index);
+
+            HideDeathOverlay(index);
+
+            rig.track.StartRun();
+        }
+
+        UpdateAllHUD();
+
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.ChangeState(
+                GameState.Survival
+            );
+        }
     }
-
-    UpdateAllHUD();
-
-    if (GameManager.Instance != null)
-    {
-        GameManager.Instance.ChangeState(
-            GameState.Survival
-        );
-    }
-}
 
 
     // =========================================================
@@ -153,81 +203,90 @@ public class SurvivalManager : MonoBehaviour
         if (gameEnded)
             return;
 
+        // Time.deltaTime follows the game's time scale, so normal Time.timeScale pauses
+        // are excluded from the recorded Survival time.
+        if (mode == SurvivalMode.Solo)
+            survivalElapsedTime += Time.deltaTime;
+
         UpdateAllHUD();
     }
 
- private void UpdateAllHUD()
-{
-    int teamScore = 0;
-
-    if (players == null)
-        return;
-
-    for (int i = 0; i < players.Length; i++)
+    private void UpdateAllHUD()
     {
-        SurvivalPlayerRig rig = players[i];
+        // Once the run has ended, preserve the last visible values.
+        if (gameEnded)
+            return;
 
-        // Seguridad: slot vacío en el array
-        if (rig == null)
-            continue;
+        int teamScore = 0;
 
-        // -------------------------
-        // SCORE
-        // -------------------------
+        if (players == null)
+            return;
 
-        if (rig.score != null)
+        for (int i = 0; i < players.Length; i++)
         {
-            if (rig.scoreText != null)
+            SurvivalPlayerRig rig = players[i];
+
+            // Seguridad: slot vacío en el array
+            if (rig == null)
+                continue;
+
+            // -------------------------
+            // SCORE
+            // -------------------------
+
+            if (rig.score != null)
             {
-                rig.scoreText.text =
-                    $"SCORE {rig.score.Score}";
+                if (rig.scoreText != null)
+                {
+                    rig.scoreText.text =
+                        $"SCORE {rig.score.Score}";
+                }
+
+                teamScore += rig.score.Score;
             }
 
-            teamScore += rig.score.Score;
+            // -------------------------
+            // STAGE
+            // -------------------------
+
+            if (
+                rig.stageText != null &&
+                rig.track != null
+            )
+            {
+                rig.stageText.text =
+                    $"STAGE {rig.track.TotalStagesCompleted + 1}";
+            }
+
+            // -------------------------
+            // DISTANCE
+            // -------------------------
+
+            if (
+                rig.distanceToStageText != null &&
+                rig.track != null
+            )
+            {
+                int distance =
+                    Mathf.CeilToInt(
+                        rig.track.DistanceToNextStage
+                    );
+
+                rig.distanceToStageText.text =
+                    $"NEXT STAGE {distance}";
+            }
         }
 
         // -------------------------
-        // STAGE
+        // TEAM SCORE
         // -------------------------
 
-        if (
-            rig.stageText != null &&
-            rig.track != null
-        )
+        if (teamScoreText != null)
         {
-            rig.stageText.text =
-                $"STAGE {rig.track.TotalStagesCompleted + 1}";
-        }
-
-        // -------------------------
-        // DISTANCE
-        // -------------------------
-
-        if (
-            rig.distanceToStageText != null &&
-            rig.track != null
-        )
-        {
-            int distance =
-                Mathf.CeilToInt(
-                    rig.track.DistanceToNextStage
-                );
-
-            rig.distanceToStageText.text =
-                $"NEXT STAGE {distance}";
+            teamScoreText.text =
+                $"TEAM SCORE {teamScore}";
         }
     }
-
-    // -------------------------
-    // TEAM SCORE
-    // -------------------------
-
-    if (teamScoreText != null)
-    {
-        teamScoreText.text =
-            $"TEAM SCORE {teamScore}";
-    }
-}
 
 
     // =========================================================
@@ -241,9 +300,8 @@ public class SurvivalManager : MonoBehaviour
         if (gameEnded)
             return;
 
-        players[playerIndex]
-            .track
-            .SetRunning(false);
+        // Freeze every gameplay/statistics source before dispatching the mode-specific end flow.
+        FreezePlayerRig(playerIndex);
 
         switch (mode)
         {
@@ -267,7 +325,7 @@ public class SurvivalManager : MonoBehaviour
 
             case SurvivalMode.Solo:
 
-                EndSolo();
+                EndSolo(playerIndex);
 
                 break;
         }
@@ -515,7 +573,7 @@ public class SurvivalManager : MonoBehaviour
             .SetEase(Ease.OutCubic)
             .SetUpdate(true);
 
-            gameOverNav.AssignButton(initialButton);
+        gameOverNav.AssignButton(initialButton);
     }
     // =========================================================
     // HUD
@@ -837,28 +895,308 @@ public class SurvivalManager : MonoBehaviour
         );
     }
 
-    private void EndSolo()
+    private void EnsureSoloResultTexts()
     {
-        gameEnded = true;
+        if (gameOverPanel == null)
+            return;
 
-        StopAllTracks();
+        RectTransform panelRect = gameOverPanel.GetComponent<RectTransform>();
+        if (panelRect == null)
+        {
+            Debug.LogWarning("[SurvivalManager] Game Over Panel has no RectTransform; automatic Solo result labels cannot be created.", this);
+            return;
+        }
+
+        if (soloFinalStatsText == null)
+        {
+            soloFinalStatsText = FindChildText(gameOverPanel.transform, "BARunnerSoloFinalStats");
+            if (soloFinalStatsText == null)
+            {
+                soloFinalStatsText = CreateAutoResultText(
+                    "BARunnerSoloFinalStats", panelRect, new Vector2(0.5f, 0.57f),
+                    new Vector2(620f, 190f), 25f, Color.white);
+            }
+        }
+
+        if (soloNewRecordText == null)
+        {
+            soloNewRecordText = FindChildText(gameOverPanel.transform, "BARunnerSoloNewRecord");
+            if (soloNewRecordText == null)
+            {
+                soloNewRecordText = CreateAutoResultText(
+                    "BARunnerSoloNewRecord", panelRect, new Vector2(0.5f, 0.79f),
+                    new Vector2(620f, 85f), 44f, new Color(1f, 0.78f, 0.25f));
+            }
+        }
     }
 
+    private static TextMeshProUGUI FindChildText(Transform parent, string objectName)
+    {
+        if (parent == null) return null;
+        Transform child = parent.Find(objectName);
+        return child != null ? child.GetComponent<TextMeshProUGUI>() : null;
+    }
+
+    private static TextMeshProUGUI CreateAutoResultText(
+        string objectName,
+        RectTransform parent,
+        Vector2 anchor,
+        Vector2 size,
+        float fontSize,
+        Color color)
+    {
+        GameObject textObject = new GameObject(
+            objectName, typeof(RectTransform), typeof(CanvasRenderer), typeof(TextMeshProUGUI));
+        RectTransform rect = textObject.GetComponent<RectTransform>();
+        rect.SetParent(parent, false);
+        rect.anchorMin = anchor;
+        rect.anchorMax = anchor;
+        rect.pivot = new Vector2(0.5f, 0.5f);
+        rect.anchoredPosition = Vector2.zero;
+        rect.sizeDelta = size;
+        rect.SetAsLastSibling();
+
+        TextMeshProUGUI text = textObject.GetComponent<TextMeshProUGUI>();
+        if (TMP_Settings.defaultFontAsset != null)
+            text.font = TMP_Settings.defaultFontAsset;
+        text.fontSize = fontSize;
+        text.color = color;
+        text.alignment = TextAlignmentOptions.Center;
+        text.fontStyle = FontStyles.Bold;
+        text.enableAutoSizing = true;
+        text.fontSizeMin = Mathf.Max(16f, fontSize * 0.7f);
+        text.fontSizeMax = fontSize;
+        text.raycastTarget = false;
+        text.text = string.Empty;
+        return text;
+    }
+
+    private void EndSolo(int playerIndex)
+    {
+        if (gameEnded)
+            return;
+
+        gameEnded = true;
+        StopAllTracks();
+        StopNewRecordPulse();
+        EnsureSoloResultTexts();
+
+        if (players == null || playerIndex < 0 || playerIndex >= players.Length || players[playerIndex] == null)
+        {
+            Debug.LogError("[SurvivalManager] Cannot create the Solo result because the player's rig is missing.", this);
+            ShowSoloGameOver();
+            return;
+        }
+
+        SurvivalPlayerRig rig = players[playerIndex];
+
+        int finalScore = rig.score != null ? rig.score.Score : 0;
+        float finalDistance = rig.score != null ? rig.score.Distance : 0f;
+        int finalStages = rig.track != null
+    ? rig.track.TotalStagesCompleted + 1
+    : 0;
+
+        SurvivalRunResult result = new SurvivalRunResult(
+            finalScore,
+            finalDistance,
+            finalStages,
+            survivalElapsedTime);
+
+        BARunnerStatistics savedStatistics = null;
+        bool isNewScoreRecord = false;
+
+        if (soloResultAdapter != null)
+        {
+            string saveError;
+            bool saved = soloResultAdapter.TryRecordRun(
+                result,
+                out savedStatistics,
+                out isNewScoreRecord,
+                out saveError);
+
+            if (!saved)
+            {
+                // A score only counts as a new record when the write succeeds.
+                isNewScoreRecord = false;
+
+                Debug.LogWarning(
+                    "[SurvivalManager] Solo result could not be saved to the Party profile. " + saveError,
+                    this);
+
+                // Still try to show the previous personal best if the save failed.
+                string loadError;
+                if (!soloResultAdapter.TryLoadStatistics(out savedStatistics, out loadError))
+                    Debug.LogWarning("[SurvivalManager] Could not load the previous Survival record. " + loadError, this);
+            }
+        }
+
+        int bestScore = savedStatistics != null ? savedStatistics.bestSurvivalScore : finalScore;
+
+        if (soloFinalScoreText != null)
+            soloFinalScoreText.text = $"SCORE {finalScore:N0}";
+
+        if (soloBestScoreText != null)
+        {
+            soloBestScoreText.text = savedStatistics != null
+                ? $"BEST SCORE {bestScore:N0}"
+                : "BEST SCORE —";
+        }
+
+        if (soloFinalStatsText != null)
+        {
+            string bestScoreLine = soloBestScoreText == null
+                ? (savedStatistics != null ? $"BEST SCORE {bestScore:N0}\n" : "BEST SCORE —\n")
+                : string.Empty;
+
+            string currentScoreLine = soloFinalScoreText == null
+                ? $"SCORE {finalScore:N0}\n"
+                : string.Empty;
+            string newRecordLine = isNewScoreRecord && soloNewRecordText == null
+                ? "NEW RECORD!\n"
+                : string.Empty;
+
+            soloFinalStatsText.text =
+                newRecordLine + currentScoreLine + bestScoreLine +
+                $"DISTANCE {finalDistance:N0}\n" +
+                $"STAGES {finalStages}\n" +
+                $"TIME {FormatSurvivalTime(survivalElapsedTime)}";
+        }
+
+        if (soloNewRecordText != null)
+        {
+            soloNewRecordText.text = "NEW RECORD!";
+            soloNewRecordText.gameObject.SetActive(isNewScoreRecord);
+            if (isNewScoreRecord)
+                StartNewRecordPulse(soloNewRecordText.transform);
+        }
+        else if (isNewScoreRecord)
+        {
+            Transform fallbackPulseTarget = soloFinalStatsText != null
+                ? soloFinalStatsText.transform
+                : (soloFinalScoreText != null ? soloFinalScoreText.transform : null);
+            if (fallbackPulseTarget != null)
+                StartNewRecordPulse(fallbackPulseTarget);
+        }
+
+        if (isNewScoreRecord)
+            Debug.Log("[SurvivalManager] NEW SURVIVAL SCORE RECORD: " + finalScore, this);
+        else if (soloResultAdapter == null || !soloResultAdapter.HasCapturedRun)
+            Debug.LogWarning("[SurvivalManager] The result UI is shown, but no Party profile was captured; no BA Runner statistics were saved.", this);
+
+        // Prefer the scene's original SurvivalUIManager (end screen, leaderboard,
+        // retry countdown). Keep this manager's panel as a fallback for scenes that
+        // do not contain a SurvivalUIManager.
+        Action<SurvivalRunResult, BARunnerStatistics, bool> handler = SoloRunEnded;
+        if (handler != null)
+        {
+            Debug.Log("[SurvivalManager] Dispatching Solo result to SurvivalUIManager.", this);
+            handler.Invoke(result, savedStatistics, isNewScoreRecord);
+        }
+        else
+        {
+            Debug.LogWarning(
+                "[SurvivalManager] No SurvivalUIManager subscribed to SoloRunEnded. Using the fallback Game Over panel.",
+                this);
+            ShowSoloGameOver();
+        }
+    }
+
+    private void StartNewRecordPulse(Transform target)
+    {
+        StopNewRecordPulse();
+        if (target == null)
+            return;
+
+        newRecordPulseTarget = target;
+        newRecordPulseBaseScale = target.localScale;
+        Vector3 targetScale = newRecordPulseBaseScale * newRecordPulseScale;
+
+        newRecordPulseTween = target
+            .DOScale(targetScale, newRecordPulseDuration)
+            .SetEase(Ease.InOutSine)
+            .SetLoops(-1, LoopType.Yoyo)
+            .SetUpdate(true);
+    }
+
+    private void StopNewRecordPulse()
+    {
+        if (newRecordPulseTween != null)
+        {
+            newRecordPulseTween.Kill();
+            newRecordPulseTween = null;
+        }
+
+        if (newRecordPulseTarget != null)
+        {
+            newRecordPulseTarget.localScale = newRecordPulseBaseScale;
+            newRecordPulseTarget = null;
+        }
+    }
+
+    private void ShowSoloGameOver()
+    {
+        if (gameOverPanel != null)
+            gameOverPanel.SetActive(true);
+
+        if (gameOverNav != null)
+        {
+            if (initialButton != null)
+                gameOverNav.AssignButton(initialButton);
+            else
+                gameOverNav.AssignButton();
+        }
+    }
+
+    private static string FormatSurvivalTime(float totalSeconds)
+    {
+        int wholeSeconds = Mathf.Max(0, Mathf.FloorToInt(totalSeconds));
+        int hours = wholeSeconds / 3600;
+        int minutes = (wholeSeconds % 3600) / 60;
+        int seconds = wholeSeconds % 60;
+
+        return hours > 0
+            ? $"{hours:00}:{minutes:00}:{seconds:00}"
+            : $"{minutes:00}:{seconds:00}";
+    }
+
+    private void FreezePlayerRig(int index)
+    {
+        if (players == null || index < 0 || index >= players.Length)
+            return;
+
+        SurvivalPlayerRig rig = players[index];
+        if (rig == null)
+            return;
+
+        // Stop the track first so it cannot accumulate more distance or complete a stage.
+        if (rig.track != null)
+            rig.track.SetRunning(false);
+
+        // Also stop these references directly. This protects against an Inspector setup
+        // where the rig and track point to different WorldSpeed/ScoreSystem components.
+        if (rig.score != null)
+            rig.score.SetRunning(false);
+
+        if (rig.worldSpeed != null)
+            rig.worldSpeed.SetFrozen(true);
+
+        if (rig.player != null)
+            rig.player.SetHorizontalInput(0f);
+    }
 
     private void StopAllTracks()
     {
-        foreach (
-            SurvivalPlayerRig rig
-            in players
-        )
-        {
-            rig.track.SetRunning(false);
-        }
+        if (players == null)
+            return;
+
+        for (int i = 0; i < players.Length; i++)
+            FreezePlayerRig(i);
     }
 
     private void OnDestroy()
     {
         tutorialSequence?.Kill();
         scoreCountTween?.Kill();
+        StopNewRecordPulse();
     }
 }

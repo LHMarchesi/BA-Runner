@@ -8401,6 +8401,7 @@ GameObject:
   - component: {fileID: 715614805}
   - component: {fileID: 715614804}
   - component: {fileID: 715614803}
+  - component: {fileID: 715614810}
   m_Layer: 0
   m_Name: Party Setup Canvas
   m_TagString: Untagged
@@ -8605,6 +8606,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &715614810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715614802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e55b1ed9cbc07f64199925b208d9e0c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BARunner.Survival.BARunnerProfileStatisticsView
+  profileScreen: {fileID: 0}
+  sectionTitle: BA RUNNER - SURVIVAL
+  expandStatsTextToFit: 1
 --- !u!1 &729995230
 GameObject:
   m_ObjectHideFlags: 0
@@ -11010,7 +11026,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 112.06824, y: 126.96808}
+  m_AnchoredPosition: {x: 112.06836, y: 126.96802}
   m_SizeDelta: {x: 72.0568, y: 71.4578}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &943232546
@@ -13711,8 +13727,6 @@ MonoBehaviour:
   gameInputDefinition: {fileID: 11400000, guid: 72796256f2aae8448839b2569cb052f6, type: 2}
   maxLocalPlayers: 8
   createLocalPlayerOneOnAwake: 1
-  autoJoinUnassignedGamepads: 1
-  autoAssignPlayerOneInputOnStart: 1
 --- !u!4 &1237326855
 Transform:
   m_ObjectHideFlags: 0

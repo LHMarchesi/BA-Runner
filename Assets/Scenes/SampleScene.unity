@@ -10796,8 +10796,6 @@ MonoBehaviour:
   gameInputDefinition: {fileID: 11400000, guid: 72796256f2aae8448839b2569cb052f6, type: 2}
   maxLocalPlayers: 8
   createLocalPlayerOneOnAwake: 1
-  autoJoinUnassignedGamepads: 1
-  autoAssignPlayerOneInputOnStart: 1
 --- !u!4 &1138189556
 Transform:
   m_ObjectHideFlags: 0
@@ -18356,6 +18354,7 @@ GameObject:
   - component: {fileID: 1890583427}
   - component: {fileID: 1890583426}
   - component: {fileID: 1890583425}
+  - component: {fileID: 1890583432}
   m_Layer: 0
   m_Name: Party Setup Canvas
   m_TagString: Untagged
@@ -18560,6 +18559,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1890583432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890583424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e55b1ed9cbc07f64199925b208d9e0c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BARunner.Survival.BARunnerProfileStatisticsView
+  profileScreen: {fileID: 0}
+  sectionTitle: BA RUNNER - SURVIVAL
 --- !u!1 &1894912749
 GameObject:
   m_ObjectHideFlags: 0
@@ -20902,6 +20915,7 @@ MonoBehaviour:
   keyboard1Scheme: Keyboard1
   keyboard2Scheme: Keyboard2
   gamepadScheme: Gamepad
+  joystickScheme: Joystick
   gameInputDefinition: {fileID: 11400000, guid: 16c7b32242d1c724185b8d9f3a36962c, type: 2}
   applySavedProfileOverrides: 1
 --- !u!1660057539 &9223372036854775807

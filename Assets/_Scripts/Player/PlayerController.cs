@@ -236,6 +236,16 @@ public class PlayerController : MonoBehaviour
         );
     }
 
+    public void SetSurvivalMode(bool enabled)
+    {
+        survivalMode = enabled;
+
+        Debug.Log(
+            $"[PlayerController] Survival mode: {enabled}",
+            this
+        );
+    }
+
     private void HandleBoost()
     {
         float currentX = transform.position.x;

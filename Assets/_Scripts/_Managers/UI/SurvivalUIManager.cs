@@ -6,6 +6,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using BARunner.Survival;
 
 public class SurvivalUIManager : MonoBehaviour
 {
@@ -26,6 +27,16 @@ public class SurvivalUIManager : MonoBehaviour
     [SerializeField] private InputField enterNameField;
     [SerializeField] private GameObject PausePanel;
 
+    [Header("Party / BA Runner Result UI")]
+    [Tooltip("Optional. If empty, the manager is found in the active scene.")]
+    [SerializeField] private SurvivalManager survivalManager;
+    [Tooltip("Create a TMP text under End Screen and assign it here to show the personal best.")]
+    [SerializeField] private TextMeshProUGUI bestSurvivalScoreText;
+    [Tooltip("Create a TMP text under End Screen and assign it here to show NEW RECORD! with a pulse.")]
+    [SerializeField] private TextMeshProUGUI newRecordText;
+    [SerializeField, Range(1.02f, 1.5f)] private float newRecordPulseScale = 1.14f;
+    [SerializeField, Min(0.05f)] private float newRecordPulseDuration = 0.42f;
+
     private EventBinding<OnRoadEnvironmentChanged> envBinding;
     private EventBinding<OnPlayerDeathEvent> onDeathBinding;
     private EventBinding<OnRoadSectionChanged> sectionBinding;
@@ -33,14 +44,33 @@ public class SurvivalUIManager : MonoBehaviour
     private EventBinding<OnPauseEvent> pauseEventBinding;
 
     private float survivalTime;
+    private bool timerRunning;
+    private bool hasHandledEnd;
+    private bool scoreSaved;
+    private float lastScore;
+    private Tween newRecordPulseTween;
+    private Vector3 newRecordBaseScale;
+    private bool hasNewRecordBaseScale;
+
+    [SerializeField] private Image despedidoImage;
+    [SerializeField] private TextMeshProUGUI countDownText;
+    [SerializeField] private Image countDown;
+    [SerializeField] private AudioClip countdownBeep;
+    [SerializeField] private LeaderboardUI leaderboardUI;
+
+    private void Awake()
+    {
+        if (survivalManager == null)
+            survivalManager = FindObjectOfType<SurvivalManager>();
+    }
 
     private void OnEnable()
     {
         envBinding = new EventBinding<OnRoadEnvironmentChanged>(OnEnvironmentChanged);
         EventBus<OnRoadEnvironmentChanged>.Register(envBinding);
 
-        onDeathBinding = new EventBinding<OnPlayerDeathEvent>(OnSurvivalEnded);
-        EventBus<OnPlayerDeathEvent>.Register(onDeathBinding);
+        // Keep the legacy event path for any other mode/system that still raises it.
+        // Survival Solo now uses SurvivalManager.SoloRunEnded instead.
 
         updateEventBinding = new EventBinding<OnLevelUpdateEvent>(OnUpdateEvent);
         EventBus<OnLevelUpdateEvent>.Register(updateEventBinding);
@@ -48,44 +78,74 @@ public class SurvivalUIManager : MonoBehaviour
         pauseEventBinding = new EventBinding<OnPauseEvent>(OnPauseEventTriggered);
         EventBus<OnPauseEvent>.Register(pauseEventBinding);
 
+        if (survivalManager == null)
+            survivalManager = FindObjectOfType<SurvivalManager>();
+
+        if (survivalManager != null)
+        {
+            survivalManager.SoloRunEnded -= HandleSoloRunEnded;
+            survivalManager.SoloRunEnded += HandleSoloRunEnded;
+        }
+        else
+        {
+            Debug.LogError("[SurvivalUIManager] No SurvivalManager found. Solo result UI cannot receive the completed run.", this);
+        }
     }
+
+    private void Start()
+    {
+        survivalTime = 0f;
+        timerRunning = true;
+        hasHandledEnd = false;
+        scoreSaved = false;
+        lastScore = 0f;
+
+        if (endScreen != null)
+            endScreen.SetActive(false);
+        else
+            Debug.LogError("[SurvivalUIManager] End Screen is not assigned in the Inspector.", this);
+
+        if (newRecordText != null)
+            newRecordText.gameObject.SetActive(false);
+
+        SetDistance(0f);
+        SetLoop(0);
+        SetScore(0);
+        SetTime(0f);
+    }
+
     private void Update()
     {
         if (!timerRunning)
             return;
 
         survivalTime += Time.deltaTime;
-
         SetTime(survivalTime);
     }
+
     public void ResumeGame()
     {
         GameManager.Instance.ChangeState(GameState.Playing);
     }
 
-    private void OnPauseEventTriggered(OnPauseEvent @event)
+    private void OnPauseEventTriggered(OnPauseEvent pauseEvent)
     {
-        if (@event.isPaused)
+        if (pauseEvent.isPaused)
         {
+            if (PausePanel == null) return;
             PausePanel.SetActive(true);
             Button button = PausePanel.GetComponentInChildren<Button>();
-            button.Select();
-            EventSystem.current.SetSelectedGameObject(button.gameObject);
+            if (button != null)
+            {
+                button.Select();
+                if (EventSystem.current != null)
+                    EventSystem.current.SetSelectedGameObject(button.gameObject);
+            }
         }
-        else
+        else if (PausePanel != null)
         {
             PausePanel.SetActive(false);
         }
-    }
-
-    private void Start()
-    {
-        timerRunning = true;
-        endScreen.SetActive(false);
-        SetDistance(0);
-        SetLoop(0);
-        SetScore(0);
-        SetTime(0);
     }
 
     #region ENVIRONMENT (BACKGROUND)
@@ -100,33 +160,38 @@ public class SurvivalUIManager : MonoBehaviour
         if (env == null || env.background == null)
             yield break;
 
-        backgroundImage.material = env.background;
+        if (backgroundImage != null)
+            backgroundImage.material = env.background;
     }
-
 
     #endregion
 
-
-    #region RUN UI (external updates)
+    #region RUN UI
 
     public void SetDistance(float value)
     {
-        distanceText.text = $"{value:0.0} m";
+        if (distanceText != null)
+            distanceText.text = $"{value:0.0} m";
     }
+
     public void SetTime(float seconds)
     {
+        if (timeText == null) return;
+
         int minutes = Mathf.FloorToInt(seconds / 60f);
         int secs = Mathf.FloorToInt(seconds % 60f);
-
         timeText.text = $"TIME: {minutes:00}:{secs:00}";
     }
+
     public void SetScore(int value)
     {
-        scoreText.text = value.ToString();
+        if (scoreText != null)
+            scoreText.text = value.ToString();
     }
 
     public void SetLoop(int loop)
     {
+        if (loopText == null) return;
         loopText.text = $"LOOP {loop}";
         loopText.transform.DOPunchScale(Vector3.one * 0.3f, 0.3f);
     }
@@ -135,112 +200,233 @@ public class SurvivalUIManager : MonoBehaviour
 
     #region END RUN
 
-    private void OnSurvivalEnded(OnPlayerDeathEvent e)
+    /// <summary>
+    /// Called by SurvivalManager after the Party-linked result has been recorded.
+    /// This is the canonical Solo completion path for this UI.
+    /// </summary>
+    private void HandleSoloRunEnded(
+        SurvivalRunResult result,
+        BARunnerStatistics statistics,
+        bool isNewRecord)
     {
+        if (hasHandledEnd)
+            return;
+
+        if (result == null)
+        {
+            Debug.LogError("[SurvivalUIManager] Received a null SurvivalRunResult.", this);
+            return;
+        }
+
+        hasHandledEnd = true;
         timerRunning = false;
+
+        // Use the exact same score that BA Runner stored as the profile record.
+        // This keeps the local leaderboard and Party-linked statistics consistent.
+        lastScore = result.Score;
+        survivalTime = result.SurvivalTimeSeconds;
+
+        if (scoreText != null)
+            scoreText.text = $"SCORE: {result.Score:N0}";
+        if (distanceText != null)
+            distanceText.text = $"DISTANCE: {result.Distance:0.0} m";
+        if (loopText != null)
+            loopText.text = $"STAGE: {result.StagesCompleted}";
+        SetTime(survivalTime);
+
+        if (bestSurvivalScoreText != null)
+        {
+            bestSurvivalScoreText.text = statistics != null
+                ? $"BEST SCORE: {statistics.bestSurvivalScore:N0}"
+                : "BEST SCORE: —";
+        }
+
+        if (newRecordText != null)
+        {
+            newRecordText.text = "NEW RECORD!";
+            newRecordText.gameObject.SetActive(isNewRecord);
+        }
+        else if (isNewRecord)
+        {
+            Debug.LogWarning(
+                "[SurvivalUIManager] New record saved, but New Record Text is not assigned. Create a TextMeshProUGUI under End Screen and assign it in the Inspector.",
+                this);
+        }
+
+        Debug.Log(
+            "[SurvivalUIManager] Received SoloRunEnded | Score: " + result.Score +
+            " | Distance: " + result.Distance.ToString("F1") +
+            " | Stages: " + result.StagesCompleted +
+            " | Time: " + result.SurvivalTimeSeconds.ToString("F1") +
+            " | New record: " + isNewRecord,
+            this);
+
+        if (AudioManager.Instance != null)
+            AudioManager.Instance.StopMusic();
+
         StartCoroutine(LoseSequence());
-        AudioManager.Instance.StopMusic();
-        float efficiency = e.distance / Mathf.Max(survivalTime, 1f);
-
-        int finalScore = Mathf.RoundToInt(
-            e.distance +
-            efficiency * 100f +
-            e.loops * 200f);
-
-        lastScore = finalScore;
-
-        scoreText.text = $"SCORE: {e.score}";
-        distanceText.text = $"DISTANCE: {e.distance:0.0} m";
-        loopText.text = $"STAGE: {e.loops}";
-    } 
-    
-    private void OnUpdateEvent(OnLevelUpdateEvent e)
-    {
-        lastScore = e.score;
-        scoreText.text = $"SCORE: {e.score}";
-        distanceText.text = $"DISTANCE: {e.distance:0.0} m";
-        loopText.text = $"STAGE: {e.loops}";
     }
 
-    [SerializeField] Image despedidoImage;
-    [SerializeField] TextMeshProUGUI countDownText;
-    [SerializeField] Image countDown;
-    [SerializeField] AudioClip countdownBeep;
-    [SerializeField] LeaderboardUI leaderboardUI;
-    private bool scoreSaved;
-    private float lastScore;
-    private bool timerRunning;
-
-    IEnumerator LoseSequence()
+    // Legacy fallback for systems that still raise OnPlayerDeathEvent.
+    // PlayerController's Survival branch does not raise this event.
+    private void OnUpdateEvent(OnLevelUpdateEvent e)
     {
-        endScreen.gameObject.SetActive(true);
-        despedidoImage.gameObject.SetActive(true);
-        enterNameField.gameObject.SetActive(false);
-        despedidoImage.color = new Color(1, 1, 1, 0);
+        // Do not let late HUD broadcasts overwrite the final result screen.
+        if (hasHandledEnd)
+            return;
 
-        yield return despedidoImage.DOFade(1, 0.5f).WaitForCompletion();
+        lastScore = e.score;
+        if (scoreText != null) scoreText.text = $"SCORE: {e.score}";
+        if (distanceText != null) distanceText.text = $"DISTANCE: {e.distance:0.0} m";
+        if (loopText != null) loopText.text = $"STAGE: {e.loops}";
+    }
+
+    private IEnumerator LoseSequence()
+    {
+        if (endScreen == null)
+        {
+            Debug.LogError("[SurvivalUIManager] Cannot show defeat sequence because End Screen is not assigned.", this);
+            yield break;
+        }
+
+        endScreen.SetActive(true);
+
+        if (newRecordText != null && newRecordText.gameObject.activeSelf)
+            StartNewRecordPulse();
+
+        if (despedidoImage != null)
+        {
+            despedidoImage.gameObject.SetActive(true);
+            despedidoImage.color = new Color(1f, 1f, 1f, 0f);
+            yield return despedidoImage.DOFade(1f, 0.5f).WaitForCompletion();
+        }
+
+        if (enterNameField != null)
+            enterNameField.gameObject.SetActive(false);
 
         yield return new WaitForSeconds(3f);
 
+        bool isHighScore = LeaderBoardManager.IsHighScore(lastScore);
+        if (enterNameField != null)
+            enterNameField.gameObject.SetActive(isHighScore);
 
-        bool isHighScore =
-    LeaderBoardManager.IsHighScore(lastScore);
-
-        enterNameField.gameObject.SetActive(isHighScore);
-
-        // Mostrar countdown
-
-
-        countDown.gameObject.SetActive(true);
-        retryButton.Select();
-        EventSystem.current.SetSelectedGameObject(retryButton.gameObject);
-        countDown.color = new Color(1, 1, 1, 0);
-        countDownText.alpha = 0;
-
-        yield return countDown.DOFade(1, 0.5f).WaitForCompletion();
-        yield return countDownText.DOFade(1, 0.5f).WaitForCompletion();
-        retryButton.onClick.AddListener(() =>
+        if (countDown != null)
         {
-            sceneTransition.StartTransition(SceneTransition.transitionTo.Survival);   
-        });
-        //  Countdown retro
+            countDown.gameObject.SetActive(true);
+            countDown.color = new Color(1f, 1f, 1f, 0f);
+        }
+
+        if (retryButton != null)
+        {
+            retryButton.Select();
+            if (EventSystem.current != null)
+                EventSystem.current.SetSelectedGameObject(retryButton.gameObject);
+        }
+
+        if (countDownText != null)
+            countDownText.alpha = 0f;
+
+        if (countDown != null)
+            yield return countDown.DOFade(1f, 0.5f).WaitForCompletion();
+        if (countDownText != null)
+            yield return countDownText.DOFade(1f, 0.5f).WaitForCompletion();
+
+        if (retryButton != null)
+        {
+            retryButton.onClick.RemoveListener(RetrySurvival);
+            retryButton.onClick.AddListener(RetrySurvival);
+        }
+
         for (int i = 10; i >= 0; i--)
         {
-            countDownText.text = "CONTINUE " + i.ToString() + "?";
-            AudioManager.Instance.PlaySFX(countdownBeep);
-            // punch (retro feel)
-            countDownText.transform.localScale = Vector3.one * 1.5f;
-            countDownText.transform.DOScale(1f, 0.2f);
+            if (countDownText != null)
+            {
+                countDownText.text = "CONTINUE " + i + "?";
+                countDownText.transform.localScale = Vector3.one * 1.5f;
+                countDownText.transform.DOScale(1f, 0.2f);
+            }
+
+            if (AudioManager.Instance != null && countdownBeep != null)
+                AudioManager.Instance.PlaySFX(countdownBeep);
 
             yield return new WaitForSeconds(1f);
         }
-        sceneTransition.StartTransition(SceneTransition.transitionTo.Survival);
+
+        RetrySurvival();
     }
+
+    private void StartNewRecordPulse()
+    {
+        if (newRecordText == null) return;
+
+        StopNewRecordPulse();
+        newRecordBaseScale = newRecordText.transform.localScale;
+        hasNewRecordBaseScale = true;
+
+        newRecordPulseTween = newRecordText.transform
+            .DOScale(newRecordBaseScale * newRecordPulseScale, newRecordPulseDuration)
+            .SetEase(Ease.InOutSine)
+            .SetLoops(-1, LoopType.Yoyo)
+            .SetUpdate(true);
+    }
+
+    private void StopNewRecordPulse()
+    {
+        if (newRecordPulseTween != null)
+        {
+            newRecordPulseTween.Kill();
+            newRecordPulseTween = null;
+        }
+
+        if (newRecordText != null && hasNewRecordBaseScale)
+            newRecordText.transform.localScale = newRecordBaseScale;
+
+        hasNewRecordBaseScale = false;
+    }
+
     public void SaveScore()
     {
         if (scoreSaved)
             return;
 
-        string playerName = enterNameField.text.Trim();
-
+        string playerName = enterNameField != null ? enterNameField.text.Trim() : string.Empty;
         if (string.IsNullOrEmpty(playerName))
             playerName = "PLAYER";
 
         LeaderBoardManager.AddScore(playerName, lastScore);
-
         scoreSaved = true;
 
-        enterNameField.gameObject.SetActive(false);
+        if (enterNameField != null)
+            enterNameField.gameObject.SetActive(false);
 
-        leaderboardUI.Refresh();
+        if (leaderboardUI != null)
+            leaderboardUI.Refresh();
     }
+
+    private void RetrySurvival()
+    {
+        if (sceneTransition != null)
+            sceneTransition.StartTransition(SceneTransition.transitionTo.Survival);
+        else
+            Debug.LogError("[SurvivalUIManager] SceneTransition is not assigned; cannot retry Survival.", this);
+    }
+
     #endregion
 
     private void OnDisable()
     {
-        EventBus<OnRoadEnvironmentChanged>.Deregister(envBinding);
-        EventBus<OnPlayerDeathEvent>.Deregister(onDeathBinding);
-        EventBus<OnRoadSectionChanged>.Deregister(sectionBinding);
-        EventBus<OnPauseEvent>.Deregister(pauseEventBinding);
+        if (survivalManager != null)
+            survivalManager.SoloRunEnded -= HandleSoloRunEnded;
+
+        StopNewRecordPulse();
+
+        if (envBinding != null)
+            EventBus<OnRoadEnvironmentChanged>.Deregister(envBinding);
+        if (sectionBinding != null)
+            EventBus<OnRoadSectionChanged>.Deregister(sectionBinding);
+        if (pauseEventBinding != null)
+            EventBus<OnPauseEvent>.Deregister(pauseEventBinding);
+        if (updateEventBinding != null)
+            EventBus<OnLevelUpdateEvent>.Deregister(updateEventBinding);
     }
 }

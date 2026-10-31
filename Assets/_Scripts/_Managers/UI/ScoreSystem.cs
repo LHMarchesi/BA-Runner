@@ -10,14 +10,15 @@ public class ScoreSystem : MonoBehaviour
     private bool isRunning;
 
     private EventBinding<OnRoadSectionChanged> sectionBinding;
-
-    EventBinding<OnPlayerDeathEvent> playerDeathBinding;
+    private EventBinding<OnPlayerDeathEvent> playerDeathBinding;
 
     [SerializeField]
     private bool useGlobalEvents = true;
 
     [SerializeField]
     private bool broadcastLevelUpdate = true;
+
+    public bool IsRunning => isRunning;
 
     private void OnEnable()
     {
@@ -26,43 +27,38 @@ public class ScoreSystem : MonoBehaviour
         if (!useGlobalEvents)
             return;
 
-        sectionBinding =
-            new EventBinding<OnRoadSectionChanged>(
-                OnRoadSectionChanged
-            );
+        sectionBinding = new EventBinding<OnRoadSectionChanged>(OnRoadSectionChanged);
+        EventBus<OnRoadSectionChanged>.Register(sectionBinding);
 
-        EventBus<OnRoadSectionChanged>
-            .Register(sectionBinding);
-
-        playerDeathBinding =
-            new EventBinding<OnPlayerDeathEvent>(
-                HandlePLayerDeath
-            );
-
-        EventBus<OnPlayerDeathEvent>
-            .Register(playerDeathBinding);
+        playerDeathBinding = new EventBinding<OnPlayerDeathEvent>(HandlePlayerDeath);
+        EventBus<OnPlayerDeathEvent>.Register(playerDeathBinding);
     }
 
-    private void HandlePLayerDeath(OnPlayerDeathEvent e)
+    private void HandlePlayerDeath(OnPlayerDeathEvent e)
     {
-        isRunning = false;
+        SetRunning(false);
     }
+
     private void OnDisable()
     {
+        SetRunning(false);
+
         if (!useGlobalEvents)
             return;
 
-        EventBus<OnRoadSectionChanged>
-            .Deregister(sectionBinding);
+        if (sectionBinding != null)
+            EventBus<OnRoadSectionChanged>.Deregister(sectionBinding);
 
-        EventBus<OnPlayerDeathEvent>
-            .Deregister(playerDeathBinding);
+        if (playerDeathBinding != null)
+            EventBus<OnPlayerDeathEvent>.Deregister(playerDeathBinding);
     }
-
 
     private void Update()
     {
-        if (!broadcastLevelUpdate)
+        // Important: do not keep broadcasting stale/zero values after the run stops.
+        // SurvivalUIManager listens to this global event and otherwise can overwrite
+        // the final result that SurvivalManager has just displayed.
+        if (!broadcastLevelUpdate || !isRunning)
             return;
 
         EventBus<OnLevelUpdateEvent>.Raise(
@@ -77,6 +73,9 @@ public class ScoreSystem : MonoBehaviour
 
     public void AddStage()
     {
+        if (!isRunning)
+            return;
+
         Stage++;
     }
 
@@ -88,23 +87,32 @@ public class ScoreSystem : MonoBehaviour
         isRunning = true;
     }
 
-    public void SetRunnig(bool value)
+    /// <summary>Stops or resumes score accumulation and HUD event broadcasting.</summary>
+    public void SetRunning(bool value)
     {
         isRunning = value;
     }
 
-    private void OnRoadSectionChanged(OnRoadSectionChanged e)
+    /// <summary>Backward-compatible spelling used by older project scripts.</summary>
+    public void SetRunnig(bool value)
     {
-        Stage++;
+        SetRunning(value);
     }
 
-
-    public void AddDistance(float value)
+    private void OnRoadSectionChanged(OnRoadSectionChanged e)
     {
         if (!isRunning)
             return;
+
+        Stage++;
+    }
+
+    public void AddDistance(float value)
+    {
+        if (!isRunning || value <= 0f)
+            return;
+
         Distance += value;
         Score = Mathf.FloorToInt(Distance * 10f);
     }
-
 }
